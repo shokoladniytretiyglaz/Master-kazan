@@ -355,36 +355,44 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
-                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6">
-                        <div class="grid grid-cols-2 gap-2 mb-4">
-                            <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&auto=format&fit=crop&q=80" class="rounded-xl object-cover h-36 w-full" alt="До">
-                                <span class="absolute top-2 left-2 bg-rose-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded">ДО</span>
+                    <!-- Case 1: Plumbing -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-slate-700 transition">
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="relative overflow-hidden rounded-xl bg-slate-950">
+                                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full" alt="Старая раковина и смеситель ДО ремонта">
+                                <span class="absolute top-2 left-2 bg-rose-600/90 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ДО</span>
                             </div>
-                            <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=400&auto=format&fit=crop&q=80" class="rounded-xl object-cover h-36 w-full" alt="После">
-                                <span class="absolute top-2 left-2 bg-emerald-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded">ПОСЛЕ</span>
+                            <div class="relative overflow-hidden rounded-xl bg-slate-950">
+                                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full filter brightness-110 contrast-105" alt="Новая раковина ПОСЛЕ установки">
+                                <span class="absolute top-2 left-2 bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ПОСЛЕ</span>
                             </div>
                         </div>
                         <h3 class="font-bold text-white text-base">Замена смесителя и сифона в ванной</h3>
                         <p class="text-xs text-slate-400 mt-1 mb-3">Район: Ново-Савиновский, ул. Ямашева. Время выполнения: 45 минут.</p>
-                        <div class="text-xs font-black text-brand-orange">Итоговая стоимость: 1 050 ₽</div>
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                            <span class="text-xs text-slate-400">Итоговая стоимость:</span>
+                            <span class="text-sm font-black text-brand-orange">1 050 ₽</span>
+                        </div>
                     </div>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6">
-                        <div class="grid grid-cols-2 gap-2 mb-4">
-                            <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&auto=format&fit=crop&q=80" class="rounded-xl object-cover h-36 w-full" alt="До">
-                                <span class="absolute top-2 left-2 bg-rose-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded">ДО</span>
+                    <!-- Case 2: Kitchen Furniture Assembly -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-slate-700 transition">
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="relative overflow-hidden rounded-xl bg-slate-950">
+                                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full filter grayscale contrast-120" alt="Разобранная кухня ДО сборки">
+                                <span class="absolute top-2 left-2 bg-rose-600/90 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ДО</span>
                             </div>
-                            <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&auto=format&fit=crop&q=80" class="rounded-xl object-cover h-36 w-full" alt="После">
-                                <span class="absolute top-2 left-2 bg-emerald-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded">ПОСЛЕ</span>
+                            <div class="relative overflow-hidden rounded-xl bg-slate-950">
+                                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full" alt="Собраный кухонный гарнитур ПОСЛЕ">
+                                <span class="absolute top-2 left-2 bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ПОСЛЕ</span>
                             </div>
                         </div>
                         <h3 class="font-bold text-white text-base">Сборка кухонного гарнитура с врезкой мойки</h3>
                         <p class="text-xs text-slate-400 mt-1 mb-3">Район: Советский, ЖК "Арт Сити". Время выполнения: 3.5 часа.</p>
-                        <div class="text-xs font-black text-brand-orange">Итоговая стоимость: 3 800 ₽</div>
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                            <span class="text-xs text-slate-400">Итоговая стоимость:</span>
+                            <span class="text-sm font-black text-brand-orange">3 800 ₽</span>
+                        </div>
                     </div>
 
                 </div>
