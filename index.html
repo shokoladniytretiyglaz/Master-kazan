@@ -137,13 +137,14 @@
             </a>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold">
+            <nav class="hidden lg:flex items-center space-x-5 text-sm font-semibold">
                 <a href="#/home" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Главная</a>
                 <a href="#/services" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Услуги</a>
-                <a href="#/pricelist" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Прайс-лист Казань</a>
+                <a href="#/pricelist" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Прайс-лист</a>
                 <a href="#/masters" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Мастера</a>
                 <a href="#/reviews" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Отзывы</a>
-                <a href="#/contacts" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Заявка / Контакты</a>
+                <a href="#/faq" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">FAQ</a>
+                <a href="#/contacts" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Контакты</a>
             </nav>
 
             <!-- CTA Call Button -->
@@ -166,6 +167,7 @@
             <a href="#/pricelist" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Прайс-лист Казань</a>
             <a href="#/masters" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Мастера</a>
             <a href="#/reviews" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Отзывы</a>
+            <a href="#/faq" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Частые вопросы (FAQ)</a>
             <a href="#/contacts" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Оформить заявку</a>
             <button onclick="closeMobileMenu(); openBookingModal('Вызов из меню')" class="w-full text-center bg-brand-orange text-slate-950 font-bold py-3 rounded-xl mt-2">
                 Срочный вызов мастера в Казани
@@ -401,7 +403,7 @@
             </div>
         </section>
 
-        <!-- PAGE 2 & 3: PRICELIST & CATEGORIES SEARCH (MAIN HUB) -->
+        <!-- PAGE: PRICELIST & CATEGORIES SEARCH (MAIN HUB) -->
         <section id="page-pricelist" class="page-view hidden py-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -472,15 +474,104 @@
             </div>
         </section>
 
-        <!-- PAGE: REVIEWS -->
+        <!-- PAGE: REVIEWS (NOW WITH INTERACTIVE ADD REVIEW FORM) -->
         <section id="page-reviews" class="page-view hidden py-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-10">
                     <h1 class="font-heading text-3xl sm:text-5xl font-black text-white mb-3">Отзывы жителей Казани</h1>
                     <p class="text-slate-400 text-sm">Настоящие впечатления клиентов из разных районов города</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="reviews-cards-grid">
-                    <!-- Populated via JS -->
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    <!-- Reviews List (Left) -->
+                    <div class="lg:col-span-7 space-y-4" id="reviews-cards-grid">
+                        <!-- Populated via JS -->
+                    </div>
+
+                    <!-- Add Review Form (Right) -->
+                    <div class="lg:col-span-5 bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl h-fit">
+                        <h2 class="text-xl font-bold text-white mb-2">Оставить отзыв</h2>
+                        <p class="text-xs text-slate-400 mb-6">Поделитесь впечатлениями о работе наших мастеров в Казани</p>
+
+                        <form onsubmit="handleAddNewReview(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Ваше Имя *</label>
+                                <input type="text" id="new-rev-name" required placeholder="Например: Марат" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Район Казани</label>
+                                <input type="text" id="new-rev-district" placeholder="Советский р-н" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Оценка (от 1 до 5)</label>
+                                <select id="new-rev-rating" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-orange">
+                                    <option value="5">⭐⭐⭐⭐⭐ (5/5 - Отлично)</option>
+                                    <option value="4">⭐⭐⭐⭐ (4/5 - Хорошо)</option>
+                                    <option value="3">⭐⭐⭐ (3/5 - Нормально)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Ваш отзыв *</label>
+                                <textarea id="new-rev-text" required rows="3" placeholder="Опишите, какие работы выполнялись..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg transition">
+                                Отправить отзыв
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: DEDICATED FAQ (ЧАСТЫЕ ВОПРОСЫ ОТДЕЛЬНОЙ СТРАНИЦЕЙ) -->
+        <section id="page-faq" class="page-view hidden py-10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <h1 class="font-heading text-3xl sm:text-5xl font-black text-white mb-3">Частые вопросы (FAQ)</h1>
+                    <p class="text-slate-400 text-sm">Всё, что вы хотели знать о вызове мастеров и гарантиях</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+                            <span>Как происходит оплата услуг мастера?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
+                        </div>
+                        <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
+                            Оплата производится только после завершения работ и проверки вами качества. Вы можете оплатить наличными мастеру или переводом на карту/счет компании.
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+                            <span>Что делать, если при работе обнаружилась скрытая поломка?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
+                        </div>
+                        <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
+                            Мастер обязательно согласует с вами дополнительные расходы и смету до начала их выполнения. Никаких неожиданных доплат по факту.
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+                            <span>Выезжаете ли вы в загородные поселки Казани?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
+                        </div>
+                        <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
+                            Да, наши мастера выезжают во все пригороды и коттеджные поселки (Куюки, Осиново, Высокая Гора, Салмачи и др.). Стоимость выезда за город рассчитывается индивидуально.
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+                            <span>Какая гарантия предоставляется на выполненные работы?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
+                        </div>
+                        <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
+                            Мы выдаем официальный гарантийный талон сроком на 12 месяцев на все виды бытового ремонта и установки.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -636,52 +727,6 @@
 
     </main>
 
-    <!-- SECTION: FAQ (FREQUENTLY ASKED QUESTIONS) -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center mb-10">
-            <span class="text-xs font-bold text-brand-orange uppercase">Популярные вопросы</span>
-            <h2 class="font-heading text-2xl sm:text-3xl font-black text-white mt-1">Ответы на частые вопросы</h2>
-        </div>
-        <div class="space-y-4" id="faq-container">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
-                <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-                    <span>Как происходит оплата услуг мастера?</span>
-                    <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
-                </div>
-                <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
-                    Оплата производится только после завершения работ и проверки вами качества. Вы можете оплатить наличными мастеру или переводом на карту/счет компании.
-                </div>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
-                <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-                    <span>Что делать, если при работе обнаружилась скрытая поломка?</span>
-                    <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
-                </div>
-                <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
-                    Мастер обязательно согласует с вами дополнительные расходы и смету до начала их выполнения. Никаких неожиданных доплат по факту.
-                </div>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
-                <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-                    <span>Выезжаете ли вы в загородные поселки Казани?</span>
-                    <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
-                </div>
-                <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
-                    Да, наши мастера выезжают во все пригороды и коттеджные поселки (Куюки, Осиново, Высокая Гора, Салмачи и др.). Стоимость выезда за город рассчитывается индивидуально.
-                </div>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
-                <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-                    <span>Какая гарантия предоставляется на выполненные работы?</span>
-                    <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
-                </div>
-                <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
-                    Мы выдаем официальный гарантийный талон сроком на 12 месяцев на все виды бытового ремонта и установки.
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- FOOTER -->
     <footer class="bg-slate-900 border-t border-slate-800 py-10 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -697,7 +742,7 @@
                     <ul class="space-y-1.5 text-xs text-slate-400">
                         <li><a href="#/home" class="hover:text-brand-orange transition">Главная</a></li>
                         <li><a href="#/pricelist" class="hover:text-brand-orange transition">Прайс-лист Казань</a></li>
-                        <li><a href="#/masters" class="hover:text-brand-orange transition">Мастера города</a></li>
+                        <li><a href="#/faq" class="hover:text-brand-orange transition">Частые вопросы (FAQ)</a></li>
                         <li><a href="#/contacts" class="hover:text-brand-orange transition">Подача заявки</a></li>
                     </ul>
                 </div>
@@ -965,7 +1010,7 @@
             { name: 'Евгений Морозов', role: 'Плотник и сборщик мебели', exp: '7 лет опыта', rating: '4.88', district: 'Московский, Кировский, Авиастроительный', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80' }
         ];
 
-        const reviewsData = [
+        let reviewsData = [
             { name: 'Айгуль З.', district: 'Ново-Савиновский р-н', text: 'Мастер приехал со своими кронштейнами и раковиной, за 40 минут заменил всё идеальнейше. Все расценки совпали с прямоугольниками прайс-листа!', rating: 5, date: 'Вчера' },
             { name: 'Руслан К.', district: 'Вахитовский р-н', text: 'Заказывал установку входной двери и замка. Сделали аккуратно, мусор убрали. Отличный сервис в Казани.', rating: 5, date: '3 дня назад' }
         ];
@@ -980,6 +1025,7 @@
             initParentCategoryButtons();
             renderPricelistRectangles();
             renderCardsPages();
+            renderReviews();
             setupPhoneMasks();
         });
 
@@ -1035,6 +1081,46 @@
             icon.classList.toggle('rotate-180');
         }
 
+        // ADD NEW REVIEW HANDLER
+        function handleAddNewReview(e) {
+            e.preventDefault();
+            const name = document.getElementById('new-rev-name').value;
+            const district = document.getElementById('new-rev-district').value || 'Казань';
+            const rating = parseInt(document.getElementById('new-rev-rating').value);
+            const text = document.getElementById('new-rev-text').value;
+
+            reviewsData.unshift({
+                name: name,
+                district: district,
+                text: text,
+                rating: rating,
+                date: 'Только что'
+            });
+
+            renderReviews();
+            alert('Спасибо за ваш отзыв! Он успешно добавлен на сайт.');
+            e.target.reset();
+        }
+
+        function renderReviews() {
+            const reviewsGrid = document.getElementById('reviews-cards-grid');
+            if(!reviewsGrid) return;
+
+            reviewsGrid.innerHTML = reviewsData.map(r => `
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-md">
+                    <div class="flex items-center justify-between mb-2">
+                        <div>
+                            <span class="font-bold text-white text-sm">${r.name}</span>
+                            <span class="text-xs text-slate-400 ml-2">(${r.district})</span>
+                        </div>
+                        <span class="text-xs text-slate-500">${r.date}</span>
+                    </div>
+                    <div class="text-xs text-amber-400 mb-3">${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}</div>
+                    <p class="text-xs text-slate-300 italic">"${r.text}"</p>
+                </div>
+            `).join('');
+        }
+
         // QUIZ CALCULATOR LOGIC
         function setQuizAnswer(key, value, nextStep) {
             quizAnswers[key] = value;
@@ -1053,7 +1139,6 @@
             await sendTelegramMessageDirect(text, null);
             alert(`Спасибо, ${name}! Заявка со скидкой 10% принята. Диспетчер свяжется с вами через 3 минуты.`);
             
-            // Reset Quiz
             document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
             document.getElementById('quiz-step-1').classList.remove('hidden');
             quizAnswers = {};
@@ -1227,40 +1312,29 @@
             }
         }
 
-        // DIRECT TELEGRAM BOT API DISPATCH (INCL. MEDIA)
         async function sendTelegramMessageDirect(text, files) {
             if (TELEGRAM_BOT_TOKEN === 'YOUR_TELEGRAM_BOT_TOKEN_HERE') {
-                console.warn('Telegram Bot Token не уставновлен. Сообщение эмулируется.');
+                console.warn('Telegram Bot Token не уставновлен.');
                 return;
             }
 
             try {
-                // Send text first
                 await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: text,
-                        parse_mode: 'Markdown'
-                    })
+                    body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text, parse_mode: 'Markdown' })
                 });
 
-                // Send files if attached
                 if (files && files.length > 0) {
                     for (let file of files) {
                         const formData = new FormData();
                         formData.append('chat_id', TELEGRAM_CHAT_ID);
                         formData.append('document', file);
-
-                        await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendDocument`, {
-                            method: 'POST',
-                            body: formData
-                        });
+                        await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendDocument`, { method: 'POST', body: formData });
                     }
                 }
             } catch (err) {
-                console.error('Ошибка отправки в Telegram API:', err);
+                console.error('Ошибка отправки:', err);
             }
         }
 
@@ -1271,16 +1345,13 @@
 
             const text = `🛠 *НОВАЯ ЗАЯВКА В КАЗАНИ*\n\n👤 *Имя:* ${data.name}\n📞 *Телефон:* ${data.phone}\n📍 *Район:* ${data.district || 'Казань'}\n🔧 *Услуга:* ${data.service || 'Бытовой ремонт'}\n📝 *Описание:* ${data.desc}\n📎 *Файлов:* ${fileCount}`;
 
-            // 1. Send via Telegram API
             await sendTelegramMessageDirect(text, data.files);
 
-            // 2. Open Email Client as fallback backup
             const subject = encodeURIComponent(`Заявка Казань: ${data.name} (${data.phone})`);
-            const body = encodeURIComponent(`Имя: ${data.name}\nТелефон: ${data.phone}\nРайон: ${data.district || 'Казань'}\nУслуга: ${data.service || 'Ремонт'}\nОписание: ${data.desc}\nПрикрепил файлов: ${fileCount}`);
-            
+            const body = encodeURIComponent(`Имя: ${data.name}\nТелефон: ${data.phone}\nРайон: ${data.district || 'Казань'}\nУслуга: ${data.service || 'Ремонт'}\nОписание: ${data.desc}`);
             window.location.href = `mailto:sokoladniy.tretiy.glaz@gmail.com?subject=${subject}&body=${body}`;
 
-            alert(`Спасибо, ${data.name}! Ваша заявка успешно передана администратору. Мастер перезвонит в течение 3 минут.`);
+            alert(`Спасибо, ${data.name}! Ваша заявка успешно передана администратору.`);
             if(type === 'modal') closeBookingModal();
         }
 
@@ -1289,11 +1360,8 @@
             const text = `🛠 *ЗАЯВКА В КАЗАНИ*\n\n👤 *Имя:* ${data.name}\n📞 *Телефон:* ${data.phone}\n📍 *Район:* ${data.district || 'Казань'}\n🔧 *Услуга:* ${data.service || 'Бытовой ремонт'}\n📝 *Описание:* ${data.desc}`;
             const encoded = encodeURIComponent(text);
 
-            if (messenger === 'telegram') {
-                window.open(`https://t.me/DedaYagaaaa`, '_blank');
-            } else if (messenger === 'whatsapp') {
-                window.open(`https://wa.me/79614879836?text=${encoded}`, '_blank');
-            }
+            if (messenger === 'telegram') window.open(`https://t.me/DedaYagaaaa`, '_blank');
+            else if (messenger === 'whatsapp') window.open(`https://wa.me/79614879836?text=${encoded}`, '_blank');
         }
 
         function renderCardsPages() {
@@ -1311,13 +1379,18 @@
                             <h3 class="text-lg font-bold text-white mb-2 group-hover:text-brand-orange transition-colors">${c.name}</h3>
                             <p class="text-xs text-slate-400 leading-relaxed mb-4">${c.desc}</p>
                             <div class="text-[11px] text-slate-400 bg-slate-950 p-2.5 rounded-xl border border-slate-800 mb-6">
-                                <span class="font-bold text-slate-300 block mb-0.5"><i class="fa-solid fa-toolbox text-brand-orange mr-1"></i> Инструмент и оснащение:</span>
+                                <span class="font-bold text-slate-300 block mb-0.5"><i class="fa-solid fa-toolbox text-brand-orange mr-1"></i> Оснащение:</span>
                                 ${c.tools}
                             </div>
                         </div>
-                        <button onclick="selectParentCategory('${c.id}'); window.location.hash='#/pricelist';" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-brand-orange hover:text-slate-950 text-white font-bold text-xs transition-all flex items-center justify-center gap-2">
-                            <span>Смотреть цены и работы</span> <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+                        <div class="space-y-2">
+                            <button onclick="selectParentCategory('${c.id}'); window.location.hash='#/pricelist';" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-2">
+                                <span>Смотреть цены</span> <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <button onclick="openBookingModal('Заказ услуги: ${c.name}')" class="w-full py-2.5 rounded-xl bg-brand-orange text-slate-950 font-bold text-xs hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                                <span>Заказать услугу</span> <i class="fa-solid fa-bolt"></i>
+                            </button>
+                        </div>
                     </div>
                 `).join('');
             }
@@ -1336,20 +1409,6 @@
                     </div>
                 `).join('');
             }
-
-            const reviewsGrid = document.getElementById('reviews-cards-grid');
-            if(reviewsGrid) {
-                reviewsGrid.innerHTML = reviewsData.map(r => `
-                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="font-bold text-white text-sm">${r.name}</span>
-                            <span class="text-xs text-slate-500">${r.date}</span>
-                        </div>
-                        <div class="text-xs text-amber-400 mb-3">${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}</div>
-                        <p class="text-xs text-slate-300 italic">"${r.text}"</p>
-                    </div>
-                `).join('');
-            }
         }
 
         function openBookingModal(title = 'Вызов мастера') {
@@ -1363,9 +1422,7 @@
         }
 
         function handleModalBackdropClick(e) {
-            if (e.target.id === 'booking-modal') {
-                closeBookingModal();
-            }
+            if (e.target.id === 'booking-modal') closeBookingModal();
         }
 
         function toggleQuickMenu() {
@@ -1373,20 +1430,14 @@
             const icon = document.getElementById('quick-btn-icon');
             menu.classList.toggle('hidden');
             menu.classList.toggle('flex');
-            
-            if(menu.classList.contains('flex')) icon.className = 'fa-solid fa-xmark';
-            else icon.className = 'fa-solid fa-headset';
+            icon.className = menu.classList.contains('flex') ? 'fa-solid fa-xmark' : 'fa-solid fa-headset';
         }
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('burger-icon');
             menu.classList.toggle('hidden');
-            if(!menu.classList.contains('hidden')) {
-                icon.className = 'fa-solid fa-xmark';
-            } else {
-                icon.className = 'fa-solid fa-bars';
-            }
+            icon.className = !menu.classList.contains('hidden') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
         }
 
         function closeMobileMenu() {
