@@ -244,6 +244,7 @@
                                     <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-orange to-amber-500 text-slate-950 font-black text-sm hover:brightness-110 shadow-lg pulse-orange transition">
                                         Рассчитать стоимость
                                     </button>
+                                    <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
                                 </form>
                             </div>
                         </div>
@@ -309,6 +310,7 @@
                                 <button type="submit" class="w-full py-3 bg-brand-orange text-slate-950 font-black text-xs rounded-xl hover:brightness-110 shadow-lg">
                                     Получить расчет со скидкой 10%
                                 </button>
+                                <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
                             </form>
                         </div>
 
@@ -613,6 +615,7 @@
                                 <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg flex items-center justify-center gap-2 transition">
                                     <i class="fa-solid fa-paper-plane"></i> Мгновенная отправка заявки
                                 </button>
+                                <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <button type="button" onclick="sendToMessenger('whatsapp', 'main')" class="py-3 px-4 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition flex items-center justify-center gap-2 shadow-md">
@@ -632,6 +635,52 @@
         </section>
 
     </main>
+
+    <!-- SECTION: FAQ (FREQUENTLY ASKED QUESTIONS) -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-10">
+            <span class="text-xs font-bold text-brand-orange uppercase">Популярные вопросы</span>
+            <h2 class="font-heading text-2xl sm:text-3xl font-black text-white mt-1">Ответы на частые вопросы</h2>
+        </div>
+        <div class="space-y-4" id="faq-container">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
+                <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+                    <span>Как происходит оплата услуг мастера?</span>
+                    <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
+                </div>
+                <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
+                    Оплата производится только после завершения работ и проверки вами качества. Вы можете оплатить наличными мастеру или переводом на карту/счет компании.
+                </div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
+                <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+                    <span>Что делать, если при работе обнаружилась скрытая поломка?</span>
+                    <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
+                </div>
+                <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
+                    Мастер обязательно согласует с вами дополнительные расходы и смету до начала их выполнения. Никаких неожиданных доплат по факту.
+                </div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
+                <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+                    <span>Выезжаете ли вы в загородные поселки Казани?</span>
+                    <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
+                </div>
+                <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
+                    Да, наши мастера выезжают во все пригороды и коттеджные поселки (Куюки, Осиново, Высокая Гора, Салмачи и др.). Стоимость выезда за город рассчитывается индивидуально.
+                </div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 cursor-pointer hover:border-slate-700 transition" onclick="toggleFaq(this)">
+                <div class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+                    <span>Какая гарантия предоставляется на выполненные работы?</span>
+                    <i class="fa-solid fa-chevron-down text-brand-orange transition-transform duration-300"></i>
+                </div>
+                <div class="text-xs text-slate-400 mt-2 hidden leading-relaxed">
+                    Мы выдаем официальный гарантийный талон сроком на 12 месяцев на все виды бытового ремонта и установки.
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="bg-slate-900 border-t border-slate-800 py-10 mt-12">
@@ -739,6 +788,7 @@
                 <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg transition">
                     <i class="fa-solid fa-paper-plane mr-1"></i> Отправить заявку
                 </button>
+                <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
 
                 <div class="grid grid-cols-2 gap-2 pt-1">
                     <button type="button" onclick="sendToMessenger('whatsapp', 'modal')" class="py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-emerald-700 transition">
@@ -759,13 +809,13 @@
         const TELEGRAM_CHAT_ID = 'YOUR_TELEGRAM_CHAT_ID_HERE';
 
         const categoriesConfig = [
-            { id: 'plumbing', name: 'Сантехника', icon: 'fa-faucet', subs: ['Все подкатегории', 'Раковины и мойки', 'Смесители и краны', 'Ванны и душевые', 'Унитазы и инсталляции', 'Трубы и канализация', 'Водонагреватели и радиаторы', 'Фильтры и герметизация'] },
-            { id: 'electric', name: 'Электромонтаж', icon: 'fa-bolt', subs: ['Все подкатегории', 'Розетки и выключатели', 'Люстры и светильники', 'Электрощиты и точки'] },
-            { id: 'handyman', name: 'Мелкий бытовой ремонт', icon: 'fa-toolbox', subs: ['Все подкатегории', 'Зеркала и плинтусы', 'Карнизы и навес', 'Мастер на час'] },
-            { id: 'carpenter', name: 'Услуги плотника', icon: 'fa-door-open', subs: ['Все подкатегории', 'Двери и замки', 'Глазки и фурнитура'] },
-            { id: 'furniture_repair', name: 'Ремонт мебели', icon: 'fa-chair', subs: ['Все подкатегории', 'Ремонт шкафов', 'Ремонт диванов и кроватей'] },
-            { id: 'furniture_assemble', name: 'Сборка мебели', icon: 'fa-couch', subs: ['Все подкатегории', 'Сборка кухонь', 'Сборка шкафов', 'Сборка диванов и столов'] },
-            { id: 'diagnostics', name: 'Выезд и диагностика', icon: 'fa-truck-fast', subs: ['Все подкатегории', 'Выезд мастера'] }
+            { id: 'plumbing', name: 'Сантехника', icon: 'fa-faucet', time: 'от 30 минут', tools: 'Проф. ключи, герметик', desc: 'Установка и замена раковин, смесителей, ванн, унитазов, устранение засоров.', subs: ['Все подкатегории', 'Раковины и мойки', 'Смесители и краны', 'Ванны и душевые', 'Унитазы и инсталляции', 'Трубы и канализация', 'Водонагреватели и радиаторы', 'Фильтры и герметизация'] },
+            { id: 'electric', name: 'Электромонтаж', icon: 'fa-bolt', time: 'от 20 минут', tools: 'Тестер, перфоратор', desc: 'Монтаж розеток, выключателей, светильников, люстр и поиск обрывов проводки.', subs: ['Все подкатегории', 'Розетки и выключатели', 'Люстры и светильники', 'Электрощиты и точки'] },
+            { id: 'handyman', name: 'Мелкий бытовой ремонт', icon: 'fa-toolbox', time: 'от 40 минут', tools: 'Шуруповерт, уровень', desc: 'Навеска зеркал, карнизов, полок, замена плинтусов и порожков.', subs: ['Все подкатегории', 'Зеркала и плинтусы', 'Карнизы и навес', 'Мастер на час'] },
+            { id: 'carpenter', name: 'Услуги плотника', icon: 'fa-door-open', time: 'от 1 часа', tools: 'Стамеска, уровень, торцовка', desc: 'Установка и замена межкомнатных и входных дверей, замков и глазков.', subs: ['Все подкатегории', 'Двери и замки', 'Глазки и фурнитура'] },
+            { id: 'furniture_repair', name: 'Ремонт мебели', icon: 'fa-chair', time: 'от 45 минут', tools: 'Мебельный набор', desc: 'Ремонт шкафов-купе, диванов, кроватей, замена подъемных механизмов.', subs: ['Все подкатегории', 'Ремонт шкафов', 'Ремонт диванов и кроватей'] },
+            { id: 'furniture_assemble', name: 'Сборка мебели', icon: 'fa-couch', time: 'от 1 часа', tools: 'Проф. набор сборщика', desc: 'Сборка и монтаж кухонных гарнитуров, шкафов, спален и офисной мебели.', subs: ['Все подкатегории', 'Сборка кухонь', 'Сборка шкафов', 'Сборка диванов и столов'] },
+            { id: 'diagnostics', name: 'Выезд и диагностика', icon: 'fa-truck-fast', time: '15-30 минут', tools: 'Диагностика на месте', desc: 'Оперативный выезд мастера на дом для оценки сложности и составления сметы.', subs: ['Все подкатегории', 'Выезд мастера'] }
         ];
 
         const priceDatabase = [
@@ -930,6 +980,7 @@
             initParentCategoryButtons();
             renderPricelistRectangles();
             renderCardsPages();
+            setupPhoneMasks();
         });
 
         document.addEventListener('keydown', (e) => {
@@ -956,6 +1007,32 @@
 
             closeMobileMenu();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PHONE MASK IMPLEMENTATION
+        function setupPhoneMasks() {
+            const phoneInputs = document.querySelectorAll('input[type="tel"]');
+            phoneInputs.forEach(input => {
+                input.addEventListener('input', function(e) {
+                    let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+                    if (!x[2]) {
+                        e.target.value = x[1] ? '+7 (' + x[1] : '';
+                    } else {
+                        e.target.value = '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+                    }
+                });
+                input.addEventListener('focus', function(e) {
+                    if (!e.target.value) e.target.value = '+7 (';
+                });
+            });
+        }
+
+        // FAQ ACCORDION TOGGLE
+        function toggleFaq(el) {
+            const desc = el.querySelector('div:last-child');
+            const icon = el.querySelector('i');
+            desc.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
         }
 
         // QUIZ CALCULATOR LOGIC
@@ -1223,13 +1300,24 @@
             const svcGrid = document.getElementById('services-cards-grid');
             if(svcGrid) {
                 svcGrid.innerHTML = categoriesConfig.map(c => `
-                    <div onclick="selectParentCategory('${c.id}'); window.location.hash='#/pricelist';" class="bg-slate-900 border border-slate-800 rounded-3xl p-6 cursor-pointer hover:border-brand-orange transition-all group">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-brand-orange flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid ${c.icon}"></i>
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between hover:border-brand-orange transition-all group">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-brand-orange flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid ${c.icon}"></i>
+                                </div>
+                                <span class="text-[11px] font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full"><i class="fa-solid fa-clock mr-1"></i>${c.time}</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-brand-orange transition-colors">${c.name}</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">${c.desc}</p>
+                            <div class="text-[11px] text-slate-400 bg-slate-950 p-2.5 rounded-xl border border-slate-800 mb-6">
+                                <span class="font-bold text-slate-300 block mb-0.5"><i class="fa-solid fa-toolbox text-brand-orange mr-1"></i> Инструмент и оснащение:</span>
+                                ${c.tools}
+                            </div>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-brand-orange transition-colors">${c.name}</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Нажмите для просмотра полного сегментированного прайс-листа по этой категории.</p>
-                        <span class="text-xs font-bold text-brand-orange">Смотреть цены <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                        <button onclick="selectParentCategory('${c.id}'); window.location.hash='#/pricelist';" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-brand-orange hover:text-slate-950 text-white font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            <span>Смотреть цены и работы</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
                     </div>
                 `).join('');
             }
