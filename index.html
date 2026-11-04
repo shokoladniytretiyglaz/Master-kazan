@@ -198,7 +198,7 @@
                             </h1>
 
                             <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                                Сантехника, электрик, услуги плотника и сборка мебели. Опишите проблему, загрузите фото или видео поломки — мастера рассчитают точную стоимость!
+                                Сантехника, электрик, услуги плотника и сборка мебели. Выберите несколько услуг сразу, получите скидку 10% и вызовите мастера!
                             </p>
 
                             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
@@ -257,62 +257,90 @@
                 </div>
             </div>
 
-            <!-- SECTION: QUIZ CALCULATOR WITH 10% DISCOUNT -->
+            <!-- SECTION: MULTI-CHOICE QUIZ CALCULATOR WITH BACK BUTTON & 10% DISCOUNT -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div class="bg-slate-900 border border-amber-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
                     <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"></div>
                     
                     <div class="text-center max-w-2xl mx-auto mb-8">
-                        <span class="px-3 py-1 bg-amber-500/10 text-brand-orange text-xs font-bold rounded-full uppercase border border-amber-500/20">Онлайн-Квиз</span>
-                        <h2 class="font-heading text-2xl sm:text-4xl font-black text-white mt-3 mb-2">Рассчитайте стоимость и получите скидку 10%</h2>
-                        <p class="text-xs sm:text-sm text-slate-400">Ответьте на 3 быстрых вопроса, чтобы зафиксировать минимальную цену ремонта</p>
+                        <span class="px-3 py-1 bg-amber-500/10 text-brand-orange text-xs font-bold rounded-full uppercase border border-amber-500/20">Интерактивный Квиз</span>
+                        <h2 class="font-heading text-2xl sm:text-4xl font-black text-white mt-3 mb-2">Выберите нужные услуги и получите скидку 10%</h2>
+                        <p class="text-xs sm:text-sm text-slate-400">Отмечайте сразу несколько услуг из полного прайс-листа, сравнивайте цены и фиксируйте скидку</p>
                     </div>
 
-                    <div id="quiz-container" class="max-w-xl mx-auto bg-slate-950 border border-slate-800 rounded-2xl p-6">
+                    <div id="quiz-container" class="max-w-2xl mx-auto bg-slate-950 border border-slate-800 rounded-2xl p-6">
                         
-                        <!-- Step 1 -->
+                        <!-- Step 1: Multiple Services Selection -->
                         <div id="quiz-step-1" class="quiz-step">
-                            <div class="text-xs text-amber-400 font-bold mb-2">Шаг 1 из 3</div>
-                            <h3 class="text-base font-bold text-white mb-4">Какой тип работ вам требуется?</h3>
-                            <div class="grid grid-cols-2 gap-3 mb-6">
-                                <button onclick="setQuizAnswer('type', 'Сантехника', 2)" class="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 font-semibold transition flex items-center gap-2">
-                                    <i class="fa-solid fa-faucet text-brand-orange"></i> Сантехника
-                                </button>
-                                <button onclick="setQuizAnswer('type', 'Электрика', 2)" class="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 font-semibold transition flex items-center gap-2">
-                                    <i class="fa-solid fa-bolt text-brand-orange"></i> Электрика
-                                </button>
-                                <button onclick="setQuizAnswer('type', 'Сборка мебели', 2)" class="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 font-semibold transition flex items-center gap-2">
-                                    <i class="fa-solid fa-couch text-brand-orange"></i> Сборка мебели
-                                </button>
-                                <button onclick="setQuizAnswer('type', 'Мелкий ремонт', 2)" class="p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 font-semibold transition flex items-center gap-2">
-                                    <i class="fa-solid fa-toolbox text-brand-orange"></i> Мелкий ремонт
-                                </button>
+                            <div class="text-xs text-amber-400 font-bold mb-2">Шаг 1 из 3: Выбор услуг</div>
+                            <h3 class="text-sm font-bold text-white mb-2">Отметьте одну или несколько услуг из прайс-листа:</h3>
+                            <p class="text-[11px] text-slate-400 mb-4">Вы можете выбрать сколько угодно позиций — итоговая сумма рассчитается автоматически</p>
+                            
+                            <div class="max-h-72 overflow-y-auto space-y-2 mb-6 pr-2 no-scrollbar border border-slate-800 rounded-xl p-3 bg-slate-900/50" id="quiz-services-checkboxes">
+                                <!-- Populated dynamically from priceDatabase -->
                             </div>
+
+                            <button type="button" onclick="goToQuizStep(2)" class="w-full py-3.5 bg-brand-orange text-slate-950 font-black text-xs rounded-xl hover:brightness-110 shadow-lg flex items-center justify-center gap-2">
+                                <span>Далее (Выбрать район)</span> <i class="fa-solid fa-arrow-right"></i>
+                            </button>
                         </div>
 
-                        <!-- Step 2 -->
+                        <!-- Step 2: District Selection with Back Button -->
                         <div id="quiz-step-2" class="quiz-step hidden">
-                            <div class="text-xs text-amber-400 font-bold mb-2">Шаг 2 из 3</div>
-                            <h3 class="text-base font-bold text-white mb-4">Укажите ваш район Казани:</h3>
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="text-xs text-amber-400 font-bold">Шаг 2 из 3: Район Казани</div>
+                                <button type="button" onclick="goToQuizStep(1)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1 bg-slate-900 px-2.5 py-1 rounded-lg border border-slate-800 transition">
+                                    <i class="fa-solid fa-arrow-left"></i> Назад к выбору услуг
+                                </button>
+                            </div>
+                            <h3 class="text-base font-bold text-white mb-4">Укажите ваш район в Казани:</h3>
                             <div class="grid grid-cols-2 gap-3 mb-6">
-                                <button onclick="setQuizAnswer('district', 'Ново-Савиновский', 3)" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Ново-Савиновский</button>
-                                <button onclick="setQuizAnswer('district', 'Вахитовский', 3)" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Вахитовский</button>
-                                <button onclick="setQuizAnswer('district', 'Советский', 3)" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Советский</button>
-                                <button onclick="setQuizAnswer('district', 'Приволжский', 3)" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Приволжский</button>
-                                <button onclick="setQuizAnswer('district', 'Московский', 3)" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Московский</button>
-                                <button onclick="setQuizAnswer('district', 'Другой / Пригород', 3)" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Другой / Пригород</button>
+                                <button type="button" onclick="setQuizDistrict('Ново-Савиновский')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Ново-Савиновский</button>
+                                <button type="button" onclick="setQuizDistrict('Вахитовский')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Вахитовский</button>
+                                <button type="button" onclick="setQuizDistrict('Советский')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Советский</button>
+                                <button type="button" onclick="setQuizDistrict('Приволжский')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Приволжский</button>
+                                <button type="button" onclick="setQuizDistrict('Московский')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Московский</button>
+                                <button type="button" onclick="setQuizDistrict('Другой / Пригород')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Другой / Пригород</button>
                             </div>
                         </div>
 
-                        <!-- Step 3 -->
+                        <!-- Step 3: Results, Comparison & Contact Form with Back Button -->
                         <div id="quiz-step-3" class="quiz-step hidden">
-                            <div class="text-xs text-emerald-400 font-bold mb-2"><i class="fa-solid fa-gift mr-1"></i> Скидка 10% зафиксирована!</div>
-                            <h3 class="text-base font-bold text-white mb-3">Куда прислать расчет стоимости?</h3>
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="text-xs text-emerald-400 font-bold flex items-center gap-1">
+                                    <i class="fa-solid fa-circle-check"></i> Расчет по вашему списку готов!
+                                </div>
+                                <button type="button" onclick="goToQuizStep(2)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1 bg-slate-900 px-2.5 py-1 rounded-lg border border-slate-800 transition">
+                                    <i class="fa-solid fa-arrow-left"></i> Назад
+                                </button>
+                            </div>
+                            
+                            <!-- COMPARISON BOX FOR MULTIPLE SERVICES -->
+                            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 mb-4 space-y-3">
+                                <div class="text-[11px] font-bold text-amber-400 uppercase tracking-wide">Выбранные вами услуги (<span id="quiz-selected-count">0</span>):</div>
+                                <div id="quiz-selected-list" class="text-xs text-slate-300 bg-slate-950 p-2.5 rounded-lg border border-slate-800 max-h-28 overflow-y-auto space-y-1"></div>
+
+                                <div class="grid grid-cols-2 gap-2 text-center pt-1">
+                                    <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
+                                        <div class="text-[10px] uppercase text-slate-500 font-bold">Сумма без скидки</div>
+                                        <div id="quiz-price-old" class="text-sm font-bold text-slate-400 line-through mt-0.5">0 ₽</div>
+                                    </div>
+                                    <div class="bg-amber-500/10 p-2.5 rounded-lg border border-amber-500/30">
+                                        <div class="text-[10px] uppercase text-amber-400 font-bold">Сумма со скидкой 10%</div>
+                                        <div id="quiz-price-new" class="text-base font-black text-brand-orange mt-0.5">0 ₽</div>
+                                    </div>
+                                </div>
+                                <div class="text-[11px] text-emerald-400 text-center font-semibold">
+                                    🎉 Ваша общая экономия: <span id="quiz-savings">0 ₽</span>
+                                </div>
+                            </div>
+
+                            <h3 class="text-sm font-bold text-white mb-3">Куда прислать промокод и подтвердить выезд?</h3>
                             <form onsubmit="finishQuiz(event)" class="space-y-3">
                                 <input type="text" id="quiz-name" required placeholder="Ваше имя" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange">
                                 <input type="tel" id="quiz-phone" required placeholder="+7 (961) 487-98-36" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange">
                                 <button type="submit" class="w-full py-3 bg-brand-orange text-slate-950 font-black text-xs rounded-xl hover:brightness-110 shadow-lg">
-                                    Получить расчет со скидкой 10%
+                                    Зафиксировать скидку 10% и вызвать мастера
                                 </button>
                                 <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
                             </form>
@@ -412,7 +440,7 @@
                 <div class="text-center max-w-3xl mx-auto mb-10">
                     <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Официальные расценки 2026 Казань</span>
                     <h1 class="font-heading text-3xl sm:text-5xl font-black text-white mt-2 mb-4">Прайс-лист услуг мастеров</h1>
-                    <p class="text-slate-400 text-sm sm:text-base">Все цены указаны в рублях (₽). Выберите категорию ниже, чтобы открыть списки работ с отдельными блоками услуг.</p>
+                    <p class="text-slate-400 text-sm sm:text-base">Все цены указаны в рублях (₽). Нажмите на название любой услуги, чтобы посмотреть её краткое описание.</p>
                 </div>
 
                 <!-- 1. CATEGORIES SELECTOR (MAIN PARENT CATEGORIES) -->
@@ -578,14 +606,14 @@
             </div>
         </section>
 
-        <!-- PAGE: CONTACTS & FULL ORDER FORM WITH PHOTO/VIDEO -->
+        <!-- PAGE: CONTACTS & MULTI-CHOICE ORDER FORM WITH BACK BUTTON & PHOTO/VIDEO -->
         <section id="page-contacts" class="page-view hidden py-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-10">
                     <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Оформить заявку</span>
-                    <h1 class="font-heading text-3xl sm:text-5xl font-black text-white mt-2 mb-3">Заказ работы с Фото и Видео</h1>
-                    <p class="text-slate-400 text-sm">Опишите задачу и прикрепите медиафайлы — администратор передаст заказ дежурному мастеру Казани.</p>
+                    <h1 class="font-heading text-3xl sm:text-5xl font-black text-white mt-2 mb-3">Заказ с выбором услуг и фото/видео</h1>
+                    <p class="text-slate-400 text-sm">Отметьте нужные услуги из прайса (можно несколько), прикрепите медиафайлы и отправьте администратору.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
@@ -650,76 +678,103 @@
                         </div>
                     </div>
 
-                    <!-- Comprehensive Order Form with Photo/Video -->
+                    <!-- Multi-Step Order Form with Back Button -->
                     <div class="lg:col-span-7 bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl">
-                        <h2 class="text-xl font-bold text-white mb-2">Форма заявки администратору</h2>
-                        <p class="text-xs text-slate-400 mb-6">Заполните форму и прикрепите фото или видео поломки для оценки</p>
+                        
+                        <!-- STEP 1 OF MAIN FORM: CHOOSE MULTIPLE SERVICES -->
+                        <div id="main-form-step-1" class="main-form-step">
+                            <div class="flex items-center justify-between mb-4">
+                                <h2 class="text-xl font-bold text-white">Шаг 1: Выберите услуги из прайса</h2>
+                                <span class="text-xs text-amber-400 font-bold bg-amber-500/10 px-2.5 py-1 rounded-full">Можно несколько</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4">Отметьте галочками все работы, которые вам необходимы:</p>
 
-                        <form id="main-order-form" onsubmit="handleFormSubmit(event, 'main')" class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Ваше Имя *</label>
-                                    <input type="text" id="main-name" required placeholder="Артур" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange transition">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Телефон в Казани *</label>
-                                    <input type="tel" id="main-phone" required placeholder="+7 (961) 487-98-36" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange transition">
-                                </div>
+                            <div class="max-h-80 overflow-y-auto space-y-2 mb-6 pr-2 no-scrollbar border border-slate-800 rounded-xl p-3 bg-slate-950" id="main-form-services-checkboxes">
+                                <!-- Populated via JS -->
                             </div>
 
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Район Казани</label>
-                                    <select id="main-district" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-3 text-xs text-white focus:outline-none focus:border-brand-orange transition">
-                                        <option value="Ново-Савиновский">Ново-Савиновский</option>
-                                        <option value="Вахитовский">Вахитовский</option>
-                                        <option value="Советский">Советский</option>
-                                        <option value="Приволжский">Приволжский</option>
-                                        <option value="Московский">Московский</option>
-                                        <option value="Кировский">Кировский</option>
-                                        <option value="Авиастроительный">Авиастроительный</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Выбранная услуга</label>
-                                    <input type="text" id="main-service" placeholder="Автоматически из прайса..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-orange transition">
-                                </div>
-                            </div>
+                            <button type="button" onclick="goToMainFormStep(2)" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg flex items-center justify-center gap-2 transition">
+                                <span>Далее (Контакты и адрес)</span> <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
 
-                            <div>
-                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Подробное описание работы *</label>
-                                <textarea id="main-desc" required rows="3" placeholder="Опишите детально задачу (что подтекает, какой объем работ и т.д.)..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none transition"></textarea>
-                            </div>
-
-                            <!-- FILE ATTACHMENT BOX -->
-                            <div>
-                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Прикрепить Фото и Видео поломки</label>
-                                <div class="border-2 border-dashed border-slate-700 hover:border-brand-orange rounded-2xl p-4 text-center bg-slate-950 transition cursor-pointer" onclick="document.getElementById('main-files').click()">
-                                    <input type="file" id="main-files" multiple accept="image/*,video/*" onchange="previewFiles(this, 'main-files-prev')" class="hidden">
-                                    <i class="fa-solid fa-cloud-arrow-up text-3xl text-brand-orange mb-2"></i>
-                                    <div class="text-xs font-bold text-white">Нажмите для выбора фото или видео</div>
-                                    <div class="text-[11px] text-slate-400 mt-1">Форматы JPG, PNG, MP4, MOV</div>
-                                    <div id="main-files-prev" class="mt-2 text-xs font-bold text-amber-400 flex flex-wrap justify-center gap-2"></div>
-                                </div>
-                            </div>
-
-                            <!-- MULTI SUBMIT BUTTONS -->
-                            <div class="space-y-3 pt-2">
-                                <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg flex items-center justify-center gap-2 transition">
-                                    <i class="fa-solid fa-paper-plane"></i> Мгновенная отправка заявки
+                        <!-- STEP 2 OF MAIN FORM: CONTACTS, FILES & BACK BUTTON -->
+                        <div id="main-form-step-2" class="main-form-step hidden">
+                            <div class="flex items-center justify-between mb-4">
+                                <h2 class="text-xl font-bold text-white">Шаг 2: Ваши данные и отправка</h2>
+                                <button type="button" onclick="goToMainFormStep(1)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1 bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800 transition">
+                                    <i class="fa-solid fa-arrow-left"></i> Назад к выбору услуг
                                 </button>
-                                <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
-
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <button type="button" onclick="sendToMessenger('whatsapp', 'main')" class="py-3 px-4 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition flex items-center justify-center gap-2 shadow-md">
-                                        <i class="fa-brands fa-whatsapp text-base"></i> Написать в WhatsApp
-                                    </button>
-                                    <button type="button" onclick="sendToMessenger('telegram', 'main')" class="py-3 px-4 rounded-xl bg-sky-500 text-white font-bold text-xs hover:bg-sky-600 transition flex items-center justify-center gap-2 shadow-md">
-                                        <i class="fa-brands fa-telegram text-base"></i> Написать в Telegram
-                                    </button>
-                                </div>
                             </div>
-                        </form>
+                            <p class="text-xs text-slate-400 mb-6">Заполните контактные данные для выезда мастера по вашему адресу</p>
+
+                            <form id="main-order-form" onsubmit="handleFormSubmit(event, 'main')" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Ваше Имя *</label>
+                                        <input type="text" id="main-name" required placeholder="Артур" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange transition">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Телефон в Казани *</label>
+                                        <input type="tel" id="main-phone" required placeholder="+7 (961) 487-98-36" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange transition">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Район Казани</label>
+                                        <select id="main-district" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-3 text-xs text-white focus:outline-none focus:border-brand-orange transition">
+                                            <option value="Ново-Савиновский">Ново-Савиновский</option>
+                                            <option value="Вахитовский">Вахитовский</option>
+                                            <option value="Советский">Советский</option>
+                                            <option value="Приволжский">Приволжский</option>
+                                            <option value="Московский">Московский</option>
+                                            <option value="Кировский">Кировский</option>
+                                            <option value="Авиастроительный">Авиастроительный</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Выбрано услуг</label>
+                                        <div id="main-selected-summary" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-xs text-amber-400 font-bold truncate">Ничего не выбрано</div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Дополнительное описание (необязательно)</label>
+                                    <textarea id="main-desc" rows="2" placeholder="Уточните детали задачи..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none transition"></textarea>
+                                </div>
+
+                                <!-- FILE ATTACHMENT BOX -->
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Прикрепить Фото и Видео поломки</label>
+                                    <div class="border-2 border-dashed border-slate-700 hover:border-brand-orange rounded-2xl p-4 text-center bg-slate-950 transition cursor-pointer" onclick="document.getElementById('main-files').click()">
+                                        <input type="file" id="main-files" multiple accept="image/*,video/*" onchange="previewFiles(this, 'main-files-prev')" class="hidden">
+                                        <i class="fa-solid fa-cloud-arrow-up text-3xl text-brand-orange mb-2"></i>
+                                        <div class="text-xs font-bold text-white">Нажмите для выбора фото или видео</div>
+                                        <div class="text-[11px] text-slate-400 mt-1">Форматы JPG, PNG, MP4, MOV</div>
+                                        <div id="main-files-prev" class="mt-2 text-xs font-bold text-amber-400 flex flex-wrap justify-center gap-2"></div>
+                                    </div>
+                                </div>
+
+                                <!-- MULTI SUBMIT BUTTONS -->
+                                <div class="space-y-3 pt-2">
+                                    <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg flex items-center justify-center gap-2 transition">
+                                        <i class="fa-solid fa-paper-plane"></i> Мгновенная отправка заявки
+                                    </button>
+                                    <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <button type="button" onclick="sendToMessenger('whatsapp', 'main')" class="py-3 px-4 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition flex items-center justify-center gap-2 shadow-md">
+                                            <i class="fa-brands fa-whatsapp text-base"></i> Написать в WhatsApp
+                                        </button>
+                                        <button type="button" onclick="sendToMessenger('telegram', 'main')" class="py-3 px-4 rounded-xl bg-sky-500 text-white font-bold text-xs hover:bg-sky-600 transition flex items-center justify-center gap-2 shadow-md">
+                                            <i class="fa-brands fa-telegram text-base"></i> Написать в Telegram
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
 
                 </div>
@@ -929,8 +984,12 @@
                     <input type="text" id="edit-price-title" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Категория ID (plumbing, electric, handyman, carpenter, furniture_repair, furniture_assemble, diagnostics)</label>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Категория ID (plumbing, electric, handyman...)</label>
                     <input type="text" id="edit-price-cat" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Краткое описание услуги</label>
+                    <textarea id="edit-price-desc" rows="2" placeholder="Описание, что входит в работу..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none"></textarea>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-300 mb-1">Ед. изм. (шт., пог. м, час)</label>
@@ -962,63 +1021,36 @@
         ];
 
         let priceDatabase = JSON.parse(localStorage.getItem('site_prices')) || [
-            { title: 'Установка раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽' },
-            { title: 'Установка раковины в ванной', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽' },
-            { title: 'Установка раковины на кухне', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽' },
-            { title: 'Установка раковины над стиральной машиной', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 050 ₽' },
-            { title: 'Установка раковины в столешницу', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '700 ₽' },
-            { title: 'Установка накладной раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽' },
-            { title: 'Установка накладной раковины на столешницу', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽' },
-            { title: 'Установка раковины с тумбой', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 500 ₽' },
-            { title: 'Установка подвесной раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽' },
-            { title: 'Установка раковины типа "Тюльпан"', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 100 ₽' },
-            { title: 'Установка раковины типа "Кувшинка"', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 100 ₽' },
-            { title: 'Установка раковины на кронштейнах', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 000 ₽' },
-            { title: 'Замена раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 180 ₽' },
-            { title: 'Врезка раковины в столешницу', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '500 ₽' },
-            { title: 'Установка мойки', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '550 ₽' },
-            { title: 'Установка тумбы под раковину', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 200 ₽' },
-            { title: 'Установка сифона раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '600 ₽' },
-            { title: 'Установка смесителя на раковину', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽' },
-            { title: 'Установка смесителя на ванну', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽' },
-            { title: 'Замена смесителя на кухне', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽' },
-            { title: 'Установка смесителя с термостатом', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '1 100 ₽' },
-            { title: 'Ремонт смесителя', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '600 ₽' },
-            { title: 'Установка акриловой ванны', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '2 100 ₽' },
-            { title: 'Установка стальной ванны', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '1 200 ₽' },
-            { title: 'Установка чугунной ванны', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '2 950 ₽' },
-            { title: 'Установка душевой кабины', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '4 500 ₽' },
-            { title: 'Установка унитаза', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 500 ₽' },
-            { title: 'Установка подвесного унитаза', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 800 ₽' },
-            { title: 'Установка инсталляции', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 500 ₽' },
-            { title: 'Замена сливной арматуры бачка', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 200 ₽' },
-            { title: 'Замена радиатора отопления', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 200 ₽' },
-            { title: 'Установка накопительного водонагревателя', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 200 ₽' },
-            { title: 'Установка проточного водонагревателя', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 000 ₽' },
-            { title: 'Установка полотенцесушителя', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 200 ₽' },
-            { title: 'Установка фильтров для воды', cat: 'plumbing', sub: 'Фильтры и герметизация', unit: 'шт.', price: '650 ₽' },
-            { title: 'Устранение засоров канализации', cat: 'plumbing', sub: 'Фильтры и герметизация', unit: 'шт.', price: '1 000 ₽' },
-            { title: 'Герметизация швов силиконом', cat: 'plumbing', sub: 'Фильтры и герметизация', unit: 'пог. м', price: '200 ₽' },
-            { title: 'Установка розеток и выключателей', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '130 ₽' },
-            { title: 'Установка внутренней розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '180 ₽' },
-            { title: 'Установка розетки для электроплиты', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '350 ₽' },
-            { title: 'Навеска и подключение люстры', cat: 'electric', sub: 'Люстры и светильники', unit: 'шт.', price: '800 ₽' },
-            { title: 'Установка точечного светильника', cat: 'electric', sub: 'Люстры и светильники', unit: 'шт.', price: '250 ₽' },
-            { title: 'Поиск и устранение обрыва проводки', cat: 'electric', sub: 'Электрощиты и точки', unit: 'час', price: '1 500 ₽' },
-            { title: 'Монтаж и замена зеркал', cat: 'handyman', sub: 'Зеркала и плинтусы', unit: 'шт.', price: '990 ₽' },
-            { title: 'Монтаж пластикового плинтуса', cat: 'handyman', sub: 'Зеркала и плинтусы', unit: 'пог. м', price: '120 ₽' },
-            { title: 'Крепление карнизов на стене', cat: 'handyman', sub: 'Карнизы и навес', unit: 'шт.', price: '380 ₽' },
-            { title: 'Услуга "Мастер на час"', cat: 'handyman', sub: 'Мастер на час', unit: 'час', price: '990 ₽' },
-            { title: 'Установка входных металлических дверей', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '3 000 ₽' },
-            { title: 'Установка межкомнатных дверей', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '1 490 ₽' },
-            { title: 'Замена замков на двери', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '400 ₽' },
-            { title: 'Ремонт шкафов-купе', cat: 'furniture_repair', sub: 'Ремонт шкафов', unit: 'шт.', price: '950 ₽' },
-            { title: 'Ремонт диванов', cat: 'furniture_repair', sub: 'Ремонт диванов и кроватей', unit: 'шт.', price: '900 ₽' },
-            { title: 'Сборка кухни', cat: 'furniture_assemble', sub: 'Сборка кухонь', unit: 'пог. м', price: '1 100 ₽' },
-            { title: 'Сборка шкафа распашного (2-дверного)', cat: 'furniture_assemble', sub: 'Сборка шкафов', unit: 'шт.', price: '890 ₽' },
-            { title: 'Диагностика при оказании услуг', cat: 'diagnostics', sub: 'Выезд мастера', unit: 'услуга', price: 'Бесплатно *' },
-            { title: 'Выезд мастера в магазин за деталями', cat: 'diagnostics', sub: 'Выезд мастера', unit: '1 выезд', price: '1 000 ₽' },
-            { title: 'Минимальный заказ по Казани', cat: 'diagnostics', sub: 'Выезд мастера', unit: 'заказ', price: '1 300 ₽' }
+            { title: 'Установка раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽', desc: 'Профессиональный монтаж раковины в ванной или на кухне с герметизацией стыков и подключением слива.' },
+            { title: 'Установка раковины в ванной', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽', desc: 'Надежная установка раковины настенного или мебельного типа с выравниванием по уровню.' },
+            { title: 'Установка раковины на кухне', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽', desc: 'Установка кухонной мойки с надежным крепежом и подключением сифона.' },
+            { title: 'Установка раковины над стиральной машиной', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 050 ₽', desc: 'Специальный компактный монтаж раковины «кувшинка» с учетом габаритов стиральной машины.' },
+            { title: 'Установка раковины в столешницу', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '700 ₽', desc: 'Врезка и герметизация раковины в подготовленный вырез столешницы.' },
+            { title: 'Установка накладной раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽', desc: 'Монтаж накладной чаши на столешницу или тумбу с гидроизоляцией.' },
+            { title: 'Установка раковины с тумбой', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 500 ₽', desc: 'Сборка тумбы, установка раковины, подключение смесителя и сифона.' },
+            { title: 'Установка подвесной раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽', desc: 'Крепление к несущей стене на прочные анкерные болты с проверкой нагрузки.' },
+            { title: 'Замена раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 180 ₽', desc: 'Демонтаж старого сантехнического оборудования, подготовка места и установка новой раковины.' },
+            { title: 'Установка смесителя на раковину', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽', desc: 'Подключение гибкой подводки, установка картриджа и проверка на протечки.' },
+            { title: 'Установка смесителя на ванну', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽', desc: 'Монтаж на эксцентрики с использованием герметичных уплотнителей.' },
+            { title: 'Установка смесителя с термостатом', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '1 100 ₽', desc: 'Точная настройка и установка термостатического смесителя для поддержания комфортной температуры воды.' },
+            { title: 'Установка акриловой ванны', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '2 100 ₽', desc: 'Сборка металлического каркаса, выставление по уровню, подключение слива-перелива.' },
+            { title: 'Установка чугунной ванны', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '2 950 ₽', desc: 'Профессиональный тяжелый монтаж чугунной ванны с надежной фиксацией ножек.' },
+            { title: 'Установка унитаза', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 500 ₽', desc: 'Сборка бачка, монтаж к полу, подключение гофры к канализации и подаче воды.' },
+            { title: 'Установка подвесного унитаза', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 800 ₽', desc: 'Навешивание чаши унитаза на ранее смонтированную инсталляционную раму.' },
+            { title: 'Установка накопительного водонагревателя', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 200 ₽', desc: 'Настенный монтаж бойлера, обвязка предохранительным клапаном и подключение в сеть.' },
+            { title: 'Устранение засоров канализации', cat: 'plumbing', sub: 'Фильтры и герметизация', unit: 'шт.', price: '1 000 ₽', desc: 'Прочистка труб профессиональным тросом или пневматическим инструментом.' },
+            { title: 'Установка розеток и выключателей света', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '130 ₽', desc: 'Монтаж в подрозетник, подключение жилок кабеля и закрепление лицевой рамки.' },
+            { title: 'Установка розетки для электроплиты', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '350 ₽', desc: 'Силовое подключение специальной розетки повышенной мощности с заземлением.' },
+            { title: 'Навеска и подключение люстры', cat: 'electric', sub: 'Люстры и светильники', unit: 'шт.', price: '800 ₽', desc: 'Надежное анкерное крепление к потолку и коммутация проводов питания.' },
+            { title: 'Монтаж и замена зеркал', cat: 'handyman', sub: 'Зеркала и плинтусы', unit: 'шт.', price: '990 ₽', desc: 'Крепление зеркал на стену с использованием декоративных держателей или клея.' },
+            { title: 'Услуга "Мастер на час"', cat: 'handyman', sub: 'Мастер на час', unit: 'час', price: '990 ₽', desc: 'Выполнение любых мелких бытовых задач по дому в течение одного часа.' },
+            { title: 'Установка входных металлических дверей', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '3 000 ₽', desc: 'Выставление по уровню, анкерление коробки в проем, запенивание швов.' },
+            { title: 'Установка межкомнатных дверей', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '1 490 ₽', desc: 'Сборка коробки, врезка петель и замка, монтаж наличников.' },
+            { title: 'Ремонт шкафов-купе', cat: 'furniture_repair', sub: 'Ремонт шкафов', unit: 'шт.', price: '950 ₽', desc: 'Регулировка роликов, замена направляющих и выравнивание раздвижных дверей.' },
+            { title: 'Сборка кухни', cat: 'furniture_assemble', sub: 'Сборка кухонь', unit: 'пог. м', price: '1 100 ₽', desc: 'Сборка шкафов, стяжка модулей, навеска верхнего ряда и регулировка фасадов.' },
+            { title: 'Сборка шкафа распашного (2-х дверного)', cat: 'furniture_assemble', sub: 'Сборка шкафов', unit: 'шт.', price: '890 ₽', desc: 'Сборка каркаса, полок, штанг и навеска распашных дверей.' },
+            { title: 'Диагностика (при оказании услуг)', cat: 'diagnostics', sub: 'Выезд мастера', unit: 'услуга', price: 'Бесплатно *', desc: 'Осмотр объекта мастером при последующем проведении заказанных работ.' },
+            { title: 'Минимальный заказ по Казани', cat: 'diagnostics', sub: 'Выезд мастера', unit: 'заказ', price: '1 300 ₽', desc: 'Минимальная стоимость выезда и работы мастера по городу.' }
         ];
 
         let reviewsData = JSON.parse(localStorage.getItem('site_reviews')) || [
@@ -1038,7 +1070,7 @@
 
         let activeParentCat = 'plumbing';
         let activeSubCat = 'Все подкатегории';
-        let quizAnswers = {};
+        let quizAnswers = { district: 'Ново-Савиновский' };
 
         window.addEventListener('hashchange', handleRouting);
         window.addEventListener('load', () => {
@@ -1048,6 +1080,8 @@
             renderCardsPages();
             renderReviews();
             setupPhoneMasks();
+            initQuizCheckboxes();
+            initMainFormCheckboxes();
         });
 
         document.addEventListener('keydown', (e) => {
@@ -1103,6 +1137,15 @@
             icon.classList.toggle('rotate-180');
         }
 
+        // TOGGLE PRICE ITEM DESCRIPTION ON CLICK
+        function togglePriceDesc(headerEl) {
+            const card = headerEl.closest('.price-card-item');
+            const descBox = card.querySelector('.price-desc-box');
+            const icon = headerEl.querySelector('.fa-chevron-down');
+            descBox.classList.toggle('hidden');
+            if(icon) icon.classList.toggle('rotate-180');
+        }
+
         // ADD NEW REVIEW HANDLER
         function handleAddNewReview(e) {
             e.preventDefault();
@@ -1144,12 +1187,75 @@
             `).join('');
         }
 
-        // QUIZ CALCULATOR LOGIC
-        function setQuizAnswer(key, value, nextStep) {
-            quizAnswers[key] = value;
+        // INIT QUIZ CHECKBOXES FOR MULTI-CHOICE FROM PRICE LIST
+        function initQuizCheckboxes() {
+            const container = document.getElementById('quiz-services-checkboxes');
+            if(!container) return;
+
+            container.innerHTML = priceDatabase.map((item, idx) => `
+                <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange cursor-pointer transition text-xs">
+                    <div class="flex items-center gap-2.5">
+                        <input type="checkbox" value="${idx}" class="quiz-service-chk w-4 h-4 accent-brand-orange rounded cursor-pointer" onchange="updateQuizCalculation()">
+                        <span class="text-slate-200 font-semibold">${item.title}</span>
+                    </div>
+                    <span class="text-brand-orange font-bold shrink-0 ml-2">${item.price}</span>
+                </label>
+            `).join('');
+        }
+
+        function goToQuizStep(stepNum) {
+            if(stepNum === 2) {
+                const checked = document.querySelectorAll('.quiz-service-chk:checked');
+                if(checked.length === 0) {
+                    alert('Пожалуйста, выберите хотя бы одну услугу из списка!');
+                    return;
+                }
+                updateQuizCalculation();
+            }
+
             document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
-            const next = document.getElementById(`quiz-step-${nextStep}`);
-            if(next) next.classList.remove('hidden');
+            const target = document.getElementById(`quiz-step-${stepNum}`);
+            if(target) target.classList.remove('hidden');
+        }
+
+        function setQuizDistrict(dist) {
+            quizAnswers.district = dist;
+            goToQuizStep(3);
+        }
+
+        function updateQuizCalculation() {
+            const checked = document.querySelectorAll('.quiz-service-chk:checked');
+            let totalBase = 0;
+            let listHTML = '';
+            let titlesArray = [];
+
+            checked.forEach(chk => {
+                const item = priceDatabase[chk.value];
+                const num = parseInt(item.price.replace(/\D/g, '')) || 500;
+                totalBase += num;
+                titlesArray.push(item.title);
+                listHTML += `<div class="flex justify-between text-[11px]"><span>• ${item.title}</span><span class="text-amber-400 font-bold">${item.price}</span></div>`;
+            });
+
+            const totalDiscount = Math.round(totalBase * 0.9);
+            const totalSavings = totalBase - totalDiscount;
+
+            quizAnswers.selectedItems = titlesArray;
+            quizAnswers.basePriceVal = totalBase;
+            quizAnswers.discountPriceVal = totalDiscount;
+            quizAnswers.savingsVal = totalSavings;
+
+            const countEl = document.getElementById('quiz-selected-count');
+            const listEl = document.getElementById('quiz-selected-list');
+            const oldEl = document.getElementById('quiz-price-old');
+            const newEl = document.getElementById('quiz-price-new');
+            const savEl = document.getElementById('quiz-savings');
+
+            if(countEl) countEl.innerText = checked.length;
+            if(listEl) listEl.innerHTML = listHTML;
+            if(oldEl) oldEl.innerText = `${totalBase.toLocaleString()} ₽`;
+            if(newEl) newEl.innerText = `${totalDiscount.toLocaleString()} ₽`;
+            if(savEl) savEl.innerText = `${totalSavings.toLocaleString()} ₽`;
         }
 
         async function finishQuiz(e) {
@@ -1162,20 +1268,67 @@
                 name: name,
                 phone: phone,
                 district: quizAnswers.district || 'Казань',
-                service: `Квиз: ${quizAnswers.type || 'Ремонт'} (Скидка 10%)`,
-                desc: 'Заявка из онлайн-квиза с 10% скидкой',
+                service: `Квиз (Услуги: ${quizAnswers.selectedItems ? quizAnswers.selectedItems.join(', ') : 'Не выбрано'})`,
+                desc: `Заявка из квиза со скидкой 10%. Сумма без скидки: ${quizAnswers.basePriceVal} ₽, со скидкой: ${quizAnswers.discountPriceVal} ₽`,
                 date: 'Только что'
             });
             localStorage.setItem('site_orders', JSON.stringify(ordersData));
 
-            const text = `🎁 *ЗАЯВКА ИЗ КВИЗА (СКИДКА 10%)*\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Тип работ: ${quizAnswers.type || 'Не выбран'}\n📍 Район: ${quizAnswers.district || 'Не выбран'}`;
+            const text = `🎁 *ЗАЯВКА ИЗ КВИЗА (СКИДКА 10%)*\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📍 Район: ${quizAnswers.district}\n📋 Выбранные услуги:\n- ${quizAnswers.selectedItems ? quizAnswers.selectedItems.join('\n- ') : 'Нет'}\n\n💰 Сумма без скидки: ${quizAnswers.basePriceVal || 0} ₽\n🔥 Сумма со скидкой 10%: ${quizAnswers.discountPriceVal || 0} ₽`;
 
             await sendTelegramMessageDirect(text, null);
-            alert(`Спасибо, ${name}! Заявка со скидкой 10% принята. Диспетчер свяжется с вами через 3 минуты.`);
+            alert(`Спасибо, ${name}! Ваши услуги и скидка 10% зафиксированы. Диспетчер свяжется с вами через 3 минуты.`);
             
             document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
             document.getElementById('quiz-step-1').classList.remove('hidden');
-            quizAnswers = {};
+            document.querySelectorAll('.quiz-service-chk').forEach(c => c.checked = false);
+            quizAnswers = { district: 'Ново-Савиновский' };
+        }
+
+        // INIT MAIN CONTACTS FORM CHECKBOXES FOR MULTI-CHOICE
+        function initMainFormCheckboxes() {
+            const container = document.getElementById('main-form-services-checkboxes');
+            if(!container) return;
+
+            container.innerHTML = priceDatabase.map((item, idx) => `
+                <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange cursor-pointer transition text-xs">
+                    <div class="flex items-center gap-2.5">
+                        <input type="checkbox" value="${idx}" class="main-service-chk w-4 h-4 accent-brand-orange rounded cursor-pointer" onchange="updateMainFormSummary()">
+                        <span class="text-slate-200 font-semibold">${item.title}</span>
+                    </div>
+                    <span class="text-brand-orange font-bold shrink-0 ml-2">${item.price}</span>
+                </label>
+            `).join('');
+        }
+
+        function goToMainFormStep(stepNum) {
+            if(stepNum === 2) {
+                const checked = document.querySelectorAll('.main-service-chk:checked');
+                if(checked.length === 0) {
+                    alert('Пожалуйста, выберите хотя бы одну услугу!');
+                    return;
+                }
+                updateMainFormSummary();
+            }
+
+            document.querySelectorAll('.main-form-step').forEach(s => s.classList.add('hidden'));
+            const target = document.getElementById(`main-form-step-${stepNum}`);
+            if(target) target.classList.remove('hidden');
+        }
+
+        function updateMainFormSummary() {
+            const checked = document.querySelectorAll('.main-service-chk:checked');
+            const summaryEl = document.getElementById('main-selected-summary');
+            const serviceInput = document.getElementById('main-service');
+            
+            let titles = [];
+            checked.forEach(chk => {
+                titles.push(priceDatabase[chk.value].title);
+            });
+
+            const textStr = titles.join(', ');
+            if(summaryEl) summaryEl.innerText = `${checked.length} выбрано: ${textStr}`;
+            if(serviceInput) serviceInput.value = textStr;
         }
 
         // ADMIN PANEL FUNCTIONS
@@ -1245,7 +1398,7 @@
                                     <span class="text-xs text-slate-400">${ord.date || 'Недавно'}</span>
                                 </div>
                                 <div class="text-sm font-bold text-white">${ord.name} — <a href="tel:${ord.phone}" class="text-amber-400">${ord.phone}</a></div>
-                                <div class="text-xs text-slate-300 mt-1"><b>Услуга:</b> ${ord.service} | <b>Район:</b> ${ord.district}</div>
+                                <div class="text-xs text-slate-300 mt-1"><b>Услуги:</b> ${ord.service} | <b>Район:</b> ${ord.district}</div>
                                 <div class="text-xs text-slate-400 mt-1 italic">"${ord.desc}"</div>
                             </div>
                             <button onclick="deleteOrder(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
@@ -1306,6 +1459,8 @@
             localStorage.setItem('site_prices', JSON.stringify(priceDatabase));
             renderAdminDashboard();
             renderPricelistRectangles();
+            initQuizCheckboxes();
+            initMainFormCheckboxes();
         }
 
         function openAddPriceModal() {
@@ -1313,6 +1468,7 @@
             document.getElementById('edit-price-index').value = '';
             document.getElementById('edit-price-title').value = '';
             document.getElementById('edit-price-cat').value = 'plumbing';
+            document.getElementById('edit-price-desc').value = '';
             document.getElementById('edit-price-unit').value = 'шт.';
             document.getElementById('edit-price-val').value = '500 ₽';
             document.getElementById('price-edit-modal').classList.remove('hidden');
@@ -1324,6 +1480,7 @@
             document.getElementById('edit-price-index').value = idx;
             document.getElementById('edit-price-title').value = item.title;
             document.getElementById('edit-price-cat').value = item.cat;
+            document.getElementById('edit-price-desc').value = item.desc || '';
             document.getElementById('edit-price-unit').value = item.unit;
             document.getElementById('edit-price-val').value = item.price;
             document.getElementById('price-edit-modal').classList.remove('hidden');
@@ -1340,6 +1497,7 @@
                 title: document.getElementById('edit-price-title').value,
                 cat: document.getElementById('edit-price-cat').value,
                 sub: 'Основные услуги',
+                desc: document.getElementById('edit-price-desc').value,
                 unit: document.getElementById('edit-price-unit').value,
                 price: document.getElementById('edit-price-val').value
             };
@@ -1354,6 +1512,8 @@
             closePriceModal();
             renderAdminDashboard();
             renderPricelistRectangles();
+            initQuizCheckboxes();
+            initMainFormCheckboxes();
             alert('Изменения в прайс-листе сохранены успешно!');
         }
 
@@ -1440,31 +1600,42 @@
             }
 
             container.innerHTML = filtered.map(item => `
-                <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-3 sm:p-4 hover:border-brand-orange/40 transition-all flex flex-col md:flex-row items-stretch md:items-center gap-3 shadow-lg">
-                    <div class="flex-grow bg-slate-950 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-lg bg-amber-500/10 text-brand-orange flex items-center justify-center shrink-0 font-bold">
-                            <i class="fa-solid fa-wrench text-sm"></i>
+                <div class="price-card-item bg-slate-900 border border-slate-800/80 rounded-2xl p-3 sm:p-4 hover:border-brand-orange/40 transition-all flex flex-col gap-3 shadow-lg">
+                    <div class="flex flex-col md:flex-row items-stretch md:items-center gap-3">
+                        <div onclick="togglePriceDesc(this)" class="flex-grow bg-slate-950 border border-slate-800 rounded-xl p-3 flex items-center gap-3 cursor-pointer group">
+                            <div class="w-9 h-9 rounded-lg bg-amber-500/10 text-brand-orange flex items-center justify-center shrink-0 font-bold group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-wrench text-sm"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <div class="font-bold text-white text-sm sm:text-base leading-snug flex items-center justify-between">
+                                    <span>${item.title}</span>
+                                    <i class="fa-solid fa-chevron-down text-xs text-brand-orange transition-transform duration-300 ml-2"></i>
+                                </div>
+                                <div class="text-[11px] text-slate-400 mt-0.5">${item.sub || 'Основное'} <span class="text-amber-400/80">(Нажмите для описания)</span></div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="font-bold text-white text-sm sm:text-base leading-snug">${item.title}</div>
-                            <div class="text-[11px] text-slate-400 mt-0.5">${item.sub || 'Основное'}</div>
+
+                        <div class="w-full md:w-28 shrink-0 bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 flex md:flex-col justify-between md:justify-center items-center text-center">
+                            <span class="text-[10px] uppercase font-bold text-slate-500 md:block">Ед. изм.</span>
+                            <span class="text-xs font-semibold text-slate-300">${item.unit}</span>
+                        </div>
+
+                        <div class="w-full md:w-36 shrink-0 bg-slate-950 border border-amber-500/30 rounded-xl px-4 py-2.5 flex md:flex-col justify-between md:justify-center items-center text-center">
+                            <span class="text-[10px] uppercase font-bold text-slate-400 md:block">Стоимость ОТ</span>
+                            <span class="text-sm sm:text-base font-black text-brand-orange">${item.price}</span>
+                        </div>
+
+                        <div class="w-full md:w-32 shrink-0">
+                            <button onclick="orderSpecificItem('${item.title}')" class="w-full h-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-brand-orange hover:text-slate-950 text-white font-bold text-xs transition-all flex items-center justify-center gap-2">
+                                <span>Заказать</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
                         </div>
                     </div>
 
-                    <div class="w-full md:w-28 shrink-0 bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 flex md:flex-col justify-between md:justify-center items-center text-center">
-                        <span class="text-[10px] uppercase font-bold text-slate-500 md:block">Ед. изм.</span>
-                        <span class="text-xs font-semibold text-slate-300">${item.unit}</span>
-                    </div>
-
-                    <div class="w-full md:w-36 shrink-0 bg-slate-950 border border-amber-500/30 rounded-xl px-4 py-2.5 flex md:flex-col justify-between md:justify-center items-center text-center">
-                        <span class="text-[10px] uppercase font-bold text-slate-400 md:block">Стоимость ОТ</span>
-                        <span class="text-sm sm:text-base font-black text-brand-orange">${item.price}</span>
-                    </div>
-
-                    <div class="w-full md:w-32 shrink-0">
-                        <button onclick="orderSpecificItem('${item.title}')" class="w-full h-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-brand-orange hover:text-slate-950 text-white font-bold text-xs transition-all flex items-center justify-center gap-2">
-                            <span>Заказать</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                        </button>
+                    <!-- Collapsible Description Box -->
+                    <div class="price-desc-box hidden bg-slate-950/90 border border-slate-800/80 rounded-xl p-3.5 text-xs text-slate-300 leading-relaxed">
+                        <span class="font-bold text-amber-400 block mb-1"><i class="fa-solid fa-circle-info mr-1"></i> Описание услуги:</span>
+                        ${item.desc || `Профессиональное выполнение работы: «${item.title}». Включает выезд мастера в любой район Казани, необходимую диагностику, надежный монтаж/замену с использованием профессионального инструмента и официальную гарантию по договору 12 месяцев.`}
                     </div>
                 </div>
             `).join('');
@@ -1514,11 +1685,14 @@
                     files: document.getElementById('modal-files').files
                 };
             } else {
+                const checked = document.querySelectorAll('.main-service-chk:checked');
+                let titles = [];
+                checked.forEach(c => titles.push(priceDatabase[c.value].title));
                 return {
                     name: document.getElementById('main-name').value || 'Не указано',
                     phone: document.getElementById('main-phone').value || 'Не указан',
                     district: document.getElementById('main-district').value,
-                    service: document.getElementById('main-service').value || 'Не указано',
+                    service: titles.length > 0 ? titles.join(', ') : 'Не указано',
                     desc: document.getElementById('main-desc').value || 'Без описания',
                     files: document.getElementById('main-files').files
                 };
@@ -1569,12 +1743,12 @@
             ordersData.unshift(newOrder);
             localStorage.setItem('site_orders', JSON.stringify(ordersData));
 
-            const text = `🛠 *НОВАЯ ЗАЯВКА В КАЗАНИ*\n\n👤 *Имя:* ${data.name}\n📞 *Телефон:* ${data.phone}\n📍 *Район:* ${data.district || 'Казань'}\n🔧 *Услуга:* ${data.service || 'Бытовой ремонт'}\n📝 *Описание:* ${data.desc}\n📎 *Файлов:* ${fileCount}`;
+            const text = `🛠 *НОВАЯ ЗАЯВКА В КАЗАНИ*\n\n👤 *Имя:* ${data.name}\n📞 *Телефон:* ${data.phone}\n📍 *Район:* ${data.district || 'Казань'}\n🔧 *Услуги:* ${data.service}\n📝 *Описание:* ${data.desc}\n📎 *Файлов:* ${fileCount}`;
 
             await sendTelegramMessageDirect(text, data.files);
 
             const subject = encodeURIComponent(`Заявка Казань: ${data.name} (${data.phone})`);
-            const body = encodeURIComponent(`Имя: ${data.name}\nТелефон: ${data.phone}\nРайон: ${data.district || 'Казань'}\nУслуга: ${data.service || 'Ремонт'}\nОписание: ${data.desc}`);
+            const body = encodeURIComponent(`Имя: ${data.name}\nТелефон: ${data.phone}\nРайон: ${data.district || 'Казань'}\nУслуги: ${data.service}\nОписание: ${data.desc}`);
             window.location.href = `mailto:sokoladniy.tretiy.glaz@gmail.com?subject=${subject}&body=${body}`;
 
             alert(`Спасибо, ${data.name}! Ваша заявка успешно передана администратору.`);
@@ -1584,7 +1758,7 @@
 
         function sendToMessenger(messenger, type) {
             const data = getFormValues(type);
-            const text = `🛠 *ЗАЯВКА В КАЗАНИ*\n\n👤 *Имя:* ${data.name}\n📞 *Телефон:* ${data.phone}\n📍 *Район:* ${data.district || 'Казань'}\n🔧 *Услуга:* ${data.service || 'Бытовой ремонт'}\n📝 *Описание:* ${data.desc}`;
+            const text = `🛠 *ЗАЯВКА В КАЗАНИ*\n\n👤 *Имя:* ${data.name}\n📞 *Телефон:* ${data.phone}\n📍 *Район:* ${data.district || 'Казань'}\n🔧 *Услуги:* ${data.service}\n📝 *Описание:* ${data.desc}`;
             const encoded = encodeURIComponent(text);
 
             if (messenger === 'telegram') window.open(`https://t.me/DedaYagaaaa`, '_blank');
