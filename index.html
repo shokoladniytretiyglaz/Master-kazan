@@ -226,7 +226,7 @@
                                     <div class="w-14 h-14 rounded-2xl bg-brand-orange/10 text-brand-orange flex items-center justify-center text-2xl mx-auto mb-3 animate-float">
                                         <i class="fa-solid fa-bolt"></i>
                                     </div>
-                                    <h2 class="font-heading font-bold text-xl text-white">Быстрый расчет вызова</h2>
+                                    <h2 class="font-heading font-bold text-xl text-white">Быстрый вызов мастера</h2>
                                     <p class="text-xs text-slate-400">Мастер перезвонит в течение 3 минут</p>
                                 </div>
 
@@ -246,7 +246,7 @@
                                     </div>
 
                                     <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-orange to-amber-500 text-slate-950 font-black text-sm hover:brightness-110 shadow-lg pulse-orange transition">
-                                        Рассчитать стоимость
+                                        Вызвать мастера
                                     </button>
                                     <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
                                 </form>
@@ -956,7 +956,7 @@
                 </div>
 
                 <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg transition">
-                    <i class="fa-solid fa-paper-plane mr-1"></i> Отправить заявку
+                    <i class="fa-solid fa-paper-plane mr-1"></i> Вызвать мастера
                 </button>
                 <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
 
@@ -969,6 +969,20 @@
                     </button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- CUSTOM SUCCESS NOTIFICATION MODAL -->
+    <div id="success-modal" onclick="handleSuccessBackdropClick(event)" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-sm w-full p-6 sm:p-8 text-center relative shadow-2xl transform transition-all">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 id="success-modal-title" class="font-heading font-black text-xl text-white mb-2">Заявка принята!</h3>
+            <p id="success-modal-desc" class="text-xs text-slate-300 leading-relaxed mb-6">Заявка успешно отправлена в панель администратора. Диспетчер свяжется с вами в течение 3 минут.</p>
+            <button onclick="closeSuccessModal()" class="w-full py-3 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 transition shadow-lg">
+                Отлично
+            </button>
         </div>
     </div>
 
@@ -1085,7 +1099,10 @@
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeBookingModal();
+            if (e.key === 'Escape') {
+                closeBookingModal();
+                closeSuccessModal();
+            }
         });
 
         function handleRouting() {
@@ -1146,6 +1163,25 @@
             if(icon) icon.classList.toggle('rotate-180');
         }
 
+        // CUSTOM SUCCESS POPUP MODAL FUNCTIONS
+        function showSuccessModal(title, text) {
+            const modal = document.getElementById('success-modal');
+            const titleEl = document.getElementById('success-modal-title');
+            const descEl = document.getElementById('success-modal-desc');
+            if(titleEl && title) titleEl.innerText = title;
+            if(descEl && text) descEl.innerText = text;
+            if(modal) modal.classList.remove('hidden');
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            if(modal) modal.classList.add('hidden');
+        }
+
+        function handleSuccessBackdropClick(e) {
+            if(e.target.id === 'success-modal') closeSuccessModal();
+        }
+
         // ADD NEW REVIEW HANDLER
         function handleAddNewReview(e) {
             e.preventDefault();
@@ -1164,7 +1200,7 @@
 
             localStorage.setItem('site_reviews', JSON.stringify(reviewsData));
             renderReviews();
-            alert('Спасибо за ваш отзыв! Он успешно добавлен на сайт.');
+            showSuccessModal('Отзыв отправлен!', 'Спасибо за ваш отзыв! Он успешно добавлен и отображается на сайте.');
             e.target.reset();
         }
 
@@ -1207,7 +1243,7 @@
             if(stepNum === 2) {
                 const checked = document.querySelectorAll('.quiz-service-chk:checked');
                 if(checked.length === 0) {
-                    alert('Пожалуйста, выберите хотя бы одну услугу из списка!');
+                    showSuccessModal('Внимание', 'Пожалуйста, выберите хотя бы одну услугу из списка!');
                     return;
                 }
                 updateQuizCalculation();
@@ -1277,7 +1313,8 @@
             const text = `🎁 *ЗАЯВКА ИЗ КВИЗА (СКИДКА 10%)*\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📍 Район: ${quizAnswers.district}\n📋 Выбранные услуги:\n- ${quizAnswers.selectedItems ? quizAnswers.selectedItems.join('\n- ') : 'Нет'}\n\n💰 Сумма без скидки: ${quizAnswers.basePriceVal || 0} ₽\n🔥 Сумма со скидкой 10%: ${quizAnswers.discountPriceVal || 0} ₽`;
 
             await sendTelegramMessageDirect(text, null);
-            alert(`Спасибо, ${name}! Ваши услуги и скидка 10% зафиксированы. Диспетчер свяжется с вами через 3 минуты.`);
+            
+            showSuccessModal('Скидка и вызов оформлены!', `Спасибо, ${name}! Ваша заявка успешно направлена в административную панель со скидкой 10%. Мастер свяжется с вами.`);
             
             document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
             document.getElementById('quiz-step-1').classList.remove('hidden');
@@ -1285,7 +1322,7 @@
             quizAnswers = { district: 'Ново-Савиновский' };
         }
 
-        // INIT MAIN CONTACTS FORM CHECKBOXES FOR MULTI-CHOICE
+        // INIT MAIN CONTACT्स FORM CHECKBOXES FOR MULTI-CHOICE
         function initMainFormCheckboxes() {
             const container = document.getElementById('main-form-services-checkboxes');
             if(!container) return;
@@ -1305,7 +1342,7 @@
             if(stepNum === 2) {
                 const checked = document.querySelectorAll('.main-service-chk:checked');
                 if(checked.length === 0) {
-                    alert('Пожалуйста, выберите хотя бы одну услугу!');
+                    showSuccessModal('Внимание', 'Пожалуйста, выберите хотя бы одну услугу!');
                     return;
                 }
                 updateMainFormSummary();
@@ -1339,7 +1376,7 @@
                 localStorage.setItem('admin_auth', 'true');
                 checkAdminAuth();
             } else {
-                alert('Неверный пароль администратора!');
+                showSuccessModal('Ошибка входа', 'Неверный пароль администратора!');
             }
         }
 
@@ -1514,7 +1551,7 @@
             renderPricelistRectangles();
             initQuizCheckboxes();
             initMainFormCheckboxes();
-            alert('Изменения в прайс-листе сохранены успешно!');
+            showSuccessModal('Успешно', 'Изменения в прайс-листе сохранены!');
         }
 
         // PRICELIST NAVIGATION
@@ -1674,7 +1711,7 @@
                 return {
                     name: document.getElementById('hero-name').value || 'Не указано',
                     phone: document.getElementById('hero-phone').value || 'Не указан',
-                    desc: document.getElementById('hero-desc').value || 'Быстрый заказ с главной',
+                    desc: document.getElementById('hero-desc').value || 'Быстрый вызов с главной',
                     files: document.getElementById('hero-files').files
                 };
             } else if(type === 'modal') {
@@ -1701,7 +1738,7 @@
 
         async function sendTelegramMessageDirect(text, files) {
             if (TELEGRAM_BOT_TOKEN === 'YOUR_TELEGRAM_BOT_TOKEN_HERE') {
-                console.warn('Telegram Bot Token не уставновлен.');
+                console.warn('Telegram Bot Token не установлен.');
                 return;
             }
 
@@ -1735,7 +1772,7 @@
                 name: data.name,
                 phone: data.phone,
                 district: data.district || 'Казань',
-                service: data.service || 'Бытовой ремонт',
+                service: data.service || 'Быстрый вызов мастера',
                 desc: data.desc,
                 date: 'Только что'
             };
@@ -1747,11 +1784,7 @@
 
             await sendTelegramMessageDirect(text, data.files);
 
-            const subject = encodeURIComponent(`Заявка Казань: ${data.name} (${data.phone})`);
-            const body = encodeURIComponent(`Имя: ${data.name}\nТелефон: ${data.phone}\nРайон: ${data.district || 'Казань'}\nУслуги: ${data.service}\nОписание: ${data.desc}`);
-            window.location.href = `mailto:sokoladniy.tretiy.glaz@gmail.com?subject=${subject}&body=${body}`;
-
-            alert(`Спасибо, ${data.name}! Ваша заявка успешно передана администратору.`);
+            showSuccessModal('Заявка успешно принята!', `Спасибо, ${data.name}! Ваш вызов зарегистрирован и отправлен в панель администратора. Мастер перезвонит в течение 3 минут.`);
             e.target.reset();
             if(type === 'modal') closeBookingModal();
         }
@@ -1789,7 +1822,7 @@
                                 <span>Смотреть цены</span> <i class="fa-solid fa-arrow-right"></i>
                             </button>
                             <button onclick="openBookingModal('Заказ услуги: ${c.name}')" class="w-full py-2.5 rounded-xl bg-brand-orange text-slate-950 font-bold text-xs hover:brightness-110 transition-all flex items-center justify-center gap-2">
-                                <span>Заказать услугу</span> <i class="fa-solid fa-bolt"></i>
+                                <span>Вызвать мастера</span> <i class="fa-solid fa-bolt"></i>
                             </button>
                         </div>
                     </div>
@@ -1805,7 +1838,7 @@
                         <div class="text-xs text-brand-orange font-semibold mb-2">${m.role}</div>
                         <div class="text-xs text-slate-400 mb-4"><i class="fa-solid fa-location-dot mr-1 text-amber-400"></i> ${m.district}</div>
                         <button onclick="openBookingModal('Мастер: ${m.name}')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-brand-orange hover:text-slate-950 text-white font-bold text-xs transition-all">
-                            Заказать мастера
+                            Вызвать мастера
                         </button>
                     </div>
                 `).join('');
