@@ -98,9 +98,9 @@
     <div class="bg-slate-900 border-b border-slate-800 text-xs text-slate-400 py-2 px-4">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
             <div class="flex items-center space-x-4">
-                <span class="text-amber-400 font-bold flex items-center">
+                <a href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D1%83%D0%BB.%20%D0%A7%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F%2C%2042" target="_blank" class="text-amber-400 font-bold flex items-center hover:text-brand-orange transition" title="Открыть адрес на карте">
                     <i class="fa-solid fa-location-dot mr-1.5"></i> Казань и пригород
-                </span>
+                </a>
                 <span class="hidden md:inline text-slate-700">|</span>
                 <span class="hidden md:inline text-emerald-400 font-semibold flex items-center gap-1.5">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Сейчас свободно 4 мастера в районах
@@ -198,7 +198,7 @@
                             </h1>
 
                             <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                                Сантехника, электрик, услуги плотника и сборка мебели. Выберите несколько услуг сразу, получите скидку 10% и вызовите мастера!
+                                Сантехника, электрик, услуги плотника и сборка мебели. Выберите несколько услуг сразу и вызовите мастера!
                             </p>
 
                             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
@@ -336,6 +336,29 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+
+            <!-- SECTION: MINI MAP LOCATION (ADDED AT THE BOTTOM OF HOME PAGE) -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-bold text-brand-orange uppercase tracking-wider">Карта проезда</span>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-black text-white mt-1">Наш офис и диспетчерская в Казани</h2>
+                    <p class="text-xs text-slate-400 mt-2">ул. Чистопольская, д. 42 — работаем во всех районах города и пригороде</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-4 sm:p-6 shadow-2xl relative overflow-hidden">
+                    <div class="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-slate-800 shadow-inner bg-slate-950">
+                        <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D1%83%D0%BB.%20%D0%A7%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F%2C%2042&z=16" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative;" class="w-full h-full border-0 filter contrast-110"></iframe>
+                    </div>
+                    <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300 px-2">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-brand-orange text-base"></i>
+                            <span>г. Казань, ул. Чистопольская, д. 42 (Ново-Савиновский р-н)</span>
+                        </div>
+                        <a href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D1%83%D0%BB.%20%D0%A7%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F%2C%2042" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-brand-orange to-amber-500 text-slate-950 font-black rounded-xl transition shadow-lg hover:brightness-110 flex items-center gap-2">
+                            <i class="fa-solid fa-map-location-dot"></i> Открыть в Яндекс Картах
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -667,7 +690,7 @@
                                 <!-- MULTI SUBMIT BUTTONS -->
                                 <div class="space-y-3 pt-2">
                                     <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg flex items-center justify-center gap-2 transition">
-                                        <i class="fa-solid fa-paper-plane"></i> Зафиксировать скидку 10% и вызвать мастера
+                                        <i class="fa-solid fa-paper-plane"></i> Вызвать мастера
                                     </button>
                                     <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
 
