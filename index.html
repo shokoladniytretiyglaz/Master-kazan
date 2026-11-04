@@ -17,8 +17,8 @@
       "@context": "https://schema.org",
       "@type": "HomeAndConstructionBusiness",
       "name": "Мастер На Час — Казань",
-      "telephone": "+79614879836",
-      "email": "sokoladniy.tretiy.glaz@gmail.com",
+      "telephone": "+79270435353",
+      "email": "master.kazan5353@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Казань",
@@ -107,8 +107,8 @@
                 </span>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="tel:+79614879836" class="hover:text-brand-orange font-bold text-white transition">
-                    <i class="fa-solid fa-phone mr-1 text-brand-orange"></i> +7 (961) 487-98-36
+                <a href="tel:+79270435353" class="hover:text-brand-orange font-bold text-white transition">
+                    <i class="fa-solid fa-phone mr-1 text-brand-orange"></i> 8 (927) 043-53-53
                 </a>
                 <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[11px] px-2.5 py-0.5 rounded-full font-semibold flex items-center">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-1.5"></span> Прием заказов 24/7
@@ -232,7 +232,7 @@
 
                                 <form onsubmit="handleFormSubmit(event, 'hero')" class="space-y-4">
                                     <input type="text" id="hero-name" required placeholder="Ваше имя" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange transition">
-                                    <input type="tel" id="hero-phone" required placeholder="+7 (961) 487-98-36" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange transition">
+                                    <input type="tel" id="hero-phone" required placeholder="8 (927) 043-53-53" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange transition">
                                     <textarea id="hero-desc" rows="2" placeholder="Кратко опишите проблему..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none transition"></textarea>
                                     
                                     <!-- File upload in hero -->
@@ -251,105 +251,6 @@
                                     <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
                                 </form>
                             </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECTION: MULTI-CHOICE QUIZ CALCULATOR WITH BACK BUTTON & 10% DISCOUNT -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div class="bg-slate-900 border border-amber-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"></div>
-                    
-                    <div class="text-center max-w-2xl mx-auto mb-8">
-                        <span class="px-3 py-1 bg-amber-500/10 text-brand-orange text-xs font-bold rounded-full uppercase border border-amber-500/20">Интерактивный Квиз</span>
-                        <h2 class="font-heading text-2xl sm:text-4xl font-black text-white mt-3 mb-2">Выберите нужные услуги и получите скидку 10%</h2>
-                        <p class="text-xs sm:text-sm text-slate-400">Отмечайте сразу несколько услуг из полного прайс-листа, сравнивайте цены и фиксируйте скидку</p>
-                    </div>
-
-                    <div id="quiz-container" class="max-w-2xl mx-auto bg-slate-950 border border-slate-800 rounded-2xl p-6">
-                        
-                        <!-- Step 1: Multiple Services Selection -->
-                        <div id="quiz-step-1" class="quiz-step">
-                            <div class="text-xs text-amber-400 font-bold mb-2">Шаг 1 из 3: Выбор услуг</div>
-                            <h3 class="text-sm font-bold text-white mb-2">Отметьте одну или несколько услуг из прайс-листа:</h3>
-                            <p class="text-[11px] text-slate-400 mb-4">Вы можете выбрать сколько угодно позиций — итоговая сумма рассчитается автоматически</p>
-                            
-                            <div class="max-h-72 overflow-y-auto space-y-2 mb-6 pr-2 no-scrollbar border border-slate-800 rounded-xl p-3 bg-slate-900/50" id="quiz-services-checkboxes">
-                                <!-- Populated dynamically from priceDatabase -->
-                            </div>
-
-                            <button type="button" onclick="goToQuizStep(2)" class="w-full py-3.5 bg-brand-orange text-slate-950 font-black text-xs rounded-xl hover:brightness-110 shadow-lg flex items-center justify-center gap-2">
-                                <span>Далее (Выбрать район)</span> <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
-
-                        <!-- Step 2: District Selection with Back Button -->
-                        <div id="quiz-step-2" class="quiz-step hidden">
-                            <div class="flex items-center justify-between mb-2">
-                                <div class="text-xs text-amber-400 font-bold">Шаг 2 из 3: Район Казани</div>
-                                <button type="button" onclick="goToQuizStep(1)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1 bg-slate-900 px-2.5 py-1 rounded-lg border border-slate-800 transition">
-                                    <i class="fa-solid fa-arrow-left"></i> Назад к выбору услуг
-                                </button>
-                            </div>
-                            <h3 class="text-base font-bold text-white mb-4">Укажите ваш район в Казани:</h3>
-                            <div class="grid grid-cols-2 gap-3 mb-6">
-                                <button type="button" onclick="setQuizDistrict('Ново-Савиновский')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Ново-Савиновский</button>
-                                <button type="button" onclick="setQuizDistrict('Вахитовский')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Вахитовский</button>
-                                <button type="button" onclick="setQuizDistrict('Советский')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Советский</button>
-                                <button type="button" onclick="setQuizDistrict('Приволжский')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Приволжский</button>
-                                <button type="button" onclick="setQuizDistrict('Московский')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Московский</button>
-                                <button type="button" onclick="setQuizDistrict('Другой / Пригород')" class="quiz-dist-btn p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange text-left text-xs text-slate-200 transition">Другой / Пригород</button>
-                            </div>
-                        </div>
-
-                        <!-- Step 3: Results, Comparison & Contact Form with Back Button -->
-                        <div id="quiz-step-3" class="quiz-step hidden">
-                            <div class="flex items-center justify-between mb-2">
-                                <div class="text-xs text-emerald-400 font-bold flex items-center gap-1">
-                                    <i class="fa-solid fa-circle-check"></i> Расчет по вашему списку готов!
-                                </div>
-                                <button type="button" onclick="goToQuizStep(2)" class="text-xs text-slate-400 hover:text-white flex items-center gap-1 bg-slate-900 px-2.5 py-1 rounded-lg border border-slate-800 transition">
-                                    <i class="fa-solid fa-arrow-left"></i> Назад
-                                </button>
-                            </div>
-                            
-                            <!-- COMPARISON BOX FOR MULTIPLE SERVICES -->
-                            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 mb-4 space-y-3">
-                                <div class="text-[11px] font-bold text-amber-400 uppercase tracking-wide">Выбранные вами услуги (<span id="quiz-selected-count">0</span>):</div>
-                                <div id="quiz-selected-list" class="text-xs text-slate-300 bg-slate-950 p-2.5 rounded-lg border border-slate-800 max-h-28 overflow-y-auto space-y-1"></div>
-
-                                <div class="grid grid-cols-2 gap-2 text-center pt-1">
-                                    <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-                                        <div class="text-[10px] uppercase text-slate-500 font-bold">Сумма без скидки</div>
-                                        <div id="quiz-price-old" class="text-sm font-bold text-slate-400 line-through mt-0.5">0 ₽</div>
-                                    </div>
-                                    <div class="bg-amber-500/10 p-2.5 rounded-lg border border-amber-500/30">
-                                        <div class="text-[10px] uppercase text-amber-400 font-bold">Сумма со скидкой 10%</div>
-                                        <div id="quiz-price-new" class="text-base font-black text-brand-orange mt-0.5">0 ₽</div>
-                                    </div>
-                                </div>
-                                <div class="text-[11px] text-emerald-400 text-center font-semibold">
-                                    🎉 Ваша общая экономия: <span id="quiz-savings">0 ₽</span>
-                                </div>
-                            </div>
-
-                            <h3 class="text-sm font-bold text-white mb-3">Куда прислать промокод и подтвердить выезд?</h3>
-                            <form onsubmit="finishQuiz(event)" class="space-y-3">
-                                <input type="text" id="quiz-name" required placeholder="Ваше имя" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange">
-                                <input type="tel" id="quiz-phone" required placeholder="+7 (961) 487-98-36" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange">
-                                
-                                <!-- Дополнительное описание (что еще нужно) перед кнопкой -->
-                                <div>
-                                    <textarea id="quiz-desc-input" rows="2" placeholder="Опишите то, что вам еще нужно (детали, пожелания)..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none"></textarea>
-                                </div>
-
-                                <button type="submit" class="w-full py-3 bg-brand-orange text-slate-950 font-black text-xs rounded-xl hover:brightness-110 shadow-lg">
-                                    Зафиксировать скидку 10% и вызвать мастера
-                                </button>
-                                <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
-                            </form>
                         </div>
 
                     </div>
@@ -446,7 +347,7 @@
                 <div class="text-center max-w-3xl mx-auto mb-10">
                     <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Официальные расценки 2026 Казань</span>
                     <h1 class="font-heading text-3xl sm:text-5xl font-black text-white mt-2 mb-4">Прайс-лист услуг мастеров</h1>
-                    <p class="text-slate-400 text-sm sm:text-base">Все цены указаны в рублях (₽). Нажмите на название любой услуги, чтобы посмотреть её описание.</p>
+                    <p class="text-slate-400 text-sm sm:text-base">Все цены указаны в рублях (₽). Нажмите на название любой услуги, чтобы посмотреть её развернутое подробное описание.</p>
                 </div>
 
                 <!-- 1. CATEGORIES SELECTOR (MAIN PARENT CATEGORIES) -->
@@ -632,7 +533,7 @@
                             </div>
                             <div>
                                 <div class="text-xs text-slate-400">Диспетчерская в Казани</div>
-                                <a href="tel:+79614879836" class="text-lg font-bold text-white hover:text-brand-orange transition">+7 (961) 487-98-36</a>
+                                <a href="tel:+79270435353" class="text-lg font-bold text-white hover:text-brand-orange transition">8 (927) 043-53-53</a>
                                 <div class="text-[11px] text-emerald-400 font-semibold">Прием звонков 24/7</div>
                             </div>
                         </div>
@@ -643,7 +544,7 @@
                             </div>
                             <div>
                                 <div class="text-xs text-slate-400">Telegram администратора</div>
-                                <a href="https://t.me/DedaYagaaaa" target="_blank" class="text-base font-bold text-white hover:text-sky-400 transition">@DedaYagaaaa (+79614879836)</a>
+                                <a href="https://t.me/DedaYagaaaa" target="_blank" class="text-base font-bold text-white hover:text-sky-400 transition">@DedaYagaaaa (8 927 043 53 53)</a>
                             </div>
                         </div>
 
@@ -653,7 +554,7 @@
                             </div>
                             <div>
                                 <div class="text-xs text-slate-400">WhatsApp</div>
-                                <a href="https://wa.me/79614879836" target="_blank" class="text-base font-bold text-white hover:text-emerald-400 transition">+7 (961) 487-98-36</a>
+                                <a href="https://wa.me/79270435353" target="_blank" class="text-base font-bold text-white hover:text-emerald-400 transition">8 (927) 043-53-53</a>
                             </div>
                         </div>
 
@@ -663,7 +564,7 @@
                             </div>
                             <div>
                                 <div class="text-xs text-slate-400">Мессенджер MAX</div>
-                                <a href="tel:+79097605706" class="text-base font-bold text-white hover:text-indigo-400 transition">+7 (909) 760-57-06</a>
+                                <a href="tel:+79270435353" class="text-base font-bold text-white hover:text-indigo-400 transition">8 (927) 043-53-53</a>
                             </div>
                         </div>
 
@@ -673,7 +574,7 @@
                             </div>
                             <div>
                                 <div class="text-xs text-slate-400">E-mail для заявок</div>
-                                <a href="mailto:sokoladniy.tretiy.glaz@gmail.com" class="text-xs sm:text-sm font-bold text-white hover:text-rose-400 transition break-all">sokoladniy.tretiy.glaz@gmail.com</a>
+                                <a href="mailto:master.kazan5353@gmail.com" class="text-xs sm:text-sm font-bold text-white hover:text-rose-400 transition break-all">master.kazan5353@gmail.com</a>
                             </div>
                         </div>
 
@@ -722,7 +623,7 @@
                                     </div>
                                     <div>
                                         <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Телефон в Казани *</label>
-                                        <input type="tel" id="main-phone" required placeholder="+7 (961) 487-98-36" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange transition">
+                                        <input type="tel" id="main-phone" required placeholder="8 (927) 043-53-53" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange transition">
                                     </div>
                                 </div>
 
@@ -745,9 +646,10 @@
                                     </div>
                                 </div>
 
+                                <!-- Дополнительное описание (что еще нужно) перед кнопкой -->
                                 <div>
-                                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Дополнительное описание (необязательно)</label>
-                                    <textarea id="main-desc" rows="2" placeholder="Уточните детали задачи..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none transition"></textarea>
+                                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Описание того, что вам еще нужно (детали, пожелания)</label>
+                                    <textarea id="main-desc" rows="2" placeholder="Опишите детали задачи..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none transition"></textarea>
                                 </div>
 
                                 <!-- FILE ATTACHMENT BOX -->
@@ -765,7 +667,7 @@
                                 <!-- MULTI SUBMIT BUTTONS -->
                                 <div class="space-y-3 pt-2">
                                     <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg flex items-center justify-center gap-2 transition">
-                                        <i class="fa-solid fa-paper-plane"></i> Мгновенная отправка заявки
+                                        <i class="fa-solid fa-paper-plane"></i> Зафиксировать скидку 10% и вызвать мастера
                                     </button>
                                     <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных (ФЗ-152)</p>
 
@@ -889,9 +791,9 @@
                 <div>
                     <h2 class="text-xs font-bold uppercase tracking-wider text-white mb-3">Контакты</h2>
                     <div class="text-xs text-slate-300 space-y-1">
-                        <div class="font-bold text-brand-orange text-sm">+7 (961) 487-98-36</div>
+                        <div class="font-bold text-brand-orange text-sm">8 (927) 043-53-53</div>
                         <div>г. Казань, ул. Чистопольская, 42</div>
-                        <div class="text-[11px] text-slate-400">sokoladniy.tretiy.glaz@gmail.com</div>
+                        <div class="text-[11px] text-slate-400">master.kazan5353@gmail.com</div>
                     </div>
                 </div>
             </div>
@@ -907,13 +809,13 @@
             <a href="https://t.me/DedaYagaaaa" target="_blank" class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-sky-500 text-white font-bold text-xs shadow-xl hover:scale-105 transition-transform">
                 <span>Telegram</span> <i class="fa-brands fa-telegram text-sm"></i>
             </a>
-            <a href="https://wa.me/79614879836" target="_blank" class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-emerald-500 text-white font-bold text-xs shadow-xl hover:scale-105 transition-transform">
+            <a href="https://wa.me/79270435353" target="_blank" class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-emerald-500 text-white font-bold text-xs shadow-xl hover:scale-105 transition-transform">
                 <span>WhatsApp</span> <i class="fa-brands fa-whatsapp text-sm"></i>
             </a>
-            <a href="tel:+79097605706" class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-brand-max text-white font-bold text-xs shadow-xl hover:scale-105 transition-transform">
+            <a href="tel:+79270435353" class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-brand-max text-white font-bold text-xs shadow-xl hover:scale-105 transition-transform">
                 <span>MAX</span> <i class="fa-solid fa-comments text-sm"></i>
             </a>
-            <a href="tel:+79614879836" class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-amber-500 text-slate-950 font-bold text-xs shadow-xl hover:scale-105 transition-transform">
+            <a href="tel:+79270435353" class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-amber-500 text-slate-950 font-bold text-xs shadow-xl hover:scale-105 transition-transform">
                 <span>Позвонить</span> <i class="fa-solid fa-phone text-sm"></i>
             </a>
         </div>
@@ -943,7 +845,7 @@
 
                 <div>
                     <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Телефон в Казани *</label>
-                    <input type="tel" id="modal-phone" required placeholder="+7 (961) 487-98-36" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange transition">
+                    <input type="tel" id="modal-phone" required placeholder="8 (927) 043-53-53" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange transition">
                 </div>
 
                 <div>
@@ -1008,8 +910,8 @@
                     <input type="text" id="edit-price-cat" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Краткое описание услуги</label>
-                    <textarea id="edit-price-desc" rows="2" placeholder="Описание, что входит в работу..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none"></textarea>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Подробное описание услуги</label>
+                    <textarea id="edit-price-desc" rows="2" placeholder="Подробное описание, что входит в работу..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none"></textarea>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-300 mb-1">Ед. изм. (шт., пог. м, м2, усл., объект)</label>
@@ -1031,365 +933,364 @@
         const TELEGRAM_CHAT_ID = 'YOUR_TELEGRAM_CHAT_ID_HERE';
 
         const categoriesConfig = [
-            { id: 'furniture', name: 'Мебель и сборка', icon: 'fa-couch', time: 'от 30 минут', tools: 'Проф. набор сборщика', desc: 'Сборка, разборка, ремонт и перетяжка диванов, кроватей, шкафов, кухонь и столов.', subs: ['Все подкатегории', 'Диван', 'Стенка, прихожая', 'Кровать', 'Кухня', 'Полки', 'Стул', 'Тумбочка', 'Шкаф', 'Стол', 'Кресло', 'Стеллаж', 'Комод'] },
-            { id: 'plumbing', name: 'Сантехника', icon: 'fa-faucet', time: 'от 20 минут', tools: 'Проф. ключи, герметик', desc: 'Установка раковин, моек, смесителей, ванн, унитазов, труб и устранение засоров.', subs: ['Все подкатегории', 'Установка раковины', 'Установка мойки', 'Установка и обслуживание мойдодыра', 'Установка смесителя', 'Ремонт и замена смесителя', 'Установка и демонтаж кранов', 'Ванны и Джакузи', 'Гидроизоляция швов', 'Сантехнические люки', 'Установка и замена сифонов', 'Душевые кабины', 'Унитазы, писсуары и биде', 'Полотенцесушители и сушилки', 'Канализация и водоснабжение', 'Фильтры для воды', 'Засоры и Защита от протечек', 'Отопление и Водонагреватели'] },
-            { id: 'electric', name: 'Электрика', icon: 'fa-bolt', time: 'от 20 минут', tools: 'Тестер, перфоратор', desc: 'Монтаж розеток, выключателей, светильников, люстр, автоматов и электропроводки.', subs: ['Все подкатегории', 'Розетки и выключатели', 'Светильники и Люстры', 'Подключение бытовой техники', 'Щиты, Автоматы, Счетчики', 'Электропроводка и Кабель', 'Теплый пол', 'ЭЛЕКТРИКА ПОД КЛЮЧ'] },
-            { id: 'callout', name: 'Вызов и Диагностика', icon: 'fa-user-gear', time: 'от 15 минут', tools: 'Инструменты диагностики', desc: 'Вызов мастера на дом, диагностика и поездка в магазин.', subs: ['Все подкатегории', 'Вызов мастера и диагностика', 'Минимальный заказ'] }
+            { id: 'furniture', name: 'Мебель и сборка', icon: 'fa-couch', time: 'от 30 минут', tools: 'Проф. набор сборщика', desc: 'Сборка, разборка, ремонт и перетяжка диванов, кроватей, шкафов, кухонь и столов с использованием профессионального инструмента.', subs: ['Все подкатегории', 'Диван', 'Стенка, прихожая', 'Кровать', 'Кухня', 'Полки', 'Стул', 'Тумбочка', 'Шкаф', 'Стол', 'Кресло', 'Стеллаж', 'Комод'] },
+            { id: 'plumbing', name: 'Сантехника', icon: 'fa-faucet', time: 'от 20 минут', tools: 'Проф. ключи, герметик', desc: 'Профессиональная установка и замена раковин, моек, смесителей, ванн, унитазов, труб, фильтров и устранение сложных засоров.', subs: ['Все подкатегории', 'Установка раковины', 'Установка мойки', 'Установка и обслуживание мойдодыра', 'Установка смесителя', 'Ремонт и замена смесителя', 'Установка и демонтаж кранов', 'Ванны и Джакузи', 'Гидроизоляция швов', 'Сантехнические люки', 'Установка и замена сифонов', 'Душевые кабины', 'Унитазы, писсуары и биде', 'Полотенцесушители и сушилки', 'Канализация и водоснабжение', 'Фильтры для воды', 'Засоры и Защита от протечек', 'Отопление и Водонагреватели'] },
+            { id: 'electric', name: 'Электрика', icon: 'fa-bolt', time: 'от 20 минут', tools: 'Тестер, перфоратор', desc: 'Безопасный монтаж розеток, выключателей, светильников, люстр, автоматов, щитов и полной электропроводки с соблюдением ПУЭ.', subs: ['Все подкатегории', 'Розетки и выключатели', 'Светильники и Люстры', 'Подключение бытовой техники', 'Щиты, Автоматы, Счетчики', 'Электропроводка и Кабель', 'Теплый пол', 'ЭЛЕКТРИКА ПОД КЛЮЧ'] },
+            { id: 'callout', name: 'Вызов и Диагностика', icon: 'fa-user-gear', time: 'от 15 минут', tools: 'Инструменты диагностики', desc: 'Оперативный вызов мастера на дом в любой район Казани, полная комплексная диагностика и покупка материалов.', subs: ['Все подкатегории', 'Вызов мастера и диагностика'] }
         ];
 
         let priceDatabase = JSON.parse(localStorage.getItem('site_prices')) || [
-            // МЕБЕЛЬ И СБОРКА
-            { title: 'Разобрать диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 640 ₽', desc: 'Аккуратная разборка дивана любой конструкции для переезда или ремонта.' },
-            { title: 'Собрать диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 1 440 ₽', desc: 'Профессиональная сборка дивана с надежным закреплением механизмов.' },
-            { title: 'Починить диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 2 176 ₽', desc: 'Ремонт каркаса, замена механизмов трансформации дивана.' },
-            { title: 'Перетянуть диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 11 040 ₽', desc: 'Полная замена обивочного материала и ткани дивана.' },
-            { title: 'Перетяжка подлокотников дивана', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 6 400 ₽', desc: 'Замена обивки на подлокотниках.' },
-            { title: 'Замена наполнителя в диване', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 3 280 ₽', desc: 'Установка нового поролона или пенополиуретана.' },
-            { title: 'Собрать стенку', cat: 'furniture', sub: 'Стенка, прихожая', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Сборка модульных стенок и гостиных гарнитуров.' },
-            { title: 'Собрать прихожую', cat: 'furniture', sub: 'Стенка, прихожая', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Сборка мебели для прихожих и коридоров.' },
-            { title: 'Сборка обувницы', cat: 'furniture', sub: 'Стенка, прихожая', unit: 'шт.', price: 'от 800 ₽', desc: 'Монтаж тумб для обуви.' },
-            { title: 'Собрать кровать', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 1 600 ₽', desc: 'Сборка односпальных и двуспальных кроватей.' },
-            { title: 'Разобрать кровать', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 640 ₽', desc: 'Разборка кроватного каркаса.' },
-            { title: 'Починить кровать', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Устранение скрипа, укрепление соединений.' },
-            { title: 'Заменить ламели на кровати', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Установка новых ортопедических ламелей.' },
-            { title: 'Перетяжка кровати', cat: 'furniture', sub: 'Кровать', unit: 'выезд', price: 'от 11 760 ₽', desc: 'Перетяжка изголовья и каркаса кровати.' },
-            { title: 'Собрать кухню', cat: 'furniture', sub: 'Кухня', unit: 'пог. м', price: 'от 4 160 ₽', desc: 'Сборка кухонных модулей и гарнитуров.' },
-            { title: 'Разобрать кухонный гарнитур', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 400 ₽', desc: 'Демонтаж кухни.' },
-            { title: 'Распилить фасад для кухни', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 720 ₽', desc: 'Подгонка фасадов под размеры.' },
-            { title: 'Перетяжка кухонного уголка', cat: 'furniture', sub: 'Кухня', unit: 'выезд', price: 'от 14 880 ₽', desc: 'Обновление обивки мягкого уголка.' },
-            { title: 'Замена кухонных фасадов', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 240 ₽', desc: 'Установка новых дверок.' },
-            { title: 'Заменить столешницу кухонного стола', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 2 080 ₽', desc: 'Монтаж новой столешницы.' },
-            { title: 'Установить столешницу из ДСП на кухне', cat: 'furniture', sub: 'Кухня', unit: 'усл.', price: 'от 1 040 ₽', desc: 'Установка и крепеж столешницы.' },
-            { title: 'Установить столешницу из искусственного камня', cat: 'furniture', sub: 'Кухня', unit: 'пог. м', price: 'от 7 200 ₽', desc: 'Монтаж каменных столешниц.' },
-            { title: 'Повесить полки', cat: 'furniture', sub: 'Полки', unit: 'шт.', price: 'от 320 ₽', desc: 'Навеска полок на стены.' },
-            { title: 'Собрать стул', cat: 'furniture', sub: 'Стул', unit: 'шт.', price: 'от 400 ₽', desc: 'Сборка стульев.' },
-            { title: 'Починить стул', cat: 'furniture', sub: 'Стул', unit: 'шт.', price: 'от 768 ₽', desc: 'Ремонт расшатанных ножек и спинок.' },
-            { title: 'Перетяжка стула', cat: 'furniture', sub: 'Стул', unit: 'шт.', price: 'от 6 400 ₽', desc: 'Замена обивки сиденья.' },
-            { title: 'Собрать тумбу', cat: 'furniture', sub: 'Тумбочка', unit: 'шт.', price: 'от 1 360 ₽', desc: 'Сборка прикроватных и офисных тумб.' },
-            { title: 'Починить тумбу', cat: 'furniture', sub: 'Тумбочка', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Ремонт ящиков и петель.' },
-            { title: 'Разобрать шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 960 ₽', desc: 'Разборка шкафов.' },
-            { title: 'Собрать корпусный шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 960 ₽', desc: 'Сборка шкафов.' },
-            { title: 'Установить встроенный шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 3 648 ₽', desc: 'Монтаж встроенной мебели.' },
-            { title: 'Разобрать шкаф-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 960 ₽', desc: 'Демонтаж шкафа-купе.' },
-            { title: 'Собрать шкаф-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 2 560 ₽', desc: 'Сборка шкафа с раздвижными дверями.' },
-            { title: 'Починить шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Ремонт мебели.' },
-            { title: 'Починить дверцу шкафа', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 152 ₽', desc: 'Регулировка и замена петель.' },
-            { title: 'Починить шкаф-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Ремонт раздвижных систем.' },
-            { title: 'Заменить дверь шкафа-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Установка нового полотна двери.' },
-            { title: 'Починить дверь шкафа-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Ремонт дверей шкафа-купе.' },
-            { title: 'Собрать стол', cat: 'furniture', sub: 'Стол', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка письменных и обеденных столов.' },
-            { title: 'Разобрать стол', cat: 'furniture', sub: 'Стол', unit: 'шт.', price: 'от 384 ₽', desc: 'Разборка столов.' },
-            { title: 'Починить стол', cat: 'furniture', sub: 'Стол', unit: 'шт.', price: 'от 1 152 ₽', desc: 'Ремонт ножек и столешницы.' },
-            { title: 'Починить кресло', cat: 'furniture', sub: 'Кресло', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Ремонт мягких кресел.' },
-            { title: 'Собрать кресло', cat: 'furniture', sub: 'Кресло', unit: 'шт.', price: 'от 1 408 ₽', desc: 'Сборка кресел.' },
-            { title: 'Перетяжка кресла', cat: 'furniture', sub: 'Кресло', unit: 'шт.', price: 'от 7 920 ₽', desc: 'Перетяжка мягкого кресла.' },
-            { title: 'Перетяжка офисного кресла', cat: 'furniture', sub: 'Кресло', unit: 'выезд', price: 'от 10 720 ₽', desc: 'Обивка компьютерных кресел.' },
-            { title: 'Собрать стеллаж', cat: 'furniture', sub: 'Стеллаж', unit: 'шт.', price: 'от 384 ₽', desc: 'Сборка полок и стеллажей.' },
-            { title: 'Разобрать стеллаж', cat: 'furniture', sub: 'Стеллаж', unit: 'шт.', price: 'от 320 ₽', desc: 'Демонтаж стеллажей.' },
-            { title: 'Собрать комод', cat: 'furniture', sub: 'Комод', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка комодов с ящиками.' },
+            // МЕБЕЛЬ И СБОРКА (С подробным описанием)
+            { title: 'Разобрать диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 640 ₽', desc: 'Аккуратная разборка дивана любой конструкции (книжка, еврокнижка, угловой) с сохранением крепежа и подготовкой к транспортировке.' },
+            { title: 'Собрать диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 1 440 ₽', desc: 'Профессиональная сборка нового дивана, регулировка механизмов трансформации, проверка прочности каркаса и соединений.' },
+            { title: 'Починить диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 2 176 ₽', desc: 'Устранение скрипа, ремонт или замена сломанного деревянного каркаса, пружинных блоков и механизмов трансформации.' },
+            { title: 'Перетянуть диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 11 040 ₽', desc: 'Полная замена обивочного материала и изношенной ткани дивана на качественную ткань с подбором расцветки под интерьер.' },
+            { title: 'Перетяжка подлокотников дивана', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 6 400 ₽', desc: 'Замена обивки непосредственно на боковых частях и подлокотниках мягкой мебели.' },
+            { title: 'Замена наполнителя в диване', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 3 280 ₽', desc: 'Установка нового упругого поролона или пенополиуретана для восстановления комфорта и мягкости посадочного места.' },
+            { title: 'Собрать стенку', cat: 'furniture', sub: 'Стенка, прихожая', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Сборка модульных гостиных стенок, выравнивание по уровню и навеска навесных элементов.' },
+            { title: 'Собрать прихожую', cat: 'furniture', sub: 'Стенка, прихожая', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Сборка мебели для прихожих, шкафов для одежды, вешалок и тумб.' },
+            { title: 'Сборка обувницы', cat: 'furniture', sub: 'Стенка, прихожая', unit: 'шт.', price: 'от 800 ₽', desc: 'Монтаж и сборка специализированных тумб для хранения обуви.' },
+            { title: 'Собрать кровать', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 1 600 ₽', desc: 'Сборка односпальных, двуспальных и детских кроватей, установка ортопедического основания и подъемного механизма.' },
+            { title: 'Разобрать кровать', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 640 ₽', desc: 'Аккуратный демонтаж кроватного каркаса для переезда.' },
+            { title: 'Починить кровать', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Устранение скрипов, укрепление слабых соединений и замена крепежных элементов.' },
+            { title: 'Заменить ламели на кровати', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Установка новых прочных деревянных ламелей в ортопедическое основание.' },
+            { title: 'Перетяжка кровати', cat: 'furniture', sub: 'Кровать', unit: 'выезд', price: 'от 11 760 ₽', desc: 'Обновление обивки изголовья и внешнего периметра кровати.' },
+            { title: 'Собрать кухню', cat: 'furniture', sub: 'Кухня', unit: 'пог. м', price: 'от 4 160 ₽', desc: 'Сборка нижних и верхних кухонных модулей, соединение секций, навеска на монтажную планку.' },
+            { title: 'Разобрать кухонный гарнитур', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 400 ₽', desc: 'Аккуратный демонтаж кухонной мебели и шкафов.' },
+            { title: 'Распилить фасад для кухни', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 720 ₽', desc: 'Точный распил мебельных фасадов и плит под требуемый размер.' },
+            { title: 'Перетяжка кухонного уголка', cat: 'furniture', sub: 'Кухня', unit: 'выезд', price: 'от 14 880 ₽', desc: 'Замена обивочной ткани на мягком кухонном уголке.' },
+            { title: 'Замена кухонных фасадов', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 240 ₽', desc: 'Демонтаж старых дверок и установка новых фасадов с регулировкой петель.' },
+            { title: 'Заменить столешницу кухонного стола', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 2 080 ₽', desc: 'Монтаж новой столешницы на кухонный стол.' },
+            { title: 'Установить столешницу из ДСП на кухне', cat: 'furniture', sub: 'Кухня', unit: 'усл.', price: 'от 1 040 ₽', desc: 'Установка и надежная фиксация кухонной столешницы из ДСП.' },
+            { title: 'Установить столешницу из искусственного камня', cat: 'furniture', sub: 'Кухня', unit: 'пог. м', price: 'от 7 200 ₽', desc: 'Профессиональный монтаж тяжелых столешниц из искусственного камня.' },
+            { title: 'Повесить полки', cat: 'furniture', sub: 'Полки', unit: 'шт.', price: 'от 320 ₽', desc: 'Надежная навеска настенных полок с разметкой по уровню и подбором дюбелей под тип стены.' },
+            { title: 'Собрать стул', cat: 'furniture', sub: 'Стул', unit: 'шт.', price: 'от 400 ₽', desc: 'Быстрая сборка обеденных или офисных стульев.' },
+            { title: 'Починить стул', cat: 'furniture', sub: 'Стул', unit: 'шт.', price: 'от 768 ₽', desc: 'Устранение шатания, укрепление ножек и спинок стула.' },
+            { title: 'Перетяжка стула', cat: 'furniture', sub: 'Стул', unit: 'шт.', price: 'от 6 400 ₽', desc: 'Замена обивки сиденья и спинки стула.' },
+            { title: 'Собрать тумбу', cat: 'furniture', sub: 'Тумбочка', unit: 'шт.', price: 'от 1 360 ₽', desc: 'Сборка прикроватных, офисных и тумб под телевизор.' },
+            { title: 'Починить тумбу', cat: 'furniture', sub: 'Тумбочка', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Ремонт направляющих выдвижных ящиков и петель.' },
+            { title: 'Разобрать шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 960 ₽', desc: 'Аккуратная разборка распашного шкафа.' },
+            { title: 'Собрать корпусный шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 960 ₽', desc: 'Сборка корпусной мебели, установка полок и штанг.' },
+            { title: 'Установить встроенный шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 3 648 ₽', desc: 'Монтаж встроенного шкафа с подгонкой по стенам помещения.' },
+            { title: 'Разобрать шкаф-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 960 ₽', desc: 'Демонтаж раздвижных дверей и каркаса шкафа-купе.' },
+            { title: 'Собрать шкаф-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 2 560 ₽', desc: 'Сборка шкафа-купе, установка направляющих и регулировка дверей.' },
+            { title: 'Починить шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Комплексный ремонт корпусной мебели.' },
+            { title: 'Починить дверцу шкафа', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 152 ₽', desc: 'Регулировка и замена мебельных петель.' },
+            { title: 'Починить шкаф-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Ремонт роликов и профилей шкафа-купе.' },
+            { title: 'Заменить дверь шкафа-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Установка нового полотна двери в раздвижную систему.' },
+            { title: 'Починить дверь шкафа-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Восстановление плавности хода дверей купе.' },
+            { title: 'Собрать стол', cat: 'furniture', sub: 'Стол', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка письменных, компьютерных и обеденных столов.' },
+            { title: 'Разобрать стол', cat: 'furniture', sub: 'Стол', unit: 'шт.', price: 'от 384 ₽', desc: 'Разборка столов для перевозки.' },
+            { title: 'Починить стол', cat: 'furniture', sub: 'Стол', unit: 'шт.', price: 'от 1 152 ₽', desc: 'Ремонт креплений ног и столешниц.' },
+            { title: 'Починить кресло', cat: 'furniture', sub: 'Кресло', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Ремонт мягких кресел и механизмов.' },
+            { title: 'Собрать кресло', cat: 'furniture', sub: 'Кресло', unit: 'шт.', price: 'от 1 408 ₽', desc: 'Сборка мягких и офисных кресел.' },
+            { title: 'Перетяжка кресла', cat: 'furniture', sub: 'Кресло', unit: 'шт.', price: 'от 7 920 ₽', desc: 'Полное обновление обивки мягкого кресла.' },
+            { title: 'Перетяжка офисного кресла', cat: 'furniture', sub: 'Кресло', unit: 'выезд', price: 'от 10 720 ₽', desc: 'Замена ткани и наполнителя на компьютерных креслах.' },
+            { title: 'Собрать стеллаж', cat: 'furniture', sub: 'Стеллаж', unit: 'шт.', price: 'от 384 ₽', desc: 'Сборка металлических и деревянных стеллажей.' },
+            { title: 'Разобрать стеллаж', cat: 'furniture', sub: 'Стеллаж', unit: 'шт.', price: 'от 320 ₽', desc: 'Демонтаж полочных стеллажей.' },
+            { title: 'Собрать комод', cat: 'furniture', sub: 'Комод', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка корпуса комода и сборка выдвижных ящиков.' },
 
-            // САНТЕХНИКА
-            { title: 'Установка раковины в ванной', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Монтаж раковины.' },
-            { title: 'Установка раковины на кухне', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Установка кухонной мойки.' },
-            { title: 'Монтаж раковины в столешницу', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 700 ₽', desc: 'Врезка в столешницу.' },
-            { title: 'Монтаж раковины над стиральной машиной', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 050 ₽', desc: 'Монтаж раковины кувшинки.' },
-            { title: 'Монтаж накладной раковины на столешницу', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Монтаж накладной чаши.' },
-            { title: 'Установка раковины врезного типа', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Врезной тип установки.' },
-            { title: 'Установка раковины накладного типа', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Накладной тип установки.' },
-            { title: 'Монтаж раковины модели Кувшинка', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Специальная компактная раковина.' },
-            { title: 'Монтаж раковины с тумбой', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка тумбы с раковиной.' },
-            { title: 'Установка подвесной раковины', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Крепление на стену.' },
-            { title: 'Установка раковины модели Тюльпан', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Раковина с пьедесталом.' },
-            { title: 'Установка кронштейнов для раковины/мойки', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 490 ₽', desc: 'Монтаж опорных кронштейнов.' },
-            { title: 'Монтаж раковины на кронштейнах', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Установка с кронштейнами.' },
-            { title: 'Установка мини-раковины без смесителя и сифона', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 500 ₽', desc: 'Базовый монтаж мини-раковины.' },
-            { title: 'Изготовление отверстий в каменной раковине', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Сверление камня.' },
-            { title: 'Изготовление отверстий в металлической раковине', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 690 ₽', desc: 'Сверление металла.' },
-            { title: 'Замена раковины в ванной', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 180 ₽', desc: 'Демонтаж старой и установка новой.' },
-            { title: 'Замена раковины в туалете', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 180 ₽', desc: 'Замена раковины в санузле.' },
-            { title: 'Замена раковины на кухне', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 180 ₽', desc: 'Замена кухонной раковины.' },
-            { title: 'Врезка раковины в столешницу', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 500 ₽', desc: 'Аккуратная выпилка и установка.' },
-            { title: 'Монтаж тумбы под раковину', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Установка подстолья.' },
-            { title: 'Демонтаж раковины', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 350 ₽', desc: 'Аккуратный демонтаж.' },
-            { title: 'Установка мойки врезного типа', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 550 ₽', desc: 'Врезка и крепление мойки.' },
-            { title: 'Установка мойки из нержавеющей стали', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 550 ₽', desc: 'Монтаж металлической мойки.' },
-            { title: 'Установка мойки накладного типа', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 550 ₽', desc: 'Установка на тумбу.' },
-            { title: 'Установка мойки из искусственного камня', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 700 ₽', desc: 'Монтаж каменной мойки.' },
-            { title: 'Монтаж стеклянной мойки со смесителем', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка дизайнерской мойки.' },
-            { title: 'Демонтаж мойки', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 350 ₽', desc: 'Демонтаж раковины/мойки.' },
-            { title: 'Демонтаж подстолья с мойкой', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 525 ₽', desc: 'Демонтаж комплекта.' },
-            { title: 'Замена мойки', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 900 ₽', desc: 'Смена старой мойки на новую.' },
-            { title: 'Установка мойдодыра', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка и установка комплекта.' },
-            { title: 'Сборка мойдодыра', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 500 ₽', desc: 'Сборка элементов.' },
-            { title: 'Монтаж фильтра для очистки воды в мойдодыре', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 900 ₽', desc: 'Подключение фильтра.' },
-            { title: 'Герметизация швов на мойдодыре', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 350 ₽', desc: 'Обработка герметиком.' },
-            { title: 'Демонтаж мойдодыра', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 450 ₽', desc: 'Разборка комплекта.' },
-            { title: 'Установка смесителя на ванну', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж смесителя.' },
-            { title: 'Монтаж душевого смесителя', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Установка душа.' },
-            { title: 'Установка смесителя на кухне', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Подключение кухонного крана.' },
-            { title: 'Монтаж смесителя в ванной', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж в ванной комнате.' },
-            { title: 'Установка смесителя модели Ёлочка', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 650 ₽', desc: 'Классический смеситель.' },
-            { title: 'Установка смесителя с одним рычагом', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 650 ₽', desc: 'Однорычажный кран.' },
-            { title: 'Монтаж смесителя на мойку', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 650 ₽', desc: 'Установка на мойку.' },
-            { title: 'Установка смесителя на биде', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 850 ₽', desc: 'Монтаж на биде.' },
-            { title: 'Монтаж смесителя на душевую кабину', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 950 ₽', desc: 'Установка в душевую.' },
-            { title: 'Установка смесителя в ванной с лейкой для душа', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Смеситель с гарнитуром.' },
-            { title: 'Установка смесителя с терморегулятором на стену', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Монтаж термостата.' },
-            { title: 'Установка электронного бесконтактного смесителя', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 300 ₽', desc: 'Сенсорный смеситель.' },
-            { title: 'Установка смесителя скрытого монтажа', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 800 ₽', desc: 'Скрытый монтаж.' },
-            { title: 'Монтаж смесителя на раковину', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Установка на раковину.' },
-            { title: 'Монтаж держателя для душевой лейки', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Крепление держателя.' },
-            { title: 'Установка гибкой подводки', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 500 ₽', desc: 'Подключение шлангов.' },
-            { title: 'Ремонт смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 600 ₽', desc: 'Устранение неисправностей.' },
-            { title: 'Замена гибкой подводки смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 600 ₽', desc: 'Смена шлангов.' },
-            { title: 'Замена картриджа в смесителе', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 600 ₽', desc: 'Установка нового картриджа.' },
-            { title: 'Замена эксцентриков смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Замена переходников.' },
-            { title: 'Замена уплотнителей или прокладок смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 300 ₽', desc: 'Замена прокладок.' },
-            { title: 'Замена вентильной головки смесителя (кранбуксы)', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 315 ₽', desc: 'Замена кранбуксы.' },
-            { title: 'Замена девиатора (переключателя) смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 455 ₽', desc: 'Замена переключателя душа.' },
-            { title: 'Выпиливание старых эксцентриков', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Демонтаж прикипевших деталей.' },
-            { title: 'Прогон резьб', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 500 ₽', desc: 'Восстановление резьбы.' },
-            { title: 'Замена смесителя на кухне', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 700 ₽', desc: 'Смена кухонного крана.' },
-            { title: 'Замена смесителя в ванной', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 800 ₽', desc: 'Смена смесителя в ванной.' },
-            { title: 'Сборка простого смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 250 ₽', desc: 'Сборка крана.' },
-            { title: 'Сборка сложного/душевого смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Сборка сложного узла.' },
-            { title: 'Демонтаж смесителя на кухне', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 250 ₽', desc: 'Снятие крана.' },
-            { title: 'Демонтаж смесителя в ванной', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 350 ₽', desc: 'Снятие смесителя.' },
-            { title: 'Демонтаж держателя для душевой лейки', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Снятие держателя.' },
-            { title: 'Демонтаж эксцентриков', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 210 ₽', desc: 'Снятие эксцентриков.' },
-            { title: 'Установка кранов 1/2, 3/4 / 1 дюйм', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 600 ₽', desc: 'Монтаж запорной арматуры.' },
-            { title: 'Установка угловых кранов 1/2', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 420 ₽', desc: 'Монтаж углового крана.' },
-            { title: 'Установка переходников (переходных фитингов)', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 280 ₽', desc: 'Установка фитингов.' },
-            { title: 'Установка фитингов из ПВХ', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 210 ₽', desc: 'ПВХ фитинги.' },
-            { title: 'Устройство сливного трапа', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 1 050 ₽', desc: 'Монтаж трапа.' },
-            { title: 'Установка гофры диаметром 40*50', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 70 ₽', desc: 'Монтаж гофротрубы.' },
-            { title: 'Установка шарового крана (водопровод/отопление)', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 600 ₽', desc: 'Монтаж шарового крана.' },
-            { title: 'Установка шарового крана с фильтром тонкой очистки', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 690 ₽', desc: 'Кран с фильтром.' },
-            { title: 'Демонтаж кранов / фитингов', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 245 ₽', desc: 'Снятие арматуры.' },
+            // САНТЕХНИКА (С подробным описанием)
+            { title: 'Установка раковины в ванной', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Профессиональный монтаж раковины на стену или тумбу, подключение сифона и проверка герметичности соединений.' },
+            { title: 'Установка раковины на кухне', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Установка кухонной мойки с надежной фиксацией и герметизацией стыков.' },
+            { title: 'Монтаж раковины в столешницу', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 700 ₽', desc: 'Аккуратная врезка раковины в подготовленный проем столешницы с обработкой срезов.' },
+            { title: 'Монтаж раковины над стиральной машиной', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 050 ₽', desc: 'Монтаж компактной раковины-кувшинки над стиральной машиной с подгонкой слива.' },
+            { title: 'Монтаж накладной раковины на столешницу', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Установка накладной чаши раковины на поверхность столешницы.' },
+            { title: 'Установка раковины врезного типа', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Врезной монтаж раковины в мебельную конструкцию.' },
+            { title: 'Установка раковины накладного типа', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Монтаж раковины накладного типа исполнения.' },
+            { title: 'Монтаж раковины модели Кувшинка', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Установка плоской раковины для экономии пространства.' },
+            { title: 'Монтаж раковины с тумбой', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Сборка тумбы, установка раковины и подключение коммуникаций.' },
+            { title: 'Установка подвесной раковины', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Надежное крепление подвесной раковины на капитальную стену.' },
+            { title: 'Установка раковины модели Тюльпан', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Монтаж раковины с декоративным пьедесталом.' },
+            { title: 'Установка кронштейнов для раковины/мойки', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 490 ₽', desc: 'Монтаж прочных несущих кронштейнов по уровню.' },
+            { title: 'Монтаж раковины на кронштейнах', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Установка чаши раковины на опорные кронштейны.' },
+            { title: 'Установка мини-раковины без смесителя и сифона', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 500 ₽', desc: 'Базовый монтаж малогабаритной раковины.' },
+            { title: 'Изготовление отверстий в каменной раковине', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Аккуратное сверление отверстий под смеситель в искусственном камне.' },
+            { title: 'Изготовление отверстий в металлической раковине', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 690 ₽', desc: 'Высверливание отверстий фрезой в нержавеющей мойке.' },
+            { title: 'Замена раковины в ванной', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 180 ₽', desc: 'Демонтаж старой сантехники, подготовка места и установка новой раковины.' },
+            { title: 'Замена раковины в туалете', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 180 ₽', desc: 'Смена раковины в санузле с подключением сифона.' },
+            { title: 'Замена раковины на кухне', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 180 ₽', desc: 'Замена кухонной мойки со сменой обвязки.' },
+            { title: 'Врезка раковины в столешницу', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 500 ₽', desc: 'Точный электролобзиковый выпил отверстия в столешнице.' },
+            { title: 'Монтаж тумбы под раковину', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка и установка мебельного подстолья.' },
+            { title: 'Демонтаж раковины', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 350 ₽', desc: 'Аккуратное снятие старой раковины.' },
+            { title: 'Установка мойки врезного типа', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 550 ₽', desc: 'Монтаж врезной кухонной мойки с герметизацией.' },
+            { title: 'Установка мойки из нержавеющей стали', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 550 ₽', desc: 'Установка стальной мойки на герметик.' },
+            { title: 'Установка мойки накладного типа', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 550 ₽', desc: 'Накладной монтаж мойки на тумбу.' },
+            { title: 'Установка мойки из искусственного камня', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 700 ₽', desc: 'Монтаж тяжелой каменной мойки.' },
+            { title: 'Монтаж стеклянной мойки со смесителем', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка дизайнерской раковины из закаленного стекла.' },
+            { title: 'Демонтаж мойки', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 350 ₽', desc: 'Снятие старой кухонной мойки.' },
+            { title: 'Демонтаж подстолья с мойкой', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 525 ₽', desc: 'Разборка и вынос тумбы с мойкой.' },
+            { title: 'Замена мойки', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 900 ₽', desc: 'Полная замена старой мойки на новую.' },
+            { title: 'Установка мойдодыра', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка зеркала, тумбы и раковины комплекта Мойдодыр.' },
+            { title: 'Сборка мойдодыра', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 500 ₽', desc: 'Сборка элементов комплекта мебели для ванной.' },
+            { title: 'Монтаж фильтра для очистки воды в мойдодыре', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 900 ₽', desc: 'Установка питьевого фильтра внутри тумбы.' },
+            { title: 'Герметизация швов на мойдодыре', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 350 ₽', desc: 'Обработка стыков влагостойким санитарным герметиком.' },
+            { title: 'Демонтаж мойдодыра', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 450 ₽', desc: 'Разборка и отключение мебели для ванной.' },
+            { title: 'Установка смесителя на ванну', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж настенного смесителя на эксцентрики с уплотнением.' },
+            { title: 'Монтаж душевого смесителя', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Установка смесителя для душевой зоны.' },
+            { title: 'Установка смесителя на кухне', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж кухонного крана с подключением гибкой подводки.' },
+            { title: 'Монтаж смесителя в ванной', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Установка смесителя в ванной комнате.' },
+            { title: 'Установка смесителя модели Ёлочка', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 650 ₽', desc: 'Монтаж классического двухвентильного смесителя.' },
+            { title: 'Установка смесителя с одним рычагом', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 650 ₽', desc: 'Установка однорычажного крана с картриджем.' },
+            { title: 'Монтаж смесителя на мойку', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 650 ₽', desc: 'Крепление смесителя на корпус мойки.' },
+            { title: 'Установка смесителя на биде', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 850 ₽', desc: 'Монтаж специализированного смесителя для биде.' },
+            { title: 'Монтаж смесителя на душевую кабину', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 950 ₽', desc: 'Установка смесительного узла в душевую кабину.' },
+            { title: 'Установка смесителя в ванной с лейкой для душа', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Монтаж смесителя в комплекте с душевым гарнитуром.' },
+            { title: 'Установка смесителя с терморегулятором на стену', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Установка термостатического смесителя для стабильной температуры воды.' },
+            { title: 'Установка электронного бесконтактного смесителя', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 300 ₽', desc: 'Монтаж сенсорного автоматического смесителя.' },
+            { title: 'Установка смесителя скрытого монтажа', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 800 ₽', desc: 'Сложный монтаж встроенного в стену смесителя.' },
+            { title: 'Монтаж смесителя на раковину', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Установка крана на раковину.' },
+            { title: 'Монтаж держателя для душевой лейки', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Крепление держателя на стену.' },
+            { title: 'Установка гибкой подводки', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 500 ₽', desc: 'Подключение водных шлангов к водорозеткам.' },
+            { title: 'Ремонт смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 600 ₽', desc: 'Восстановление работоспособности сантехнического прибора.' },
+            { title: 'Замена гибкой подводки смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 600 ₽', desc: 'Смена изношенных шлангов подключения.' },
+            { title: 'Замена картриджа в смесителе', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 600 ₽', desc: 'Установка нового керамического картриджа взамен текущего.' },
+            { title: 'Замена эксцентриков смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Замена крепежных эксцентриков в стене.' },
+            { title: 'Замена уплотнителей или прокладок смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 300 ₽', desc: 'Установка новых резиновых или силиконовых прокладок.' },
+            { title: 'Замена вентильной головки смесителя (кранбуксы)', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 315 ₽', desc: 'Смена кранбуксы для устранения течи вентиля.' },
+            { title: 'Замена девиатора (переключателя) смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 455 ₽', desc: 'Замена механизма переключения вода-душ.' },
+            { title: 'Выпиливание старых эксцентриков', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Аккуратное извлечение прикипевших старых эксцентриков.' },
+            { title: 'Прогон резьб', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 500 ₽', desc: 'Восстановление и очистка резьбовых соединений.' },
+            { title: 'Замена смесителя на кухне', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 700 ₽', desc: 'Демонтаж старого и установка нового кухонного крана.' },
+            { title: 'Замена смесителя в ванной', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 800 ₽', desc: 'Смена настенного смесителя в ванной.' },
+            { title: 'Сборка простого смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 250 ₽', desc: 'Предварительная сборка крана.' },
+            { title: 'Сборка сложного/душевого смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Сборка многофункционального смесителя.' },
+            { title: 'Демонтаж смесителя на кухне', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 250 ₽', desc: 'Снятие кухонного крана.' },
+            { title: 'Демонтаж смесителя в ванной', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 350 ₽', desc: 'Снятие настенного смесителя.' },
+            { title: 'Демонтаж держателя для душевой лейки', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Снятие старого держателя.' },
+            { title: 'Демонтаж эксцентриков', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 210 ₽', desc: 'Демонтаж эксцентриков из труб.' },
+            { title: 'Установка кранов 1/2, 3/4 / 1 дюйм', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 600 ₽', desc: 'Монтаж шаровых и запорных кранов разного диаметра.' },
+            { title: 'Установка угловых кранов 1/2', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 420 ₽', desc: 'Монтаж угловых кранов для подключения техники.' },
+            { title: 'Установка переходников (переходных фитингов)', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 280 ₽', desc: 'Монтаж соединительных переходников.' },
+            { title: 'Установка фитингов из ПВХ', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 210 ₽', desc: 'Монтаж пластиковых фитингов.' },
+            { title: 'Устройство сливного трапа', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 1 050 ₽', desc: 'Монтаж напольного трапа для слива воды.' },
+            { title: 'Установка гофры диаметром 40*50', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 70 ₽', desc: 'Монтаж гибкой пластиковой гофротрубы.' },
+            { title: 'Установка шарового крана (водопровод/отопление)', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 600 ₽', desc: 'Монтаж надежного шарового крана.' },
+            { title: 'Установка шарового крана с фильтром тонкой очистки', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 690 ₽', desc: 'Монтаж комбинированного узла с грязевиком.' },
+            { title: 'Демонтаж кранов / фитингов', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 245 ₽', desc: 'Снятие запорной арматуры.' },
             { title: 'Демонтаж фитингов до 3/4', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 175 ₽', desc: 'Снятие мелких фитингов.' },
-            { title: 'Демонтаж шарового крана до 3/4', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 280 ₽', desc: 'Снятие крана.' },
-            { title: 'Демонтаж шарового крана на стояке', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 385 ₽', desc: 'Снятие со стояка.' },
-            { title: 'Демонтаж простого шарового крана на стояке', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 490 ₽', desc: 'Демонтаж со стояка.' },
-            { title: 'Демонтаж редуктора давления', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 280 ₽', desc: 'Снятие редуктора.' },
-            { title: 'Монтаж стальной ванны / Замена ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Установка стальной ванны.' },
-            { title: 'Установка акриловой ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 2 100 ₽', desc: 'Сборка каркаса и установка.' },
-            { title: 'Установка чугунной ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 2 950 ₽', desc: 'Монтаж чугунной ванны.' },
-            { title: 'Монтаж угловой ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка угловой модели.' },
-            { title: 'Монтаж угловой ванны с гидромассажем', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 3 000 ₽', desc: 'Угловое гидромассажное оборудование.' },
-            { title: 'Монтаж нестандартной по размерам ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 600 ₽', desc: 'Нестандартная установка.' },
-            { title: 'Установка чугунной ванны прямоугольной формы', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 2 065 ₽', desc: 'Прямоугольная чугунная ванна.' },
-            { title: 'Установка ванны нестандартной с электрооборудованием', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 8 400 ₽', desc: 'Сложный электромонтаж ванны.' },
-            { title: 'Установка джакузи', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 3 000 ₽', desc: 'Монтаж ванны с гидромассажем.' },
-            { title: 'Монтаж прямоугольной ванны с гидромассажем', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 4 060 ₽', desc: 'Гидромассажная ванна.' },
-            { title: 'Обвязка системы слива-перелива на ванну', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 574 ₽', desc: 'Монтаж слива.' },
-            { title: 'Устройство вспомогательных опор под ванну', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 245 ₽', desc: 'Усиление опор.' },
-            { title: 'Подготовка места под монтаж ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 770 ₽', desc: 'Подготовка участка.' },
-            { title: 'Корректировка положения ванны по уровню', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 700 ₽', desc: 'Выравнивание.' },
-            { title: 'Установка душевых шторок из пластика', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Пластиковые шторки.' },
-            { title: 'Установка душевых шторок из стекла', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Стеклянные шторки.' },
-            { title: 'Установка жалюзи', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'пог. м', price: 'от 420 ₽', desc: 'Монтаж жалюзи.' },
-            { title: 'Монтаж / Замена душевой штанги', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 350 ₽', desc: 'Установка штанги.' },
-            { title: 'Замена гибкого шланга', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 350 ₽', desc: 'Смена шланга душа.' },
-            { title: 'Изготовление подиума под поддон или ванну', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Строительство подиума.' },
-            { title: 'Установка каркаса для ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 390 ₽', desc: 'Сборка каркаса.' },
-            { title: 'Демонтаж цельномонолитного подиума под ванной', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'м2', price: 'от 1 120 ₽', desc: 'Снос подиума.' },
-            { title: 'Демонтаж монолитного подиума под поддоном', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 260 ₽', desc: 'Снос подиума поддона.' },
-            { title: 'Демонтаж ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 750 ₽', desc: 'Снятие старой ванны.' },
-            { title: 'Демонтаж душевой штанги', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 175 ₽', desc: 'Снятие штанги.' },
-            { title: 'Ремонт ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 350 ₽', desc: 'Восстановление покрытия.' },
-            { title: 'Устранение протечек под ванной', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 400 ₽', desc: 'Ликвидация течи.' },
-            { title: 'Гидроизоляция силиконом / герметиком по контуру ванны', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'м2', price: 'от 200 ₽', desc: 'Герметизация швов.' },
-            { title: 'Гидроизоляция плинтусом ПВХ по контуру ванны', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 350 ₽', desc: 'Монтаж ПВХ плинтуса.' },
-            { title: 'Гидроизоляция керамическим плинтусом', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 1 000 ₽', desc: 'Керамический бордюр.' },
-            { title: 'Герметизация швов мойки, раковины', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 220 ₽', desc: 'Обработка герметиком.' },
-            { title: 'Герметизация швов душевой кабины, ванной', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 450 ₽', desc: 'Герметизация стыков.' },
-            { title: 'Герметизация бордюрной лентой', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 250 ₽', desc: 'Наклейка ленты.' },
-            { title: 'Герметизация швов плитки затиркой', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'м2', price: 'от 150 ₽', desc: 'Затирка швов.' },
-            { title: 'Установка ревизионного люка на готовое место', cat: 'plumbing', sub: 'Сантехнические люки', unit: 'шт.', price: 'от 600 ₽', desc: 'Монтаж люка.' },
-            { title: 'Установка ревизионного люка с подготовкой места', cat: 'plumbing', sub: 'Сантехнические люки', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж с подготовкой проема.' },
-            { title: 'Установка сифона (ванна, раковина, кухня, мойка)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 600 ₽', desc: 'Подключение сифона.' },
-            { title: 'Установка сифона на ванну', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж сифона для ванны.' },
-            { title: 'Монтаж перехода на канализацию', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 560 ₽', desc: 'Установка переходника.' },
-            { title: 'Замена сифона (общая / ванна)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 450-600 ₽', desc: 'Смена старого сифона.' },
-            { title: 'Замена сифона для душевой кабины', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 500 ₽', desc: 'Смена сифона душа.' },
-            { title: 'Замена колена / гофры / сливного устройства', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 280 ₽', desc: 'Замена элементов обвязки.' },
-            { title: 'Ремонт сифона (ванна, душевая кабина)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 280 ₽', desc: 'Устранение течи сифона.' },
-            { title: 'Демонтаж сифона (ванна, раковина, мойка)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 200 ₽', desc: 'Снятие сифона.' },
-            { title: 'Установка душевой кабины / панели', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 990 ₽', desc: 'Сборка и монтаж кабины.' },
-            { title: 'Устройство душевого поддона', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 600 ₽', desc: 'Монтаж поддона.' },
-            { title: 'Сборка душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 2 200 ₽', desc: 'Сборка элементов кабины.' },
-            { title: 'Установка гидромассажной панели', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж панели.' },
-            { title: 'Монтаж душевой кабины без гидромассажа', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 3 500 ₽', desc: 'Установка простой кабины.' },
-            { title: 'Монтаж душевой кабины с гидромассажем / парогенератором', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 4 500 ₽', desc: 'Сложный монтаж кабины.' },
-            { title: 'Установка душевого бокса', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Монтаж бокса.' },
-            { title: 'Монтаж душевого уголка', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка уголка.' },
-            { title: 'Гидроизоляция швов душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'пог. м', price: 'от 350 ₽', desc: 'Герметизация швов кабины.' },
-            { title: 'Ремонт отдельных элементов душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Ремонт фурнитуры.' },
-            { title: 'Замена душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 3 500 ₽', desc: 'Смена старой кабины.' },
-            { title: 'Навес дверей душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Регулировка и навес дверей.' },
-            { title: 'Замена смесителя в душевой кабине', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 700 ₽', desc: 'Смена смесителя кабины.' },
-            { title: 'Монтаж / Подключение парогенератора', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 260 ₽', desc: 'Подключение генератора пара.' },
-            { title: 'Замена парогенератора', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 3 360 ₽', desc: 'Смена парогенератора.' },
-            { title: 'Демонтаж поддона душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 700 ₽', desc: 'Снятие поддона.' },
-            { title: 'Демонтаж душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Разборка кабины.' },
-            { title: 'Установка напольного унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж напольного унитаза.' },
-            { title: 'Монтаж подвесного унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 800 ₽', desc: 'Установка на инсталляцию.' },
-            { title: 'Монтаж инсталляции подвесного унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка каркаса.' },
-            { title: 'Установка сидения на унитаз', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 350 ₽', desc: 'Замена сиденья/крышки.' },
-            { title: 'Изготовление подиума под унитаз', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 000-1 400 ₽', desc: 'Строительство подиума.' },
-            { title: 'Изготовление площадки на унитаз (наливной пол)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 910 ₽', desc: 'Заливка площадки.' },
-            { title: 'Установка писсуара (простого / сложного)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Монтаж писсуара.' },
-            { title: 'Установка гофры на унитаз', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 500 ₽', desc: 'Монтаж гофры.' },
-            { title: 'Замена гофры на унитазе (без/с демонтажем)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 200-2 500 ₽', desc: 'Смена гофротрубы.' },
-            { title: 'Установка / ремонт бачка унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 500-1 200 ₽', desc: 'Монтаж/ремонт бачка.' },
-            { title: 'Монтаж сложного бачка унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 400 ₽', desc: 'Сложный монтаж бачка.' },
-            { title: 'Замена арматуры / механизма бачка унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Смена механизма слива.' },
-            { title: 'Устранение течи бачка унитаза / Ремонт унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 750 ₽', desc: 'Ремонт и устранение течи.' },
-            { title: 'Ремонт инсталляции', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Ремонт скрытого бачка.' },
-            { title: 'Замена унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Смена старого унитаза.' },
-            { title: 'Демонтаж унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 650 ₽', desc: 'Снятие унитаза.' },
-            { title: 'Монтаж напольного биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка биде.' },
-            { title: 'Установка подвесного биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 800 ₽', desc: 'Монтаж подвесного биде.' },
-            { title: 'Сложный монтаж биде в углу', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 2 000 ₽', desc: 'Угловая установка.' },
-            { title: 'Подключение биде (обычное / к инсталляции)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 650-800 ₽', desc: 'Подключение к коммуникациям.' },
-            { title: 'Установка крышки биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 400 ₽', desc: 'Монтаж крышки.' },
-            { title: 'Монтаж инсталляции для биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка рамы.' },
-            { title: 'Прочистка засоров биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Устранение засора.' },
-            { title: 'Ремонт / Демонтаж биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Ремонт или снятие.' },
-            { title: 'Установка полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Монтаж водяного или электрического полотенцесушителя.' },
-            { title: 'Установка электрического полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 900 ₽', desc: 'Монтаж электросушителя.' },
-            { title: 'Перенос полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Перенос на новое место.' },
-            { title: 'Врезка полотенцесушителя в стояк горячей воды', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Врезка в стояк ГВС.' },
-            { title: 'Монтаж кранов полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 500 ₽', desc: 'Установка запорных кранов.' },
-            { title: 'Устранение течи полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 500 ₽', desc: 'Ремонт соединения.' },
+            { title: 'Демонтаж шарового крана до 3/4', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 280 ₽', desc: 'Снятие шарового крана.' },
+            { title: 'Демонтаж шарового крана на стояке', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 385 ₽', desc: 'Демонтаж крана на общедомовом стояке.' },
+            { title: 'Демонтаж простого шарового крана на стояке', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 490 ₽', desc: 'Демонтаж крана стояка с перекрытием.' },
+            { title: 'Демонтаж редуктора давления', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 280 ₽', desc: 'Снятие регулировочного редуктора.' },
+            { title: 'Монтаж стальной ванны / Замена ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Установка стальной ванны на ножки, подключение сифона и заземления.' },
+            { title: 'Установка акриловой ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 2 100 ₽', desc: 'Сборка каркаса акриловой ванны, выставление по уровню и обвязка.' },
+            { title: 'Установка чугунной ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 2 950 ₽', desc: 'Монтаж тяжелой чугунной ванны на опорные ножки.' },
+            { title: 'Монтаж угловой ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка угловой акриловой или стальной ванны.' },
+            { title: 'Монтаж угловой ванны с гидромассажем', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 3 000 ₽', desc: 'Установка угловой гидромассажной ванны с подключением электропитания.' },
+            { title: 'Монтаж нестандартной по размерам ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 600 ₽', desc: 'Монтаж ванны нестандартной формы.' },
+            { title: 'Установка чугунной ванны прямоугольной формы', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 2 065 ₽', desc: 'Монтаж классической прямоугольной чугунной ванны.' },
+            { title: 'Установка ванны нестандартной с электрооборудованием', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 8 400 ₽', desc: 'Сложный монтаж ванны с электронасосами и подсветкой.' },
+            { title: 'Установка джакузи', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 3 000 ₽', desc: 'Профессиональная установка ванны с гидромассажем.' },
+            { title: 'Монтаж прямоугольной ванны с гидромассажем', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 4 060 ₽', desc: 'Установка и подключение гидромассажного оборудования.' },
+            { title: 'Обвязка системы слива-перелива на ванну', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 574 ₽', desc: 'Монтаж полуавтоматического или стандартного слива-перелива.' },
+            { title: 'Устройство вспомогательных опор под ванну', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 245 ₽', desc: 'Монтаж дополнительных подпорных элементов.' },
+            { title: 'Подготовка места под монтаж ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 770 ₽', desc: 'Подготовка площадки и стен под установку.' },
+            { title: 'Корректировка положения ванны по уровню', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 700 ₽', desc: 'Тюнинг ножек для идеального горизонтального уровня.' },
+            { title: 'Установка душевых шторок из пластика', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Монтаж пластикового ограждения на бортик ванны.' },
+            { title: 'Установка душевых шторок из стекла', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж стеклянных распашных или раздвижных шторок.' },
+            { title: 'Установка жалюзи', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'пог. м', price: 'от 420 ₽', desc: 'Монтаж солнцезащитных или влагостойких жалюзи.' },
+            { title: 'Монтаж / Замена душевой штанги', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 350 ₽', desc: 'Установка штанги с держателем ручной лейки.' },
+            { title: 'Замена гибкого шланга', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 350 ₽', desc: 'Смена изношенного душевого шланга.' },
+            { title: 'Изготовление подиума под поддон или ванну', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Строительство кирпичного или каркасного подиума.' },
+            { title: 'Установка каркаса для ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 390 ₽', desc: 'Сборка металлического несущего каркаса ванны.' },
+            { title: 'Демонтаж цельномонолитного подиума под ванной', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'м2', price: 'от 1 120 ₽', desc: 'Разрушение бетонного подиума.' },
+            { title: 'Демонтаж монолитного подиума под поддоном', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 260 ₽', desc: 'Демонтаж основания душевого поддона.' },
+            { title: 'Демонтаж ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 750 ₽', desc: 'Снятие и вынос старой ванны.' },
+            { title: 'Демонтаж душевой штанги', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 175 ₽', desc: 'Снятие креплений душа.' },
+            { title: 'Ремонт ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 350 ₽', desc: 'Местный ремонт сколов и трещин акрила.' },
+            { title: 'Устранение протечек под ванной', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 400 ₽', desc: 'Поиск и ликвидация причин протечки воды.' },
+            { title: 'Гидроизоляция силиконом / герметиком по контуру ванны', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'м2', price: 'от 200 ₽', desc: 'Нанесение влагозащитного силиконового слоя.' },
+            { title: 'Гидроизоляция плинтусом ПВХ по контуру ванны', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 350 ₽', desc: 'Монтаж пластикового бордюра по краю ванны.' },
+            { title: 'Гидроизоляция керамическим плинтусом', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 1 000 ₽', desc: 'Укладка эстетичного керамического бордюра.' },
+            { title: 'Герметизация швов мойки, раковины', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 220 ₽', desc: 'Обработка стыков раковины со стеной.' },
+            { title: 'Герметизация швов душевой кабины, ванной', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 450 ₽', desc: 'Герметизация примыканий в мокрой зоне.' },
+            { title: 'Герметизация бордюрной лентой', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 250 ₽', desc: 'Наклейка самоклеющейся бордюрной ленты.' },
+            { title: 'Герметизация швов плитки затиркой', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'м2', price: 'от 150 ₽', desc: 'Обновление межплиточной затирки.' },
+            { title: 'Установка ревизионного люка на готовое место', cat: 'plumbing', sub: 'Сантехнические люки', unit: 'шт.', price: 'от 600 ₽', desc: 'Монтаж сантехнического лючка-невидимки.' },
+            { title: 'Установка ревизионного люка с подготовкой места', cat: 'plumbing', sub: 'Сантехнические люки', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Устройство проема и монтаж люка.' },
+            { title: 'Установка сифона (ванна, раковина, кухня, мойка)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 600 ₽', desc: 'Сборка и подключение сифона с защитой от запаха.' },
+            { title: 'Установка сифона на ванну', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж обвязки слива ванны.' },
+            { title: 'Монтаж перехода на канализацию', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 560 ₽', desc: 'Установка манжет и переходных труб.' },
+            { title: 'Замена сифона (общая / ванна)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 450-600 ₽', desc: 'Демонтаж старого и установка нового сифона.' },
+            { title: 'Замена сифона для душевой кабины', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 500 ₽', desc: 'Смена сливного сифона под душевым поддоном.' },
+            { title: 'Замена колена / гофры / сливного устройства', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 280 ₽', desc: 'Замена гибких элементов слива.' },
+            { title: 'Ремонт сифона (ванна, душевая кабина)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 280 ₽', desc: 'Устранение течи в сифонном узле.' },
+            { title: 'Демонтаж сифона (ванна, раковина, мойка)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 200 ₽', desc: 'Снятие старого сифона.' },
+            { title: 'Установка душевой кабины / панели', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 990 ₽', desc: 'Базовый монтаж душевого оборудования.' },
+            { title: 'Устройство душевого поддона', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 600 ₽', desc: 'Монтаж и выравнивание поддона.' },
+            { title: 'Сборка душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 2 200 ₽', desc: 'Сборка стенок, крыши и дверей кабины.' },
+            { title: 'Установка гидромассажной панели', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж душевой панели с гидромассажем.' },
+            { title: 'Монтаж душевой кабины без гидромассажа', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 3 500 ₽', desc: 'Установка простой душевой кабины.' },
+            { title: 'Монтаж душевой кабины с гидромассажем / парогенератором', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 4 500 ₽', desc: 'Сложный монтаж кабины с электроникой.' },
+            { title: 'Установка душевого бокса', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Монтаж глубокого душевого бокса.' },
+            { title: 'Монтаж душевого уголка', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка душевого ограждения.' },
+            { title: 'Гидроизоляция швов душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'пог. м', price: 'от 350 ₽', desc: 'Герметизация стыков кабины силиконом.' },
+            { title: 'Ремонт отдельных элементов душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Замена роликов, леек, шлангов.' },
+            { title: 'Замена душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 3 500 ₽', desc: 'Демонтаж старой и установка новой кабины.' },
+            { title: 'Навес дверей душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Регулировка стеклянных створок.' },
+            { title: 'Замена смесителя в душевой кабине', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 700 ₽', desc: 'Смена многорежимного смесителя кабины.' },
+            { title: 'Монтаж / Подключение парогенератора', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 260 ₽', desc: 'Подключение генератора пара к сети и воде.' },
+            { title: 'Замена парогенератора', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 3 360 ₽', desc: 'Смена неисправного парогенератора.' },
+            { title: 'Демонтаж поддона душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 700 ₽', desc: 'Снятие душевого поддона.' },
+            { title: 'Демонтаж душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Полная разборка кабины.' },
+            { title: 'Установка напольного унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж напольного унитаза, подключение гофры и бачка.' },
+            { title: 'Монтаж подвесного унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 800 ₽', desc: 'Навеска чаши подвесного унитаза на инсталляцию.' },
+            { title: 'Монтаж инсталляции подвесного унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Сборка и жесткая фиксация рамы инсталляции.' },
+            { title: 'Установка сидения на унитаз', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 350 ₽', desc: 'Замена крышки и сиденья унитаза.' },
+            { title: 'Изготовление подиума под унитаз', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 000-1 400 ₽', desc: 'Строительство подставки для поднятия уровня.' },
+            { title: 'Изготовление площадки на унитаз (наливной пол)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 910 ₽', desc: 'Заливка выравнивающей площадки.' },
+            { title: 'Установка писсуара (простого / сложного)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Монтаж настенного писсуара с сифоном.' },
+            { title: 'Установка гофры на унитаз', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 500 ₽', desc: 'Подключение выпуска унитаза к канализации.' },
+            { title: 'Замена гофры на унитазе (без/с демонтажем)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 200-2 500 ₽', desc: 'Смена гофротрубы с разборкой соединения.' },
+            { title: 'Установка / ремонт бачка унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 500-1 200 ₽', desc: 'Монтаж сливного бачка и настройка арматуры.' },
+            { title: 'Монтаж сложного бачка унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 400 ₽', desc: 'Установка нестандартного бачка.' },
+            { title: 'Замена арматуры / механизма бачка унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Установка нового внутреннего наливного и спускного механизма.' },
+            { title: 'Устранение течи бачка унитаза / Ремонт унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 750 ₽', desc: 'Ремонт узла слива и устранение протечек воды.' },
+            { title: 'Ремонт инсталляции', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Ремонт скрытого механизма смыва в стене.' },
+            { title: 'Замена унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Демонтаж старого унитаза и установка нового.' },
+            { title: 'Демонтаж унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 650 ₽', desc: 'Аккуратное снятие старого унитаза.' },
+            { title: 'Монтаж напольного биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка напольного биде со смесителем.' },
+            { title: 'Установка подвесного биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 800 ₽', desc: 'Монтаж подвесного биде на инсталляцию.' },
+            { title: 'Сложный монтаж биде в углу', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 2 000 ₽', desc: 'Нестандартная угловая установка биде.' },
+            { title: 'Подключение биде (обычное / к инсталляции)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 650-800 ₽', desc: 'Подключение воды и сифона.' },
+            { title: 'Установка крышки биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 400 ₽', desc: 'Монтаж крышки-биде.' },
+            { title: 'Монтаж инсталляции для биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка опорной рамы биде.' },
+            { title: 'Прочистка засоров биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Устранение засора в сливе биде.' },
+            { title: 'Ремонт / Демонтаж биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Ремонт или снятие сантехники.' },
+            { title: 'Установка полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Монтаж водяного полотенцесушителя с подключением к контуру.' },
+            { title: 'Установка электрического полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 900 ₽', desc: 'Монтаж электросушителя с подключением в розетку.' },
+            { title: 'Перенос полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Смещение полотенцесушителя на другую стену.' },
+            { title: 'Врезка полотенцесушителя в стояк горячей воды', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Врезка в стояк ГВС с устройством байпаса.' },
+            { title: 'Монтаж кранов полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 500 ₽', desc: 'Установка отсечных кранов.' },
+            { title: 'Устранение течи полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 500 ₽', desc: 'Ремонт резьбовых соединений сушителя.' },
             { title: 'Демонтаж полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 750 ₽', desc: 'Снятие прибора.' },
-            { title: 'Установка электрической сушилки для рук', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 644 ₽', desc: 'Монтаж сушилки.' },
-            { title: 'Монтаж сушилки для белья', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 700 ₽', desc: 'Установка бельевой сушилки.' },
-            { title: 'Монтаж / Замена канализационных труб', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 450 ₽', desc: 'Разводка труб ПВХ.' },
-            { title: 'Штробление под канализационные трубы', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 300 ₽', desc: 'Создание штроб.' },
-            { title: 'Сборка фитингов и установка сгона', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 560 ₽', desc: 'Монтаж элементов.' },
-            { title: 'Замена тройника / Отвод ПВХ D 110мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 500 ₽', desc: 'Замена тройника.' },
-            { title: 'Замена переходника (манжеты)', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 245 ₽', desc: 'Смена манжеты.' },
-            { title: 'Обустройство заглушки трубы', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 70 ₽', desc: 'Установка заглушки.' },
-            { title: 'Демонтаж ПВХ труб канализации', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 175-350 ₽', desc: 'Снятие пластиковых труб.' },
-            { title: 'Демонтаж чугунных труб канализации', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 400 ₽', desc: 'Снятие чугуна.' },
-            { title: 'Демонтаж труб канализационного стояка', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'объем', price: 'от 800 ₽', desc: 'Снос стояка.' },
-            { title: 'Установка / Замена труб водоснабжения', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'точка', price: 'от 800 ₽', desc: 'Монтаж точек водорозеток.' },
-            { title: 'Нарезка резьбы до 30мм / до 50мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 385-455 ₽', desc: 'Нарезка резьбы на трубах.' },
-            { title: 'Штробление стен под водоснабжение', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 250 ₽', desc: 'Штробы под воду.' },
-            { title: 'Заделка штробы', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 210 ₽', desc: 'Заделка раствором.' },
-            { title: 'Разводка металлопластиковых / ПП труб', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 800 ₽', desc: 'Монтаж разводки.' },
-            { title: 'Замена стояков водоснабжения', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 5 600 ₽', desc: 'Смена стояков.' },
-            { title: 'Расчеканка чугунной трубы D 110мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 1 050 ₽', desc: 'Демонтаж чеканки.' },
-            { title: 'Врезка тройника 3/4 или ПВХ до 50мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 455 ₽', desc: 'Врезка тройника.' },
-            { title: 'Установка клапана (вентиля)', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 400 ₽', desc: 'Монтаж вентиля.' },
-            { title: 'Установка соединительного хомута', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 500 ₽', desc: 'Монтаж хомута.' },
-            { title: 'Демонтаж труб водоснабжения/отопления', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 250-280 ₽', desc: 'Снятие труб.' },
-            { title: 'Установка фильтра (Амвэй, Аквафор, Atoll)', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 650 ₽', desc: 'Монтаж фильтра.' },
-            { title: 'Установка проточного фильтра / под мойку', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 750 ₽', desc: 'Подключение фильтра.' },
-            { title: 'Монтаж фильтра Барьер', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 700 ₽', desc: 'Установка Барьер.' },
-            { title: 'Установка фильтра грубой / тонкой очистки', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж грязевика.' },
-            { title: 'Установка фильтра на магистраль', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 450 ₽', desc: 'Магистральный фильтр.' },
-            { title: 'Замена картриджа в фильтре', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 500 ₽', desc: 'Смена картриджей.' },
-            { title: 'Замена / чистка аэратора', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 280 ₽', desc: 'Обслуживание аэратора.' },
-            { title: 'Демонтаж фильтра тонкой очистки', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 175-350 ₽', desc: 'Снятие фильтра.' },
-            { title: 'Устранение бытовых засоров / Чистка сифона', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Прочистка труб и сифонов.' },
-            { title: 'Сложный засор (со спец. оборудованием)', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Профессиональная прочистка.' },
-            { title: 'Устранение протечек', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 500 ₽', desc: 'Ликвидация течи.' },
-            { title: 'Монтаж системы защиты от протечек', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 2 975 ₽', desc: 'Установка системы аквасторож.' },
-            { title: 'Установка измельчителя отходов', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 1 260 ₽', desc: 'Монтаж диспозера.' },
-            { title: 'Установка / Замена радиаторов отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Монтаж батарей отопления.' },
-            { title: 'Установка стальных радиаторов', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж стальных батарей.' },
-            { title: 'Перенос батареи отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 400 ₽', desc: 'Смещение радиатора.' },
-            { title: 'Врезка крана Маевского', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 700 ₽', desc: 'Установка воздухоотводчика.' },
-            { title: 'Монтаж байпаса', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 500-1 750 ₽', desc: 'Установка обводной линии.' },
-            { title: 'Демонтаж батарей отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 450-840 ₽', desc: 'Снятие батарей.' },
-            { title: 'Монтаж бойлера / накопительного водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Монтаж бойлера.' },
-            { title: 'Установка проточного водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Монтаж проточника.' },
-            { title: 'Подключение водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 650 ₽', desc: 'Подключение к коммуникациям.' },
-            { title: 'Установка циркуляционного насоса', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 680 ₽', desc: 'Монтаж насоса.' },
-            { title: 'Замена водонагревателя (Аристон, Термекс)', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 650 ₽', desc: 'Смена бойлера.' },
-            { title: 'Ремонт накопительного водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 2 100-2 450 ₽', desc: 'Ремонт бойлера.' },
-            { title: 'Диагностика водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 330 ₽', desc: 'Проверка работы.' },
-            { title: 'Демонтаж водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 450 ₽', desc: 'Снятие водонагревателя.' },
-            { title: 'Монтаж коллектора отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Установка гребенки.' },
-            { title: 'Экран под ванну (установка / подрезка)', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 300-600 ₽', desc: 'Монтаж экрана.' },
+            { title: 'Установка электрической сушилки для рук', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 644 ₽', desc: 'Монтаж настенной сушилки для рук.' },
+            { title: 'Монтаж сушилки для белья', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 700 ₽', desc: 'Установка потолочной или настенной сушилки.' },
+            { title: 'Монтаж / Замена канализационных труб', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 450 ₽', desc: 'Прокладка пластиковых труб ПВХ для отвода стоков.' },
+            { title: 'Штробление под канализационные трубы', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 300 ₽', desc: 'Штробление стен под скрытый монтаж труб.' },
+            { title: 'Сборка фитингов и установка сгона', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 560 ₽', desc: 'Монтаж соединительных узлов.' },
+            { title: 'Замена тройника / Отвод ПВХ D 110мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 500 ₽', desc: 'Замена главного канализационного тройника.' },
+            { title: 'Замена переходника (манжеты)', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 245 ₽', desc: 'Смена резиновых уплотнительных манжет.' },
+            { title: 'Обустройство заглушки трубы', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 70 ₽', desc: 'Установка временной или постоянной заглушки.' },
+            { title: 'Демонтаж ПВХ труб канализации', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 175-350 ₽', desc: 'Разборка пластиковых труб.' },
+            { title: 'Демонтаж чугунных труб канализации', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 400 ₽', desc: 'Аккуратный демонтаж тяжелого чугуна.' },
+            { title: 'Демонтаж труб канализационного стояка', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'объем', price: 'от 800 ₽', desc: 'Демонтаж общедомового стояка.' },
+            { title: 'Установка / Замена труб водоснабжения', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'точка', price: 'от 800 ₽', desc: 'Монтаж точек разводки воды.' },
+            { title: 'Нарезка резьбы до 30мм / до 50мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 385-455 ₽', desc: 'Нарезка резьбы на металлических трубах.' },
+            { title: 'Штробление стен под водоснабжение', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 250 ₽', desc: 'Создание штроб для водяных труб.' },
+            { title: 'Заделка штробы', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 210 ₽', desc: 'Заделка штроб штукатурным раствором.' },
+            { title: 'Разводка металлопластиковых / ПП труб', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 800 ₽', desc: 'Монтаж разводки воды из полипропилена.' },
+            { title: 'Замена стояков водоснабжения', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 5 600 ₽', desc: 'Смена стояков ХВС/ГВС.' },
+            { title: 'Расчеканка чугунной трубы D 110мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 1 050 ₽', desc: 'Удаление старой цементной чеканки.' },
+            { title: 'Врезка тройника 3/4 или ПВХ до 50мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 455 ₽', desc: 'Врезка отвода в действующий трубопровод.' },
+            { title: 'Установка клапана (вентиля)', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 400 ₽', desc: 'Монтаж обратного клапана.' },
+            { title: 'Установка соединительного хомута', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 500 ₽', desc: 'Монтаж обжимного хомута.' },
+            { title: 'Демонтаж труб водоснабжения/отопления', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 250-280 ₽', desc: 'Снятие старых труб.' },
+            { title: 'Установка фильтра (Амвэй, Аквафор, Atoll)', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 650 ₽', desc: 'Монтаж систем глубокой очистки воды под мойку.' },
+            { title: 'Установка проточного фильтра / под мойку', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 750 ₽', desc: 'Установка питьевого фильтра с отдельным краном.' },
+            { title: 'Монтаж фильтра Барьер', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 700 ₽', desc: 'Подключение фильтрусющей системы Барьер.' },
+            { title: 'Установка фильтра грубой / тонкой очистки', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж грязевиков и магистральных фильтров.' },
+            { title: 'Установка фильтра на магистраль', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж колбы фильтра на ввод воды.' },
+            { title: 'Замена картриджа в фильтре', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 500 ₽', desc: 'Смена фильтрующих элементов с промывкой колб.' },
+            { title: 'Замена / чистка аэратора', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 280 ₽', desc: 'Очистка или замена сетки аэратора на изливе.' },
+            { title: 'Демонтаж фильтра тонкой очистки', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 175-350 ₽', desc: 'Снятие фильтрующего узла.' },
+            { title: 'Устранение бытовых засоров / Чистка сифона', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Прочистка сифонов и труб от накопившихся загрязнений.' },
+            { title: 'Сложный засор (со спец. оборудованием)', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Устранение сложных глубоких засоров тросом или насосом.' },
+            { title: 'Устранение протечек', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 500 ₽', desc: 'Быстрый ремонт соединений для остановки течи.' },
+            { title: 'Монтаж системы защиты от протечек', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 2 975 ₽', desc: 'Установка датчиков и кранов с электроприводом (Аквасторож, Нептун).' },
+            { title: 'Установка измельчителя отходов', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 1 260 ₽', desc: 'Монтаж диспозера пищевых отходов в мойку.' },
+            { title: 'Установка / Замена радиаторов отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Монтаж биметаллических или алюминиевых радиаторов.' },
+            { title: 'Установка стальных радиаторов', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж панельных стальных батарей.' },
+            { title: 'Перенос батареи отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 400 ₽', desc: 'Смещение радиатора по стене.' },
+            { title: 'Врезка крана Маевского', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 700 ₽', desc: 'Установка игольчатого крана для спуска воздуха.' },
+            { title: 'Монтаж байпаса', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 500-1 750 ₽', desc: 'Установка обводной перемычки на отопление.' },
+            { title: 'Демонтаж батарей отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 450-840 ₽', desc: 'Снятие старых чугунных батарей.' },
+            { title: 'Монтаж бойлера / накопительного водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Навеска бойлера на стену и подключение к трубам.' },
+            { title: 'Установка проточного водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Монтаж компактного проточного нагревателя.' },
+            { title: 'Подключение водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 650 ₽', desc: 'Подключение прибора к воде и электричеству.' },
+            { title: 'Установка циркуляционного насоса', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 680 ₽', desc: 'Монтаж насоса в систему отопления.' },
+            { title: 'Замена водонагревателя (Аристон, Термекс)', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 650 ₽', desc: 'Демонтаж старого и монтаж нового бойлера.' },
+            { title: 'Ремонт накопительного водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 2 100-2 450 ₽', desc: 'Замена ТЭНа, термостата или чистка бака от накипи.' },
+            { title: 'Диагностика водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 330 ₽', desc: 'Проверка электрической и гидравлической части.' },
+            { title: 'Демонтаж водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 450 ₽', desc: 'Снятие водонагревателя со стены.' },
+            { title: 'Монтаж коллектора отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Установка распределительной гребенки.' },
+            { title: 'Экран под ванну (установка / подрезка)', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 300-600 ₽', desc: 'Монтаж декоративного экрана под ванну.' },
 
-            // ЭЛЕКТРИКА
-            { title: 'Установка розетки (внутренняя / наружная)', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130 ₽', desc: 'Монтаж розетки.' },
-            { title: 'Установка розетки с заземлением', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 200 ₽', desc: 'Монтаж розетки с заземляющим контактом.' },
-            { title: 'Установка компьютерной / телефонной / ТВ розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 180 ₽', desc: 'Монтаж слабых токов.' },
-            { title: 'Установка подрозетника', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 80 ₽', desc: 'Монтаж установочной коробки.' },
-            { title: 'Установка розетки для электроплиты', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 350 ₽', desc: 'Монтаж силовой розетки.' },
-            { title: 'Установка распаечной коробки (внутренняя / наружная)', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 400-550 ₽', desc: 'Монтаж распред. коробки.' },
-            { title: 'Замена розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130 ₽', desc: 'Демонтаж старой и установка новой розетки.' },
-            { title: 'Ремонт розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 280 ₽', desc: 'Восстановление работоспособности розетки.' },
-            { title: 'Демонтаж розетки / подрозетника', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 80 ₽', desc: 'Снятие розетки.' },
-            { title: 'Установка одноклавишного выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130-200 ₽', desc: 'Монтаж выключателя.' },
-            { title: 'Установка двухклавишного выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 230-350 ₽', desc: 'Монтаж двухклавишного выключателя.' },
-            { title: 'Установка проходного выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 350-750 ₽', desc: 'Монтаж проходного переключателя.' },
-            { title: 'Установка диммера (регулятора света)', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 350 ₽', desc: 'Монтаж диммера.' },
-            { title: 'Замена / Ремонт выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130-350 ₽', desc: 'Смена выключателя.' },
-            { title: 'Демонтаж выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130 ₽', desc: 'Снятие выключателя.' },
-            { title: 'Установка точечного / потолочного светильника', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 150-180 ₽', desc: 'Монтаж спотов и точечных светильников.' },
-            { title: 'Установка светильника Армстронг', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 550 ₽', desc: 'Монтаж офисного светильника.' },
-            { title: 'Установка трековых светильников', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж трековых систем.' },
-            { title: 'Установка настенных светильников (бра)', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 350 ₽', desc: 'Установка настенного света.' },
-            { title: 'Установка уличных светильников', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 700 ₽', desc: 'Монтаж фасадного или уличного света.' },
-            { title: 'Установка светильников в натяжной потолок', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 180 ₽', desc: 'Монтаж в полотно.' },
-            { title: 'Замена патрона в светильнике', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 120 ₽', desc: 'Смена патрона.' },
-            { title: 'Демонтаж светильника', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 150 ₽', desc: 'Снятие светильника.' },
-            { title: 'Установка потолочной люстры (анкер / крюк)', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 650 ₽', desc: 'Навеска и подключение люстры.' },
-            { title: 'Сборка простой / сложной люстры', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 400-650 ₽', desc: 'Сборка осветительного прибора.' },
-            { title: 'Монтаж тяжелой люстры (от 5 до 18 кг)', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 950-4 200 ₽', desc: 'Установка тяжелых люстр.' },
-            { title: 'Установка светодиодной / хрустальной люстры', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 800 ₽', desc: 'Монтаж сложной люстры.' },
-            { title: 'Замена / Демонтаж люстры', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 450-650 ₽', desc: 'Смена люстры.' },
-            { title: 'Подключение / Установка бытовой техники', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 750 ₽', desc: 'Подключение приборов.' },
-            { title: 'Установка холодильника (в т.ч. встраиваемого)', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 550-1 250 ₽', desc: 'Монтаж холодильника.' },
-            { title: 'Установка холодильника с льдогенератором', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 1 400 ₽', desc: 'Подключение льдогенератора.' },
-            { title: 'Установка электроплиты / варочной панели', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 850 ₽', desc: 'Подключение плиты.' },
-            { title: 'Монтаж встраиваемого духового шкафа', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 1 150 ₽', desc: 'Монтаж духовки.' },
-            { title: 'Установка комплекта (панель + духовка)', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 2 000 ₽', desc: 'Монтаж комплекта.' },
-            { title: 'Монтаж встраиваемой СВЧ / Кронштейна', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 980 ₽', desc: 'Установка микроволновки.' },
-            { title: 'Установка вытяжки', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 850 ₽', desc: 'Монтаж вытяжки.' },
-            { title: 'Подключение вытяжки', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 350 ₽', desc: 'Подключение к сети.' },
-            { title: 'Монтаж вентилятора (бытовой / канальный)', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 400-630 ₽', desc: 'Установка вентилятора.' },
-            { title: 'Монтаж телевизора на стену', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 1 150 ₽', desc: 'Крепление ТВ.' },
-            { title: 'Установка однополюсного автомата', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 200-300 ₽', desc: 'Монтаж автомата.' },
-            { title: 'Установка двухполюсного / четырехполюсного УЗО', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 350-450 ₽', desc: 'Монтаж УЗО.' },
-            { title: 'Установка Диф. автомата', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 400-450 ₽', desc: 'Монтаж дифавтомата.' },
-            { title: 'Сборка электрощита', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 2 600-3 000 ₽', desc: 'Сборка щита.' },
-            { title: 'Установка щитка (накладной / встраиваемый)', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 1 100-1 650 ₽', desc: 'Монтаж бокса.' },
-            { title: 'Монтаж распред. щитка (от 6 до 72 автоматов)', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 3 150-17 220 ₽', desc: 'Сборка большого щита.' },
-            { title: 'Установка счетчика (однофазный / трехфазный)', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 1 190-1 400 ₽', desc: 'Монтаж прибора учета.' },
-            { title: 'Монтаж стабилизатора напряжения', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 1 750 ₽', desc: 'Установка стабилизатора.' },
-            { title: 'Прокладка кабеля (в зависимости от сечения)', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 80-180 ₽', desc: 'Монтаж кабеля.' },
-            { title: 'Прокладка провода (до 120 кв. мм)', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 60 ₽', desc: 'Монтаж провода.' },
-            { title: 'Прокладка кабель-канала / короба', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 60-260 ₽', desc: 'Монтаж короба.' },
-            { title: 'Затяжка кабеля в гофру', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 20 ₽', desc: 'Протяжка в гофротрубу.' },
-            { title: 'Замена проводки в квартире', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 300 ₽', desc: 'Смена линий.' },
-            { title: 'Прокладка кабеля бронированного', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 740 ₽', desc: 'Монтаж бронекабеля.' },
-            { title: 'Поиск обрыва эл. цепи / Устранение КЗ', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'шт.', price: 'от 390-800 ₽', desc: 'Диагностика и ремонт.' },
-            { title: 'Штробление стен под проводку', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м.', price: 'от 180 ₽', desc: 'Штробы.' },
-            { title: 'Демонтаж проводки', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 60 ₽', desc: 'Снятие старой проводки.' },
-            { title: 'Монтаж / Подключение / Замена теплого пола', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 450 ₽', desc: 'Укладка теплого пола.' },
-            { title: 'Укладка теплого пола под ламинат', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 650 ₽', desc: 'Монтаж под ламинат.' },
-            { title: 'Монтаж инфракрасного теплого пола под ламинат', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 280 ₽', desc: 'ИК пленка.' },
-            { title: 'Монтаж терморегулятора с датчиком', cat: 'electric', sub: 'Теплый пол', unit: 'шт.', price: 'от 500 ₽', desc: 'Установка регулятора.' },
-            { title: 'Демонтаж теплого пола', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 180 ₽', desc: 'Снятие системы.' },
-            { title: 'Однокомнатная квартира (до 35 м2; 14 точек; бокс до 8)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 13 500 ₽', desc: 'Электромонтаж под ключ.' },
-            { title: 'Двухкомнатная квартира (до 45 м2; 16 точек; бокс до 10)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 17 000 ₽', desc: 'Электромонтаж под ключ.' },
-            { title: 'Трехкомнатная квартира (до 60 м2; 22 точки; бокс до 12)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 24 000 ₽', desc: 'Электромонтаж под ключ.' },
-            { title: 'Дом площадью до 70 м2 (22 точки; бокс до 14)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 29 000 ₽', desc: 'Электромонтаж в доме.' },
-            { title: 'Дом площадью до 110 м2 (45 точек; бокс до 18)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 46 000 ₽', desc: 'Электромонтаж в доме.' },
-            { title: 'Дом площадью до 150 м2 (60 точек; бокс до 24)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 72 000 ₽', desc: 'Электромонтаж в доме.' },
+            // ЭЛЕКТРИКА (С подробным описанием)
+            { title: 'Установка розетки (внутренняя / наружная)', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130 ₽', desc: 'Профессиональный монтаж электрической розетки с подключением проводов.' },
+            { title: 'Установка розетки с заземлением', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 200 ₽', desc: 'Монтаж розетки с обязательным подключением защитного заземляющего контура.' },
+            { title: 'Установка компьютерной / телефонной / ТВ розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 180 ₽', desc: 'Монтаж слаботочных информационных розеток.' },
+            { title: 'Установка подрозетника', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 80 ₽', desc: 'Высверливание коронкой и вмонтирование подрозетника в стену.' },
+            { title: 'Установка розетки для электроплиты', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 350 ₽', desc: 'Монтаж силовой розетки повышенной мощности для плиты.' },
+            { title: 'Установка распаечной коробки (внутренняя / наружная)', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 400-550 ₽', desc: 'Коммутация проводов в распред. коробке.' },
+            { title: 'Замена розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130 ₽', desc: 'Демонтаж старой искрящей розетки и установка новой.' },
+            { title: 'Ремонт розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 280 ₽', desc: 'Восстановление контактов и подтяжка пружин.' },
+            { title: 'Демонтаж розетки / подрозетника', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 80 ₽', desc: 'Аккуратное снятие розетки.' },
+            { title: 'Установка одноклавишного выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130-200 ₽', desc: 'Монтаж выключателя света.' },
+            { title: 'Установка двухклавишного выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 230-350 ₽', desc: 'Монтаж двухклавишного выключателя для групп ламп.' },
+            { title: 'Установка проходного выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 350-750 ₽', desc: 'Монтаж переключателей для управления светом из двух мест.' },
+            { title: 'Установка диммера (регулятора света)', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 350 ₽', desc: 'Монтаж светорегулятора (диммера).' },
+            { title: 'Замена / Ремонт выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130-350 ₽', desc: 'Смена неисправного выключателя.' },
+            { title: 'Демонтаж выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130 ₽', desc: 'Снятие выключателя с изоляцией проводов.' },
+            { title: 'Установка точечного / потолочного светильника', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 150-180 ₽', desc: 'Монтаж врезного точечного светильника в потолок.' },
+            { title: 'Установка светильника Армстронг', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 550 ₽', desc: 'Монтаж растрового светильника в подвесной потолок.' },
+            { title: 'Установка трековых светильников', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж шинопровода и точечных спотов.' },
+            { title: 'Установка настенных светильников (бра)', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 350 ₽', desc: 'Монтаж и подключение настенного бра.' },
+            { title: 'Установка уличных светильников', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 700 ₽', desc: 'Монтаж влагозащищенных светильников на фасад.' },
+            { title: 'Установка светильников в натяжной потолок', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 180 ₽', desc: 'Установка термокольца и монтаж светильника.' },
+            { title: 'Замена патрона в светильнике', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 120 ₽', desc: 'Смена сгоревшего электрического патрона.' },
+            { title: 'Демонтаж светильника', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 150 ₽', desc: 'Снятие осветительного прибора.' },
+            { title: 'Установка потолочной люстры (анкер / крюк)', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 650 ₽', desc: 'Надежная навеска люстры на потолочный крюк или монтажную планку.' },
+            { title: 'Сборка простой / сложной люстры', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 400-650 ₽', desc: 'Сборка хрупких и многорожковых элементов люстры.' },
+            { title: 'Монтаж тяжелой люстры (от 5 до 18 кг)', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 950-4 200 ₽', desc: 'Усиленный монтаж массивных потолочных конструкций.' },
+            { title: 'Установка светодиодной / хрустальной люстры', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 800 ₽', desc: 'Монтаж люстр с пультом управления или хрусталем.' },
+            { title: 'Замена / Демонтаж люстры', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 450-650 ₽', desc: 'Снятие старой и подвес новой люстры.' },
+            { title: 'Подключение / Установка бытовой техники', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 750 ₽', desc: 'Профессиональное подключение приборов к электросети.' },
+            { title: 'Установка холодильника (в т.ч. встраиваемого)', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 550-1 250 ₽', desc: 'Монтаж отдельно стоящего или встраиваемого холодильника.' },
+            { title: 'Установка холодильника с льдогенератором', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 1 400 ₽', desc: 'Подключение сложного холодильника с подачей воды.' },
+            { title: 'Установка электроплиты / варочной панели', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 850 ₽', desc: 'Подключение варочной панели с проверкой мощности.' },
+            { title: 'Монтаж встраиваемого духового шкафа', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 1 150 ₽', desc: 'Установка духовки в мебельный шкаф.' },
+            { title: 'Установка комплекта (панель + духовка)', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 2 000 ₽', desc: 'Монтаж связки варочной панели и духового шкафа.' },
+            { title: 'Монтаж встраиваемой СВЧ / Кронштейна', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 980 ₽', desc: 'Монтаж микроволновой печи.' },
+            { title: 'Установка вытяжки', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 850 ₽', desc: 'Навеска кухонной вытяжки и подключение в вентиляцию.' },
+            { title: 'Подключение вытяжки', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 350 ₽', desc: 'Подключение шнура питания в розетку.' },
+            { title: 'Монтаж вентилятора (бытовой / канальный)', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 400-630 ₽', desc: 'Установка вытяжного вентилятора в санузле.' },
+            { title: 'Монтаж телевизора на стену', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 1 150 ₽', desc: 'Крепление кронштейна и навеска ТВ панели.' },
+            { title: 'Установка однополюсного автомата', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 200-300 ₽', desc: 'Монтаж модульного автомата в электрощит.' },
+            { title: 'Установка двухполюсного / четырехполюсного УЗО', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 350-450 ₽', desc: 'Монтаж устройства защитного отключения.' },
+            { title: 'Установка Диф. автомата', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 400-450 ₽', desc: 'Монтаж дифференциального автоматического выключателя.' },
+            { title: 'Сборка электрощита', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 2 600-3 000 ₽', desc: 'Монтаж и коммутация автоматов внутри щита.' },
+            { title: 'Установка щитка (накладной / встраиваемый)', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 1 100-1 650 ₽', desc: 'Монтаж бокса для электроавтоматов.' },
+            { title: 'Монтаж распред. щитка (от 6 до 72 автоматов)', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 3 150-17 220 ₽', desc: 'Сборка крупного распределительного щита.' },
+            { title: 'Установка счетчика (однофазный / трехфазный)', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 1 190-1 400 ₽', desc: 'Монтаж электросчетчика учета энергии.' },
+            { title: 'Монтаж стабилизатора напряжения', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 1 750 ₽', desc: 'Установка защитного стабилизатора.' },
+            { title: 'Прокладка кабеля (в зависимости от сечения)', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 80-180 ₽', desc: 'Открытая или скрытая прокладка кабельных линий.' },
+            { title: 'Прокладка провода (до 120 кв. мм)', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 60 ₽', desc: 'Монтаж силового провода.' },
+            { title: 'Прокладка кабель-канала / короба', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 60-260 ₽', desc: 'Монтаж пластикового короба для проводов.' },
+            { title: 'Затяжка кабеля в гофру', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 20 ₽', desc: 'Протяжка кабеля в защитную гофротрубу.' },
+            { title: 'Замена проводки в квартире', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 300 ₽', desc: 'Полная замена старых электрических линий.' },
+            { title: 'Прокладка кабеля бронированного', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 740 ₽', desc: 'Монтаж бронированного кабеля для улицы.' },
+            { title: 'Поиск обрыва эл. цепи / Устранение КЗ', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'шт.', price: 'от 390-800 ₽', desc: 'Диагностика мультиметром и устранение короткого замыкания.' },
+            { title: 'Штробление стен под проводку', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м.', price: 'от 180 ₽', desc: 'Штробление стен штроборезом под провода.' },
+            { title: 'Демонтаж проводки', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 60 ₽', desc: 'Удаление старых кабельных линий.' },
+            { title: 'Монтаж / Подключение / Замена теплого пола', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 450 ₽', desc: 'Укладка нагревательных матов теплого пола.' },
+            { title: 'Укладка теплого пола под ламинат', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 650 ₽', desc: 'Монтаж инфракрасной или кабельной системы под ламинат.' },
+            { title: 'Монтаж инфракрасного теплого пола под ламинат', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 280 ₽', desc: 'Укладка термопленки.' },
+            { title: 'Монтаж терморегулятора с датчиком', cat: 'electric', sub: 'Теплый пол', unit: 'шт.', price: 'от 500 ₽', desc: 'Установка настенного регулятора температуры.' },
+            { title: 'Демонтаж теплого пола', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 180 ₽', desc: 'Снятие нагревательных элементов.' },
+            { title: 'Однокомнатная квартира (до 35 м2; 14 точек; бокс до 8)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 13 500 ₽', desc: 'Электромонтаж однокомнатной квартиры под ключ.' },
+            { title: 'Двухкомнатная квартира (до 45 м2; 16 точек; бокс до 10)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 17 000 ₽', desc: 'Электромонтаж двухкомнатной квартиры под ключ.' },
+            { title: 'Трехкомнатная квартира (до 60 м2; 22 точки; бокс до 12)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 24 000 ₽', desc: 'Электромонтаж трехкомнатной квартиры под ключ.' },
+            { title: 'Дом площадью до 70 м2 (22 точки; бокс до 14)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 29 000 ₽', desc: 'Электромонтаж загородного дома до 70 кв.м.' },
+            { title: 'Дом площадью до 110 м2 (45 точек; бокс до 18)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 46 000 ₽', desc: 'Электромонтаж загородного дома до 110 кв.м.' },
+            { title: 'Дом площадью до 150 м2 (60 точек; бокс до 24)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 72 000 ₽', desc: 'Электромонтаж крупного коттеджа под ключ.' },
 
             // ВЫЗОВ И ДИАГНОСТИКА
-            { title: 'Вызов мастера на дом / Выезд', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'Базовый', price: 'Бесплатно', desc: 'Базовый выезд специалиста.' },
-            { title: 'Диагностика при оказании услуг', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'С услугой', price: 'Бесплатно', desc: 'Диагностика при заказе работ.' },
-            { title: 'Диагностика в случае отказа', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'Отказ', price: '1 000 ₽', desc: 'Оплата при отказе от услуг.' },
-            { title: 'Выезд мастера в магазин', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: '1 выезд', price: '1 000 ₽', desc: 'Покупка материалов мастером.' },
-            { title: 'МИНИМАЛЬНЫЙ ЗАКАЗ', cat: 'callout', sub: 'Минимальный заказ', unit: 'усл.', price: '2 500 ₽', desc: 'Минимальная стоимость выезда и заказа.' }
+            { title: 'Вызов мастера на дом / Выезд', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'Базовый', price: 'Бесплатно', desc: 'Оперативный выезд квалифицированного специалиста по указанному адресу в Казани.' },
+            { title: 'Диагностика при оказании услуг', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'С услугой', price: 'Бесплатно', desc: 'Полная профессиональная диагностика неисправности при заказе ремонтных работ.' },
+            { title: 'Диагностика в случае отказа', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'Отказ', price: '1 000 ₽', desc: 'Оплата выезда и работы мастера при отказе от проведения ремонта.' },
+            { title: 'Выезд мастера в магазин', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: '1 выезд', price: '1 000 ₽', desc: 'Профессиональный подбор, покупка и доставка необходимых комплектующих мастером.' }
         ];
 
         let reviewsData = JSON.parse(localStorage.getItem('site_reviews')) || [
@@ -1398,7 +1299,7 @@
         ];
 
         let ordersData = JSON.parse(localStorage.getItem('site_orders')) || [
-            { id: 101, name: 'Артур', phone: '+7 (961) 123-45-67', district: 'Ново-Савиновский', service: 'Собрать диван', desc: 'Нужно собрать новый угловой диван', date: 'Сегодня, 14:20' }
+            { id: 101, name: 'Артур', phone: '8 (927) 043-53-53', district: 'Ново-Савиновский', service: 'Собрать диван', desc: 'Нужно собрать новый угловой диван', date: 'Сегодня, 14:20' }
         ];
 
         const mastersData = [
@@ -1409,7 +1310,6 @@
 
         let activeParentCat = 'furniture';
         let activeSubCat = 'Все подкатегории';
-        let quizAnswers = { district: 'Ново-Савиновский' };
 
         window.addEventListener('hashchange', handleRouting);
         window.addEventListener('load', () => {
@@ -1419,7 +1319,6 @@
             renderCardsPages();
             renderReviews();
             setupPhoneMasks();
-            initQuizCheckboxes();
             initMainFormCheckboxes();
         });
 
@@ -1460,13 +1359,13 @@
                 input.addEventListener('input', function(e) {
                     let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
                     if (!x[2]) {
-                        e.target.value = x[1] ? '+7 (' + x[1] : '';
+                        e.target.value = x[1] ? '8 (' + x[1] : '';
                     } else {
-                        e.target.value = '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+                        e.target.value = '8 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
                     }
                 });
                 input.addEventListener('focus', function(e) {
-                    if (!e.target.value) e.target.value = '+7 (';
+                    if (!e.target.value) e.target.value = '8 (';
                 });
             });
         }
@@ -1546,111 +1445,6 @@
                     <p class="text-xs text-slate-300 italic">"${r.text}"</p>
                 </div>
             `).join('');
-        }
-
-        // INIT QUIZ CHECKBOXES FOR MULTI-CHOICE FROM PRICE LIST (EXCLUDING МИНИМАЛЬНЫЙ ЗАКАЗ)
-        function initQuizCheckboxes() {
-            const container = document.getElementById('quiz-services-checkboxes');
-            if(!container) return;
-
-            container.innerHTML = priceDatabase.map((item, idx) => {
-                if (item.title === 'МИНИМАЛЬНЫЙ ЗАКАЗ') return '';
-                return `
-                    <label class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-orange cursor-pointer transition text-xs">
-                        <div class="flex items-center gap-2.5">
-                            <input type="checkbox" value="${idx}" class="quiz-service-chk w-4 h-4 accent-brand-orange rounded cursor-pointer" onchange="updateQuizCalculation()">
-                            <span class="text-slate-200 font-semibold">${item.title}</span>
-                        </div>
-                        <span class="text-brand-orange font-bold shrink-0 ml-2">${item.price}</span>
-                    </label>
-                `;
-            }).join('');
-        }
-
-        function goToQuizStep(stepNum) {
-            if(stepNum === 2) {
-                const checked = document.querySelectorAll('.quiz-service-chk:checked');
-                if(checked.length === 0) {
-                    showSuccessModal('Внимание', 'Пожалуйста, выберите хотя бы одну услугу из списка!');
-                    return;
-                }
-                updateQuizCalculation();
-            }
-
-            document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
-            const target = document.getElementById(`quiz-step-${stepNum}`);
-            if(target) target.classList.remove('hidden');
-        }
-
-        function setQuizDistrict(dist) {
-            quizAnswers.district = dist;
-            goToQuizStep(3);
-        }
-
-        function updateQuizCalculation() {
-            const checked = document.querySelectorAll('.quiz-service-chk:checked');
-            let totalBase = 0;
-            let listHTML = '';
-            let titlesArray = [];
-
-            checked.forEach(chk => {
-                const item = priceDatabase[chk.value];
-                const num = parseInt(item.price.replace(/\D/g, '')) || 500;
-                totalBase += num;
-                titlesArray.push(item.title);
-                listHTML += `<div class="flex justify-between text-[11px]"><span>• ${item.title}</span><span class="text-amber-400 font-bold">${item.price}</span></div>`;
-            });
-
-            const totalDiscount = Math.round(totalBase * 0.9);
-            const totalSavings = totalBase - totalDiscount;
-
-            quizAnswers.selectedItems = titlesArray;
-            quizAnswers.basePriceVal = totalBase;
-            quizAnswers.discountPriceVal = totalDiscount;
-            quizAnswers.savingsVal = totalSavings;
-
-            const countEl = document.getElementById('quiz-selected-count');
-            const listEl = document.getElementById('quiz-selected-list');
-            const oldEl = document.getElementById('quiz-price-old');
-            const newEl = document.getElementById('quiz-price-new');
-            const savEl = document.getElementById('quiz-savings');
-
-            if(countEl) countEl.innerText = checked.length;
-            if(listEl) listEl.innerHTML = listHTML;
-            if(oldEl) oldEl.innerText = `${totalBase.toLocaleString()} ₽`;
-            if(newEl) newEl.innerText = `${totalDiscount.toLocaleString()} ₽`;
-            if(savEl) savEl.innerText = `${totalSavings.toLocaleString()} ₽`;
-        }
-
-        async function finishQuiz(e) {
-            e.preventDefault();
-            const name = document.getElementById('quiz-name').value;
-            const phone = document.getElementById('quiz-phone').value;
-            const descInput = document.getElementById('quiz-desc-input');
-            const userDesc = descInput ? descInput.value.trim() : '';
-
-            ordersData.unshift({
-                id: Date.now().toString().slice(-4),
-                name: name,
-                phone: phone,
-                district: quizAnswers.district || 'Казань',
-                service: `Квиз (Услуги: ${quizAnswers.selectedItems ? quizAnswers.selectedItems.join(', ') : 'Не выбрано'})`,
-                desc: `Заявка из квиза со скидкой 10%. ${userDesc ? 'Что еще нужно: ' + userDesc + '. ' : ''}Сумма без скидки: ${quizAnswers.basePriceVal || 0} ₽, со скидкой: ${quizAnswers.discountPriceVal || 0} ₽`,
-                date: 'Только что'
-            });
-            localStorage.setItem('site_orders', JSON.stringify(ordersData));
-
-            const text = `🎁 *ЗАЯВКА ИЗ КВИЗА (СКИДКА 10%)*\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📍 Район: ${quizAnswers.district}\n📋 Выбранные услуги:\n- ${quizAnswers.selectedItems ? quizAnswers.selectedItems.join('\n- ') : 'Нет'}\n${userDesc ? '📝 Что еще нужно: ' + userDesc + '\n' : ''}\n💰 Сумма без скидки: ${quizAnswers.basePriceVal || 0} ₽\n🔥 Сумма со скидкой 10%: ${quizAnswers.discountPriceVal || 0} ₽`;
-
-            await sendTelegramMessageDirect(text, null);
-            
-            showSuccessModal('Скидка и вызов оформлены!', `Спасибо, ${name}! Ваша заявка успешно направлена в административную панель со скидкой 10%. Мастер свяжется с вами.`);
-            
-            document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
-            document.getElementById('quiz-step-1').classList.remove('hidden');
-            document.querySelectorAll('.quiz-service-chk').forEach(c => c.checked = false);
-            if(descInput) descInput.value = '';
-            quizAnswers = { district: 'Ново-Савиновский' };
         }
 
         // INIT MAIN FORM CHECKBOXES FOR MULTI-CHOICE
@@ -1827,7 +1621,6 @@
             localStorage.setItem('site_prices', JSON.stringify(priceDatabase));
             renderAdminDashboard();
             renderPricelistRectangles();
-            initQuizCheckboxes();
             initMainFormCheckboxes();
         }
 
@@ -1880,7 +1673,6 @@
             closePriceModal();
             renderAdminDashboard();
             renderPricelistRectangles();
-            initQuizCheckboxes();
             initMainFormCheckboxes();
             showSuccessModal('Успешно', 'Изменения в прайс-листе сохранены!');
         }
@@ -1979,7 +1771,7 @@
                                     <span>${item.title}</span>
                                     <i class="fa-solid fa-chevron-down text-xs text-brand-orange transition-transform duration-300 ml-2"></i>
                                 </div>
-                                <div class="text-[11px] text-slate-400 mt-0.5">${item.sub || 'Основное'} <span class="text-amber-400/80">(Нажмите для описания)</span></div>
+                                <div class="text-[11px] text-slate-400 mt-0.5">${item.sub || 'Основное'} <span class="text-amber-400/80">(Нажмите для подробного описания)</span></div>
                             </div>
                         </div>
 
@@ -2002,7 +1794,7 @@
 
                     <!-- Collapsible Description Box -->
                     <div class="price-desc-box hidden bg-slate-950/90 border border-slate-800/80 rounded-xl p-3.5 text-xs text-slate-300 leading-relaxed">
-                        <span class="font-bold text-amber-400 block mb-1"><i class="fa-solid fa-circle-info mr-1"></i> Описание услуги:</span>
+                        <span class="font-bold text-amber-400 block mb-1"><i class="fa-solid fa-circle-info mr-1"></i> Подробное описание услуги:</span>
                         ${item.desc || `Профессиональное выполнение работы: «${item.title}». Включает выезд мастера в любой район Казани, диагностику и гарантию по договору 12 месяцев.`}
                     </div>
                 </div>
@@ -2126,7 +1918,7 @@
             const encoded = encodeURIComponent(text);
 
             if (messenger === 'telegram') window.open(`https://t.me/DedaYagaaaa`, '_blank');
-            else if (messenger === 'whatsapp') window.open(`https://wa.me/79614879836?text=${encoded}`, '_blank');
+            else if (messenger === 'whatsapp') window.open(`https://wa.me/79270435353?text=${encoded}`, '_blank');
         }
 
         function renderCardsPages() {
