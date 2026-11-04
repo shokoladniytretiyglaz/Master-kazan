@@ -145,6 +145,7 @@
                 <a href="#/reviews" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Отзывы</a>
                 <a href="#/faq" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">FAQ</a>
                 <a href="#/contacts" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Контакты</a>
+                <a href="#/admin" class="nav-link py-2 text-amber-400 hover:text-brand-orange transition-colors flex items-center gap-1"><i class="fa-solid fa-gear"></i> Админка</a>
             </nav>
 
             <!-- CTA Call Button -->
@@ -169,6 +170,7 @@
             <a href="#/reviews" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Отзывы</a>
             <a href="#/faq" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Частые вопросы (FAQ)</a>
             <a href="#/contacts" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Оформить заявку</a>
+            <a href="#/admin" onclick="closeMobileMenu()" class="block text-base font-medium text-amber-400 hover:text-brand-orange py-1"><i class="fa-solid fa-gear"></i> Панель администратора</a>
             <button onclick="closeMobileMenu(); openBookingModal('Вызов из меню')" class="w-full text-center bg-brand-orange text-slate-950 font-bold py-3 rounded-xl mt-2">
                 Срочный вызов мастера в Казани
             </button>
@@ -648,7 +650,7 @@
                         </div>
                     </div>
 
-                    <!-- Comprehensive Order Form with Photo/Video Attachment -->
+                    <!-- Comprehensive Order Form with Photo/Video -->
                     <div class="lg:col-span-7 bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl">
                         <h2 class="text-xl font-bold text-white mb-2">Форма заявки администратору</h2>
                         <p class="text-xs text-slate-400 mb-6">Заполните форму и прикрепите фото или видео поломки для оценки</p>
@@ -725,6 +727,73 @@
             </div>
         </section>
 
+        <!-- PAGE: ADMIN (ДИНАМИЧЕСКАЯ ПАНЕЛЬ АДМИНИСТРАТОРА) -->
+        <section id="page-admin" class="page-view hidden py-10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Login Box -->
+                <div id="admin-login-box" class="max-w-md mx-auto bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-brand-orange flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h2 class="font-heading font-black text-xl text-white text-center mb-2">Вход в Админку</h2>
+                    <p class="text-xs text-slate-400 text-center mb-6">Пароль по умолчанию: <code class="text-amber-400 font-bold">admin123</code></p>
+                    <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                        <input type="password" id="admin-password-input" required placeholder="Введите пароль..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg transition">Войти</button>
+                    </form>
+                </div>
+
+                <!-- Admin Dashboard -->
+                <div id="admin-dashboard" class="hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900 border border-slate-800 p-6 rounded-3xl">
+                        <div>
+                            <h1 class="font-heading text-2xl font-black text-white">Панель управления</h1>
+                            <p class="text-xs text-slate-400">Управление заявками клиентов, модерация отзывов и редактирование цен в прайсе</p>
+                        </div>
+                        <button onclick="logoutAdmin()" class="px-4 py-2 bg-rose-600/20 text-rose-400 hover:bg-rose-600 hover:text-white rounded-xl text-xs font-bold transition">Выйти</button>
+                    </div>
+
+                    <div class="flex gap-2 border-b border-slate-800 pb-4 overflow-x-auto">
+                        <button onclick="switchAdminTab('orders')" id="admin-tab-btn-orders" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-orange text-slate-950 transition">Заявки (<span id="orders-count">0</span>)</button>
+                        <button onclick="switchAdminTab('reviews')" id="admin-tab-btn-reviews" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Отзывы (<span id="reviews-count">0</span>)</button>
+                        <button onclick="switchAdminTab('prices')" id="admin-tab-btn-prices" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Редактор цен</button>
+                    </div>
+
+                    <!-- Tab Orders -->
+                    <div id="admin-tab-orders" class="admin-tab-content space-y-3">
+                        <div id="admin-orders-list"></div>
+                    </div>
+
+                    <!-- Tab Reviews -->
+                    <div id="admin-tab-reviews" class="admin-tab-content space-y-3 hidden">
+                        <div id="admin-reviews-list"></div>
+                    </div>
+
+                    <!-- Tab Prices -->
+                    <div id="admin-tab-prices" class="admin-tab-content space-y-4 hidden">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-sm font-bold text-white">База данных цен прайс-листа</h3>
+                            <button onclick="openAddPriceModal()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition shadow-md">+ Добавить услугу</button>
+                        </div>
+                        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-4 overflow-x-auto">
+                            <table class="w-full text-left text-xs text-slate-300">
+                                <thead>
+                                    <tr class="border-b border-slate-800 text-slate-400">
+                                        <th class="p-3">Название</th>
+                                        <th class="p-3">Категория</th>
+                                        <th class="p-3">Ед. изм.</th>
+                                        <th class="p-3">Цена</th>
+                                        <th class="p-3 text-right">Действие</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-price-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- FOOTER -->
@@ -744,6 +813,7 @@
                         <li><a href="#/pricelist" class="hover:text-brand-orange transition">Прайс-лист Казань</a></li>
                         <li><a href="#/faq" class="hover:text-brand-orange transition">Частые вопросы (FAQ)</a></li>
                         <li><a href="#/contacts" class="hover:text-brand-orange transition">Подача заявки</a></li>
+                        <li><a href="#/admin" class="hover:text-amber-400 transition">Панель администратора</a></li>
                     </ul>
                 </div>
                 <div>
@@ -847,6 +917,34 @@
         </div>
     </div>
 
+    <!-- EDIT / ADD PRICE ITEM MODAL -->
+    <div id="price-edit-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 relative shadow-2xl">
+            <button onclick="closePriceModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="text-xl font-bold text-white mb-4" id="price-modal-title">Редактировать услугу</h2>
+            <form onsubmit="savePriceItem(event)" class="space-y-4">
+                <input type="hidden" id="edit-price-index" value="">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Название услуги</label>
+                    <input type="text" id="edit-price-title" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Категория ID (plumbing, electric, handyman, carpenter, furniture_repair, furniture_assemble, diagnostics)</label>
+                    <input type="text" id="edit-price-cat" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Ед. изм. (шт., пог. м, час)</label>
+                    <input type="text" id="edit-price-unit" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Цена (например: 950 ₽)</label>
+                    <input type="text" id="edit-price-val" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange">
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
     <!-- JAVASCRIPT APPLICATION LOGIC -->
     <script>
         // CONFIGURATION & TELEGRAM BOT API CREDENTIALS
@@ -863,7 +961,7 @@
             { id: 'diagnostics', name: 'Выезд и диагностика', icon: 'fa-truck-fast', time: '15-30 минут', tools: 'Диагностика на месте', desc: 'Оперативный выезд мастера на дом для оценки сложности и составления сметы.', subs: ['Все подкатегории', 'Выезд мастера'] }
         ];
 
-        const priceDatabase = [
+        let priceDatabase = JSON.parse(localStorage.getItem('site_prices')) || [
             { title: 'Установка раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽' },
             { title: 'Установка раковины в ванной', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽' },
             { title: 'Установка раковины на кухне', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '850 ₽' },
@@ -877,142 +975,65 @@
             { title: 'Установка раковины типа "Кувшинка"', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 100 ₽' },
             { title: 'Установка раковины на кронштейнах', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 000 ₽' },
             { title: 'Замена раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 180 ₽' },
-            { title: 'Замена раковины в ванной', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 180 ₽' },
             { title: 'Врезка раковины в столешницу', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '500 ₽' },
             { title: 'Установка мойки', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '550 ₽' },
-            { title: 'Установка врезной мойки', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '550 ₽' },
-            { title: 'Установка мойки из нержавейки', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '550 ₽' },
-            { title: 'Установка накладной мойки', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '550 ₽' },
-            { title: 'Установка мойки из искусственного камня', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '700 ₽' },
-            { title: 'Установка стеклянной мойки со смесителем', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 500 ₽' },
-            { title: 'Демонтаж мойки', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '350 ₽' },
-            { title: 'Демонтаж подстолья с мойкой', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '525 ₽' },
-            { title: 'Демонтаж раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '350 ₽' },
             { title: 'Установка тумбы под раковину', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '1 200 ₽' },
             { title: 'Установка сифона раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '600 ₽' },
-            { title: 'Демонтаж сифона раковины', cat: 'plumbing', sub: 'Раковины и мойки', unit: 'шт.', price: '200 ₽' },
-
             { title: 'Установка смесителя на раковину', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽' },
             { title: 'Установка смесителя на ванну', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽' },
-            { title: 'Установка душевого смесителя', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽' },
-            { title: 'Установка смесителя на кухне', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽' },
             { title: 'Замена смесителя на кухне', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽' },
-            { title: 'Установка смесителя в ванной', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽' },
-            { title: 'Замена смесителя в ванной', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '450 ₽' },
-            { title: 'Установка смесителя типа "ёлочка"', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '650 ₽' },
-            { title: 'Установка смесителя однорычажного', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '650 ₽' },
-            { title: 'Установка смесителя на мойку', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '650 ₽' },
-            { title: 'Установка смесителя на биде', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '850 ₽' },
-            { title: 'Установка смесителя на душевую кабину', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '950 ₽' },
-            { title: 'Установка смесителя с душевой лейкой', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '1 000 ₽' },
             { title: 'Установка смесителя с термостатом', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '1 100 ₽' },
-            { title: 'Установка бесконтактного смесителя', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '1 300 ₽' },
-            { title: 'Установка скрытого смесителя', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '1 600 ₽' },
-            { title: 'Установка смесителя скрытого монтажа', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '1 800 ₽' },
             { title: 'Ремонт смесителя', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '600 ₽' },
-            { title: 'Замена гибкой подводки смесителя', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '600 ₽' },
-            { title: 'Замена картриджа в смесителе', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '600 ₽' },
-            { title: 'Замена эксцентриков смесителя', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '390 ₽' },
-            { title: 'Демонтаж смесителя', cat: 'plumbing', sub: 'Смесители и краны', unit: 'шт.', price: '250 ₽' },
-
             { title: 'Установка акриловой ванны', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '2 100 ₽' },
             { title: 'Установка стальной ванны', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '1 200 ₽' },
             { title: 'Установка чугунной ванны', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '2 950 ₽' },
-            { title: 'Установка угловой ванны', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '1 500 ₽' },
-            { title: 'Установка угловой ванны с гидромассажем', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '3 000 ₽' },
-            { title: 'Установка джакузи', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '3 000 ₽' },
-            { title: 'Демонтаж ванны', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '750 ₽' },
-            { title: 'Установка душевой кабины с гидромассажем', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '4 500 ₽' },
-            { title: 'Сборка душевой кабины', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '2 200 ₽' },
-            { title: 'Установка душевого поддона', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '1 600 ₽' },
-
+            { title: 'Установка душевой кабины', cat: 'plumbing', sub: 'Ванны и душевые', unit: 'шт.', price: '4 500 ₽' },
             { title: 'Установка унитаза', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 500 ₽' },
-            { title: 'Установка напольного унитаза', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 500 ₽' },
             { title: 'Установка подвесного унитаза', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 800 ₽' },
-            { title: 'Установка инсталляции подвесного унитаза', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 500 ₽' },
-            { title: 'Ремонт инсталляции', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 000 ₽' },
-            { title: 'Замена сливной арматуры бачка унитаза', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 200 ₽' },
-            { title: 'Замена гофры на унитазе', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 200 ₽' },
-            { title: 'Демонтаж унитаза', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '650 ₽' },
-            { title: 'Установка биде напольного / подвесного', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 500 ₽' },
-
-            { title: 'Замена 1 радиатора отопления', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 200 ₽' },
-            { title: 'Замена биметаллических радиаторов', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 200 ₽' },
+            { title: 'Установка инсталляции', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 500 ₽' },
+            { title: 'Замена сливной арматуры бачка', cat: 'plumbing', sub: 'Унитазы и инсталляции', unit: 'шт.', price: '1 200 ₽' },
+            { title: 'Замена радиатора отопления', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 200 ₽' },
             { title: 'Установка накопительного водонагревателя', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 200 ₽' },
             { title: 'Установка проточного водонагревателя', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 000 ₽' },
             { title: 'Установка полотенцесушителя', cat: 'plumbing', sub: 'Водонагреватели и радиаторы', unit: 'шт.', price: '1 200 ₽' },
-
-            { title: 'Установка фильтров для очистки воды', cat: 'plumbing', sub: 'Фильтры и герметизация', unit: 'шт.', price: '650 ₽' },
-            { title: 'Установка фильтра под мойку (Аквафор/Барьер)', cat: 'plumbing', sub: 'Фильтры и герметизация', unit: 'шт.', price: '750 ₽' },
+            { title: 'Установка фильтров для воды', cat: 'plumbing', sub: 'Фильтры и герметизация', unit: 'шт.', price: '650 ₽' },
             { title: 'Устранение засоров канализации', cat: 'plumbing', sub: 'Фильтры и герметизация', unit: 'шт.', price: '1 000 ₽' },
-            { title: 'Устранение сложных засоров спецтехникой', cat: 'plumbing', sub: 'Фильтры и герметизация', unit: 'шт.', price: '1 500 ₽' },
             { title: 'Герметизация швов силиконом', cat: 'plumbing', sub: 'Фильтры и герметизация', unit: 'пог. м', price: '200 ₽' },
-
-            { title: 'Установка розеток и выключателей света', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '130 ₽' },
-            { title: 'Установка наружной розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '130 ₽' },
+            { title: 'Установка розеток и выключателей', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '130 ₽' },
             { title: 'Установка внутренней розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '180 ₽' },
-            { title: 'Установка розеток с заземлением', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '200 ₽' },
-            { title: 'Установка компьютерной розетки RJ45', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '180 ₽' },
-            { title: 'Установка телевизионной розетки TV', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '180 ₽' },
             { title: 'Установка розетки для электроплиты', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: '350 ₽' },
             { title: 'Навеска и подключение люстры', cat: 'electric', sub: 'Люстры и светильники', unit: 'шт.', price: '800 ₽' },
             { title: 'Установка точечного светильника', cat: 'electric', sub: 'Люстры и светильники', unit: 'шт.', price: '250 ₽' },
             { title: 'Поиск и устранение обрыва проводки', cat: 'electric', sub: 'Электрощиты и точки', unit: 'час', price: '1 500 ₽' },
-
             { title: 'Монтаж и замена зеркал', cat: 'handyman', sub: 'Зеркала и плинтусы', unit: 'шт.', price: '990 ₽' },
-            { title: 'Замена порожков', cat: 'handyman', sub: 'Зеркала и плинтусы', unit: 'пог. м', price: '180 ₽' },
             { title: 'Монтаж пластикового плинтуса', cat: 'handyman', sub: 'Зеркала и плинтусы', unit: 'пог. м', price: '120 ₽' },
-            { title: 'Монтаж плинтуса МДФ', cat: 'handyman', sub: 'Зеркала и плинтусы', unit: 'шт.', price: '990 ₽' },
             { title: 'Крепление карнизов на стене', cat: 'handyman', sub: 'Карнизы и навес', unit: 'шт.', price: '380 ₽' },
-            { title: 'Монтаж карниза потолочного', cat: 'handyman', sub: 'Карнизы и навес', unit: 'пог. м', price: '504 ₽' },
             { title: 'Услуга "Мастер на час"', cat: 'handyman', sub: 'Мастер на час', unit: 'час', price: '990 ₽' },
-            { title: 'Вызов мастера на дом', cat: 'handyman', sub: 'Мастер на час', unit: 'услуга', price: '990 ₽' },
-
-            { title: 'Установка металлических входных дверей', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '3 000 ₽' },
-            { title: 'Замена входной двери в квартире', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '3 000 ₽' },
+            { title: 'Установка входных металлических дверей', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '3 000 ₽' },
             { title: 'Установка межкомнатных дверей', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '1 490 ₽' },
-            { title: 'Установка раздвижных межкомнатных дверей', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '1 690 ₽' },
-            { title: 'Установка двери "Гармошка"', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '1 064 ₽' },
-            { title: 'Установка двустворчатой двери', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '3 000 ₽' },
-            { title: 'Установка двери стенли', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '2 200 ₽' },
-            { title: 'Установка глазка в деревянную дверь', cat: 'carpenter', sub: 'Глазки и фурнитура', unit: 'шт.', price: '266 ₽' },
-            { title: 'Монтаж дверного глазка в металлическую дверь', cat: 'carpenter', sub: 'Глазки и фурнитура', unit: 'шт.', price: '400 ₽' },
             { title: 'Замена замков на двери', cat: 'carpenter', sub: 'Двери и замки', unit: 'шт.', price: '400 ₽' },
-
-            { title: 'Ремонт встроенных шкафов-купе', cat: 'furniture_repair', sub: 'Ремонт шкафов', unit: 'шт.', price: '950 ₽' },
-            { title: 'Ремонт дверей шкафа-купе', cat: 'furniture_repair', sub: 'Ремонт шкафов', unit: 'шт.', price: '950 ₽' },
-            { title: 'Ремонт двери обычного шкафа', cat: 'furniture_repair', sub: 'Ремонт шкафов', unit: 'шт.', price: '504 ₽' },
-            { title: 'Ремонт корпусной мебели', cat: 'furniture_repair', sub: 'Ремонт шкафов', unit: 'шт.', price: '840 ₽' },
-            { title: 'Ремонт деревянной мебели', cat: 'furniture_repair', sub: 'Ремонт шкафов', unit: 'шт.', price: '1 000 ₽' },
-            { title: 'Ремонт деревянных кроватей', cat: 'furniture_repair', sub: 'Ремонт диванов и кроватей', unit: 'шт.', price: '900 ₽' },
-            { title: 'Ремонт дивана аккордеон', cat: 'furniture_repair', sub: 'Ремонт диванов и кроватей', unit: 'шт.', price: '900 ₽' },
-            { title: 'Ремонт дивана еврокнижка', cat: 'furniture_repair', sub: 'Ремонт диванов и кроватей', unit: 'шт.', price: '900 ₽' },
-            { title: 'Ремонт диванов (замена механизмов)', cat: 'furniture_repair', sub: 'Ремонт диванов и кроватей', unit: 'шт.', price: '850 ₽' },
-
-            { title: 'Сборка мебели на дому', cat: 'furniture_assemble', sub: 'Сборка шкафов', unit: 'шт.', price: '990 ₽' },
+            { title: 'Ремонт шкафов-купе', cat: 'furniture_repair', sub: 'Ремонт шкафов', unit: 'шт.', price: '950 ₽' },
+            { title: 'Ремонт диванов', cat: 'furniture_repair', sub: 'Ремонт диванов и кроватей', unit: 'шт.', price: '900 ₽' },
             { title: 'Сборка кухни', cat: 'furniture_assemble', sub: 'Сборка кухонь', unit: 'пог. м', price: '1 100 ₽' },
-            { title: 'Сборка корпусной мебели', cat: 'furniture_assemble', sub: 'Сборка шкафов', unit: 'пог. м', price: '1 200 ₽' },
-            { title: 'Сборка офисной мебели', cat: 'furniture_assemble', sub: 'Сборка диванов и столов', unit: 'шт.', price: '590 ₽' },
-            { title: 'Сборка распашного шкафа (1 дверь)', cat: 'furniture_assemble', sub: 'Сборка шкафов', unit: 'шт.', price: '690 ₽' },
-            { title: 'Сборка распашного шкафа (2-х дверного)', cat: 'furniture_assemble', sub: 'Сборка шкафов', unit: 'шт.', price: '890 ₽' },
-            { title: 'Сборка распашного шкафа (3-х дверного)', cat: 'furniture_assemble', sub: 'Сборка шкафов', unit: 'шт.', price: '1 090 ₽' },
-            { title: 'Сборка распашного шкафа (4-х дверного)', cat: 'furniture_assemble', sub: 'Сборка шкафов', unit: 'шт.', price: '1 590 ₽' },
-
-            { title: 'Диагностика (при оказании услуг)', cat: 'diagnostics', sub: 'Выезд мастера', unit: 'услуга', price: 'Бесплатно *' },
-            { title: 'Диагностика (в случае отказа от работ)', cat: 'diagnostics', sub: 'Выезд мастера', unit: 'услуга', price: '500 ₽' },
+            { title: 'Сборка шкафа распашного (2-дверного)', cat: 'furniture_assemble', sub: 'Сборка шкафов', unit: 'шт.', price: '890 ₽' },
+            { title: 'Диагностика при оказании услуг', cat: 'diagnostics', sub: 'Выезд мастера', unit: 'услуга', price: 'Бесплатно *' },
             { title: 'Выезд мастера в магазин за деталями', cat: 'diagnostics', sub: 'Выезд мастера', unit: '1 выезд', price: '1 000 ₽' },
             { title: 'Минимальный заказ по Казани', cat: 'diagnostics', sub: 'Выезд мастера', unit: 'заказ', price: '1 300 ₽' }
+        ];
+
+        let reviewsData = JSON.parse(localStorage.getItem('site_reviews')) || [
+            { name: 'Айгуль З.', district: 'Ново-Савиновский р-н', text: 'Мастер приехал со своими кронштейнами и раковиной, за 40 минут заменил всё идеальнейше. Все расценки совпали с прямоугольниками прайс-листа!', rating: 5, date: 'Вчера' },
+            { name: 'Руслан К.', district: 'Вахитовский р-н', text: 'Заказывал установку входной двери и замка. Сделали аккуратно, мусор убрали. Отличный сервис в Казани.', rating: 5, date: '3 дня назад' }
+        ];
+
+        let ordersData = JSON.parse(localStorage.getItem('site_orders')) || [
+            { id: 101, name: 'Артур', phone: '+7 (961) 123-45-67', district: 'Ново-Савиновский', service: 'Установка раковины', desc: 'Подтекает сифон под раковиной', date: 'Сегодня, 14:20' }
         ];
 
         const mastersData = [
             { name: 'Рамиль Сафин', role: 'Электрик-сантехник (6 разряд)', exp: '9 лет опыта', rating: '4.95', district: 'Ново-Савиновский, Вахитовский', avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80' },
             { name: 'Ильнур Хасанов', role: 'Специалист по сантехнике и ваннам', exp: '12 лет опыта', rating: '5.0', district: 'Советский, Приволжский', avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&auto=format&fit=crop&q=80' },
             { name: 'Евгений Морозов', role: 'Плотник и сборщик мебели', exp: '7 лет опыта', rating: '4.88', district: 'Московский, Кировский, Авиастроительный', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80' }
-        ];
-
-        let reviewsData = [
-            { name: 'Айгуль З.', district: 'Ново-Савиновский р-н', text: 'Мастер приехал со своими кронштейнами и раковиной, за 40 минут заменил всё идеальнейше. Все расценки совпали с прямоугольниками прайс-листа!', rating: 5, date: 'Вчера' },
-            { name: 'Руслан К.', district: 'Вахитовский р-н', text: 'Заказывал установку входной двери и замка. Сделали аккуратно, мусор убрали. Отличный сервис в Казани.', rating: 5, date: '3 дня назад' }
         ];
 
         let activeParentCat = 'plumbing';
@@ -1042,6 +1063,7 @@
             const targetPage = document.getElementById(`page-${pageId}`);
             if (targetPage) {
                 targetPage.classList.remove('hidden');
+                if(pageId === 'admin') checkAdminAuth();
             } else {
                 document.getElementById('page-home').classList.remove('hidden');
             }
@@ -1097,6 +1119,7 @@
                 date: 'Только что'
             });
 
+            localStorage.setItem('site_reviews', JSON.stringify(reviewsData));
             renderReviews();
             alert('Спасибо за ваш отзыв! Он успешно добавлен на сайт.');
             e.target.reset();
@@ -1134,6 +1157,17 @@
             const name = document.getElementById('quiz-name').value;
             const phone = document.getElementById('quiz-phone').value;
 
+            ordersData.unshift({
+                id: Date.now().toString().slice(-4),
+                name: name,
+                phone: phone,
+                district: quizAnswers.district || 'Казань',
+                service: `Квиз: ${quizAnswers.type || 'Ремонт'} (Скидка 10%)`,
+                desc: 'Заявка из онлайн-квиза с 10% скидкой',
+                date: 'Только что'
+            });
+            localStorage.setItem('site_orders', JSON.stringify(ordersData));
+
             const text = `🎁 *ЗАЯВКА ИЗ КВИЗА (СКИДКА 10%)*\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Тип работ: ${quizAnswers.type || 'Не выбран'}\n📍 Район: ${quizAnswers.district || 'Не выбран'}`;
 
             await sendTelegramMessageDirect(text, null);
@@ -1142,6 +1176,185 @@
             document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
             document.getElementById('quiz-step-1').classList.remove('hidden');
             quizAnswers = {};
+        }
+
+        // ADMIN PANEL FUNCTIONS
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const pass = document.getElementById('admin-password-input').value;
+            if(pass === 'admin123') {
+                localStorage.setItem('admin_auth', 'true');
+                checkAdminAuth();
+            } else {
+                alert('Неверный пароль администратора!');
+            }
+        }
+
+        function checkAdminAuth() {
+            const isAuth = localStorage.getItem('admin_auth') === 'true';
+            const loginBox = document.getElementById('admin-login-box');
+            const dashboard = document.getElementById('admin-dashboard');
+
+            if(isAuth) {
+                if(loginBox) loginBox.classList.add('hidden');
+                if(dashboard) dashboard.classList.remove('hidden');
+                renderAdminDashboard();
+            } else {
+                if(loginBox) loginBox.classList.remove('hidden');
+                if(dashboard) dashboard.classList.add('hidden');
+            }
+        }
+
+        function logoutAdmin() {
+            localStorage.removeItem('admin_auth');
+            checkAdminAuth();
+        }
+
+        function switchAdminTab(tabName) {
+            document.querySelectorAll('.admin-tab-content').forEach(el => el.classList.add('hidden'));
+            const targetTab = document.getElementById(`admin-tab-${tabName}`);
+            if(targetTab) targetTab.classList.remove('hidden');
+
+            ['orders', 'reviews', 'prices'].forEach(t => {
+                const btn = document.getElementById(`admin-tab-btn-${t}`);
+                if(!btn) return;
+                if(t === tabName) {
+                    btn.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-orange text-slate-950 transition';
+                } else {
+                    btn.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition';
+                }
+            });
+        }
+
+        function renderAdminDashboard() {
+            const ordersCountEl = document.getElementById('orders-count');
+            const reviewsCountEl = document.getElementById('reviews-count');
+            if(ordersCountEl) ordersCountEl.innerText = ordersData.length;
+            if(reviewsCountEl) reviewsCountEl.innerText = reviewsData.length;
+
+            const ordersList = document.getElementById('admin-orders-list');
+            if(ordersList) {
+                if(ordersData.length === 0) {
+                    ordersList.innerHTML = `<div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-xs">Нет новых заявок</div>`;
+                } else {
+                    ordersList.innerHTML = ordersData.map((ord, idx) => `
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="bg-amber-500/10 text-brand-orange font-bold text-xs px-2.5 py-0.5 rounded-md">Заявка #${ord.id || idx}</span>
+                                    <span class="text-xs text-slate-400">${ord.date || 'Недавно'}</span>
+                                </div>
+                                <div class="text-sm font-bold text-white">${ord.name} — <a href="tel:${ord.phone}" class="text-amber-400">${ord.phone}</a></div>
+                                <div class="text-xs text-slate-300 mt-1"><b>Услуга:</b> ${ord.service} | <b>Район:</b> ${ord.district}</div>
+                                <div class="text-xs text-slate-400 mt-1 italic">"${ord.desc}"</div>
+                            </div>
+                            <button onclick="deleteOrder(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            const revList = document.getElementById('admin-reviews-list');
+            if(revList) {
+                revList.innerHTML = reviewsData.map((rev, idx) => `
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-white text-sm">${rev.name}</span>
+                                <span class="text-xs text-slate-400">(${rev.district})</span>
+                                <span class="text-xs text-amber-400">${'⭐'.repeat(rev.rating)}</span>
+                            </div>
+                            <p class="text-xs text-slate-300">"${rev.text}"</p>
+                        </div>
+                        <button onclick="deleteReview(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
+                    </div>
+                `).join('');
+            }
+
+            const priceTable = document.getElementById('admin-price-table-body');
+            if(priceTable) {
+                priceTable.innerHTML = priceDatabase.map((item, idx) => `
+                    <tr class="border-b border-slate-800 hover:bg-slate-950/50">
+                        <td class="py-3 px-4 font-semibold text-white">${item.title}</td>
+                        <td class="py-3 px-4 text-slate-400">${item.cat}</td>
+                        <td class="py-3 px-4">${item.unit}</td>
+                        <td class="py-3 px-4 font-bold text-brand-orange">${item.price}</td>
+                        <td class="py-3 px-4 text-right space-x-2">
+                            <button onclick="openEditPriceModal(${idx})" class="px-2.5 py-1 bg-sky-500/10 text-sky-400 hover:bg-sky-500 hover:text-white rounded-lg text-xs font-bold">Изменить</button>
+                            <button onclick="deletePriceItem(${idx})" class="px-2.5 py-1 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-lg text-xs font-bold">Удалить</button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        function deleteOrder(idx) {
+            ordersData.splice(idx, 1);
+            localStorage.setItem('site_orders', JSON.stringify(ordersData));
+            renderAdminDashboard();
+        }
+
+        function deleteReview(idx) {
+            reviewsData.splice(idx, 1);
+            localStorage.setItem('site_reviews', JSON.stringify(reviewsData));
+            renderAdminDashboard();
+            renderReviews();
+        }
+
+        function deletePriceItem(idx) {
+            priceDatabase.splice(idx, 1);
+            localStorage.setItem('site_prices', JSON.stringify(priceDatabase));
+            renderAdminDashboard();
+            renderPricelistRectangles();
+        }
+
+        function openAddPriceModal() {
+            document.getElementById('price-modal-title').innerText = 'Добавить новую услугу';
+            document.getElementById('edit-price-index').value = '';
+            document.getElementById('edit-price-title').value = '';
+            document.getElementById('edit-price-cat').value = 'plumbing';
+            document.getElementById('edit-price-unit').value = 'шт.';
+            document.getElementById('edit-price-val').value = '500 ₽';
+            document.getElementById('price-edit-modal').classList.remove('hidden');
+        }
+
+        function openEditPriceModal(idx) {
+            const item = priceDatabase[idx];
+            document.getElementById('price-modal-title').innerText = 'Редактировать услугу';
+            document.getElementById('edit-price-index').value = idx;
+            document.getElementById('edit-price-title').value = item.title;
+            document.getElementById('edit-price-cat').value = item.cat;
+            document.getElementById('edit-price-unit').value = item.unit;
+            document.getElementById('edit-price-val').value = item.price;
+            document.getElementById('price-edit-modal').classList.remove('hidden');
+        }
+
+        function closePriceModal() {
+            document.getElementById('price-edit-modal').classList.add('hidden');
+        }
+
+        function savePriceItem(e) {
+            e.preventDefault();
+            const idx = document.getElementById('edit-price-index').value;
+            const newItem = {
+                title: document.getElementById('edit-price-title').value,
+                cat: document.getElementById('edit-price-cat').value,
+                sub: 'Основные услуги',
+                unit: document.getElementById('edit-price-unit').value,
+                price: document.getElementById('edit-price-val').value
+            };
+
+            if(idx === '') {
+                priceDatabase.push(newItem);
+            } else {
+                priceDatabase[idx] = newItem;
+            }
+
+            localStorage.setItem('site_prices', JSON.stringify(priceDatabase));
+            closePriceModal();
+            renderAdminDashboard();
+            renderPricelistRectangles();
+            alert('Изменения в прайс-листе сохранены успешно!');
         }
 
         // PRICELIST NAVIGATION
@@ -1234,7 +1447,7 @@
                         </div>
                         <div>
                             <div class="font-bold text-white text-sm sm:text-base leading-snug">${item.title}</div>
-                            <div class="text-[11px] text-slate-400 mt-0.5">${item.sub}</div>
+                            <div class="text-[11px] text-slate-400 mt-0.5">${item.sub || 'Основное'}</div>
                         </div>
                     </div>
 
@@ -1343,6 +1556,19 @@
             const data = getFormValues(type);
             const fileCount = data.files ? data.files.length : 0;
 
+            const newOrder = {
+                id: Date.now().toString().slice(-4),
+                name: data.name,
+                phone: data.phone,
+                district: data.district || 'Казань',
+                service: data.service || 'Бытовой ремонт',
+                desc: data.desc,
+                date: 'Только что'
+            };
+
+            ordersData.unshift(newOrder);
+            localStorage.setItem('site_orders', JSON.stringify(ordersData));
+
             const text = `🛠 *НОВАЯ ЗАЯВКА В КАЗАНИ*\n\n👤 *Имя:* ${data.name}\n📞 *Телефон:* ${data.phone}\n📍 *Район:* ${data.district || 'Казань'}\n🔧 *Услуга:* ${data.service || 'Бытовой ремонт'}\n📝 *Описание:* ${data.desc}\n📎 *Файлов:* ${fileCount}`;
 
             await sendTelegramMessageDirect(text, data.files);
@@ -1352,6 +1578,7 @@
             window.location.href = `mailto:sokoladniy.tretiy.glaz@gmail.com?subject=${subject}&body=${body}`;
 
             alert(`Спасибо, ${data.name}! Ваша заявка успешно передана администратору.`);
+            e.target.reset();
             if(type === 'modal') closeBookingModal();
         }
 
