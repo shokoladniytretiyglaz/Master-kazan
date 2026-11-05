@@ -914,22 +914,42 @@
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900 border border-slate-800 p-6 rounded-3xl">
                         <div>
                             <h1 class="font-heading text-2xl font-black text-white">Панель управления</h1>
-                            <p class="text-xs text-slate-400">Управление заявками клиентов, анкетами исполнителей, сообщениями и ценами</p>
+                            <p class="text-xs text-slate-400">Управление заявками клиентов, анкетами исполнителей, чатом и ценами</p>
                         </div>
                         <button onclick="logoutAdmin()" class="px-4 py-2 bg-rose-600/20 text-rose-400 hover:bg-rose-600 hover:text-white rounded-xl text-xs font-bold transition">Выйти</button>
                     </div>
 
                     <div class="flex gap-2 border-b border-slate-800 pb-4 overflow-x-auto">
-                        <button onclick="switchAdminTab('orders')" id="admin-tab-btn-orders" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-orange text-slate-950 transition">Заявки клиентов (<span id="orders-count">0</span>)</button>
-                        <button onclick="switchAdminTab('performers')" id="admin-tab-btn-performers" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Анкеты исполнителей (<span id="performers-count">0</span>)</button>
-                        <button onclick="switchAdminTab('messages')" id="admin-tab-btn-messages" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Сообщения (<span id="messages-count">0</span>)</button>
+                        <button onclick="switchAdminTab('orders')" id="admin-tab-btn-orders" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-orange text-slate-950 transition">Заявки (<span id="orders-count">0</span>)</button>
+                        <button onclick="switchAdminTab('chat')" id="admin-tab-btn-chat" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">💬 Чат с клиентами (<span id="chat-count">0</span>)</button>
+                        <button onclick="switchAdminTab('performers')" id="admin-tab-btn-performers" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Анкеты (<span id="performers-count">0</span>)</button>
+                        <button onclick="switchAdminTab('messages')" id="admin-tab-btn-messages" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Письма (<span id="messages-count">0</span>)</button>
                         <button onclick="switchAdminTab('reviews')" id="admin-tab-btn-reviews" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Отзывы (<span id="reviews-count">0</span>)</button>
-                        <button onclick="switchAdminTab('prices')" id="admin-tab-btn-prices" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Редактор цен</button>
+                        <button onclick="switchAdminTab('prices')" id="admin-tab-btn-prices" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Цены</button>
                     </div>
 
                     <!-- Tab Orders -->
                     <div id="admin-tab-orders" class="admin-tab-content space-y-3">
                         <div id="admin-orders-list"></div>
+                    </div>
+
+                    <!-- Tab Chat (NEW: Обратный чат для администратора) -->
+                    <div id="admin-tab-chat" class="admin-tab-content space-y-4 hidden">
+                        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
+                            <h2 class="text-base font-bold text-white mb-2"><i class="fa-solid fa-comments text-brand-orange mr-2"></i> Онлайн-чат с клиентами</h2>
+                            <p class="text-xs text-slate-400 mb-4">Здесь отображаются сообщения из виджета чата. Вы можете ответить любому клиенту в реальном времени.</p>
+                            
+                            <div id="admin-chat-messages-box" class="bg-slate-950 border border-slate-800 rounded-2xl p-4 h-96 overflow-y-auto space-y-3 mb-4 no-scrollbar">
+                                <!-- Populated via JS -->
+                            </div>
+
+                            <form onsubmit="handleAdminChatReply(event)" class="flex gap-2">
+                                <input type="text" id="admin-chat-input" required placeholder="Введите ответ клиенту от имени оператора..." class="flex-grow bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-orange">
+                                <button type="submit" class="px-6 py-3 rounded-xl bg-brand-orange text-slate-950 font-bold text-xs hover:brightness-110 transition flex items-center gap-1.5">
+                                    <i class="fa-solid fa-paper-plane"></i> Ответить клиенту
+                                </button>
+                            </form>
+                        </div>
                     </div>
 
                     <!-- Tab Performers -->
@@ -1054,14 +1074,7 @@
 
             <!-- Chat Messages Container -->
             <div id="chat-messages-container" class="flex-grow overflow-y-auto space-y-3 pr-2 mb-3 no-scrollbar text-xs">
-                <div class="flex items-start gap-2">
-                    <div class="w-7 h-7 rounded-full bg-brand-orange text-slate-950 flex items-center justify-center shrink-0 font-bold text-xs">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
-                    <div class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[80%] leading-relaxed">
-                        Здравствуйте! Я оператор службы бытового ремонта в Казани. Чем могу помочь вам сегодня? Опишите вашу задачу или вопрос.
-                    </div>
-                </div>
+                <!-- Populated via JS -->
             </div>
 
             <!-- Chat Input Form -->
@@ -1554,6 +1567,11 @@
         let performersData = JSON.parse(localStorage.getItem('site_performers')) || [];
         let messagesData = JSON.parse(localStorage.getItem('site_messages')) || [];
 
+        // ОБРАТНЫЙ ЧАТ С КЛИЕНТАМИ
+        let chatMessages = JSON.parse(localStorage.getItem('site_chat_history')) || [
+            { sender: 'operator', text: 'Здравствуйте! Я оператор службы бытового ремонта в Казани. Чем могу помочь вам сегодня? Опишите вашу задачу или вопрос.', date: 'Только что' }
+        ];
+
         const mastersData = [
             { name: 'Рамиль Сафин', role: 'Сборщик мебели и мастер на час', exp: '9 лет опыта', rating: '4.95', district: 'Ново-Савиновский, Вахитовский', avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80' },
             { name: 'Ильнур Хасанов', role: 'Специалист по сантехнике и ваннам', exp: '12 лет опыта', rating: '5.0', district: 'Советский, Приволжский', avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&auto=format&fit=crop&q=80' },
@@ -1572,6 +1590,7 @@
             renderReviews();
             setupPhoneMasks();
             initMainFormCheckboxes();
+            renderChatMessages();
         });
 
         document.addEventListener('keydown', (e) => {
@@ -1641,10 +1660,69 @@
             if(icon) icon.classList.toggle('rotate-180');
         }
 
-        // QUICK CHAT WITH OPERATOR TOGGLE & SUBMIT
+        // QUICK CHAT WITH OPERATOR TOGGLE & SUBMIT (ОБРАТНЫЙ ЧАТ)
         function toggleQuickChat() {
             const modal = document.getElementById('quick-chat-modal');
-            if(modal) modal.classList.toggle('hidden');
+            if(modal) {
+                modal.classList.toggle('hidden');
+                renderChatMessages();
+            }
+        }
+
+        function renderChatMessages() {
+            // Рендер чата для клиента
+            const clientContainer = document.getElementById('chat-messages-container');
+            if(clientContainer) {
+                clientContainer.innerHTML = chatMessages.map(msg => {
+                    if(msg.sender === 'client') {
+                        return `
+                            <div class="flex items-end justify-end gap-2">
+                                <div class="bg-brand-orange text-slate-950 p-3 rounded-2xl rounded-tr-none max-w-[80%] leading-relaxed font-medium">
+                                    ${msg.text}
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        return `
+                            <div class="flex items-start gap-2">
+                                <div class="w-7 h-7 rounded-full bg-brand-orange text-slate-950 flex items-center justify-center shrink-0 font-bold text-xs">
+                                    <i class="fa-solid fa-headset"></i>
+                                </div>
+                                <div class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[80%] leading-relaxed">
+                                    ${msg.text}
+                                </div>
+                            </div>
+                        `;
+                    }
+                }).join('');
+                clientContainer.scrollTop = clientContainer.scrollHeight;
+            }
+
+            // Рендер чата для админки (если открыта вкладка чата)
+            const adminContainer = document.getElementById('admin-chat-messages-box');
+            const chatCount = document.getElementById('chat-count');
+            if(chatCount) chatCount.innerText = chatMessages.filter(m => m.sender === 'client').length;
+
+            if(adminContainer) {
+                adminContainer.innerHTML = chatMessages.map((msg, index) => {
+                    if(msg.sender === 'client') {
+                        return `
+                            <div class="p-3 bg-slate-900 border border-slate-800 rounded-2xl max-w-lg">
+                                <div class="text-[10px] text-amber-400 font-bold mb-1">👤 Клиент:</div>
+                                <div class="text-xs text-white">${msg.text}</div>
+                            </div>
+                        `;
+                    } else {
+                        return `
+                            <div class="p-3 bg-slate-900/50 border border-slate-800/80 rounded-2xl max-w-lg ml-auto text-right">
+                                <div class="text-[10px] text-brand-orange font-bold mb-1">👨‍💻 Администратор:</div>
+                                <div class="text-xs text-slate-300">${msg.text}</div>
+                            </div>
+                        `;
+                    }
+                }).join('');
+                adminContainer.scrollTop = adminContainer.scrollHeight;
+            }
         }
 
         function handleQuickChatSubmit(e) {
@@ -1653,45 +1731,39 @@
             const message = inputEl.value.trim();
             if(!message) return;
 
-            const container = document.getElementById('chat-messages-container');
-            
-            // Add user message bubble
-            container.innerHTML += `
-                <div class="flex items-end justify-end gap-2">
-                    <div class="bg-brand-orange text-slate-950 p-3 rounded-2xl rounded-tr-none max-w-[80%] leading-relaxed font-medium">
-                        ${message}
-                    </div>
-                </div>
-            `;
-            
-            inputEl.value = '';
-            container.scrollTop = container.scrollHeight;
+            // Добавляем сообщение клиента
+            chatMessages.push({ sender: 'client', text: message, date: 'Только что' });
+            localStorage.setItem('site_chat_history', JSON.stringify(chatMessages));
 
-            // Save message to messages data
+            inputEl.value = '';
+            renderChatMessages();
+
+            // Также дублируем в общие сообщения админки
             messagesData.unshift({
                 id: Date.now().toString().slice(-4),
-                name: 'Клиент (из чата)',
-                email: 'Чат с оператором',
-                subject: 'Сообщение в чат с оператором',
+                name: 'Клиент из чата',
+                email: 'Онлайн-чат',
+                subject: 'Сообщение в чате с оператором',
                 message: message,
                 date: 'Только что'
             });
             localStorage.setItem('site_messages', JSON.stringify(messagesData));
+        }
 
-            // Simulate operator reply
-            setTimeout(() => {
-                container.innerHTML += `
-                    <div class="flex items-start gap-2">
-                        <div class="w-7 h-7 rounded-full bg-brand-orange text-slate-950 flex items-center justify-center shrink-0 font-bold text-xs">
-                            <i class="fa-solid fa-headset"></i>
-                        </div>
-                        <div class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[80%] leading-relaxed">
-                            Спасибо! Сообщение получено. Оператор свяжется с вами в ближайшее время или перезвонит по указанному номеру.
-                        </div>
-                    </div>
-                `;
-                container.scrollTop = container.scrollHeight;
-            }, 1000);
+        // ОТВЕТ АДМИНИСТРАТОРА ИЗ АДМИНКИ
+        function handleAdminChatReply(e) {
+            e.preventDefault();
+            const inputEl = document.getElementById('admin-chat-input');
+            const message = inputEl.value.trim();
+            if(!message) return;
+
+            // Добавляем ответ администратора
+            chatMessages.push({ sender: 'operator', text: message, date: 'Только что' });
+            localStorage.setItem('site_chat_history', JSON.stringify(chatMessages));
+
+            inputEl.value = '';
+            renderChatMessages();
+            showSuccessModal('Ответ отправлен', 'Сообщение успешно доставлено клиенту в чат!');
         }
 
         // CUSTOM SUCCESS POPUP MODAL FUNCTIONS
@@ -1894,7 +1966,7 @@
             const targetTab = document.getElementById(`admin-tab-${tabName}`);
             if(targetTab) targetTab.classList.remove('hidden');
 
-            ['orders', 'performers', 'messages', 'reviews', 'prices'].forEach(t => {
+            ['orders', 'chat', 'performers', 'messages', 'reviews', 'prices'].forEach(t => {
                 const btn = document.getElementById(`admin-tab-btn-${t}`);
                 if(!btn) return;
                 if(t === tabName) {
@@ -1903,6 +1975,10 @@
                     btn.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition';
                 }
             });
+
+            if(tabName === 'chat') {
+                renderChatMessages();
+            }
         }
 
         function renderAdminDashboard() {
@@ -1915,6 +1991,8 @@
             if(performersCountEl) performersCountEl.innerText = performersData.length;
             if(messagesCountEl) messagesCountEl.innerText = messagesData.length;
             if(reviewsCountEl) reviewsCountEl.innerText = reviewsData.length;
+
+            renderChatMessages();
 
             // Orders list
             const ordersList = document.getElementById('admin-orders-list');
