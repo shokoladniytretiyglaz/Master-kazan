@@ -22,7 +22,7 @@
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Казань",
-        "streetAddress": "ул. Чистопольская, д. 42"
+        "streetAddress": "Проспект Победы, д. 18"
       },
       "priceRange": "RUB",
       "openingHours": "Mo-Su 00:00-24:00"
@@ -98,8 +98,8 @@
     <div class="bg-slate-900 border-b border-slate-800 text-xs text-slate-400 py-2 px-4">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
             <div class="flex items-center space-x-4">
-                <a href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D1%83%D0%BB.%20%D0%A7%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F%2C%2042" target="_blank" class="text-amber-400 font-bold flex items-center hover:text-brand-orange transition" title="Открыть адрес на карте">
-                    <i class="fa-solid fa-location-dot mr-1.5"></i> Казань и пригород
+                <a href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D0%9F%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B%2C%2018" target="_blank" class="text-amber-400 font-bold flex items-center hover:text-brand-orange transition" title="Открыть адрес на карте">
+                    <i class="fa-solid fa-location-dot mr-1.5"></i> Казань и пригород (пр. Победы, 18)
                 </a>
                 <span class="hidden md:inline text-slate-700">|</span>
                 <span class="hidden md:inline text-emerald-400 font-semibold flex items-center gap-1.5">
@@ -145,7 +145,7 @@
                 <a href="#/reviews" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Отзывы</a>
                 <a href="#/faq" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">FAQ</a>
                 <a href="#/contacts" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Контакты</a>
-                <a href="#/admin" class="nav-link py-2 text-amber-400 hover:text-brand-orange transition-colors flex items-center gap-1"><i class="fa-solid fa-gear"></i> Админка</a>
+                <a href="#/master-register" class="nav-link py-2 text-amber-400 hover:text-brand-orange transition-colors flex items-center gap-1"><i class="fa-solid fa-user-plus"></i> Стать мастером</a>
             </nav>
 
             <!-- CTA Call Button -->
@@ -170,7 +170,7 @@
             <a href="#/reviews" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Отзывы</a>
             <a href="#/faq" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Частые вопросы (FAQ)</a>
             <a href="#/contacts" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Оформить заявку</a>
-            <a href="#/admin" onclick="closeMobileMenu()" class="block text-base font-medium text-amber-400 hover:text-brand-orange py-1"><i class="fa-solid fa-gear"></i> Панель администратора</a>
+            <a href="#/master-register" onclick="closeMobileMenu()" class="block text-base font-medium text-amber-400 hover:text-brand-orange py-1"><i class="fa-solid fa-user-plus"></i> Стать исполнителем</a>
             <button onclick="closeMobileMenu(); openBookingModal('Вызов из меню')" class="w-full text-center bg-brand-orange text-slate-950 font-bold py-3 rounded-xl mt-2">
                 Срочный вызов мастера в Казани
             </button>
@@ -198,7 +198,7 @@
                             </h1>
 
                             <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                                Сантехника, электрик, услуги плотника и сборка мебели. Выберите несколько услуг сразу и вызовите мастера!
+                                Сантехника, электрик, услуги плотника и сборка мебели. Выберите несколько услуг сразу и вызовите проверенного мастера на дом!
                             </p>
 
                             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
@@ -257,8 +257,70 @@
                 </div>
             </div>
 
+            <!-- WELCOME CLIENTS & DETAILED SERVICES DESCRIPTION -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="bg-gradient-to-br from-slate-900 to-slate-900/80 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden mb-12">
+                    <div class="absolute -right-10 -bottom-10 text-slate-800/20 text-9xl pointer-events-none">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <div class="max-w-3xl relative z-10">
+                        <span class="px-3.5 py-1.5 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-black uppercase tracking-wider mb-4 inline-block">Добро пожаловать!</span>
+                        <h2 class="font-heading text-2xl sm:text-4xl font-black text-white mb-4 leading-tight">Профессиональная служба бытового сервиса в Казани</h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                            Мы рады приветствовать вас на официальном сайте службы «Мастер На Час — Казань»! Наша команда квалифицированных специалистов ежедневно решает любые бытовые задачи горожан: от мелкого ремонта розеток и сборки мебели до капитального монтажа сантехники и устранения сложных аварийных ситуаций. Мы ценим ваше время, гарантируем чистоту на рабочем месте, фиксированные честные цены в рублях и официальную гарантию по договору.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold"><i class="fa-solid fa-clock"></i></div>
+                                <div><div class="text-xs font-bold text-white">Выезд за 30 минут</div><div class="text-[11px] text-slate-400">По всем районам города</div></div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold"><i class="fa-solid fa-ruble-sign"></i></div>
+                                <div><div class="text-xs font-bold text-white">Честные цены</div><div class="text-[11px] text-slate-400">Без скрытых доплат</div></div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold"><i class="fa-solid fa-shield-cat"></i></div>
+                                <div><div class="text-xs font-bold text-white">Гарантия 1 год</div><div class="text-[11px] text-slate-400">По официальному договору</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Services Overview Cards -->
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs font-bold text-brand-orange uppercase tracking-wider">Направления работы</span>
+                    <h3 class="font-heading text-2xl sm:text-3xl font-black text-white mt-1">Подробный перечень оказываемых услуг</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-brand-orange flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-couch"></i></div>
+                            <h4 class="text-base font-bold text-white mb-2">Сборка и ремонт мебели</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">Сборка шкафов, кухонь, диванов, кроватей, комодов. Разборка мебели при переезде, регулировка фурнитуры, замена фасадов и перетяжка.</p>
+                        </div>
+                        <a href="#/pricelist" onclick="selectParentCategory('furniture')" class="text-xs font-bold text-brand-orange hover:underline flex items-center gap-1">Смотреть цены и каталог <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-faucet"></i></div>
+                            <h4 class="text-base font-bold text-white mb-2">Сантехнические работы</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">Установка и замена смесителей, моек, раковин, унитазов, ванн и душевых кабин. Устранение засоров, подключение стиральных и посудомоечных машин.</p>
+                        </div>
+                        <a href="#/pricelist" onclick="selectParentCategory('plumbing')" class="text-xs font-bold text-brand-orange hover:underline flex items-center gap-1">Смотреть цены и каталог <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-bolt"></i></div>
+                            <h4 class="text-base font-bold text-white mb-2">Электромонтажные работы</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">Установка розеток, выключателей, люстр и бра. Монтаж электрощитов, автоматов, прокладка кабеля, подключение бытовой техники и теплых полов.</p>
+                        </div>
+                        <a href="#/pricelist" onclick="selectParentCategory('electric')" class="text-xs font-bold text-brand-orange hover:underline flex items-center gap-1">Смотреть цены и каталог <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
             <!-- SECTION: GUARANTEES & SAFETY -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-t border-slate-900">
                 <div class="text-center max-w-2xl mx-auto mb-10">
                     <h2 class="font-heading text-2xl sm:text-3xl font-black text-white">Почему нам доверяют квартиры в Казани</h2>
                     <p class="text-xs text-slate-400 mt-2">Полная юридическая и материальная безопасность вашей собственности</p>
@@ -344,21 +406,107 @@
                 <div class="text-center max-w-2xl mx-auto mb-8">
                     <span class="text-xs font-bold text-brand-orange uppercase tracking-wider">Карта проезда</span>
                     <h2 class="font-heading text-2xl sm:text-3xl font-black text-white mt-1">Наш офис и диспетчерская в Казани</h2>
-                    <p class="text-xs text-slate-400 mt-2">ул. Чистопольская, д. 42 — работаем во всех районах города и пригороде</p>
+                    <p class="text-xs text-slate-400 mt-2">Проспект Победы, д. 18 — работаем во всех районах города и пригороде</p>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 rounded-3xl p-4 sm:p-6 shadow-2xl relative overflow-hidden">
                     <div class="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-slate-800 shadow-inner bg-slate-950">
-                        <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D1%83%D0%BB.%20%D0%A7%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F%2C%2042&z=16" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative;" class="w-full h-full border-0 filter contrast-110"></iframe>
+                        <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D0%9F%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B%2C%2018&z=16" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative;" class="w-full h-full border-0 filter contrast-110"></iframe>
                     </div>
                     <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300 px-2">
                         <div class="flex items-center gap-2">
                             <i class="fa-solid fa-location-dot text-brand-orange text-base"></i>
-                            <span>г. Казань, ул. Чистопольская, д. 42 (Ново-Савиновский р-н)</span>
+                            <span>г. Казань, Проспект Победы, д. 18</span>
                         </div>
-                        <a href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D1%83%D0%BB.%20%D0%A7%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F%2C%2042" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-brand-orange to-amber-500 text-slate-950 font-black rounded-xl transition shadow-lg hover:brightness-110 flex items-center gap-2">
+                        <a href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D0%9F%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B%2C%2018" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-brand-orange to-amber-500 text-slate-950 font-black rounded-xl transition shadow-lg hover:brightness-110 flex items-center gap-2">
                             <i class="fa-solid fa-map-location-dot"></i> Открыть в Яндекс Картах
                         </a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: MASTER REGISTER (РЕГИСТРАЦИЯ ИСПОЛНИТЕЛЕЙ) -->
+        <section id="page-master-register" class="page-view hidden py-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Attractive Information Banner for Performers -->
+                <div class="bg-gradient-to-r from-amber-500/10 via-brand-orange/10 to-slate-900 border border-brand-orange/30 rounded-3xl p-8 sm:p-10 mb-10 shadow-2xl relative overflow-hidden">
+                    <div class="absolute right-4 top-4 text-brand-orange/20 text-8xl pointer-events-none">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <span class="px-3.5 py-1.5 rounded-full bg-brand-orange text-slate-950 text-xs font-black uppercase tracking-wider mb-4 inline-block">Работа для профессионалов</span>
+                    <h1 class="font-heading text-3xl sm:text-4xl font-black text-white mb-4">Станьте партнером-исполнителем службы «Мастер На Час» в Казани!</h1>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
+                        Имеете опыт в бытовом ремонте, сантехнике, электрике или сборке мебели? Получайте стабильный поток заказов рядом с вашим домом, работайте по удобному графику и зарабатывайте достойно без поиска клиентов!
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-2xl">
+                            <div class="text-amber-400 font-black text-lg mb-1">🪙 Высокий доход</div>
+                            <div class="text-xs text-slate-400">Своевременные выплаты за каждый выполненный заказ.</div>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-2xl">
+                            <div class="text-amber-400 font-black text-lg mb-1">📍 Рядом с домом</div>
+                            <div class="text-xs text-slate-400">Заказы подбираются в вашем районе Казани или пригороде.</div>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-2xl">
+                            <div class="text-amber-400 font-black text-lg mb-1">📋 Заказы 24/7</div>
+                            <div class="text-xs text-slate-400">Постоянный поток заявок через удобную систему диспетчерской.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                    <h2 class="text-xl font-bold text-white mb-2">Анкета регистрации исполнителя</h2>
+                    <p class="text-xs text-slate-400 mb-6">Заполните данные, укажите адрес прописки и загрузите фото паспорта с лицом для прохождения проверки службы безопасности.</p>
+
+                    <form onsubmit="handleMasterRegisterSubmit(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">ФИО полностью *</label>
+                                <input type="text" id="m-name" required placeholder="Иванов Иван Иванович" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Номер телефона *</label>
+                                <input type="tel" id="m-phone" required placeholder="8 (927) 000-00-00" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Специализация *</label>
+                                <select id="m-spec" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-3 text-xs text-white focus:outline-none focus:border-brand-orange">
+                                    <option value="Мастер на час / Универсал">Мастер на час / Универсал</option>
+                                    <option value="Сантехник">Сантехник</option>
+                                    <option value="Электрик">Электрик</option>
+                                    <option value="Сборщик мебели">Сборщик мебели</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Адрес прописки (по паспорту) *</label>
+                                <input type="text" id="m-address" required placeholder="г. Казань, ул. ..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Опыт работы и ваши навыки</label>
+                            <textarea id="m-desc" rows="2" placeholder="Расскажите о своем опыте..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none"></textarea>
+                        </div>
+
+                        <!-- Passport photo with face upload -->
+                        <div class="border-2 border-dashed border-slate-700 hover:border-brand-orange rounded-2xl p-5 text-center bg-slate-950 transition cursor-pointer" onclick="document.getElementById('m-passport').click()">
+                            <input type="file" id="m-passport" required accept="image/*" onchange="previewFiles(this, 'm-passport-prev')" class="hidden">
+                            <i class="fa-solid fa-id-card-clip text-3xl text-brand-orange mb-2"></i>
+                            <div class="text-xs font-bold text-white">Загрузите фото разворота паспорта и фото с лицом в руках *</div>
+                            <div class="text-[11px] text-slate-400 mt-1">Для верификации службой безопасности (JPG, PNG)</div>
+                            <div id="m-passport-prev" class="mt-2 text-xs font-bold text-amber-400 flex flex-wrap justify-center gap-2"></div>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-orange to-amber-500 text-slate-950 font-black text-sm hover:brightness-110 shadow-lg transition">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Отправить анкету на проверку в админку
+                        </button>
+                        <p class="text-[10px] text-slate-500 text-center">Нажимая кнопку, вы даете согласие на проверку персональных данных и проверку СБ.</p>
+                    </form>
                 </div>
             </div>
         </section>
@@ -536,17 +684,17 @@
             </div>
         </section>
 
-        <!-- PAGE: CONTACTS & MULTI-CHOICE ORDER FORM -->
+        <!-- PAGE: CONTACTS & MULTI-CHOICE ORDER FORM + WRITE US FORM -->
         <section id="page-contacts" class="page-view hidden py-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-10">
                     <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Оформить заявку</span>
-                    <h1 class="font-heading text-3xl sm:text-5xl font-black text-white mt-2 mb-3">Заказ с выбором услуг и фото/видео</h1>
-                    <p class="text-slate-400 text-sm">Отметьте нужные услуги из прайса (можно несколько), прикрепите медиафайлы и отправьте администратору.</p>
+                    <h1 class="font-heading text-3xl sm:text-5xl font-black text-white mt-2 mb-3">Контакты и связь с нами</h1>
+                    <p class="text-slate-400 text-sm">Вызовите мастера или напишите нам сообщение напрямую.</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
                     
                     <!-- Contact Cards -->
                     <div class="lg:col-span-5 space-y-4">
@@ -582,16 +730,6 @@
                         </div>
 
                         <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl shrink-0">
-                                <i class="fa-solid fa-comments"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400">Мессенджер MAX</div>
-                                <a href="tel:+79270435353" class="text-base font-bold text-white hover:text-indigo-400 transition">8 (927) 043-53-53</a>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex items-center gap-4">
                             <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-2xl shrink-0">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
@@ -603,8 +741,7 @@
 
                         <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
                             <h2 class="text-sm font-bold text-white mb-2"><i class="fa-solid fa-location-dot text-brand-orange mr-2"></i> Адрес диспетчерской:</h2>
-                            <p class="text-xs text-slate-400">г. Казань, ул. Чистопольская, д. 42 (Ново-Савиновский р-н)</p>
-                            <p class="text-xs text-slate-400 mt-1">Доп. филиал: ул. Баумана, д. 19 (Вахитовский р-н)</p>
+                            <p class="text-xs text-slate-400">г. Казань, Проспект Победы, д. 18</p>
                         </div>
                     </div>
 
@@ -669,7 +806,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Дополнительное описание (что еще нужно) перед кнопкой -->
                                 <div>
                                     <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Описание того, что вам еще нужно (детали, пожелания)</label>
                                     <textarea id="main-desc" rows="2" placeholder="Опишите детали задачи..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none transition"></textarea>
@@ -710,6 +846,41 @@
 
                 </div>
 
+                <!-- BEAUTIFUL "WRITE US" (НАПИСАТЬ НАМ) SECTION -->
+                <div class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl max-w-3xl mx-auto">
+                    <div class="text-center mb-8">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-brand-orange flex items-center justify-center text-xl mx-auto mb-3">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                        </div>
+                        <h2 class="font-heading text-2xl font-black text-white">Написать нам сообщение</h2>
+                        <p class="text-xs text-slate-400 mt-1">Письмо будет автоматически отправлено в административную панель сайта и на почту <span class="text-amber-400 font-bold">master.kazan5353@gmail.com</span></p>
+                    </div>
+
+                    <form onsubmit="handleWriteUsSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Ваше Имя *</label>
+                                <input type="text" id="wu-name" required placeholder="Артур" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Ваш E-mail *</label>
+                                <input type="email" id="wu-email" required placeholder="example@mail.ru" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Тема обращения *</label>
+                            <input type="text" id="wu-subject" required placeholder="Вопрос по сотрудничеству / качеству услуг" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-orange">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Текст сообщения *</label>
+                            <textarea id="wu-message" required rows="4" placeholder="Напишите ваше сообщение..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-orange to-amber-500 text-slate-950 font-black text-sm hover:brightness-110 shadow-lg transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Отправить сообщение в админку и на e-mail
+                        </button>
+                    </form>
+                </div>
+
             </div>
         </section>
 
@@ -734,13 +905,15 @@
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900 border border-slate-800 p-6 rounded-3xl">
                         <div>
                             <h1 class="font-heading text-2xl font-black text-white">Панель управления</h1>
-                            <p class="text-xs text-slate-400">Управление заявками клиентов, модерация отзывов и редактирование цен в прайсе</p>
+                            <p class="text-xs text-slate-400">Управление заявками клиентов, анкетами исполнителей, сообщениями и ценами</p>
                         </div>
                         <button onclick="logoutAdmin()" class="px-4 py-2 bg-rose-600/20 text-rose-400 hover:bg-rose-600 hover:text-white rounded-xl text-xs font-bold transition">Выйти</button>
                     </div>
 
                     <div class="flex gap-2 border-b border-slate-800 pb-4 overflow-x-auto">
-                        <button onclick="switchAdminTab('orders')" id="admin-tab-btn-orders" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-orange text-slate-950 transition">Заявки (<span id="orders-count">0</span>)</button>
+                        <button onclick="switchAdminTab('orders')" id="admin-tab-btn-orders" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-orange text-slate-950 transition">Заявки клиентов (<span id="orders-count">0</span>)</button>
+                        <button onclick="switchAdminTab('performers')" id="admin-tab-btn-performers" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Анкеты исполнителей (<span id="performers-count">0</span>)</button>
+                        <button onclick="switchAdminTab('messages')" id="admin-tab-btn-messages" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Сообщения (<span id="messages-count">0</span>)</button>
                         <button onclick="switchAdminTab('reviews')" id="admin-tab-btn-reviews" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Отзывы (<span id="reviews-count">0</span>)</button>
                         <button onclick="switchAdminTab('prices')" id="admin-tab-btn-prices" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Редактор цен</button>
                     </div>
@@ -748,6 +921,16 @@
                     <!-- Tab Orders -->
                     <div id="admin-tab-orders" class="admin-tab-content space-y-3">
                         <div id="admin-orders-list"></div>
+                    </div>
+
+                    <!-- Tab Performers -->
+                    <div id="admin-tab-performers" class="admin-tab-content space-y-3 hidden">
+                        <div id="admin-performers-list"></div>
+                    </div>
+
+                    <!-- Tab Messages -->
+                    <div id="admin-tab-messages" class="admin-tab-content space-y-3 hidden">
+                        <div id="admin-messages-list"></div>
                     </div>
 
                     <!-- Tab Reviews -->
@@ -783,7 +966,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-900 border-t border-slate-800 py-10 mt-12">
+    <footer class="bg-slate-900 border-t border-slate-800 py-10 mt-12 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
@@ -797,9 +980,9 @@
                     <ul class="space-y-1.5 text-xs text-slate-400">
                         <li><a href="#/home" class="hover:text-brand-orange transition">Главная</a></li>
                         <li><a href="#/pricelist" class="hover:text-brand-orange transition">Прайс-лист Казань</a></li>
+                        <li><a href="#/master-register" class="hover:text-amber-400 transition">Стать исполнителем</a></li>
                         <li><a href="#/faq" class="hover:text-brand-orange transition">Частые вопросы (FAQ)</a></li>
-                        <li><a href="#/contacts" class="hover:text-brand-orange transition">Подача заявки</a></li>
-                        <li><a href="#/admin" class="hover:text-amber-400 transition">Панель администратора</a></li>
+                        <li><a href="#/contacts" class="hover:text-brand-orange transition">Контакты и связь</a></li>
                     </ul>
                 </div>
                 <div>
@@ -815,13 +998,19 @@
                     <h2 class="text-xs font-bold uppercase tracking-wider text-white mb-3">Контакты</h2>
                     <div class="text-xs text-slate-300 space-y-1">
                         <div class="font-bold text-brand-orange text-sm">8 (927) 043-53-53</div>
-                        <div>г. Казань, ул. Чистопольская, 42</div>
+                        <div>г. Казань, пр. Победы, 18</div>
                         <div class="text-[11px] text-slate-400">master.kazan5353@gmail.com</div>
                     </div>
                 </div>
             </div>
-            <div class="pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
-                © 2026 «Мастер На Час — Казань». Официальные расценки в рублях (₽).
+            <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <div>© 2026 «Мастер На Час — Казань». Официальные расценки в рублях (₽).</div>
+                <!-- HIDDEN INCONSPICUOUS ADMIN LINK FOR REGULAR VISITORS -->
+                <div>
+                    <a href="#/admin" class="text-slate-700 hover:text-slate-500 text-[10px] tracking-widest flex items-center gap-1 transition" title="Панель управления">
+                        <i class="fa-solid fa-gear"></i> admin
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -963,7 +1152,6 @@
         ];
 
         let priceDatabase = JSON.parse(localStorage.getItem('site_prices')) || [
-            // МЕБЕЛЬ И СБОРКА (С подробным описанием)
             { title: 'Разобрать диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 640 ₽', desc: 'Аккуратная разборка дивана любой конструкции (книжка, еврокнижка, угловой) с сохранением крепежа и подготовкой к транспортировке.' },
             { title: 'Собрать диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 1 440 ₽', desc: 'Профессиональная сборка нового дивана, регулировка механизмов трансформации, проверка прочности каркаса и соединений.' },
             { title: 'Починить диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 2 176 ₽', desc: 'Устранение скрипа, ремонт или замена сломанного деревянного каркаса, пружинных блоков и механизмов трансформации.' },
@@ -1013,7 +1201,6 @@
             { title: 'Разобрать стеллаж', cat: 'furniture', sub: 'Стеллаж', unit: 'шт.', price: 'от 320 ₽', desc: 'Демонтаж полочных стеллажей.' },
             { title: 'Собрать комод', cat: 'furniture', sub: 'Комод', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка корпуса комода и сборка выдвижных ящиков.' },
 
-            // САНТЕХНИКА (С подробным описанием)
             { title: 'Установка раковины в ванной', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Профессиональный монтаж раковины на стену или тумбу, подключение сифона и проверка герметичности соединений.' },
             { title: 'Установка раковины на кухне', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Установка кухонной мойки с надежной фиксацией и герметизацией стыков.' },
             { title: 'Монтаж раковины в столешницу', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 700 ₽', desc: 'Аккуратная врезка раковины в подготовленный проем столешницы с обработкой срезов.' },
@@ -1240,7 +1427,6 @@
             { title: 'Монтаж коллектора отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Установка распределительной гребенки.' },
             { title: 'Экран под ванну (установка / подрезка)', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 300-600 ₽', desc: 'Монтаж декоративного экрана под ванну.' },
 
-            // ЭЛЕКТРИКА (С подробным описанием)
             { title: 'Установка розетки (внутренняя / наружная)', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130 ₽', desc: 'Профессиональный монтаж электрической розетки с подключением проводов.' },
             { title: 'Установка розетки с заземлением', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 200 ₽', desc: 'Монтаж розетки с обязательным подключением защитного заземляющего контура.' },
             { title: 'Установка компьютерной / телефонной / ТВ розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 180 ₽', desc: 'Монтаж слаботочных информационных розеток.' },
@@ -1309,7 +1495,6 @@
             { title: 'Дом площадью до 110 м2 (45 точек; бокс до 18)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 46 000 ₽', desc: 'Электромонтаж загородного дома до 110 кв.м.' },
             { title: 'Дом площадью до 150 м2 (60 точек; бокс до 24)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 72 000 ₽', desc: 'Электромонтаж крупного коттеджа под ключ.' },
 
-            // ВЫЗОВ И ДИАГНОСТИКА
             { title: 'Вызов мастера на дом / Выезд', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'Базовый', price: 'Бесплатно', desc: 'Оперативный выезд квалифицированного специалиста по указанному адресу в Казани.' },
             { title: 'Диагностика при оказании услуг', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'С услугой', price: 'Бесплатно', desc: 'Полная профессиональная диагностика неисправности при заказе ремонтных работ.' },
             { title: 'Диагностика в случае отказа', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'Отказ', price: '1 000 ₽', desc: 'Оплата выезда и работы мастера при отказе от проведения ремонта.' },
@@ -1324,6 +1509,9 @@
         let ordersData = JSON.parse(localStorage.getItem('site_orders')) || [
             { id: 101, name: 'Артур', phone: '8 (927) 043-53-53', district: 'Ново-Савиновский', service: 'Собрать диван', desc: 'Нужно собрать новый угловой диван', date: 'Сегодня, 14:20' }
         ];
+
+        let performersData = JSON.parse(localStorage.getItem('site_performers')) || [];
+        let messagesData = JSON.parse(localStorage.getItem('site_messages')) || [];
 
         const mastersData = [
             { name: 'Рамиль Сафин', role: 'Сборщик мебели и мастер на час', exp: '9 лет опыта', rating: '4.95', district: 'Ново-Савиновский, Вахитовский', avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80' },
@@ -1470,6 +1658,64 @@
             `).join('');
         }
 
+        // HANDLE PERFORMER REGISTRATION (РЕГИСТРАЦИЯ ИСПОЛНИТЕЛЯ)
+        function handleMasterRegisterSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('m-name').value;
+            const phone = document.getElementById('m-phone').value;
+            const spec = document.getElementById('m-spec').value;
+            const address = document.getElementById('m-address').value;
+            const desc = document.getElementById('m-desc').value || 'Без описания';
+            const passportInput = document.getElementById('m-passport');
+            const passportFileName = passportInput.files[0] ? passportInput.files[0].name : 'Фото прикреплено';
+
+            const newPerformer = {
+                id: Date.now().toString().slice(-4),
+                name,
+                phone,
+                spec,
+                address,
+                desc,
+                passportFile: passportFileName,
+                date: 'Только что'
+            };
+
+            performersData.unshift(newPerformer);
+            localStorage.setItem('site_performers', JSON.stringify(performersData));
+
+            showSuccessModal('Анкета принята!', `Уважаемый(ая) ${name}, ваша анкета и паспортные данные успешно переданы в административную панель на проверку. Администратор свяжется с вами.`);
+            e.target.reset();
+            document.getElementById('m-passport-prev').innerHTML = '';
+        }
+
+        // HANDLE "WRITE US" (НАПИСАТЬ НАМ) FORM
+        function handleWriteUsSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('wu-name').value;
+            const email = document.getElementById('wu-email').value;
+            const subject = document.getElementById('wu-subject').value;
+            const message = document.getElementById('wu-message').value;
+
+            const newMessage = {
+                id: Date.now().toString().slice(-4),
+                name,
+                email,
+                subject,
+                message,
+                date: 'Только что'
+            };
+
+            messagesData.unshift(newMessage);
+            localStorage.setItem('site_messages', JSON.stringify(messagesData));
+
+            // Also open mailto to master.kazan5353@gmail.com with prefilled info
+            const mailtoLink = `mailto:master.kazan5353@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Имя: ${name}\nEmail: ${email}\n\nСообщение:\n${message}`)}`;
+            window.location.href = mailtoLink;
+
+            showSuccessModal('Сообщение отправлено!', 'Ваше сообщение успешно сохранено в административной панели и открыт почтовый клиент для отправки на master.kazan5353@gmail.com.');
+            e.target.reset();
+        }
+
         // INIT MAIN FORM CHECKBOXES FOR MULTI-CHOICE
         function initMainFormCheckboxes() {
             const container = document.getElementById('main-form-services-checkboxes');
@@ -1553,7 +1799,7 @@
             const targetTab = document.getElementById(`admin-tab-${tabName}`);
             if(targetTab) targetTab.classList.remove('hidden');
 
-            ['orders', 'reviews', 'prices'].forEach(t => {
+            ['orders', 'performers', 'messages', 'reviews', 'prices'].forEach(t => {
                 const btn = document.getElementById(`admin-tab-btn-${t}`);
                 if(!btn) return;
                 if(t === tabName) {
@@ -1566,10 +1812,16 @@
 
         function renderAdminDashboard() {
             const ordersCountEl = document.getElementById('orders-count');
+            const performersCountEl = document.getElementById('performers-count');
+            const messagesCountEl = document.getElementById('messages-count');
             const reviewsCountEl = document.getElementById('reviews-count');
+
             if(ordersCountEl) ordersCountEl.innerText = ordersData.length;
+            if(performersCountEl) performersCountEl.innerText = performersData.length;
+            if(messagesCountEl) messagesCountEl.innerText = messagesData.length;
             if(reviewsCountEl) reviewsCountEl.innerText = reviewsData.length;
 
+            // Orders list
             const ordersList = document.getElementById('admin-orders-list');
             if(ordersList) {
                 if(ordersData.length === 0) {
@@ -1592,6 +1844,55 @@
                 }
             }
 
+            // Performers list
+            const perfList = document.getElementById('admin-performers-list');
+            if(perfList) {
+                if(performersData.length === 0) {
+                    perfList.innerHTML = `<div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-xs">Нет зарегистрированных исполнителей</div>`;
+                } else {
+                    perfList.innerHTML = performersData.map((p, idx) => `
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="bg-emerald-500/10 text-emerald-400 font-bold text-xs px-2.5 py-0.5 rounded-md">Исполнитель #${p.id || idx}</span>
+                                    <span class="text-xs text-amber-400 font-semibold">${p.spec}</span>
+                                    <span class="text-xs text-slate-400">${p.date || 'Недавно'}</span>
+                                </div>
+                                <div class="text-sm font-bold text-white">${p.name} — <a href="tel:${p.phone}" class="text-amber-400">${p.phone}</a></div>
+                                <div class="text-xs text-slate-300 mt-1"><b>Адрес прописки:</b> ${p.address}</div>
+                                <div class="text-xs text-slate-300 mt-0.5"><b>Фото паспорта/лица:</b> <span class="text-sky-400">${p.passportFile}</span></div>
+                                <div class="text-xs text-slate-400 mt-1 italic">Опыт: "${p.desc}"</div>
+                            </div>
+                            <button onclick="deletePerformer(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            // Messages list
+            const msgList = document.getElementById('admin-messages-list');
+            if(msgList) {
+                if(messagesData.length === 0) {
+                    msgList.innerHTML = `<div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-xs">Нет новых сообщений</div>`;
+                } else {
+                    msgList.innerHTML = messagesData.map((m, idx) => `
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="bg-sky-500/10 text-sky-400 font-bold text-xs px-2.5 py-0.5 rounded-md">Письмо #${m.id || idx}</span>
+                                    <span class="text-xs text-slate-400">${m.date || 'Недавно'}</span>
+                                </div>
+                                <div class="text-sm font-bold text-white">${m.name} (<a href="mailto:${m.email}" class="text-amber-400">${m.email}</a>)</div>
+                                <div class="text-xs font-semibold text-brand-orange mt-1">Тема: ${m.subject}</div>
+                                <p class="text-xs text-slate-300 mt-1 bg-slate-950 p-2.5 rounded-xl border border-slate-800">"${m.message}"</p>
+                            </div>
+                            <button onclick="deleteMessage(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            // Reviews list
             const revList = document.getElementById('admin-reviews-list');
             if(revList) {
                 revList.innerHTML = reviewsData.map((rev, idx) => `
@@ -1609,6 +1910,7 @@
                 `).join('');
             }
 
+            // Prices table
             const priceTable = document.getElementById('admin-price-table-body');
             if(priceTable) {
                 priceTable.innerHTML = priceDatabase.map((item, idx) => `
@@ -1629,6 +1931,18 @@
         function deleteOrder(idx) {
             ordersData.splice(idx, 1);
             localStorage.setItem('site_orders', JSON.stringify(ordersData));
+            renderAdminDashboard();
+        }
+
+        function deletePerformer(idx) {
+            performersData.splice(idx, 1);
+            localStorage.setItem('site_performers', JSON.stringify(performersData));
+            renderAdminDashboard();
+        }
+
+        function deleteMessage(idx) {
+            messagesData.splice(idx, 1);
+            localStorage.setItem('site_messages', JSON.stringify(messagesData));
             renderAdminDashboard();
         }
 
