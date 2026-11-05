@@ -139,7 +139,6 @@
             <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-5 text-sm font-semibold">
                 <a href="#/home" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Главная</a>
-                <a href="#/services" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Услуги</a>
                 <a href="#/pricelist" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Прайс-лист</a>
                 <a href="#/masters" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Мастера</a>
                 <a href="#/reviews" class="nav-link py-2 text-slate-300 hover:text-brand-orange transition-colors">Отзывы</a>
@@ -164,7 +163,6 @@
         <!-- Mobile Menu Drawer -->
         <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
             <a href="#/home" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Главная</a>
-            <a href="#/services" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Услуги</a>
             <a href="#/pricelist" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Прайс-лист Казань</a>
             <a href="#/masters" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Мастера</a>
             <a href="#/reviews" onclick="closeMobileMenu()" class="block text-base font-medium text-slate-300 hover:text-brand-orange py-1">Отзывы</a>
@@ -182,7 +180,7 @@
 
         <!-- PAGE 1: HOME -->
         <section id="page-home" class="page-view hidden">
-            <!-- Hero Banner -->
+            <!-- Hero Banner styled with attached file IMG_20261105_112919_275.jpg -->
             <div class="relative pt-10 pb-20 md:pt-20 md:pb-28 overflow-hidden stripes-pattern">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -193,11 +191,22 @@
                                 Гарантия на работы по договору 12 месяцев
                             </div>
 
-                            <h1 id="home-title" class="font-heading text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
-                                Муж на час и бытовой ремонт <span class="bg-gradient-to-r from-brand-orange via-amber-400 to-yellow-500 bg-clip-text text-transparent">в Казани</span>
-                            </h1>
+                            <div class="flex flex-col sm:flex-row items-center gap-6 mb-6">
+                                <!-- Attached Image Badge integration -->
+                                <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-amber-400 shadow-2xl shrink-0 animate-float bg-slate-900">
+                                    <img src="IMG_20261105_112919_275.jpg" alt="Муж на час Казань" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+                                        Муж на час и бытовой ремонт <span class="bg-gradient-to-r from-brand-orange via-amber-400 to-yellow-500 bg-clip-text text-transparent">в Казани</span>
+                                    </h1>
+                                    <p class="text-amber-400 font-bold text-sm sm:text-base mt-2 tracking-wide">
+                                        ✨ Быстро. Качественно. Надёжно.
+                                    </p>
+                                </div>
+                            </div>
 
-                            <p id="home-subtitle" class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+                            <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
                                 Сантехника, электрик, услуги плотника и сборка мебели. Выберите несколько услуг сразу и вызовите проверенного мастера на дом!
                             </p>
 
@@ -350,7 +359,7 @@
                 </div>
             </div>
 
-            <!-- SECTION: BEFORE / AFTER CASES (4 DISTINCT REAL PHOTO REPORTS) -->
+            <!-- SECTION: BEFORE / AFTER CASES (FIXED DISTINCT IMAGES) -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <div class="text-center max-w-2xl mx-auto mb-10">
                     <span class="text-xs font-bold text-brand-orange uppercase">Фотоотчеты работ</span>
@@ -363,11 +372,11 @@
                         <div class="grid grid-cols-2 gap-3 mb-4">
                             <div class="relative overflow-hidden rounded-xl bg-slate-950">
                                 <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full filter grayscale contrast-125" alt="Старая раковина и смеситель ДО ремонта">
-                                <span class="absolute top-2 left-2 bg-rose-600/95 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ДО</span>
+                                <span class="absolute top-2 left-2 bg-rose-600/90 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ДО</span>
                             </div>
                             <div class="relative overflow-hidden rounded-xl bg-slate-950">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full" alt="Новая раковина ПОСЛЕ установки">
-                                <span class="absolute top-2 left-2 bg-emerald-600/95 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ПОСЛЕ</span>
+                                <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full" alt="Новая раковина ПОСЛЕ установки">
+                                <span class="absolute top-2 left-2 bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ПОСЛЕ</span>
                             </div>
                         </div>
                         <h3 class="font-bold text-white text-base">Замена смесителя и сифона в ванной</h3>
@@ -382,12 +391,12 @@
                     <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-slate-700 transition">
                         <div class="grid grid-cols-2 gap-3 mb-4">
                             <div class="relative overflow-hidden rounded-xl bg-slate-950">
-                                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full filter sepia-50" alt="Разобранная кухня ДО сборки">
-                                <span class="absolute top-2 left-2 bg-rose-600/95 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ДО</span>
+                                <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full filter sepia-50" alt="Разобранная кухня ДО сборки">
+                                <span class="absolute top-2 left-2 bg-rose-600/90 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ДО</span>
                             </div>
                             <div class="relative overflow-hidden rounded-xl bg-slate-950">
-                                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full" alt="Собраный кухонный гарнитур ПОСЛЕ">
-                                <span class="absolute top-2 left-2 bg-emerald-600/95 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ПОСЛЕ</span>
+                                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full" alt="Собранный кухонный гарнитур ПОСЛЕ">
+                                <span class="absolute top-2 left-2 bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ПОСЛЕ</span>
                             </div>
                         </div>
                         <h3 class="font-bold text-white text-base">Сборка кухонного гарнитура с врезкой мойки</h3>
@@ -395,46 +404,6 @@
                         <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
                             <span class="text-xs text-slate-400">Итоговая стоимость:</span>
                             <span class="text-sm font-black text-brand-orange">3 800 ₽</span>
-                        </div>
-                    </div>
-
-                    <!-- Case 3: Electrical Panel Upgrade -->
-                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-slate-700 transition">
-                        <div class="grid grid-cols-2 gap-3 mb-4">
-                            <div class="relative overflow-hidden rounded-xl bg-slate-950">
-                                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full filter contrast-150" alt="Старый электрощит ДО">
-                                <span class="absolute top-2 left-2 bg-rose-600/95 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ДО</span>
-                            </div>
-                            <div class="relative overflow-hidden rounded-xl bg-slate-950">
-                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full" alt="Новый современный электрощит ПОСЛЕ">
-                                <span class="absolute top-2 left-2 bg-emerald-600/95 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ПОСЛЕ</span>
-                            </div>
-                        </div>
-                        <h3 class="font-bold text-white text-base">Монтаж и сборка электрощита в квартире</h3>
-                        <p class="text-xs text-slate-400 mt-1 mb-3">Район: Вахитовский, ул. Вишневского. Время выполнения: 2 часа.</p>
-                        <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
-                            <span class="text-xs text-slate-400">Итоговая стоимость:</span>
-                            <span class="text-sm font-black text-brand-orange">2 600 ₽</span>
-                        </div>
-                    </div>
-
-                    <!-- Case 4: Bathroom Tile & Repair -->
-                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-slate-700 transition">
-                        <div class="grid grid-cols-2 gap-3 mb-4">
-                            <div class="relative overflow-hidden rounded-xl bg-slate-950">
-                                <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full filter brightness-75" alt="Ремонт ванной ДО">
-                                <span class="absolute top-2 left-2 bg-rose-600/95 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ДО</span>
-                            </div>
-                            <div class="relative overflow-hidden rounded-xl bg-slate-950">
-                                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" class="object-cover h-44 w-full" alt="Ремонт ванной ПОСЛЕ">
-                                <span class="absolute top-2 left-2 bg-emerald-600/95 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase">ПОСЛЕ</span>
-                            </div>
-                        </div>
-                        <h3 class="font-bold text-white text-base">Комплексный ремонт сантехники и герметизация</h3>
-                        <p class="text-xs text-slate-400 mt-1 mb-3">Район: Приволжский, Проспект Победы. Время выполнения: 1.5 часа.</p>
-                        <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
-                            <span class="text-xs text-slate-400">Итоговая стоимость:</span>
-                            <span class="text-sm font-black text-brand-orange">1 800 ₽</span>
                         </div>
                     </div>
 
@@ -450,6 +419,7 @@
                 </div>
                 <div class="bg-slate-900 border border-slate-800 rounded-3xl p-4 sm:p-6 shadow-2xl relative overflow-hidden">
                     <div class="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-slate-800 shadow-inner bg-slate-950">
+                        <!-- ВАЛИДНЫЙ IFRAME -->
                         <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D0%9F%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B%2C%2018&z=16" allowfullscreen style="position:relative;" class="w-full h-full border-0 filter contrast-110"></iframe>
                     </div>
                     <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300 px-2">
@@ -469,6 +439,7 @@
         <section id="page-master-register" class="page-view hidden py-12">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 
+                <!-- Attractive Information Banner for Performers -->
                 <div class="bg-gradient-to-r from-amber-500/10 via-brand-orange/10 to-slate-900 border border-brand-orange/30 rounded-3xl p-8 sm:p-10 mb-10 shadow-2xl relative overflow-hidden">
                     <div class="absolute right-4 top-4 text-brand-orange/20 text-8xl pointer-events-none">
                         <i class="fa-solid fa-user-gear"></i>
@@ -494,6 +465,7 @@
                     </div>
                 </div>
 
+                <!-- Registration Form -->
                 <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
                     <h2 class="text-xl font-bold text-white mb-2">Анкета регистрации исполнителя</h2>
                     <p class="text-xs text-slate-400 mb-6">Заполните данные, укажите адрес прописки и загрузите фото паспорта с лицом для прохождения проверки службы безопасности.</p>
@@ -531,6 +503,7 @@
                             <textarea id="m-desc" rows="2" placeholder="Расскажите о своем опыте..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none"></textarea>
                         </div>
 
+                        <!-- Passport photo with face upload -->
                         <div class="border-2 border-dashed border-slate-700 hover:border-brand-orange rounded-2xl p-5 text-center bg-slate-950 transition cursor-pointer" onclick="document.getElementById('m-passport').click()">
                             <input type="file" id="m-passport" required accept="image/*" onchange="previewFiles(this, 'm-passport-prev')" class="hidden">
                             <i class="fa-solid fa-id-card-clip text-3xl text-brand-orange mb-2"></i>
@@ -548,7 +521,7 @@
             </div>
         </section>
 
-        <!-- PAGE: PRICELIST & CATEGORIES SEARCH (MAIN HUB) -->
+        <!-- PAGE: PRICELIST & CATEGORIES SEARCH (MAIN HUB WITH THEMATIC PHOTOS) -->
         <section id="page-pricelist" class="page-view hidden py-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -561,15 +534,28 @@
                 <!-- 1. CATEGORIES SELECTOR (MAIN PARENT CATEGORIES) -->
                 <div class="mb-6">
                     <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 text-center sm:text-left">Выберите направление ремонта:</h2>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3" id="main-categories-nav"></div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3" id="main-categories-nav">
+                        <!-- Dynamic Buttons -->
+                    </div>
                 </div>
 
-                <!-- 2. SUBCATEGORIES CHIPS (CHILD SUBCATEGORIES WITH THEMATIC ICONS) -->
+                <!-- THEMATIC SUBCATEGORY PHOTO BANNER -->
+                <div id="pricelist-thematic-banner" class="relative rounded-3xl overflow-hidden mb-6 border border-slate-800 shadow-xl h-44 sm:h-56 bg-slate-900">
+                    <img id="subcat-banner-img" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover filter brightness-50" alt="Тематическое фото категории">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-6">
+                        <span id="banner-cat-tag" class="text-xs font-bold text-amber-400 uppercase tracking-widest">Каталог услуг</span>
+                        <h2 id="banner-cat-title" class="text-xl sm:text-2xl font-black text-white mt-1">Мебель и сборка</h2>
+                    </div>
+                </div>
+
+                <!-- 2. SUBCATEGORIES CHIPS (CHILD SUBCATEGORIES) -->
                 <div id="subcategories-wrapper" class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 mb-8">
                     <div class="text-xs font-bold text-amber-400 mb-3 flex items-center gap-2">
                         <i class="fa-solid fa-filter"></i> <span id="current-cat-title">Подкатегории работ</span>
                     </div>
-                    <div class="flex flex-wrap gap-2" id="subcategories-chips"></div>
+                    <div class="flex flex-wrap gap-2" id="subcategories-chips">
+                        <!-- Populated via JS -->
+                    </div>
                 </div>
 
                 <!-- Search Bar -->
@@ -582,87 +568,23 @@
                 </div>
 
                 <!-- 3. SEGMENTED RECTANGLE PRICE LIST -->
-                <div class="space-y-4" id="pricelist-rectangles-container"></div>
-
-            </div>
-        </section>
-
-        <!-- PAGE: SERVICES OVERVIEW (COMPLETELY DISTINCT FROM PRICELIST) -->
-        <section id="page-services" class="page-view hidden py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="px-3.5 py-1.5 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-black uppercase tracking-wider mb-3 inline-block">Наши возможности</span>
-                    <h1 class="font-heading text-3xl sm:text-5xl font-black text-white mb-4">Каталог Услуг Сервиса Казань</h1>
-                    <p class="text-slate-400 text-sm sm:text-base">Комплексный бытовой сервис с профессиональным подходом. Мы создали для вас интерактивные направления для быстрого выбора нужного мастера.</p>
-                </div>
-
-                <!-- Interactive Service Interactive Selector Bar -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                    <div onclick="filterServicesPage('all')" id="srv-tab-all" class="srv-tab-btn bg-brand-orange text-slate-950 p-4 rounded-2xl font-bold text-center cursor-pointer shadow-lg transition flex flex-col items-center gap-2">
-                        <i class="fa-solid fa-house-laptop text-xl"></i>
-                        <span>Все услуги</span>
-                    </div>
-                    <div onclick="filterServicesPage('furniture')" id="srv-tab-furniture" class="srv-tab-btn bg-slate-900 border border-slate-800 text-slate-300 p-4 rounded-2xl font-bold text-center cursor-pointer hover:border-brand-orange transition flex flex-col items-center gap-2">
-                        <i class="fa-solid fa-couch text-xl text-brand-orange"></i>
-                        <span>Мебель</span>
-                    </div>
-                    <div onclick="filterServicesPage('plumbing')" id="srv-tab-plumbing" class="srv-tab-btn bg-slate-900 border border-slate-800 text-slate-300 p-4 rounded-2xl font-bold text-center cursor-pointer hover:border-brand-orange transition flex flex-col items-center gap-2">
-                        <i class="fa-solid fa-faucet text-xl text-sky-400"></i>
-                        <span>Сантехника</span>
-                    </div>
-                    <div onclick="filterServicesPage('electric')" id="srv-tab-electric" class="srv-tab-btn bg-slate-900 border border-slate-800 text-slate-300 p-4 rounded-2xl font-bold text-center cursor-pointer hover:border-brand-orange transition flex flex-col items-center gap-2">
-                        <i class="fa-solid fa-bolt text-xl text-emerald-400"></i>
-                        <span>Электрика</span>
-                    </div>
-                </div>
-
-                <!-- Distinct Detailed Service Grid -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16" id="services-distinct-grid">
-                    <!-- Populated dynamically -->
-                </div>
-
-                <!-- Service Steps Section -->
-                <div class="bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
-                    <div class="text-center max-w-2xl mx-auto mb-10">
-                        <h2 class="font-heading text-2xl sm:text-3xl font-black text-white">Как мы работаем по вашей заявке</h2>
-                        <p class="text-xs text-slate-400 mt-2">Простой и прозрачный алгоритм вызова мастера в любой район Казани</p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-6">
-                        <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl text-center relative">
-                            <div class="w-10 h-10 rounded-xl bg-brand-orange text-slate-950 font-black flex items-center justify-center mx-auto mb-4 text-base">1</div>
-                            <h3 class="font-bold text-white text-sm mb-1">Заявка или звонок</h3>
-                            <p class="text-xs text-slate-400">Вы оставляете заявку на сайте или в мессенджере MAX.</p>
-                        </div>
-                        <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl text-center relative">
-                            <div class="w-10 h-10 rounded-xl bg-brand-orange text-slate-950 font-black flex items-center justify-center mx-auto mb-4 text-base">2</div>
-                            <h3 class="font-bold text-white text-sm mb-1">Согласование</h3>
-                            <p class="text-xs text-slate-400">Диспетчер уточняет детали и называет точную смету.</p>
-                        </div>
-                        <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl text-center relative">
-                            <div class="w-10 h-10 rounded-xl bg-brand-orange text-slate-950 font-black flex items-center justify-center mx-auto mb-4 text-base">3</div>
-                            <h3 class="font-bold text-white text-sm mb-1">Выезд мастера</h3>
-                            <p class="text-xs text-slate-400">Мастер прибывает по адресу в Казани через 30 минут.</p>
-                        </div>
-                        <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl text-center relative">
-                            <div class="w-10 h-10 rounded-xl bg-brand-orange text-slate-950 font-black flex items-center justify-center mx-auto mb-4 text-base">4</div>
-                            <h3 class="font-bold text-white text-sm mb-1">Гарантия и оплата</h3>
-                            <p class="text-xs text-slate-400">Вы проверяете качество работы и получаете гарантию на 1 год.</p>
-                        </div>
-                    </div>
+                <div class="space-y-4" id="pricelist-rectangles-container">
+                    <!-- Populated via JS -->
                 </div>
 
             </div>
         </section>
 
-        <!-- PAGE: MASTERS (EXPANDED & FIXED IMAGES) -->
+        <!-- PAGE: MASTERS -->
         <section id="page-masters" class="page-view hidden py-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-10">
-                    <span class="px-3.5 py-1.5 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-black uppercase tracking-wider mb-3 inline-block">Наша команда</span>
                     <h1 class="font-heading text-3xl sm:text-5xl font-black text-white mb-3">Мастера города Казань</h1>
                     <p class="text-slate-400 text-sm">Квалифицированные специалисты с личным автомобилем и профессиональным инструментом</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6" id="masters-cards-grid"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="masters-cards-grid">
+                    <!-- Populated via JS -->
+                </div>
             </div>
         </section>
 
@@ -676,7 +598,9 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
                     <!-- Reviews List (Left) -->
-                    <div class="lg:col-span-7 space-y-4" id="reviews-cards-grid"></div>
+                    <div class="lg:col-span-7 space-y-4" id="reviews-cards-grid">
+                        <!-- Populated via JS -->
+                    </div>
 
                     <!-- Add Review Form (Right) -->
                     <div class="lg:col-span-5 bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl h-fit">
@@ -838,7 +762,9 @@
                             </div>
                             <p class="text-xs text-slate-400 mb-4">Отметьте галочками все работы, которые вам необходимы:</p>
 
-                            <div class="max-h-80 overflow-y-auto space-y-2 mb-6 pr-2 no-scrollbar border border-slate-800 rounded-xl p-3 bg-slate-950" id="main-form-services-checkboxes"></div>
+                            <div class="max-h-80 overflow-y-auto space-y-2 mb-6 pr-2 no-scrollbar border border-slate-800 rounded-xl p-3 bg-slate-950" id="main-form-services-checkboxes">
+                                <!-- Populated via JS -->
+                            </div>
 
                             <button type="button" onclick="goToMainFormStep(2)" class="w-full py-3.5 rounded-xl bg-brand-orange text-slate-950 font-black text-sm hover:brightness-110 shadow-lg flex items-center justify-center gap-2 transition">
                                 <span>Далее (Контакты и адрес)</span> <i class="fa-solid fa-arrow-right"></i>
@@ -988,7 +914,7 @@
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900 border border-slate-800 p-6 rounded-3xl">
                         <div>
                             <h1 class="font-heading text-2xl font-black text-white">Панель управления</h1>
-                            <p class="text-xs text-slate-400">Управление заявками клиентов, анкетами исполнителей, сообщениями, ценами и контентом страниц</p>
+                            <p class="text-xs text-slate-400">Управление заявками клиентов, анкетами исполнителей, сообщениями и ценами</p>
                         </div>
                         <button onclick="logoutAdmin()" class="px-4 py-2 bg-rose-600/20 text-rose-400 hover:bg-rose-600 hover:text-white rounded-xl text-xs font-bold transition">Выйти</button>
                     </div>
@@ -999,7 +925,6 @@
                         <button onclick="switchAdminTab('messages')" id="admin-tab-btn-messages" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Сообщения (<span id="messages-count">0</span>)</button>
                         <button onclick="switchAdminTab('reviews')" id="admin-tab-btn-reviews" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Отзывы (<span id="reviews-count">0</span>)</button>
                         <button onclick="switchAdminTab('prices')" id="admin-tab-btn-prices" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">Редактор цен</button>
-                        <button onclick="switchAdminTab('pages')" id="admin-tab-btn-pages" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-amber-400 hover:text-white transition"><i class="fa-solid fa-file-pen mr-1"></i> Редактирование страниц</button>
                     </div>
 
                     <!-- Tab Orders -->
@@ -1041,74 +966,6 @@
                                 </thead>
                                 <tbody id="admin-price-table-body"></tbody>
                             </table>
-                        </div>
-                    </div>
-
-                    <!-- Tab Page Editing (Редактирование страниц: Услуги, Прайс-лист, Мастера, Отзывы, FAQ, Стать мастером) -->
-                    <div id="admin-tab-pages" class="admin-tab-content space-y-6 hidden">
-                        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
-                            <h2 class="text-base font-bold text-white mb-2"><i class="fa-solid fa-file-pen text-brand-orange mr-2"></i> Подкатегория: Редактирование страниц сайта</h2>
-                            <p class="text-xs text-slate-400 mb-6">Изменяйте заголовки и тексты ключевых страниц сайта в реальном времени.</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <!-- Edit Home / Services Page Header -->
-                                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3">
-                                    <h3 class="text-sm font-bold text-amber-400">📄 Главная страница / Шапка</h3>
-                                    <div>
-                                        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Главный заголовок (H1)</label>
-                                        <input type="text" id="edit-page-home-title" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Подзаголовок</label>
-                                        <textarea id="edit-page-home-subtitle" rows="2" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white resize-none"></textarea>
-                                    </div>
-                                </div>
-
-                                <!-- Edit Services Page text -->
-                                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3">
-                                    <h3 class="text-sm font-bold text-amber-400">🛠 Страница "Услуги"</h3>
-                                    <div>
-                                        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Заголовок страницы Услуги</label>
-                                        <input type="text" id="edit-page-services-title" value="Каталог Услуг Сервиса Казань" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Описание</label>
-                                        <input type="text" id="edit-page-services-desc" value="Комплексный бытовой сервис с профессиональным подходом." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
-                                    </div>
-                                </div>
-
-                                <!-- Edit Pricelist & Masters Header -->
-                                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3">
-                                    <h3 class="text-sm font-bold text-amber-400">📋 Страница "Прайс-лист" & "Мастера"</h3>
-                                    <div>
-                                        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Заголовок Прайса</label>
-                                        <input type="text" id="edit-page-price-title" value="Прайс-лист услуг мастеров" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Заголовок Мастеров</label>
-                                        <input type="text" id="edit-page-masters-title" value="Мастера города Казань" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
-                                    </div>
-                                </div>
-
-                                <!-- Edit Reviews, FAQ, Master Register -->
-                                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3">
-                                    <h3 class="text-sm font-bold text-amber-400">⭐ Отзывы, FAQ, Стать мастером</h3>
-                                    <div>
-                                        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Заголовок FAQ</label>
-                                        <input type="text" id="edit-page-faq-title" value="Частые вопросы (FAQ)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
-                                    </div>
-                                    <div>
-                                        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Заголовок Стать мастером</label>
-                                        <input type="text" id="edit-page-register-title" value="Станьте партнером-исполнителем службы «Мастер На Час» в Казани!" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-6">
-                                <button onclick="savePageEdits()" class="px-6 py-3 bg-brand-orange text-slate-950 font-black text-xs rounded-xl hover:brightness-110 transition shadow-lg">
-                                    <i class="fa-solid fa-floppy-disk mr-1.5"></i> Сохранить изменения страниц
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1157,6 +1014,7 @@
             </div>
             <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
                 <div>© 2026 «Мастер На Час — Казань». Официальные расценки в рублях (₽).</div>
+                <!-- HIDDEN INCONSPICUOUS ADMIN LINK FOR REGULAR VISITORS -->
                 <div>
                     <a href="#/admin" class="text-slate-700 hover:text-slate-500 text-[10px] tracking-widest flex items-center gap-1 transition" title="Панель управления">
                         <i class="fa-solid fa-gear"></i> admin
@@ -1166,30 +1024,54 @@
         </div>
     </footer>
 
-    <!-- STICKY FLOATING CONTACT WIDGET WITH QUICK CHAT FOR MAX & ADMIN -->
+    <!-- STICKY FLOATING CHAT WITH OPERATOR WIDGET -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="quick-contact-menu" class="hidden flex-col gap-2.5 mb-3 transition-all bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-2xl w-80">
-            <div class="text-xs font-bold text-white flex items-center justify-between">
-                <span class="flex items-center gap-1.5"><i class="fa-solid fa-comments text-brand-max"></i> Быстрый чат MAX & Админка</span>
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            </div>
-            <p class="text-[11px] text-slate-400">Напишите вопрос — сообщение уйдет в админку и в мессенджер MAX на номер <span class="text-amber-400 font-bold">89097605706</span></p>
-            
-            <textarea id="quick-chat-text" rows="2" placeholder="Опишите вашу задачу или вопрос..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-brand-orange resize-none"></textarea>
-            
-            <button onclick="sendQuickChatToMaxAndAdmin()" class="w-full py-2.5 bg-brand-max text-white font-bold text-xs rounded-xl hover:brightness-110 transition flex items-center justify-center gap-2 shadow-lg">
-                <i class="fa-solid fa-paper-plane"></i> Отправить в MAX и Админку
-            </button>
-
-            <div class="border-t border-slate-800 pt-2.5 flex justify-between gap-1">
-                <a href="https://t.me/DedaYagaaaa" target="_blank" class="px-2.5 py-1.5 rounded-lg bg-sky-500 text-white text-[11px] font-bold flex items-center gap-1"><i class="fa-brands fa-telegram"></i> TG</a>
-                <a href="https://wa.me/79270435353" target="_blank" class="px-2.5 py-1.5 rounded-lg bg-emerald-500 text-white text-[11px] font-bold flex items-center gap-1"><i class="fa-brands fa-whatsapp"></i> WA</a>
-                <a href="tel:+79270435353" class="px-2.5 py-1.5 rounded-lg bg-amber-500 text-slate-950 text-[11px] font-bold flex items-center gap-1"><i class="fa-solid fa-phone"></i> Позвонить</a>
-            </div>
-        </div>
-        <button onclick="toggleQuickMenu()" class="w-14 h-14 rounded-full bg-gradient-to-r from-brand-orange to-amber-500 text-slate-950 text-2xl font-bold flex items-center justify-center shadow-2xl pulse-orange hover:scale-110 transition-transform">
-            <i class="fa-solid fa-headset" id="quick-btn-icon"></i>
+        <button onclick="toggleQuickChat()" class="w-14 h-14 rounded-full bg-gradient-to-r from-brand-orange to-amber-500 text-slate-950 text-2xl font-bold flex items-center justify-center shadow-2xl pulse-orange hover:scale-110 transition-transform cursor-pointer" title="Чат с оператором">
+            <i class="fa-solid fa-comments" id="quick-btn-icon"></i>
         </button>
+    </div>
+
+    <!-- QUICK CHAT WITH OPERATOR MODAL (CHAT UI) -->
+    <div id="quick-chat-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-5 relative shadow-2xl flex flex-col h-[500px]">
+            <button onclick="toggleQuickChat()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <!-- Operator Header -->
+            <div class="flex items-center gap-3 pb-3 border-b border-slate-800 mb-3">
+                <div class="relative">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-orange to-amber-500 text-slate-950 flex items-center justify-center text-lg font-bold">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-slate-900"></span>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-white">Чат с оператором</h3>
+                    <p class="text-[11px] text-emerald-400">Оператор на связи 24/7</p>
+                </div>
+            </div>
+
+            <!-- Chat Messages Container -->
+            <div id="chat-messages-container" class="flex-grow overflow-y-auto space-y-3 pr-2 mb-3 no-scrollbar text-xs">
+                <div class="flex items-start gap-2">
+                    <div class="w-7 h-7 rounded-full bg-brand-orange text-slate-950 flex items-center justify-center shrink-0 font-bold text-xs">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[80%] leading-relaxed">
+                        Здравствуйте! Я оператор службы бытового ремонта в Казани. Чем могу помочь вам сегодня? Опишите вашу задачу или вопрос.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input Form -->
+            <form onsubmit="handleQuickChatSubmit(event)" class="flex items-center gap-2 pt-2 border-t border-slate-800">
+                <input type="text" id="qc-input-message" required placeholder="Введите сообщение оператору..." class="flex-grow bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand-orange">
+                <button type="submit" class="w-10 h-10 rounded-xl bg-brand-orange text-slate-950 font-bold flex items-center justify-center hover:brightness-110 transition shrink-0">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
     </div>
 
     <!-- BOOKING MODAL WITH PHOTO/VIDEO -->
@@ -1221,6 +1103,7 @@
                     <textarea id="modal-desc" rows="2" placeholder="Опишите задачу..." class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-orange resize-none transition"></textarea>
                 </div>
 
+                <!-- Media attachment in modal -->
                 <div class="border border-dashed border-slate-700 rounded-xl p-3 text-center bg-slate-950 hover:border-brand-orange transition">
                     <input type="file" id="modal-files" multiple accept="image/*,video/*" onchange="previewFiles(this, 'modal-files-prev')" class="hidden">
                     <label for="modal-files" class="cursor-pointer text-xs text-slate-300 hover:text-brand-orange flex items-center justify-center gap-1.5">
@@ -1276,7 +1159,7 @@
                     <input type="text" id="edit-price-title" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-300 mb-1">Категория ID (furniture, plumbing, electric, appliances, callout)</label>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Категория ID (furniture, plumbing, electric, callout)</label>
                     <input type="text" id="edit-price-cat" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-orange">
                 </div>
                 <div>
@@ -1298,14 +1181,15 @@
 
     <!-- JAVASCRIPT APPLICATION LOGIC -->
     <script>
+        // CONFIGURATION & TELEGRAM BOT API CREDENTIALS
         const TELEGRAM_BOT_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN_HERE'; 
         const TELEGRAM_CHAT_ID = 'YOUR_TELEGRAM_CHAT_ID_HERE';
 
         const categoriesConfig = [
-            { id: 'furniture', name: 'Мебель и сборка', icon: 'fa-couch', time: 'от 30 минут', tools: 'Проф. набор сборщика', desc: 'Сборка, разборка, ремонт и перетяжка диванов, кроватей, шкафов, кухонь и столов с использованием профессионального инструмента.', subs: ['Все подкатегории', 'Диван', 'Стенка, прихожая', 'Кровать', 'Кухня', 'Полки', 'Стул', 'Тумбочка', 'Шкаф', 'Стол', 'Кресло', 'Стеллаж', 'Комод'] },
-            { id: 'plumbing', name: 'Сантехника', icon: 'fa-faucet', time: 'от 20 минут', tools: 'Проф. ключи, герметик', desc: 'Профессиональная установка и замена раковин, моек, смесителей, ванн, унитазов, труб, фильтров и устранение сложных засоров.', subs: ['Все подкатегории', 'Установка раковины', 'Установка мойки', 'Установка и обслуживание мойдодыра', 'Установка смесителя', 'Ремонт и замена смесителя', 'Установка и демонтаж кранов', 'Ванны и Джакузи', 'Гидроизоляция швов', 'Сантехнические люки', 'Установка и замена сифонов', 'Душевые кабины', 'Унитазы, писсуары и биде', 'Полотенцесушители и сушилки', 'Канализация и водоснабжение', 'Фильтры для воды', 'Засоры и Защита от протечек', 'Отопление и Водонагреватели'] },
-            { id: 'electric', name: 'Электрика', icon: 'fa-bolt', time: 'от 20 минут', tools: 'Тестер, перфоратор', desc: 'Безопасный монтаж розеток, выключателей, светильников, люстр, автоматов, щитов и полной электропроводки с соблюдением ПУЭ.', subs: ['Все подкатегории', 'Розетки и выключатели', 'Светильники и Люстры', 'Подключение бытовой техники', 'Щиты, Автоматы, Счетчики', 'Электропроводка и Кабель', 'Теплый пол', 'ЭЛЕКТРИКА ПОД КЛЮЧ'] },
-            { id: 'callout', name: 'Вызов и Диагностика', icon: 'fa-user-gear', time: 'от 15 минут', tools: 'Инструменты диагностики', desc: 'Оперативный вызов мастера на дом в любой район Казани, полная комплексная диагностика и покупка материалов.', subs: ['Все подкатегории', 'Вызов мастера и диагностика'] }
+            { id: 'furniture', name: 'Мебель и сборка', icon: 'fa-couch', time: 'от 30 минут', tools: 'Проф. набор сборщика', bannerImg: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80', desc: 'Сборка, разборка, ремонт и перетяжка диванов, кроватей, шкафов, кухонь и столов с использованием профессионального инструмента.', subs: ['Все подкатегории', 'Диван', 'Стенка, прихожая', 'Кровать', 'Кухня', 'Полки', 'Стул', 'Тумбочка', 'Шкаф', 'Стол', 'Кресло', 'Стеллаж', 'Комод'] },
+            { id: 'plumbing', name: 'Сантехника', icon: 'fa-faucet', time: 'от 20 минут', tools: 'Проф. ключи, герметик', bannerImg: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80', desc: 'Профессиональная установка и замена раковин, моек, смесителей, ванн, унитазов, труб, фильтров и устранение сложных засоров.', subs: ['Все подкатегории', 'Установка раковины', 'Установка мойки', 'Установка и обслуживание мойдодыра', 'Установка смесителя', 'Ремонт и замена смесителя', 'Установка и демонтаж кранов', 'Ванны и Джакузи', 'Гидроизоляция швов', 'Сантехнические люки', 'Установка и замена сифонов', 'Душевые кабины', 'Унитазы, писсуары и биде', 'Полотенцесушители и сушилки', 'Канализация и водоснабжение', 'Фильтры для воды', 'Засоры и Защита от протечек', 'Отопление и Водонагреватели'] },
+            { id: 'electric', name: 'Электрика', icon: 'fa-bolt', time: 'от 20 минут', tools: 'Тестер, перфоратор', bannerImg: 'https://images.unsplash.com/photo-1555963966-b7cb59489fef?auto=format&fit=crop&w=1200&q=80', desc: 'Безопасный монтаж розеток, выключателей, светильников, люстр, автоматов, щитов и полной электропроводки с соблюдением ПУЭ.', subs: ['Все подкатегории', 'Розетки и выключатели', 'Светильники и Люстры', 'Подключение бытовой техники', 'Щиты, Автоматы, Счетчики', 'Электропроводка и Кабель', 'Теплый пол', 'ЭЛЕКТРИКА ПОД КЛЮЧ'] },
+            { id: 'callout', name: 'Вызов и Диагностика', icon: 'fa-user-gear', time: 'от 15 минут', tools: 'Инструменты диагностики', bannerImg: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80', desc: 'Оперативный вызов мастера на дом в любой район Казани, полная комплексная диагностика и покупка материалов.', subs: ['Все подкатегории', 'Вызов мастера и диагностика'] }
         ];
 
         let priceDatabase = JSON.parse(localStorage.getItem('site_prices')) || [
@@ -1313,16 +1197,349 @@
             { title: 'Собрать диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 1 440 ₽', desc: 'Профессиональная сборка нового дивана, регулировка механизмов трансформации, проверка прочности каркаса и соединений.' },
             { title: 'Починить диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 2 176 ₽', desc: 'Устранение скрипа, ремонт или замена сломанного деревянного каркаса, пружинных блоков и механизмов трансформации.' },
             { title: 'Перетянуть диван', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 11 040 ₽', desc: 'Полная замена обивочного материала и изношенной ткани дивана на качественную ткань с подбором расцветки под интерьер.' },
+            { title: 'Перетяжка подлокотников дивана', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 6 400 ₽', desc: 'Замена обивки непосредственно на боковых частях и подлокотниках мягкой мебели.' },
+            { title: 'Замена наполнителя в диване', cat: 'furniture', sub: 'Диван', unit: 'шт.', price: 'от 3 280 ₽', desc: 'Установка нового упругого поролона или пенополиуретана для восстановления комфорта и мягкости посадочного места.' },
             { title: 'Собрать стенку', cat: 'furniture', sub: 'Стенка, прихожая', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Сборка модульных гостиных стенок, выравнивание по уровню и навеска навесных элементов.' },
+            { title: 'Собрать прихожую', cat: 'furniture', sub: 'Стенка, прихожая', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Сборка мебели для прихожих, шкафов для одежды, вешалок и тумб.' },
+            { title: 'Сборка обувницы', cat: 'furniture', sub: 'Стенка, прихожая', unit: 'шт.', price: 'от 800 ₽', desc: 'Монтаж и сборка специализированных тумб для хранения обуви.' },
             { title: 'Собрать кровать', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 1 600 ₽', desc: 'Сборка односпальных, двуспальных и детских кроватей, установка ортопедического основания и подъемного механизма.' },
+            { title: 'Разобрать кровать', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 640 ₽', desc: 'Аккуратный демонтаж кроватного каркаса для переезда.' },
+            { title: 'Починить кровать', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Устранение скрипов, укрепление слабых соединений и замена крепежных элементов.' },
+            { title: 'Заменить ламели на кровати', cat: 'furniture', sub: 'Кровать', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Установка новых прочных деревянных ламелей в ортопедическое основание.' },
+            { title: 'Перетяжка кровати', cat: 'furniture', sub: 'Кровать', unit: 'выезд', price: 'от 11 760 ₽', desc: 'Обновление обивки изголовья и внешнего периметра кровати.' },
             { title: 'Собрать кухню', cat: 'furniture', sub: 'Кухня', unit: 'пог. м', price: 'от 4 160 ₽', desc: 'Сборка нижних и верхних кухонных модулей, соединение секций, навеска на монтажную планку.' },
+            { title: 'Разобрать кухонный гарнитур', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 400 ₽', desc: 'Аккуратный демонтаж кухонной мебели и шкафов.' },
+            { title: 'Распилить фасад для кухни', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 720 ₽', desc: 'Точный распил мебельных фасадов и плит под требуемый размер.' },
+            { title: 'Перетяжка кухонного уголка', cat: 'furniture', sub: 'Кухня', unit: 'выезд', price: 'от 14 880 ₽', desc: 'Замена обивочной ткани на мягком кухонном уголке.' },
+            { title: 'Замена кухонных фасадов', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 240 ₽', desc: 'Демонтаж старых дверок и установка новых фасадов с регулировкой петель.' },
+            { title: 'Заменить столешницу кухонного стола', cat: 'furniture', sub: 'Кухня', unit: 'шт.', price: 'от 2 080 ₽', desc: 'Монтаж новой столешницы на кухонный стол.' },
+            { title: 'Установить столешницу из ДСП на кухне', cat: 'furniture', sub: 'Кухня', unit: 'усл.', price: 'от 1 040 ₽', desc: 'Установка и надежная фиксация кухонной столешницы из ДСП.' },
+            { title: 'Установить столешницу из искусственного камня', cat: 'furniture', sub: 'Кухня', unit: 'пог. м', price: 'от 7 200 ₽', desc: 'Профессиональный монтаж тяжелых столешниц из искусственного камня.' },
+            { title: 'Повесить полки', cat: 'furniture', sub: 'Полки', unit: 'шт.', price: 'от 320 ₽', desc: 'Надежная навеска настенных полок с разметкой по уровню и подбором дюбелей под тип стены.' },
+            { title: 'Собрать стул', cat: 'furniture', sub: 'Стул', unit: 'шт.', price: 'от 400 ₽', desc: 'Быстрая сборка обеденных или офисных стульев.' },
+            { title: 'Починить стул', cat: 'furniture', sub: 'Стул', unit: 'шт.', price: 'от 768 ₽', desc: 'Устранение шатания, укрепление ножек и спинок стула.' },
+            { title: 'Перетяжка стула', cat: 'furniture', sub: 'Стул', unit: 'шт.', price: 'от 6 400 ₽', desc: 'Замена обивки сиденья и спинки стула.' },
+            { title: 'Собрать тумбу', cat: 'furniture', sub: 'Тумбочка', unit: 'шт.', price: 'от 1 360 ₽', desc: 'Сборка прикроватных, офисных и тумб под телевизор.' },
+            { title: 'Починить тумбу', cat: 'furniture', sub: 'Тумбочка', unit: 'шт.', price: 'от 1 536 ₽', desc: 'Ремонт направляющих выдвижных ящиков и петель.' },
+            { title: 'Разобрать шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 960 ₽', desc: 'Аккуратная разборка распашного шкафа.' },
+            { title: 'Собрать корпусный шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 960 ₽', desc: 'Сборка корпусной мебели, установка полок и штанг.' },
+            { title: 'Установить встроенный шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 3 648 ₽', desc: 'Монтаж встроенного шкафа с подгонкой по стенам помещения.' },
+            { title: 'Разобрать шкаф-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 960 ₽', desc: 'Демонтаж раздвижных дверей и каркаса шкафа-купе.' },
+            { title: 'Собрать шкаф-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 2 560 ₽', desc: 'Сборка шкафа-купе, установка направляющих и регулировка дверей.' },
+            { title: 'Починить шкаф', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Комплексный ремонт корпусной мебели.' },
+            { title: 'Починить дверцу шкафа', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 152 ₽', desc: 'Регулировка и замена мебельных петель.' },
+            { title: 'Починить шкаф-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Ремонт роликов и профилей шкафа-купе.' },
+            { title: 'Заменить дверь шкафа-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Установка нового полотна двери в раздвижную систему.' },
+            { title: 'Починить дверь шкафа-купе', cat: 'furniture', sub: 'Шкаф', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Восстановление плавности хода дверей купе.' },
+            { title: 'Собрать стол', cat: 'furniture', sub: 'Стол', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка письменных, компьютерных и обеденных столов.' },
+            { title: 'Разобрать стол', cat: 'furniture', sub: 'Стол', unit: 'шт.', price: 'от 384 ₽', desc: 'Разборка столов для перевозки.' },
+            { title: 'Починить стол', cat: 'furniture', sub: 'Стол', unit: 'шт.', price: 'от 1 152 ₽', desc: 'Ремонт креплений ног и столешниц.' },
+            { title: 'Починить кресло', cat: 'furniture', sub: 'Кресло', unit: 'шт.', price: 'от 1 920 ₽', desc: 'Ремонт мягких кресел и механизмов.' },
+            { title: 'Собрать кресло', cat: 'furniture', sub: 'Кресло', unit: 'шт.', price: 'от 1 408 ₽', desc: 'Сборка мягких и офисных кресел.' },
+            { title: 'Перетяжка кресла', cat: 'furniture', sub: 'Кресло', unit: 'шт.', price: 'от 7 920 ₽', desc: 'Полное обновление обивки мягкого кресла.' },
+            { title: 'Перетяжка офисного кресла', cat: 'furniture', sub: 'Кресло', unit: 'выезд', price: 'от 10 720 ₽', desc: 'Замена ткани и наполнителя на компьютерных креслах.' },
+            { title: 'Собрать стеллаж', cat: 'furniture', sub: 'Стеллаж', unit: 'шт.', price: 'от 384 ₽', desc: 'Сборка металлических и деревянных стеллажей.' },
+            { title: 'Разобрать стеллаж', cat: 'furniture', sub: 'Стеллаж', unit: 'шт.', price: 'от 320 ₽', desc: 'Демонтаж полочных стеллажей.' },
+            { title: 'Собрать комод', cat: 'furniture', sub: 'Комод', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка корпуса комода и сборка выдвижных ящиков.' },
+
             { title: 'Установка раковины в ванной', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Профессиональный монтаж раковины на стену или тумбу, подключение сифона и проверка герметичности соединений.' },
+            { title: 'Установка раковины на кухне', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Установка кухонной мойки с надежной фиксацией и герметизацией стыков.' },
+            { title: 'Монтаж раковины в столешницу', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 700 ₽', desc: 'Аккуратная врезка раковины в подготовленный проем столешницы с обработкой срезов.' },
+            { title: 'Монтаж раковины над стиральной машиной', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 050 ₽', desc: 'Монтаж компактной раковины-кувшинки над стиральной машиной с подгонкой слива.' },
+            { title: 'Монтаж накладной раковины на столешницу', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Установка накладной чаши раковины на поверхность столешницы.' },
+            { title: 'Установка раковины врезного типа', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Врезной монтаж раковины в мебельную конструкцию.' },
+            { title: 'Установка раковины накладного типа', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Монтаж раковины накладного типа исполнения.' },
+            { title: 'Монтаж раковины модели Кувшинка', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Установка плоской раковины для экономии пространства.' },
+            { title: 'Монтаж раковины с тумбой', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Сборка тумбы, установка раковины и подключение коммуникаций.' },
+            { title: 'Установка подвесной раковины', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Надежное крепление подвесной раковины на капитальную стену.' },
+            { title: 'Установка раковины модели Тюльпан', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Монтаж раковины с декоративным пьедесталом.' },
+            { title: 'Установка кронштейнов для раковины/мойки', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 490 ₽', desc: 'Монтаж прочных несущих кронштейнов по уровню.' },
+            { title: 'Монтаж раковины на кронштейнах', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Установка чаши раковины на опорные кронштейны.' },
+            { title: 'Установка мини-раковины без смесителя и сифона', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 500 ₽', desc: 'Базовый монтаж малогабаритной раковины.' },
+            { title: 'Изготовление отверстий в каменной раковине', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 850 ₽', desc: 'Аккуратное сверление отверстий под смеситель в искусственном камне.' },
+            { title: 'Изготовление отверстий в металлической раковине', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 690 ₽', desc: 'Высверливание отверстий фрезой в нержавеющей мойке.' },
+            { title: 'Замена раковины в ванной', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 180 ₽', desc: 'Демонтаж старой сантехники, подготовка места и установка новой раковины.' },
+            { title: 'Замена раковины в туалете', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 180 ₽', desc: 'Смена раковины в санузле с подключением сифона.' },
+            { title: 'Замена раковины на кухне', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 180 ₽', desc: 'Замена кухонной мойки со сменой обвязки.' },
+            { title: 'Врезка раковины в столешницу', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 500 ₽', desc: 'Точный электролобзиковый выпил отверстия в столешнице.' },
+            { title: 'Монтаж тумбы под раковину', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка и установка мебельного подстолья.' },
+            { title: 'Демонтаж раковины', cat: 'plumbing', sub: 'Установка раковины', unit: 'шт.', price: 'от 350 ₽', desc: 'Аккуратное снятие старой раковины.' },
+            { title: 'Установка мойки врезного типа', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 550 ₽', desc: 'Монтаж врезной кухонной мойки с герметизацией.' },
+            { title: 'Установка мойки из нержавеющей стали', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 550 ₽', desc: 'Установка стальной мойки на герметик.' },
+            { title: 'Установка мойки накладного типа', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 550 ₽', desc: 'Накладной монтаж мойки на тумбу.' },
+            { title: 'Установка мойки из искусственного камня', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 700 ₽', desc: 'Монтаж тяжелой каменной мойки.' },
+            { title: 'Монтаж стеклянной мойки со смесителем', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка дизайнерской раковины из закаленного стекла.' },
+            { title: 'Демонтаж мойки', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 350 ₽', desc: 'Снятие старой кухонной мойки.' },
+            { title: 'Демонтаж подстолья с мойкой', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 525 ₽', desc: 'Разборка и вынос тумбы с мойкой.' },
+            { title: 'Замена мойки', cat: 'plumbing', sub: 'Установка мойки', unit: 'шт.', price: 'от 900 ₽', desc: 'Полная замена старой мойки на новую.' },
+            { title: 'Установка мойдодыра', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Сборка зеркала, тумбы и раковины комплекта Мойдодыр.' },
+            { title: 'Сборка мойдодыра', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 500 ₽', desc: 'Сборка элементов комплекта мебели для ванной.' },
+            { title: 'Монтаж фильтра для очистки воды в мойдодыре', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 900 ₽', desc: 'Установка питьевого фильтра внутри тумбы.' },
+            { title: 'Герметизация швов на мойдодыре', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 350 ₽', desc: 'Обработка стыков влагостойким санитарным герметиком.' },
+            { title: 'Демонтаж мойдодыра', cat: 'plumbing', sub: 'Установка и обслуживание мойдодыра', unit: 'шт.', price: 'от 450 ₽', desc: 'Разборка и отключение мебели для ванной.' },
             { title: 'Установка смесителя на ванну', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж настенного смесителя на эксцентрики с уплотнением.' },
+            { title: 'Монтаж душевого смесителя', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Установка смесителя для душевой зоны.' },
+            { title: 'Установка смесителя на кухне', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж кухонного крана с подключением гибкой подводки.' },
+            { title: 'Монтаж смесителя в ванной', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Установка смесителя в ванной комнате.' },
+            { title: 'Установка смесителя модели Ёлочка', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 650 ₽', desc: 'Монтаж классического двухвентильного смесителя.' },
+            { title: 'Установка смесителя с одним рычагом', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 650 ₽', desc: 'Установка однорычажного крана с картриджем.' },
+            { title: 'Монтаж смесителя на мойку', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 650 ₽', desc: 'Крепление смесителя на корпус мойки.' },
+            { title: 'Установка смесителя на биде', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 850 ₽', desc: 'Монтаж специализированного смесителя для биде.' },
+            { title: 'Монтаж смесителя на душевую кабину', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 950 ₽', desc: 'Установка смесительного узла в душевую кабину.' },
+            { title: 'Установка смесителя в ванной с лейкой для душа', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Монтаж смесителя в комплекте с душевым гарнитуром.' },
+            { title: 'Установка смесителя с терморегулятором на стену', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Установка термостатического смесителя для стабильной температуры воды.' },
+            { title: 'Установка электронного бесконтактного смесителя', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 300 ₽', desc: 'Монтаж сенсорного автоматического смесителя.' },
+            { title: 'Установка смесителя скрытого монтажа', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 1 800 ₽', desc: 'Сложный монтаж встроенного в стену смесителя.' },
+            { title: 'Монтаж смесителя на раковину', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Установка крана на раковину.' },
+            { title: 'Монтаж держателя для душевой лейки', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Крепление держателя на стену.' },
+            { title: 'Установка гибкой подводки', cat: 'plumbing', sub: 'Установка смесителя', unit: 'шт.', price: 'от 500 ₽', desc: 'Подключение водных шлангов к водорозеткам.' },
+            { title: 'Ремонт смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 600 ₽', desc: 'Восстановление работоспособности сантехнического прибора.' },
+            { title: 'Замена гибкой подводки смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 600 ₽', desc: 'Смена изношенных шлангов подключения.' },
+            { title: 'Замена картриджа в смесителе', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 600 ₽', desc: 'Установка нового керамического картриджа взамен текущего.' },
+            { title: 'Замена эксцентриков смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Замена крепежных эксцентриков в стене.' },
+            { title: 'Замена уплотнителей или прокладок смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 300 ₽', desc: 'Установка новых резиновых или силиконовых прокладок.' },
+            { title: 'Замена вентильной головки смесителя (кранбуксы)', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 315 ₽', desc: 'Смена кранбуксы для устранения течи вентиля.' },
+            { title: 'Замена девиатора (переключателя) смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 455 ₽', desc: 'Замена механизма переключения вода-душ.' },
+            { title: 'Выпиливание старых эксцентриков', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Аккуратное извлечение прикипевших старых эксцентриков.' },
+            { title: 'Прогон резьб', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 500 ₽', desc: 'Восстановление и очистка резьбовых соединений.' },
+            { title: 'Замена смесителя на кухне', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 700 ₽', desc: 'Демонтаж старого и установка нового кухонного крана.' },
+            { title: 'Замена смесителя в ванной', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 800 ₽', desc: 'Смена настенного смесителя в ванной.' },
+            { title: 'Сборка простого смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 250 ₽', desc: 'Предварительная сборка крана.' },
+            { title: 'Сборка сложного/душевого смесителя', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 450 ₽', desc: 'Сборка многофункционального смесителя.' },
+            { title: 'Демонтаж смесителя на кухне', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 250 ₽', desc: 'Снятие кухонного крана.' },
+            { title: 'Демонтаж смесителя в ванной', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 350 ₽', desc: 'Снятие настенного смесителя.' },
+            { title: 'Демонтаж держателя для душевой лейки', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 390 ₽', desc: 'Снятие старого держателя.' },
+            { title: 'Демонтаж эксцентриков', cat: 'plumbing', sub: 'Ремонт и замена смесителя', unit: 'шт.', price: 'от 210 ₽', desc: 'Демонтаж эксцентриков из труб.' },
+            { title: 'Установка кранов 1/2, 3/4 / 1 дюйм', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 600 ₽', desc: 'Монтаж шаровых и запорных кранов разного диаметра.' },
+            { title: 'Установка угловых кранов 1/2', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 420 ₽', desc: 'Монтаж угловых кранов для подключения техники.' },
+            { title: 'Установка переходников (переходных фитингов)', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 280 ₽', desc: 'Монтаж соединительных переходников.' },
+            { title: 'Установка фитингов из ПВХ', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 210 ₽', desc: 'Монтаж пластиковых фитингов.' },
+            { title: 'Устройство сливного трапа', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 1 050 ₽', desc: 'Монтаж напольного трапа для слива воды.' },
+            { title: 'Установка гофры диаметром 40*50', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 70 ₽', desc: 'Монтаж гибкой пластиковой гофротрубы.' },
+            { title: 'Установка шарового крана (водопровод/отопление)', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 600 ₽', desc: 'Монтаж надежного шарового крана.' },
+            { title: 'Установка шарового крана с фильтром тонкой очистки', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 690 ₽', desc: 'Монтаж комбинированного узла с грязевиком.' },
+            { title: 'Демонтаж кранов / фитингов', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 245 ₽', desc: 'Снятие запорной арматуры.' },
+            { title: 'Демонтаж фитингов до 3/4', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 175 ₽', desc: 'Снятие мелких фитингов.' },
+            { title: 'Демонтаж шарового крана до 3/4', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 280 ₽', desc: 'Снятие шарового крана.' },
+            { title: 'Демонтаж шарового крана на стояке', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 385 ₽', desc: 'Демонтаж крана на общедомовом стояке.' },
+            { title: 'Демонтаж простого шарового крана на стояке', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 490 ₽', desc: 'Демонтаж крана стояка с перекрытием.' },
+            { title: 'Демонтаж редуктора давления', cat: 'plumbing', sub: 'Установка и демонтаж кранов', unit: 'шт.', price: 'от 280 ₽', desc: 'Снятие регулировочного редуктора.' },
+            { title: 'Монтаж стальной ванны / Замена ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Установка стальной ванны на ножки, подключение сифона и заземления.' },
+            { title: 'Установка акриловой ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 2 100 ₽', desc: 'Сборка каркаса акриловой ванны, выставление по уровню и обвязка.' },
+            { title: 'Установка чугунной ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 2 950 ₽', desc: 'Монтаж тяжелой чугунной ванны на опорные ножки.' },
+            { title: 'Монтаж угловой ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка угловой акриловой или стальной ванны.' },
+            { title: 'Монтаж угловой ванны с гидромассажем', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 3 000 ₽', desc: 'Установка угловой гидромассажной ванны с подключением электропитания.' },
+            { title: 'Монтаж нестандартной по размерам ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 600 ₽', desc: 'Монтаж ванны нестандартной формы.' },
+            { title: 'Установка чугунной ванны прямоугольной формы', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 2 065 ₽', desc: 'Монтаж классической прямоугольной чугунной ванны.' },
+            { title: 'Установка ванны нестандартной с электрооборудованием', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 8 400 ₽', desc: 'Сложный монтаж ванны с электронасосами и подсветкой.' },
+            { title: 'Установка джакузи', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 3 000 ₽', desc: 'Профессиональная установка ванны с гидромассажем.' },
+            { title: 'Монтаж прямоугольной ванны с гидромассажем', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 4 060 ₽', desc: 'Установка и подключение гидромассажного оборудования.' },
+            { title: 'Обвязка системы слива-перелива на ванну', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 574 ₽', desc: 'Монтаж полуавтоматического или стандартного слива-перелива.' },
+            { title: 'Устройство вспомогательных опор под ванну', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 245 ₽', desc: 'Монтаж дополнительных подпорных элементов.' },
+            { title: 'Подготовка места под монтаж ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 770 ₽', desc: 'Подготовка площадки и стен под установку.' },
+            { title: 'Корректировка положения ванны по уровню', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 700 ₽', desc: 'Тюнинг ножек для идеального горизонтального уровня.' },
+            { title: 'Установка душевых шторок из пластика', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Монтаж пластикового ограждения на бортик ванны.' },
+            { title: 'Установка душевых шторок из стекла', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж стеклянных распашных или раздвижных шторок.' },
+            { title: 'Установка жалюзи', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'пог. м', price: 'от 420 ₽', desc: 'Монтаж солнцезащитных или влагостойких жалюзи.' },
+            { title: 'Монтаж / Замена душевой штанги', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 350 ₽', desc: 'Установка штанги с держателем ручной лейки.' },
+            { title: 'Замена гибкого шланга', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 350 ₽', desc: 'Смена изношенного душевого шланга.' },
+            { title: 'Изготовление подиума под поддон или ванну', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Строительство кирпичного или каркасного подиума.' },
+            { title: 'Установка каркаса для ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 390 ₽', desc: 'Сборка металлического несущего каркаса ванны.' },
+            { title: 'Демонтаж цельномонолитного подиума под ванной', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'м2', price: 'от 1 120 ₽', desc: 'Разрушение бетонного подиума.' },
+            { title: 'Демонтаж монолитного подиума под поддоном', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 1 260 ₽', desc: 'Демонтаж основания душевого поддона.' },
+            { title: 'Демонтаж ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 750 ₽', desc: 'Снятие и вынос старой ванны.' },
+            { title: 'Демонтаж душевой штанги', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 175 ₽', desc: 'Снятие креплений душа.' },
+            { title: 'Ремонт ванны', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 350 ₽', desc: 'Местный ремонт сколов и трещин акрила.' },
+            { title: 'Устранение протечек под ванной', cat: 'plumbing', sub: 'Ванны и Джакузи', unit: 'шт.', price: 'от 400 ₽', desc: 'Поиск и ликвидация причин протечки воды.' },
+            { title: 'Гидроизоляция силиконом / герметиком по контуру ванны', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'м2', price: 'от 200 ₽', desc: 'Нанесение влагозащитного силиконового слоя.' },
+            { title: 'Гидроизоляция плинтусом ПВХ по контуру ванны', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 350 ₽', desc: 'Монтаж пластикового бордюра по краю ванны.' },
+            { title: 'Гидроизоляция керамическим плинтусом', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 1 000 ₽', desc: 'Укладка эстетичного керамического бордюра.' },
+            { title: 'Герметизация швов мойки, раковины', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 220 ₽', desc: 'Обработка стыков раковины со стеной.' },
+            { title: 'Герметизация швов душевой кабины, ванной', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 450 ₽', desc: 'Герметизация примыканий в мокрой зоне.' },
+            { title: 'Герметизация бордюрной лентой', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'пог. м', price: 'от 250 ₽', desc: 'Наклейка самоклеющейся бордюрной ленты.' },
+            { title: 'Герметизация швов плитки затиркой', cat: 'plumbing', sub: 'Гидроизоляция швов', unit: 'м2', price: 'от 150 ₽', desc: 'Обновление межплиточной затирки.' },
+            { title: 'Установка ревизионного люка на готовое место', cat: 'plumbing', sub: 'Сантехнические люки', unit: 'шт.', price: 'от 600 ₽', desc: 'Монтаж сантехнического лючка-невидимки.' },
+            { title: 'Установка ревизионного люка с подготовкой места', cat: 'plumbing', sub: 'Сантехнические люки', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Устройство проема и монтаж люка.' },
+            { title: 'Установка сифона (ванна, раковина, кухня, мойка)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 600 ₽', desc: 'Сборка и подключение сифона с защитой от запаха.' },
+            { title: 'Установка сифона на ванну', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж обвязки слива ванны.' },
+            { title: 'Монтаж перехода на канализацию', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 560 ₽', desc: 'Установка манжет и переходных труб.' },
+            { title: 'Замена сифона (общая / ванна)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 450-600 ₽', desc: 'Демонтаж старого и установка нового сифона.' },
+            { title: 'Замена сифона для душевой кабины', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 500 ₽', desc: 'Смена сливного сифона под душевым поддоном.' },
+            { title: 'Замена колена / гофры / сливного устройства', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 280 ₽', desc: 'Замена гибких элементов слива.' },
+            { title: 'Ремонт сифона (ванна, душевая кабина)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 280 ₽', desc: 'Устранение течи в сифонном узле.' },
+            { title: 'Демонтаж сифона (ванна, раковина, мойка)', cat: 'plumbing', sub: 'Установка и замена сифонов', unit: 'шт.', price: 'от 200 ₽', desc: 'Снятие старого сифона.' },
+            { title: 'Установка душевой кабины / панели', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 990 ₽', desc: 'Базовый монтаж душевого оборудования.' },
+            { title: 'Устройство душевого поддона', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 600 ₽', desc: 'Монтаж и выравнивание поддона.' },
+            { title: 'Сборка душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 2 200 ₽', desc: 'Сборка стенок, крыши и дверей кабины.' },
+            { title: 'Установка гидромассажной панели', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж душевой панели с гидромассажем.' },
+            { title: 'Монтаж душевой кабины без гидромассажа', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 3 500 ₽', desc: 'Установка простой душевой кабины.' },
+            { title: 'Монтаж душевой кабины с гидромассажем / парогенератором', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 4 500 ₽', desc: 'Сложный монтаж кабины с электроникой.' },
+            { title: 'Установка душевого бокса', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Монтаж глубокого душевого бокса.' },
+            { title: 'Монтаж душевого уголка', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка душевого ограждения.' },
+            { title: 'Гидроизоляция швов душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'пог. м', price: 'от 350 ₽', desc: 'Герметизация стыков кабины силиконом.' },
+            { title: 'Ремонт отдельных элементов душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Замена роликов, леек, шлангов.' },
+            { title: 'Замена душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 3 500 ₽', desc: 'Демонтаж старой и установка новой кабины.' },
+            { title: 'Навес дверей душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Регулировка стеклянных створок.' },
+            { title: 'Замена смесителя в душевой кабине', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 700 ₽', desc: 'Смена многорежимного смесителя кабины.' },
+            { title: 'Монтаж / Подключение парогенератора', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 260 ₽', desc: 'Подключение генератора пара к сети и воде.' },
+            { title: 'Замена парогенератора', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 3 360 ₽', desc: 'Смена неисправного парогенератора.' },
+            { title: 'Демонтаж поддона душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 700 ₽', desc: 'Снятие душевого поддона.' },
+            { title: 'Демонтаж душевой кабины', cat: 'plumbing', sub: 'Душевые кабины', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Полная разборка кабины.' },
             { title: 'Установка напольного унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж напольного унитаза, подключение гофры и бачка.' },
+            { title: 'Монтаж подвесного унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 800 ₽', desc: 'Навеска чаши подвесного унитаза на инсталляцию.' },
+            { title: 'Монтаж инсталляции подвесного унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Сборка и жесткая фиксация рамы инсталляции.' },
+            { title: 'Установка сидения на унитаз', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 350 ₽', desc: 'Замена крышки и сиденья унитаза.' },
+            { title: 'Изготовление подиума под унитаз', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 000-1 400 ₽', desc: 'Строительство подставки для поднятия уровня.' },
+            { title: 'Изготовление площадки на унитаз (наливной пол)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 910 ₽', desc: 'Заливка выравнивающей площадки.' },
+            { title: 'Установка писсуара (простого / сложного)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Монтаж настенного писсуара с сифоном.' },
+            { title: 'Установка гофры на унитаз', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 500 ₽', desc: 'Подключение выпуска унитаза к канализации.' },
+            { title: 'Замена гофры на унитазе (без/с демонтажем)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 200-2 500 ₽', desc: 'Смена гофротрубы с разборкой соединения.' },
+            { title: 'Установка / ремонт бачка унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 500-1 200 ₽', desc: 'Монтаж сливного бачка и настройка арматуры.' },
+            { title: 'Монтаж сложного бачка унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 400 ₽', desc: 'Установка нестандартного бачка.' },
+            { title: 'Замена арматуры / механизма бачка унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Установка нового внутреннего наливного и спускного механизма.' },
+            { title: 'Устранение течи бачка унитаза / Ремонт унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 750 ₽', desc: 'Ремонт узла слива и устранение протечек воды.' },
+            { title: 'Ремонт инсталляции', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Ремонт скрытого механизма смыва в стене.' },
+            { title: 'Замена унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Демонтаж старого унитаза и установка нового.' },
+            { title: 'Демонтаж унитаза', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 650 ₽', desc: 'Аккуратное снятие старого унитаза.' },
+            { title: 'Монтаж напольного биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка напольного биде со смесителем.' },
+            { title: 'Установка подвесного биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 800 ₽', desc: 'Монтаж подвесного биде на инсталляцию.' },
+            { title: 'Сложный монтаж биде в углу', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 2 000 ₽', desc: 'Нестандартная угловая установка биде.' },
+            { title: 'Подключение биде (обычное / к инсталляции)', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 650-800 ₽', desc: 'Подключение воды и сифона.' },
+            { title: 'Установка крышки биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 400 ₽', desc: 'Монтаж крышки-биде.' },
+            { title: 'Монтаж инсталляции для биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Установка опорной рамы биде.' },
+            { title: 'Прочистка засоров биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Устранение засора в сливе биде.' },
+            { title: 'Ремонт / Демонтаж биде', cat: 'plumbing', sub: 'Унитазы, писсуары и биде', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Ремонт или снятие сантехники.' },
+            { title: 'Установка полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Монтаж водяного полотенцесушителя с подключением к контуру.' },
+            { title: 'Установка электрического полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 900 ₽', desc: 'Монтаж электросушителя с подключением в розетку.' },
+            { title: 'Перенос полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 1 100 ₽', desc: 'Смещение полотенцесушителя на другую стену.' },
+            { title: 'Врезка полотенцесушителя в стояк горячей воды', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Врезка в стояк ГВС с устройством байпаса.' },
+            { title: 'Монтаж кранов полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 500 ₽', desc: 'Установка отсечных кранов.' },
+            { title: 'Устранение течи полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 500 ₽', desc: 'Ремонт резьбовых соединений сушителя.' },
+            { title: 'Демонтаж полотенцесушителя', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 750 ₽', desc: 'Снятие прибора.' },
+            { title: 'Установка электрической сушилки для рук', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 644 ₽', desc: 'Монтаж настенной сушилки для рук.' },
+            { title: 'Монтаж сушилки для белья', cat: 'plumbing', sub: 'Полотенцесушители и сушилки', unit: 'шт.', price: 'от 700 ₽', desc: 'Установка потолочной или настенной сушилки.' },
+            { title: 'Монтаж / Замена канализационных труб', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 450 ₽', desc: 'Прокладка пластиковых труб ПВХ для отвода стоков.' },
+            { title: 'Штробление под канализационные трубы', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 300 ₽', desc: 'Штробление стен под скрытый монтаж труб.' },
+            { title: 'Сборка фитингов и установка сгона', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 560 ₽', desc: 'Монтаж соединительных узлов.' },
+            { title: 'Замена тройника / Отвод ПВХ D 110мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 500 ₽', desc: 'Замена главного канализационного тройника.' },
+            { title: 'Замена переходника (манжеты)', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 245 ₽', desc: 'Смена резиновых уплотнительных манжет.' },
+            { title: 'Обустройство заглушки трубы', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 70 ₽', desc: 'Установка временной или постоянной заглушки.' },
+            { title: 'Демонтаж ПВХ труб канализации', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 175-350 ₽', desc: 'Разборка пластиковых труб.' },
+            { title: 'Демонтаж чугунных труб канализации', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 400 ₽', desc: 'Аккуратный демонтаж тяжелого чугуна.' },
+            { title: 'Демонтаж труб канализационного стояка', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'объем', price: 'от 800 ₽', desc: 'Демонтаж общедомового стояка.' },
+            { title: 'Установка / Замена труб водоснабжения', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'точка', price: 'от 800 ₽', desc: 'Монтаж точек разводки воды.' },
+            { title: 'Нарезка резьбы до 30мм / до 50мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 385-455 ₽', desc: 'Нарезка резьбы на металлических трубах.' },
+            { title: 'Штробление стен под водоснабжение', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 250 ₽', desc: 'Создание штроб для водяных труб.' },
+            { title: 'Заделка штробы', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 210 ₽', desc: 'Заделка штроб штукатурным раствором.' },
+            { title: 'Разводка металлопластиковых / ПП труб', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 800 ₽', desc: 'Монтаж разводки воды из полипропилена.' },
+            { title: 'Замена стояков водоснабжения', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 5 600 ₽', desc: 'Смена стояков ХВС/ГВС.' },
+            { title: 'Расчеканка чугунной трубы D 110мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 1 050 ₽', desc: 'Удаление старой цементной чеканки.' },
+            { title: 'Врезка тройника 3/4 или ПВХ до 50мм', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 455 ₽', desc: 'Врезка отвода в действующий трубопровод.' },
+            { title: 'Установка клапана (вентиля)', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 400 ₽', desc: 'Монтаж обратного клапана.' },
+            { title: 'Установка соединительного хомута', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'шт.', price: 'от 500 ₽', desc: 'Монтаж обжимного хомута.' },
+            { title: 'Демонтаж труб водоснабжения/отопления', cat: 'plumbing', sub: 'Канализация и водоснабжение', unit: 'пог. м', price: 'от 250-280 ₽', desc: 'Снятие старых труб.' },
+            { title: 'Установка фильтра (Амвэй, Аквафор, Atoll)', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 650 ₽', desc: 'Монтаж систем глубокой очистки воды под мойку.' },
+            { title: 'Установка проточного фильтра / под мойку', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 750 ₽', desc: 'Установка питьевого фильтра с отдельным краном.' },
+            { title: 'Монтаж фильтра Барьер', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 700 ₽', desc: 'Подключение фильтрусющей системы Барьер.' },
+            { title: 'Установка фильтра грубой / тонкой очистки', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж грязевиков и магистральных фильтров.' },
+            { title: 'Установка фильтра на магистраль', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 450 ₽', desc: 'Монтаж колбы фильтра на ввод воды.' },
+            { title: 'Замена картриджа в фильтре', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 500 ₽', desc: 'Смена фильтрующих элементов с промывкой колб.' },
+            { title: 'Замена / чистка аэратора', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 280 ₽', desc: 'Очистка или замена сетки аэратора на изливе.' },
+            { title: 'Демонтаж фильтра тонкой очистки', cat: 'plumbing', sub: 'Фильтры для воды', unit: 'шт.', price: 'от 175-350 ₽', desc: 'Снятие фильтрующего узла.' },
+            { title: 'Устранение бытовых засоров / Чистка сифона', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Прочистка сифонов и труб от накопившихся загрязнений.' },
+            { title: 'Сложный засор (со спец. оборудованием)', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Устранение сложных глубоких засоров тросом или насосом.' },
+            { title: 'Устранение протечек', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 500 ₽', desc: 'Быстрый ремонт соединений для остановки течи.' },
+            { title: 'Монтаж системы защиты от протечек', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 2 975 ₽', desc: 'Установка датчиков и кранов с электроприводом (Аквасторож, Нептун).' },
+            { title: 'Установка измельчителя отходов', cat: 'plumbing', sub: 'Засоры и Защита от протечек', unit: 'шт.', price: 'от 1 260 ₽', desc: 'Монтаж диспозера пищевых отходов в мойку.' },
+            { title: 'Установка / Замена радиаторов отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Монтаж биметаллических или алюминиевых радиаторов.' },
+            { title: 'Установка стальных радиаторов', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж панельных стальных батарей.' },
+            { title: 'Перенос батареи отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 400 ₽', desc: 'Смещение радиатора по стене.' },
+            { title: 'Врезка крана Маевского', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 700 ₽', desc: 'Установка игольчатого крана для спуска воздуха.' },
+            { title: 'Монтаж байпаса', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 500-1 750 ₽', desc: 'Установка обводной перемычки на отопление.' },
+            { title: 'Демонтаж батарей отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 450-840 ₽', desc: 'Снятие старых чугунных батарей.' },
+            { title: 'Монтаж бойлера / накопительного водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Навеска бойлера на стену и подключение к трубам.' },
+            { title: 'Установка проточного водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 000 ₽', desc: 'Монтаж компактного проточного нагревателя.' },
+            { title: 'Подключение водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 650 ₽', desc: 'Подключение прибора к воде и электричеству.' },
+            { title: 'Установка циркуляционного насоса', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 680 ₽', desc: 'Монтаж насоса в систему отопления.' },
+            { title: 'Замена водонагревателя (Аристон, Термекс)', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 650 ₽', desc: 'Демонтаж старого и монтаж нового бойлера.' },
+            { title: 'Ремонт накопительного водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 2 100-2 450 ₽', desc: 'Замена ТЭНа, термостата или чистка бака от накипи.' },
+            { title: 'Диагностика водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 330 ₽', desc: 'Проверка электрической и гидравлической части.' },
+            { title: 'Демонтаж водонагревателя', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 450 ₽', desc: 'Снятие водонагревателя со стены.' },
+            { title: 'Монтаж коллектора отопления', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 1 200 ₽', desc: 'Установка распределительной гребенки.' },
+            { title: 'Экран под ванну (установка / подрезка)', cat: 'plumbing', sub: 'Отопление и Водонагреватели', unit: 'шт.', price: 'от 300-600 ₽', desc: 'Монтаж декоративного экрана под ванну.' },
+
             { title: 'Установка розетки (внутренняя / наружная)', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130 ₽', desc: 'Профессиональный монтаж электрической розетки с подключением проводов.' },
+            { title: 'Установка розетки с заземлением', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 200 ₽', desc: 'Монтаж розетки с обязательным подключением защитного заземляющего контура.' },
+            { title: 'Установка компьютерной / телефонной / ТВ розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 180 ₽', desc: 'Монтаж слаботочных информационных розеток.' },
+            { title: 'Установка подрозетника', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 80 ₽', desc: 'Высверливание коронкой и вмонтирование подрозетника в стену.' },
+            { title: 'Установка розетки для электроплиты', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 350 ₽', desc: 'Монтаж силовой розетки повышенной мощности для плиты.' },
+            { title: 'Установка распаечной коробки (внутренняя / наружная)', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 400-550 ₽', desc: 'Коммутация проводов в распред. коробке.' },
+            { title: 'Замена розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130 ₽', desc: 'Демонтаж старой искрящей розетки и установка новой.' },
+            { title: 'Ремонт розетки', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 280 ₽', desc: 'Восстановление контактов и подтяжка пружин.' },
+            { title: 'Демонтаж розетки / подрозетника', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 80 ₽', desc: 'Аккуратное снятие розетки.' },
+            { title: 'Установка одноклавишного выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130-200 ₽', desc: 'Монтаж выключателя света.' },
+            { title: 'Установка двухклавишного выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 230-350 ₽', desc: 'Монтаж двухклавишного выключателя для групп ламп.' },
+            { title: 'Установка проходного выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 350-750 ₽', desc: 'Монтаж переключателей для управления светом из двух мест.' },
+            { title: 'Установка диммера (регулятора света)', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 350 ₽', desc: 'Монтаж светорегулятора (диммера).' },
+            { title: 'Замена / Ремонт выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130-350 ₽', desc: 'Смена неисправного выключателя.' },
+            { title: 'Демонтаж выключателя', cat: 'electric', sub: 'Розетки и выключатели', unit: 'шт.', price: 'от 130 ₽', desc: 'Снятие выключателя с изоляцией проводов.' },
+            { title: 'Установка точечного / потолочного светильника', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 150-180 ₽', desc: 'Монтаж врезного точечного светильника в потолок.' },
+            { title: 'Установка светильника Армстронг', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 550 ₽', desc: 'Монтаж растрового светильника в подвесной потолок.' },
+            { title: 'Установка трековых светильников', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 1 500 ₽', desc: 'Монтаж шинопровода и точечных спотов.' },
+            { title: 'Установка настенных светильников (бра)', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 350 ₽', desc: 'Монтаж и подключение настенного бра.' },
+            { title: 'Установка уличных светильников', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 700 ₽', desc: 'Монтаж влагозащищенных светильников на фасад.' },
+            { title: 'Установка светильников в натяжной потолок', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 180 ₽', desc: 'Установка термокольца и монтаж светильника.' },
+            { title: 'Замена патрона в светильнике', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 120 ₽', desc: 'Смена сгоревшего электрического патрона.' },
+            { title: 'Демонтаж светильника', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 150 ₽', desc: 'Снятие осветительного прибора.' },
             { title: 'Установка потолочной люстры (анкер / крюк)', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 650 ₽', desc: 'Надежная навеска люстры на потолочный крюк или монтажную планку.' },
-            { title: 'Сборка электрощита', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 2 600 ₽', desc: 'Монтаж и коммутация автоматов внутри щита.' },
-            { title: 'Вызов мастера на дом / Выезд', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'Базовый', price: 'Бесплатно', desc: 'Оперативный выезд квалифицированного специалиста по указанному адресу в Казани.' }
+            { title: 'Сборка простой / сложной люстры', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 400-650 ₽', desc: 'Сборка хрупких и многорожковых элементов люстры.' },
+            { title: 'Монтаж тяжелой люстры (от 5 до 18 кг)', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 950-4 200 ₽', desc: 'Усиленный монтаж массивных потолочных конструкций.' },
+            { title: 'Установка светодиодной / хрустальной люстры', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 800 ₽', desc: 'Монтаж люстр с пультом управления или хрусталем.' },
+            { title: 'Замена / Демонтаж люстры', cat: 'electric', sub: 'Светильники и Люстры', unit: 'шт.', price: 'от 450-650 ₽', desc: 'Снятие старой и подвес новой люстры.' },
+            { title: 'Подключение / Установка бытовой техники', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 750 ₽', desc: 'Профессиональное подключение приборов к электросети.' },
+            { title: 'Установка холодильника (в т.ч. встраиваемого)', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 550-1 250 ₽', desc: 'Монтаж отдельно стоящего или встраиваемого холодильника.' },
+            { title: 'Установка холодильника с льдогенератором', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 1 400 ₽', desc: 'Подключение сложного холодильника с подачей воды.' },
+            { title: 'Установка электроплиты / варочной панели', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 850 ₽', desc: 'Подключение варочной панели с проверкой мощности.' },
+            { title: 'Монтаж встраиваемого духового шкафа', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 1 150 ₽', desc: 'Установка духовки в мебельный шкаф.' },
+            { title: 'Установка комплекта (панель + духовка)', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 2 000 ₽', desc: 'Монтаж связки варочной панели и духового шкафа.' },
+            { title: 'Монтаж встраиваемой СВЧ / Кронштейна', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 980 ₽', desc: 'Монтаж микроволновой печи.' },
+            { title: 'Установка вытяжки', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 850 ₽', desc: 'Навеска кухонной вытяжки и подключение в вентиляцию.' },
+            { title: 'Подключение вытяжки', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 350 ₽', desc: 'Подключение шнура питания в розетку.' },
+            { title: 'Монтаж вентилятора (бытовой / канальный)', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 400-630 ₽', desc: 'Установка вытяжного вентилятора в санузле.' },
+            { title: 'Монтаж телевизора на стену', cat: 'electric', sub: 'Подключение бытовой техники', unit: 'шт.', price: 'от 1 150 ₽', desc: 'Крепление кронштейна и навеска ТВ панели.' },
+            { title: 'Установка однополюсного автомата', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 200-300 ₽', desc: 'Монтаж модульного автомата в электрощит.' },
+            { title: 'Установка двухполюсного / четырехполюсного УЗО', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 350-450 ₽', desc: 'Монтаж устройства защитного отключения.' },
+            { title: 'Установка Диф. автомата', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 400-450 ₽', desc: 'Монтаж дифференциального автоматического выключателя.' },
+            { title: 'Сборка электрощита', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 2 600-3 000 ₽', desc: 'Монтаж и коммутация автоматов внутри щита.' },
+            { title: 'Установка щитка (накладной / встраиваемый)', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 1 100-1 650 ₽', desc: 'Монтаж бокса для электроавтоматов.' },
+            { title: 'Монтаж распред. щитка (от 6 до 72 автоматов)', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 3 150-17 220 ₽', desc: 'Сборка крупного распределительного щита.' },
+            { title: 'Установка счетчика (однофазный / трехфазный)', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 1 190-1 400 ₽', desc: 'Монтаж электросчетчика учета энергии.' },
+            { title: 'Монтаж стабилизатора напряжения', cat: 'electric', sub: 'Щиты, Автоматы, Счетчики', unit: 'шт.', price: 'от 1 750 ₽', desc: 'Установка защитного стабилизатора.' },
+            { title: 'Прокладка кабеля (в зависимости от сечения)', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 80-180 ₽', desc: 'Открытая или скрытая прокладка кабельных линий.' },
+            { title: 'Прокладка провода (до 120 кв. мм)', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 60 ₽', desc: 'Монтаж силового провода.' },
+            { title: 'Прокладка кабель-канала / короба', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 60-260 ₽', desc: 'Монтаж пластикового короба для проводов.' },
+            { title: 'Затяжка кабеля в гофру', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 20 ₽', desc: 'Протяжка кабеля в защитную гофротрубу.' },
+            { title: 'Замена проводки в квартире', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 300 ₽', desc: 'Полная замена старых электрических линий.' },
+            { title: 'Прокладка кабеля бронированного', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 740 ₽', desc: 'Монтаж бронированного кабеля для улицы.' },
+            { title: 'Поиск обрыва эл. цепи / Устранение КЗ', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'шт.', price: 'от 390-800 ₽', desc: 'Диагностика мультиметром и устранение короткого замыкания.' },
+            { title: 'Штробление стен под проводку', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м.', price: 'от 180 ₽', desc: 'Штробление стен штроборезом под провода.' },
+            { title: 'Демонтаж проводки', cat: 'electric', sub: 'Электропроводка и Кабель', unit: 'пог. м', price: 'от 60 ₽', desc: 'Удаление старых кабельных линий.' },
+            { title: 'Монтаж / Подключение / Замена теплого пола', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 450 ₽', desc: 'Укладка нагревательных матов теплого пола.' },
+            { title: 'Укладка теплого пола под ламинат', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 650 ₽', desc: 'Монтаж инфракрасной или кабельной системы под ламинат.' },
+            { title: 'Монтаж инфракрасного теплого пола под ламинат', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 280 ₽', desc: 'Укладка термопленки.' },
+            { title: 'Монтаж терморегулятора с датчиком', cat: 'electric', sub: 'Теплый пол', unit: 'шт.', price: 'от 500 ₽', desc: 'Установка настенного регулятора температуры.' },
+            { title: 'Демонтаж теплого пола', cat: 'electric', sub: 'Теплый пол', unit: 'м2', price: 'от 180 ₽', desc: 'Снятие нагревательных элементов.' },
+            { title: 'Однокомнатная квартира (до 35 м2; 14 точек; бокс до 8)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 13 500 ₽', desc: 'Электромонтаж однокомнатной квартиры под ключ.' },
+            { title: 'Двухкомнатная квартира (до 45 м2; 16 точек; бокс до 10)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 17 000 ₽', desc: 'Электромонтаж двухкомнатной квартиры под ключ.' },
+            { title: 'Трехкомнатная квартира (до 60 м2; 22 точки; бокс до 12)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 24 000 ₽', desc: 'Электромонтаж трехкомнатной квартиры под ключ.' },
+            { title: 'Дом площадью до 70 м2 (22 точки; бокс до 14)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 29 000 ₽', desc: 'Электромонтаж загородного дома до 70 кв.м.' },
+            { title: 'Дом площадью до 110 м2 (45 точек; бокс до 18)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 46 000 ₽', desc: 'Электромонтаж загородного дома до 110 кв.м.' },
+            { title: 'Дом площадью до 150 м2 (60 точек; бокс до 24)', cat: 'electric', sub: 'ЭЛЕКТРИКА ПОД КЛЮЧ', unit: 'объект', price: 'от 72 000 ₽', desc: 'Электромонтаж крупного коттеджа под ключ.' },
+
+            { title: 'Вызов мастера на дом / Выезд', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'Базовый', price: 'Бесплатно', desc: 'Оперативный выезд квалифицированного специалиста по указанному адресу в Казани.' },
+            { title: 'Диагностика при оказании услуг', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'С услугой', price: 'Бесплатно', desc: 'Полная профессиональная диагностика неисправности при заказе ремонтных работ.' },
+            { title: 'Диагностика в случае отказа', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: 'Отказ', price: '1 000 ₽', desc: 'Оплата выезда и работы мастера при отказе от проведения ремонта.' },
+            { title: 'Выезд мастера в магазин', cat: 'callout', sub: 'Вызов мастера и диагностика', unit: '1 выезд', price: '1 000 ₽', desc: 'Профессиональный подбор, покупка и доставка необходимых комплектующих мастером.' }
         ];
 
         let reviewsData = JSON.parse(localStorage.getItem('site_reviews')) || [
@@ -1337,55 +1554,34 @@
         let performersData = JSON.parse(localStorage.getItem('site_performers')) || [];
         let messagesData = JSON.parse(localStorage.getItem('site_messages')) || [];
 
-        // EXPANDED MASTERS WITH VALID IMAGES
-        let mastersData = [
+        const mastersData = [
             { name: 'Рамиль Сафин', role: 'Сборщик мебели и мастер на час', exp: '9 лет опыта', rating: '4.95', district: 'Ново-Савиновский, Вахитовский', avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80' },
             { name: 'Ильнур Хасанов', role: 'Специалист по сантехнике и ваннам', exp: '12 лет опыта', rating: '5.0', district: 'Советский, Приволжский', avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&auto=format&fit=crop&q=80' },
-            { name: 'Евгений Морозов', role: 'Электрик и монтажник техники', exp: '7 лет опыта', rating: '4.88', district: 'Московский, Кировский', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80' },
-            { name: 'Тимур Ганиев', role: 'Мастер универсал и отделочник', exp: '10 лет опыта', rating: '4.92', district: 'Авиастроительный, Ново-Савиновский', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80' },
-            { name: 'Альберт Зарипов', role: 'Мастер по сантехнике и отоплению', exp: '8 лет опыта', rating: '4.90', district: 'Вахитовский, Приволжский', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80' }
+            { name: 'Евгений Морозов', role: 'Электрик и монтажник техники', exp: '7 лет опыта', rating: '4.88', district: 'Московский, Кировский, Авиастроительный', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80' }
         ];
-
-        // PAGE CUSTOM TEXTS EDITABLE IN ADMIN
-        let pageTexts = JSON.parse(localStorage.getItem('site_page_texts')) || {
-            homeTitle: 'Муж на час и бытовой ремонт <span class="bg-gradient-to-r from-brand-orange via-amber-400 to-yellow-500 bg-clip-text text-transparent">в Казани</span>',
-            homeSubtitle: 'Сантехника, электрик, услуги плотника и сборка мебели. Выберите несколько услуг сразу и вызовите проверенного мастера на дом!',
-            servicesTitle: 'Каталог Услуг Сервиса Казань',
-            servicesDesc: 'Комплексный бытовой сервис с профессиональным подходом. Мы создали для вас интерактивные направления для быстрого выбора нужного мастера.',
-            priceTitle: 'Прайс-лист услуг мастеров',
-            mastersTitle: 'Мастера города Казань',
-            faqTitle: 'Частые вопросы (FAQ)',
-            registerTitle: 'Станьте партнером-исполнителем службы «Мастер На Час» в Казани!'
-        };
 
         let activeParentCat = 'furniture';
         let activeSubCat = 'Все подкатегории';
-        let activeServiceFilter = 'all';
 
         window.addEventListener('hashchange', handleRouting);
         window.addEventListener('load', () => {
-            applyPageTexts();
             handleRouting();
             initParentCategoryButtons();
             renderPricelistRectangles();
-            renderCardsPages();
+            renderMastersPage();
             renderReviews();
             setupPhoneMasks();
             initMainFormCheckboxes();
-            renderDistinctServices('all');
         });
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeBookingModal();
                 closeSuccessModal();
+                const qcModal = document.getElementById('quick-chat-modal');
+                if(qcModal) qcModal.classList.add('hidden');
             }
         });
-
-        function applyPageTexts() {
-            if(document.getElementById('home-title')) document.getElementById('home-title').innerHTML = pageTexts.homeTitle;
-            if(document.getElementById('home-subtitle')) document.getElementById('home-subtitle').innerText = pageTexts.homeSubtitle;
-        }
 
         function handleRouting() {
             const hash = window.location.hash || '#/home';
@@ -1397,7 +1593,6 @@
             if (targetPage) {
                 targetPage.classList.remove('hidden');
                 if(pageId === 'admin') checkAdminAuth();
-                if(pageId === 'services') renderDistinctServices(activeServiceFilter);
             } else {
                 document.getElementById('page-home').classList.remove('hidden');
             }
@@ -1411,6 +1606,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // PHONE MASK IMPLEMENTATION
         function setupPhoneMasks() {
             const phoneInputs = document.querySelectorAll('input[type="tel"]');
             phoneInputs.forEach(input => {
@@ -1428,6 +1624,7 @@
             });
         }
 
+        // FAQ ACCORDION TOGGLE
         function toggleFaq(el) {
             const desc = el.querySelector('div:last-child');
             const icon = el.querySelector('i');
@@ -1435,6 +1632,7 @@
             icon.classList.toggle('rotate-180');
         }
 
+        // TOGGLE PRICE ITEM DESCRIPTION ON CLICK
         function togglePriceDesc(headerEl) {
             const card = headerEl.closest('.price-card-item');
             const descBox = card.querySelector('.price-desc-box');
@@ -1443,6 +1641,60 @@
             if(icon) icon.classList.toggle('rotate-180');
         }
 
+        // QUICK CHAT WITH OPERATOR TOGGLE & SUBMIT
+        function toggleQuickChat() {
+            const modal = document.getElementById('quick-chat-modal');
+            if(modal) modal.classList.toggle('hidden');
+        }
+
+        function handleQuickChatSubmit(e) {
+            e.preventDefault();
+            const inputEl = document.getElementById('qc-input-message');
+            const message = inputEl.value.trim();
+            if(!message) return;
+
+            const container = document.getElementById('chat-messages-container');
+            
+            // Add user message bubble
+            container.innerHTML += `
+                <div class="flex items-end justify-end gap-2">
+                    <div class="bg-brand-orange text-slate-950 p-3 rounded-2xl rounded-tr-none max-w-[80%] leading-relaxed font-medium">
+                        ${message}
+                    </div>
+                </div>
+            `;
+            
+            inputEl.value = '';
+            container.scrollTop = container.scrollHeight;
+
+            // Save message to messages data
+            messagesData.unshift({
+                id: Date.now().toString().slice(-4),
+                name: 'Клиент (из чата)',
+                email: 'Чат с оператором',
+                subject: 'Сообщение в чат с оператором',
+                message: message,
+                date: 'Только что'
+            });
+            localStorage.setItem('site_messages', JSON.stringify(messagesData));
+
+            // Simulate operator reply
+            setTimeout(() => {
+                container.innerHTML += `
+                    <div class="flex items-start gap-2">
+                        <div class="w-7 h-7 rounded-full bg-brand-orange text-slate-950 flex items-center justify-center shrink-0 font-bold text-xs">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <div class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[80%] leading-relaxed">
+                            Спасибо! Сообщение получено. Оператор свяжется с вами в ближайшее время или перезвонит по указанному номеру.
+                        </div>
+                    </div>
+                `;
+                container.scrollTop = container.scrollHeight;
+            }, 1000);
+        }
+
+        // CUSTOM SUCCESS POPUP MODAL FUNCTIONS
         function showSuccessModal(title, text) {
             const modal = document.getElementById('success-modal');
             const titleEl = document.getElementById('success-modal-title');
@@ -1461,49 +1713,7 @@
             if(e.target.id === 'success-modal') closeSuccessModal();
         }
 
-        // QUICK CHAT WIDGET SENDER FOR MAX & ADMIN
-        function sendQuickChatToMaxAndAdmin() {
-            const txt = document.getElementById('quick-chat-text').value.trim();
-            if(!txt) {
-                showSuccessModal('Внимание', 'Пожалуйста, введите текст сообщения!');
-                return;
-            }
-
-            // Save to messages in admin
-            const newMessage = {
-                id: Date.now().toString().slice(-4),
-                name: 'Быстрый чат виджета',
-                email: 'widget-user@kazan.ru',
-                subject: 'Сообщение из быстрого чата',
-                message: txt,
-                date: 'Только что'
-            };
-            messagesData.unshift(newMessage);
-            localStorage.setItem('site_messages', JSON.stringify(messagesData));
-
-            // Also record as order
-            const newOrder = {
-                id: Date.now().toString().slice(-4),
-                name: 'Клиент (Виджет чата)',
-                phone: '8 (927) 043-53-53',
-                district: 'Казань',
-                service: 'Быстрый вопрос из чата',
-                desc: txt,
-                date: 'Только что'
-            };
-            ordersData.unshift(newOrder);
-            localStorage.setItem('site_orders', JSON.stringify(ordersData));
-
-            // Open MAX messenger with test number 79097605706
-            const maxPhone = '79097605706';
-            const encoded = encodeURIComponent(`💬 *БЫСТРЫЙ ЧАТ С САЙТА*\n\n📝 *Сообщение:* ${txt}`);
-            window.open(`https://max.app/chat/${maxPhone}?text=${encoded}`, '_blank');
-
-            showSuccessModal('Сообщение отправлено!', 'Ваше сообщение сохранено в админке и открыт чат в мессенджере MAX на номере 89097605706.');
-            document.getElementById('quick-chat-text').value = '';
-            toggleQuickMenu();
-        }
-
+        // ADD NEW REVIEW HANDLER
         function handleAddNewReview(e) {
             e.preventDefault();
             const name = document.getElementById('new-rev-name').value;
@@ -1511,7 +1721,14 @@
             const rating = parseInt(document.getElementById('new-rev-rating').value);
             const text = document.getElementById('new-rev-text').value;
 
-            reviewsData.unshift({ name, district, text, rating, date: 'Только что' });
+            reviewsData.unshift({
+                name: name,
+                district: district,
+                text: text,
+                rating: rating,
+                date: 'Только что'
+            });
+
             localStorage.setItem('site_reviews', JSON.stringify(reviewsData));
             renderReviews();
             showSuccessModal('Отзыв отправлен!', 'Спасибо за ваш отзыв! Он успешно добавлен и отображается на сайте.');
@@ -1537,6 +1754,7 @@
             `).join('');
         }
 
+        // HANDLE PERFORMER REGISTRATION (РЕГИСТРАЦИЯ ИСПОЛНИТЕЛЯ)
         function handleMasterRegisterSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('m-name').value;
@@ -1547,15 +1765,26 @@
             const passportInput = document.getElementById('m-passport');
             const passportFileName = passportInput.files[0] ? passportInput.files[0].name : 'Фото прикреплено';
 
-            const newPerformer = { id: Date.now().toString().slice(-4), name, phone, spec, address, desc, passportFile: passportFileName, date: 'Только что' };
+            const newPerformer = {
+                id: Date.now().toString().slice(-4),
+                name,
+                phone,
+                spec,
+                address,
+                desc,
+                passportFile: passportFileName,
+                date: 'Только что'
+            };
+
             performersData.unshift(newPerformer);
             localStorage.setItem('site_performers', JSON.stringify(performersData));
 
-            showSuccessModal('Анкета принята!', `Уважаемый(ая) ${name}, ваша анкета и паспортные данные успешно переданы в административную панель на проверку.`);
+            showSuccessModal('Анкета принята!', `Уважаемый(ая) ${name}, ваша анкета и паспортные данные успешно переданы в административную панель на проверку. Администратор свяжется с вами.`);
             e.target.reset();
             document.getElementById('m-passport-prev').innerHTML = '';
         }
 
+        // HANDLE "WRITE US" (НАПИСАТЬ НАМ) FORM
         function handleWriteUsSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('wu-name').value;
@@ -1563,17 +1792,26 @@
             const subject = document.getElementById('wu-subject').value;
             const message = document.getElementById('wu-message').value;
 
-            const newMessage = { id: Date.now().toString().slice(-4), name, email, subject, message, date: 'Только что' };
+            const newMessage = {
+                id: Date.now().toString().slice(-4),
+                name,
+                email,
+                subject,
+                message,
+                date: 'Только что'
+            };
+
             messagesData.unshift(newMessage);
             localStorage.setItem('site_messages', JSON.stringify(messagesData));
 
             const mailtoLink = `mailto:master.kazan5353@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Имя: ${name}\nEmail: ${email}\n\nСообщение:\n${message}`)}`;
             window.location.href = mailtoLink;
 
-            showSuccessModal('Сообщение отправлено!', 'Ваше сообщение успешно сохранено в админке и открыт почтовый клиент для отправки на master.kazan5353@gmail.com.');
+            showSuccessModal('Сообщение отправлено!', 'Ваше сообщение успешно сохранено в административной панели и открыт почтовый клиент для отправки на master.kazan5353@gmail.com.');
             e.target.reset();
         }
 
+        // INIT MAIN FORM CHECKBOXES FOR MULTI-CHOICE
         function initMainFormCheckboxes() {
             const container = document.getElementById('main-form-services-checkboxes');
             if(!container) return;
@@ -1610,13 +1848,16 @@
             const serviceInput = document.getElementById('main-service');
             
             let titles = [];
-            checked.forEach(chk => titles.push(priceDatabase[chk.value].title));
+            checked.forEach(chk => {
+                titles.push(priceDatabase[chk.value].title);
+            });
+
             const textStr = titles.join(', ');
             if(summaryEl) summaryEl.innerText = `${checked.length} выбрано: ${textStr}`;
             if(serviceInput) serviceInput.value = textStr;
         }
 
-        // ADMIN PANEL & PAGE EDITING
+        // ADMIN PANEL FUNCTIONS
         function handleAdminLogin(e) {
             e.preventDefault();
             const pass = document.getElementById('admin-password-input').value;
@@ -1637,7 +1878,6 @@
                 if(loginBox) loginBox.classList.add('hidden');
                 if(dashboard) dashboard.classList.remove('hidden');
                 renderAdminDashboard();
-                loadPageEditsInputs();
             } else {
                 if(loginBox) loginBox.classList.remove('hidden');
                 if(dashboard) dashboard.classList.add('hidden');
@@ -1654,7 +1894,7 @@
             const targetTab = document.getElementById(`admin-tab-${tabName}`);
             if(targetTab) targetTab.classList.remove('hidden');
 
-            ['orders', 'performers', 'messages', 'reviews', 'prices', 'pages'].forEach(t => {
+            ['orders', 'performers', 'messages', 'reviews', 'prices'].forEach(t => {
                 const btn = document.getElementById(`admin-tab-btn-${t}`);
                 if(!btn) return;
                 if(t === tabName) {
@@ -1665,93 +1905,86 @@
             });
         }
 
-        function loadPageEditsInputs() {
-            document.getElementById('edit-page-home-title').value = pageTexts.homeTitle;
-            document.getElementById('edit-page-home-subtitle').value = pageTexts.homeSubtitle;
-            document.getElementById('edit-page-services-title').value = pageTexts.servicesTitle;
-            document.getElementById('edit-page-services-desc').value = pageTexts.servicesDesc;
-            document.getElementById('edit-page-price-title').value = pageTexts.priceTitle;
-            document.getElementById('edit-page-masters-title').value = pageTexts.mastersTitle;
-            document.getElementById('edit-page-faq-title').value = pageTexts.faqTitle;
-            document.getElementById('edit-page-register-title').value = pageTexts.registerTitle;
-        }
-
-        function savePageEdits() {
-            pageTexts = {
-                homeTitle: document.getElementById('edit-page-home-title').value,
-                homeSubtitle: document.getElementById('edit-page-home-subtitle').value,
-                servicesTitle: document.getElementById('edit-page-services-title').value,
-                servicesDesc: document.getElementById('edit-page-services-desc').value,
-                priceTitle: document.getElementById('edit-page-price-title').value,
-                mastersTitle: document.getElementById('edit-page-masters-title').value,
-                faqTitle: document.getElementById('edit-page-faq-title').value,
-                registerTitle: document.getElementById('edit-page-register-title').value
-            };
-            localStorage.setItem('site_page_texts', JSON.stringify(pageTexts));
-            applyPageTexts();
-            showSuccessModal('Успешно', 'Контент страниц успешно обновлен и сохранен!');
-        }
-
         function renderAdminDashboard() {
-            document.getElementById('orders-count').innerText = ordersData.length;
-            document.getElementById('performers-count').innerText = performersData.length;
-            document.getElementById('messages-count').innerText = messagesData.length;
-            document.getElementById('reviews-count').innerText = reviewsData.length;
+            const ordersCountEl = document.getElementById('orders-count');
+            const performersCountEl = document.getElementById('performers-count');
+            const messagesCountEl = document.getElementById('messages-count');
+            const reviewsCountEl = document.getElementById('reviews-count');
+
+            if(ordersCountEl) ordersCountEl.innerText = ordersData.length;
+            if(performersCountEl) performersCountEl.innerText = performersData.length;
+            if(messagesCountEl) messagesCountEl.innerText = messagesData.length;
+            if(reviewsCountEl) reviewsCountEl.innerText = reviewsData.length;
 
             // Orders list
             const ordersList = document.getElementById('admin-orders-list');
             if(ordersList) {
-                ordersList.innerHTML = ordersData.length === 0 ? `<div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-xs">Нет новых заявок</div>` : ordersData.map((ord, idx) => `
-                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                        <div>
-                            <div class="flex items-center gap-2 mb-1">
-                                <span class="bg-amber-500/10 text-brand-orange font-bold text-xs px-2.5 py-0.5 rounded-md">Заявка #${ord.id || idx}</span>
-                                <span class="text-xs text-slate-400">${ord.date || 'Недавно'}</span>
+                if(ordersData.length === 0) {
+                    ordersList.innerHTML = `<div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-xs">Нет новых заявок</div>`;
+                } else {
+                    ordersList.innerHTML = ordersData.map((ord, idx) => `
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="bg-amber-500/10 text-brand-orange font-bold text-xs px-2.5 py-0.5 rounded-md">Заявка #${ord.id || idx}</span>
+                                    <span class="text-xs text-slate-400">${ord.date || 'Недавно'}</span>
+                                </div>
+                                <div class="text-sm font-bold text-white">${ord.name} — <a href="tel:${ord.phone}" class="text-amber-400">${ord.phone}</a></div>
+                                <div class="text-xs text-slate-300 mt-1"><b>Услуги:</b> ${ord.service} | <b>Район:</b> ${ord.district}</div>
+                                <div class="text-xs text-slate-400 mt-1 italic">"${ord.desc}"</div>
                             </div>
-                            <div class="text-sm font-bold text-white">${ord.name} — <a href="tel:${ord.phone}" class="text-amber-400">${ord.phone}</a></div>
-                            <div class="text-xs text-slate-300 mt-1"><b>Услуги:</b> ${ord.service} | <b>Район:</b> ${ord.district}</div>
-                            <div class="text-xs text-slate-400 mt-1 italic">"${ord.desc}"</div>
+                            <button onclick="deleteOrder(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
                         </div>
-                        <button onclick="deleteOrder(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
-                    </div>
-                `).join('');
+                    `).join('');
+                }
             }
 
             // Performers list
             const perfList = document.getElementById('admin-performers-list');
             if(perfList) {
-                perfList.innerHTML = performersData.length === 0 ? `<div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-xs">Нет зарегистрированных исполнителей</div>` : performersData.map((p, idx) => `
-                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                        <div>
-                            <div class="flex items-center gap-2 mb-1">
-                                <span class="bg-emerald-500/10 text-emerald-400 font-bold text-xs px-2.5 py-0.5 rounded-md">Исполнитель #${p.id || idx}</span>
-                                <span class="text-xs text-amber-400 font-semibold">${p.spec}</span>
+                if(performersData.length === 0) {
+                    perfList.innerHTML = `<div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-xs">Нет зарегистрированных исполнителей</div>`;
+                } else {
+                    perfList.innerHTML = performersData.map((p, idx) => `
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="bg-emerald-500/10 text-emerald-400 font-bold text-xs px-2.5 py-0.5 rounded-md">Исполнитель #${p.id || idx}</span>
+                                    <span class="text-xs text-amber-400 font-semibold">${p.spec}</span>
+                                    <span class="text-xs text-slate-400">${p.date || 'Недавно'}</span>
+                                </div>
+                                <div class="text-sm font-bold text-white">${p.name} — <a href="tel:${p.phone}" class="text-amber-400">${p.phone}</a></div>
+                                <div class="text-xs text-slate-300 mt-1"><b>Адрес прописки:</b> ${p.address}</div>
+                                <div class="text-xs text-slate-300 mt-0.5"><b>Фото паспорта/лица:</b> <span class="text-sky-400">${p.passportFile}</span></div>
+                                <div class="text-xs text-slate-400 mt-1 italic">Опыт: "${p.desc}"</div>
                             </div>
-                            <div class="text-sm font-bold text-white">${p.name} — <a href="tel:${p.phone}" class="text-amber-400">${p.phone}</a></div>
-                            <div class="text-xs text-slate-300 mt-1"><b>Адрес:</b> ${p.address} | <b>Паспорт/Лицо:</b> <span class="text-sky-400">${p.passportFile}</span></div>
+                            <button onclick="deletePerformer(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
                         </div>
-                        <button onclick="deletePerformer(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
-                    </div>
-                `).join('');
+                    `).join('');
+                }
             }
 
             // Messages list
             const msgList = document.getElementById('admin-messages-list');
             if(msgList) {
-                msgList.innerHTML = messagesData.length === 0 ? `<div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-xs">Нет новых сообщений</div>` : messagesData.map((m, idx) => `
-                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                        <div>
-                            <div class="flex items-center gap-2 mb-1">
-                                <span class="bg-sky-500/10 text-sky-400 font-bold text-xs px-2.5 py-0.5 rounded-md">Письмо #${m.id || idx}</span>
-                                <span class="text-xs text-slate-400">${m.date || 'Недавно'}</span>
+                if(messagesData.length === 0) {
+                    msgList.innerHTML = `<div class="p-6 bg-slate-900 border border-slate-800 rounded-2xl text-slate-400 text-xs">Нет новых сообщений</div>`;
+                } else {
+                    msgList.innerHTML = messagesData.map((m, idx) => `
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="bg-sky-500/10 text-sky-400 font-bold text-xs px-2.5 py-0.5 rounded-md">Письмо #${m.id || idx}</span>
+                                    <span class="text-xs text-slate-400">${m.date || 'Недавно'}</span>
+                                </div>
+                                <div class="text-sm font-bold text-white">${m.name} (<a href="mailto:${m.email}" class="text-amber-400">${m.email}</a>)</div>
+                                <div class="text-xs font-semibold text-brand-orange mt-1">Тема: ${m.subject}</div>
+                                <p class="text-xs text-slate-300 mt-1 bg-slate-950 p-2.5 rounded-xl border border-slate-800">"${m.message}"</p>
                             </div>
-                            <div class="text-sm font-bold text-white">${m.name} (<a href="mailto:${m.email}" class="text-amber-400">${m.email}</a>)</div>
-                            <div class="text-xs font-semibold text-brand-orange mt-1">Тема: ${m.subject}</div>
-                            <p class="text-xs text-slate-300 mt-1 bg-slate-950 p-2.5 rounded-xl border border-slate-800">"${m.message}"</p>
+                            <button onclick="deleteMessage(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
                         </div>
-                        <button onclick="deleteMessage(${idx})" class="px-3 py-1.5 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl text-xs font-bold transition">Удалить</button>
-                    </div>
-                `).join('');
+                    `).join('');
+                }
             }
 
             // Reviews list
@@ -1790,11 +2023,38 @@
             }
         }
 
-        function deleteOrder(idx) { ordersData.splice(idx, 1); localStorage.setItem('site_orders', JSON.stringify(ordersData)); renderAdminDashboard(); }
-        function deletePerformer(idx) { performersData.splice(idx, 1); localStorage.setItem('site_performers', JSON.stringify(performersData)); renderAdminDashboard(); }
-        function deleteMessage(idx) { messagesData.splice(idx, 1); localStorage.setItem('site_messages', JSON.stringify(messagesData)); renderAdminDashboard(); }
-        function deleteReview(idx) { reviewsData.splice(idx, 1); localStorage.setItem('site_reviews', JSON.stringify(reviewsData)); renderAdminDashboard(); renderReviews(); }
-        function deletePriceItem(idx) { priceDatabase.splice(idx, 1); localStorage.setItem('site_prices', JSON.stringify(priceDatabase)); renderAdminDashboard(); renderPricelistRectangles(); initMainFormCheckboxes(); }
+        function deleteOrder(idx) {
+            ordersData.splice(idx, 1);
+            localStorage.setItem('site_orders', JSON.stringify(ordersData));
+            renderAdminDashboard();
+        }
+
+        function deletePerformer(idx) {
+            performersData.splice(idx, 1);
+            localStorage.setItem('site_performers', JSON.stringify(performersData));
+            renderAdminDashboard();
+        }
+
+        function deleteMessage(idx) {
+            messagesData.splice(idx, 1);
+            localStorage.setItem('site_messages', JSON.stringify(messagesData));
+            renderAdminDashboard();
+        }
+
+        function deleteReview(idx) {
+            reviewsData.splice(idx, 1);
+            localStorage.setItem('site_reviews', JSON.stringify(reviewsData));
+            renderAdminDashboard();
+            renderReviews();
+        }
+
+        function deletePriceItem(idx) {
+            priceDatabase.splice(idx, 1);
+            localStorage.setItem('site_prices', JSON.stringify(priceDatabase));
+            renderAdminDashboard();
+            renderPricelistRectangles();
+            initMainFormCheckboxes();
+        }
 
         function openAddPriceModal() {
             document.getElementById('price-modal-title').innerText = 'Добавить новую услугу';
@@ -1819,7 +2079,9 @@
             document.getElementById('price-edit-modal').classList.remove('hidden');
         }
 
-        function closePriceModal() { document.getElementById('price-edit-modal').classList.add('hidden'); }
+        function closePriceModal() {
+            document.getElementById('price-edit-modal').classList.add('hidden');
+        }
 
         function savePriceItem(e) {
             e.preventDefault();
@@ -1832,8 +2094,12 @@
                 unit: document.getElementById('edit-price-unit').value,
                 price: document.getElementById('edit-price-val').value
             };
-            if(idx === '') priceDatabase.push(newItem);
-            else priceDatabase[idx] = newItem;
+
+            if(idx === '') {
+                priceDatabase.push(newItem);
+            } else {
+                priceDatabase[idx] = newItem;
+            }
 
             localStorage.setItem('site_prices', JSON.stringify(priceDatabase));
             closePriceModal();
@@ -1843,7 +2109,7 @@
             showSuccessModal('Успешно', 'Изменения в прайс-листе сохранены!');
         }
 
-        // PRICELIST NAVIGATION WITH THEMATIC SUBCATEGORY ICONS
+        // PRICELIST NAVIGATION WITH THEMATIC PHOTOS
         function initParentCategoryButtons() {
             const nav = document.getElementById('main-categories-nav');
             if(!nav) return;
@@ -1855,6 +2121,7 @@
                 </button>
             `).join('');
 
+            updateThematicBanner();
             renderSubcategoryChips();
         }
 
@@ -1865,11 +2132,28 @@
             document.querySelectorAll('.cat-nav-btn').forEach(btn => {
                 btn.className = 'cat-nav-btn p-3 rounded-2xl border transition-all text-center flex flex-col items-center justify-center gap-1.5 bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700';
             });
-            const activeBtn = document.getElementById(`cat-btn-${catId}`);
-            if(activeBtn) activeBtn.className = 'cat-nav-btn p-3 rounded-2xl border transition-all text-center flex flex-col items-center justify-center gap-1.5 bg-brand-orange text-slate-950 font-bold border-brand-orange shadow-lg';
 
+            const activeBtn = document.getElementById(`cat-btn-${catId}`);
+            if(activeBtn) {
+                activeBtn.className = 'cat-nav-btn p-3 rounded-2xl border transition-all text-center flex flex-col items-center justify-center gap-1.5 bg-brand-orange text-slate-950 font-bold border-brand-orange shadow-lg';
+            }
+
+            updateThematicBanner();
             renderSubcategoryChips();
             renderPricelistRectangles();
+        }
+
+        function updateThematicBanner() {
+            const config = categoriesConfig.find(c => c.id === activeParentCat);
+            if(!config) return;
+
+            const bannerImg = document.getElementById('subcat-banner-img');
+            const bannerTitle = document.getElementById('banner-cat-title');
+            const bannerTag = document.getElementById('banner-cat-tag');
+
+            if(bannerImg) bannerImg.src = config.bannerImg;
+            if(bannerTitle) bannerTitle.innerText = config.name;
+            if(bannerTag) bannerTag.innerText = `Казань • ${config.time}`;
         }
 
         function renderSubcategoryChips() {
@@ -1880,24 +2164,11 @@
             const config = categoriesConfig.find(c => c.id === activeParentCat);
             if(titleEl) titleEl.innerText = `Подкатегории: ${config.name}`;
 
-            const subIcons = {
-                'Диван': 'fa-couch', 'Стенка, прихожая': 'fa-door-closed', 'Кровать': 'fa-bed', 'Кухня': 'fa-utensils',
-                'Полки': 'fa-layer-group', 'Стул': 'fa-chair', 'Тумбочка': 'fa-boxes-stacked', 'Шкаф': 'fa-shirt',
-                'Стол': 'fa-table', 'Кресло': 'fa-armchair', 'Стеллаж': 'fa-book', 'Комод': 'fa-box',
-                'Установка раковины': 'fa-sink', 'Установка смесителя': 'fa-faucet', 'Унитазы, писсуары и биде': 'fa-toilet',
-                'Розетки и выключатели': 'fa-plug', 'Светильники и Люстры': 'fa-lightbulb', 'Щиты, Автоматы, Счетчики': 'fa-car-battery'
-            };
-
-            chipsWrapper.innerHTML = config.subs.map(sub => {
-                const iconClass = subIcons[sub] || 'fa-wrench';
-                const isSel = sub === activeSubCat;
-                return `
-                    <button onclick="selectSubCategory('${sub}')" class="sub-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${isSel ? 'bg-amber-400 text-slate-950 shadow-md' : 'bg-slate-950 text-slate-300 border border-slate-800 hover:border-amber-500/50'}">
-                        <i class="fa-solid ${iconClass} ${isSel ? 'text-slate-950' : 'text-brand-orange'}"></i>
-                        <span>${sub}</span>
-                    </button>
-                `;
-            }).join('');
+            chipsWrapper.innerHTML = config.subs.map(sub => `
+                <button onclick="selectSubCategory('${sub}')" class="sub-chip-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${sub === activeSubCat ? 'bg-amber-400 text-slate-950' : 'bg-slate-950 text-slate-300 border border-slate-800 hover:border-amber-500/50'}">
+                    ${sub}
+                </button>
+            `).join('');
         }
 
         function selectSubCategory(subName) {
@@ -1920,6 +2191,7 @@
             }
 
             let filtered = [];
+
             if(searchVal) {
                 filtered = priceDatabase.filter(item => item.title.toLowerCase().includes(searchVal));
             } else {
@@ -1967,6 +2239,7 @@
                         </div>
                     </div>
 
+                    <!-- Collapsible Description Box -->
                     <div class="price-desc-box hidden bg-slate-950/90 border border-slate-800/80 rounded-xl p-3.5 text-xs text-slate-300 leading-relaxed">
                         <span class="font-bold text-amber-400 block mb-1"><i class="fa-solid fa-circle-info mr-1"></i> Подробное описание услуги:</span>
                         ${item.desc || `Профессиональное выполнение работы: «${item.title}». Включает выезд мастера в любой район Казани, диагностику и гарантию по договору 12 месяцев.`}
@@ -1975,7 +2248,10 @@
             `).join('');
         }
 
-        function handlePriceSearch() { renderPricelistRectangles(); }
+        function handlePriceSearch() {
+            renderPricelistRectangles();
+        }
+
         function clearPriceSearch() {
             const searchInput = document.getElementById('price-search-input');
             if(searchInput) searchInput.value = '';
@@ -1988,57 +2264,12 @@
             if(mainServiceInput) mainServiceInput.value = title;
         }
 
-        // RENDER DISTINCT SERVICES PAGE
-        function filterServicesPage(catId) {
-            activeServiceFilter = catId;
-            document.querySelectorAll('.srv-tab-btn').forEach(btn => {
-                btn.className = 'srv-tab-btn bg-slate-900 border border-slate-800 text-slate-300 p-4 rounded-2xl font-bold text-center cursor-pointer hover:border-brand-orange transition flex flex-col items-center gap-2';
-            });
-            const selBtn = document.getElementById(`srv-tab-${catId}`);
-            if(selBtn) selBtn.className = 'srv-tab-btn bg-brand-orange text-slate-950 p-4 rounded-2xl font-bold text-center cursor-pointer shadow-lg transition flex flex-col items-center gap-2';
-
-            renderDistinctServices(catId);
-        }
-
-        function renderDistinctServices(filterCat) {
-            const grid = document.getElementById('services-distinct-grid');
-            if(!grid) return;
-
-            let items = categoriesConfig;
-            if(filterCat !== 'all') {
-                items = categoriesConfig.filter(c => c.id === filterCat);
-            }
-
-            grid.innerHTML = items.map(c => `
-                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-brand-orange transition-all shadow-xl group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-brand-orange flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid ${c.icon}"></i>
-                        </div>
-                        <h3 class="text-xl font-black text-white mb-3">${c.name}</h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">${c.desc}</p>
-                        <div class="space-y-2 mb-6 text-xs text-slate-400">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Время прибытия: <b>${c.time}</b></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Инструмент: <b>${c.tools}</b></div>
-                        </div>
-                    </div>
-                    <div class="space-y-3 pt-4 border-t border-slate-800">
-                        <button onclick="selectParentCategory('${c.id}'); window.location.hash='#/pricelist';" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition flex items-center justify-center gap-2">
-                            <span>Смотреть расценки в прайсе</span> <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                        <button onclick="openBookingModal('Вызов мастера: ${c.name}')" class="w-full py-3 rounded-xl bg-brand-orange text-slate-950 font-black text-xs hover:brightness-110 transition flex items-center justify-center gap-2">
-                            <span>Срочный вызов мастера</span> <i class="fa-solid fa-bolt"></i>
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
         function previewFiles(input, prevBoxId) {
             const box = document.getElementById(prevBoxId);
             if(!box) return;
+
             if(input.files && input.files.length > 0) {
-                const list = Array.from(input.files).map(f => `<span class="inline-block bg-slate-800 text-slate-200 px-2 py-1 rounded-md text-[11px] border border-slate-700 m-0.5"><i class="fa-solid fa-file text-brand-orange mr-1"></i>${f.name}</span>`).join('');
+                const list = Array.from(input.files).map(f => `<span class="inline-block bg-slate-800 text-slate-200 px-2 py-1 rounded-md text-[11px] border border-slate-700 m-0.5"><i class="fa-solid fa-file text-brand-orange mr-1"></i>${f.name} (${(f.size/1024/1024).toFixed(1)} Мб)</span>`).join('');
                 box.innerHTML = `<div class="mt-1">Выбрано файлов: <b>${input.files.length}</b></div><div class="flex flex-wrap justify-center mt-1">${list}</div>`;
             } else {
                 box.innerHTML = '';
@@ -2076,14 +2307,29 @@
         }
 
         async function sendTelegramMessageDirect(text, files) {
-            if (TELEGRAM_BOT_TOKEN === 'YOUR_TELEGRAM_BOT_TOKEN_HERE') return;
+            if (TELEGRAM_BOT_TOKEN === 'YOUR_TELEGRAM_BOT_TOKEN_HERE') {
+                console.warn('Telegram Bot Token не установлен.');
+                return;
+            }
+
             try {
                 await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text, parse_mode: 'Markdown' })
                 });
-            } catch (err) { console.error(err); }
+
+                if (files && files.length > 0) {
+                    for (let file of files) {
+                        const formData = new FormData();
+                        formData.append('chat_id', TELEGRAM_CHAT_ID);
+                        formData.append('document', file);
+                        await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendDocument`, { method: 'POST', body: formData });
+                    }
+                }
+            } catch (err) {
+                console.error('Ошибка отправки:', err);
+            }
         }
 
         async function handleFormSubmit(e, type) {
@@ -2105,6 +2351,7 @@
             localStorage.setItem('site_orders', JSON.stringify(ordersData));
 
             const text = `🛠 *НОВАЯ ЗАЯВКА В КАЗАНИ*\n\n👤 *Имя:* ${data.name}\n📞 *Телефон:* ${data.phone}\n📍 *Район:* ${data.district || 'Казань'}\n🔧 *Услуги:* ${data.service}\n📝 *Описание:* ${data.desc}\n📎 *Файлов:* ${fileCount}`;
+
             await sendTelegramMessageDirect(text, data.files);
 
             showSuccessModal('Заявка успешно принята!', `Спасибо, ${data.name}! Ваш вызов зарегистрирован и отправлен в панель администратора. Мастер перезвонит в течение 3 минут.`);
@@ -2127,17 +2374,16 @@
             }
         }
 
-        function renderCardsPages() {
+        function renderMastersPage() {
             const mastersGrid = document.getElementById('masters-cards-grid');
             if(mastersGrid) {
                 mastersGrid.innerHTML = mastersData.map(m => `
-                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 flex flex-col items-center text-center shadow-xl">
-                        <img src="${m.avatar}" class="w-24 h-24 rounded-2xl object-cover mb-4 border-2 border-brand-orange shadow-md" alt="${m.name}">
-                        <h3 class="text-base font-bold text-white mb-1">${m.name}</h3>
-                        <div class="text-[11px] text-brand-orange font-semibold mb-2 leading-tight">${m.role}</div>
-                        <div class="text-[11px] text-amber-400 font-bold mb-2"><i class="fa-solid fa-star"></i> ${m.rating} (${m.exp})</div>
-                        <div class="text-[11px] text-slate-400 mb-4"><i class="fa-solid fa-location-dot mr-1 text-slate-500"></i> ${m.district}</div>
-                        <button onclick="openBookingModal('Мастер: ${m.name}')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-brand-orange hover:text-slate-950 text-white font-bold text-xs transition-all shadow">
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                        <img src="${m.avatar}" class="w-20 h-20 rounded-2xl object-cover mb-4 border-2 border-brand-orange" alt="${m.name}">
+                        <h3 class="text-lg font-bold text-white">${m.name}</h3>
+                        <div class="text-xs text-brand-orange font-semibold mb-2">${m.role}</div>
+                        <div class="text-xs text-slate-400 mb-4"><i class="fa-solid fa-location-dot mr-1 text-amber-400"></i> ${m.district}</div>
+                        <button onclick="openBookingModal('Мастер: ${m.name}')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-brand-orange hover:text-slate-950 text-white font-bold text-xs transition-all">
                             Вызвать мастера
                         </button>
                     </div>
@@ -2151,15 +2397,12 @@
             document.getElementById('booking-modal').classList.remove('hidden');
         }
 
-        function closeBookingModal() { document.getElementById('booking-modal').classList.add('hidden'); }
-        function handleModalBackdropClick(e) { if (e.target.id === 'booking-modal') closeBookingModal(); }
+        function closeBookingModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        }
 
-        function toggleQuickMenu() {
-            const menu = document.getElementById('quick-contact-menu');
-            const icon = document.getElementById('quick-btn-icon');
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-            icon.className = menu.classList.contains('flex') ? 'fa-solid fa-xmark' : 'fa-solid fa-headset';
+        function handleModalBackdropClick(e) {
+            if (e.target.id === 'booking-modal') closeBookingModal();
         }
 
         function toggleMobileMenu() {
