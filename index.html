@@ -53,15 +53,14 @@
     </script>
 
     <style>
-        /* Полное визуальное и интерактивное скрытие Telegram без удаления кода */
-a[href*="t.me"],
-a[href*="telegram.me"],
-a[href*="telegram.dog"],
-.telegram,
-.telegram-icon,
-.telegram-link,
-[class*="telegram"],
-[id*="telegram"] {
+        /* Скрытие плавающей кнопки чата, поддержки или администратора Telegram */
+.telegram-widget,
+.telegram-chat-button,
+.tg-widget,
+.admin-telegram-btn,
+div[class*="telegram-chat"],
+iframe[src*="t.me/iv"],
+iframe[src*="telegram.me"] {
     display: none !important;
     visibility: hidden !important;
     pointer-events: none !important;
