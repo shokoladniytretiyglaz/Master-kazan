@@ -53,6 +53,20 @@
     </script>
 
     <style>
+        /* Полное визуальное и интерактивное скрытие Telegram без удаления кода */
+a[href*="t.me"],
+a[href*="telegram.me"],
+a[href*="telegram.dog"],
+.telegram,
+.telegram-icon,
+.telegram-link,
+[class*="telegram"],
+[id*="telegram"] {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
         @keyframes floatSlow {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(3deg); }
